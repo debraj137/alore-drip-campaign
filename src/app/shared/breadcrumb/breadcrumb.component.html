@@ -1,0 +1,17 @@
+<div class="breadcrumb">
+  <button 
+    (click)="navigate(link.link)"
+    class="breadcrumb-list"
+    *ngFor="let link of data; let i = index">
+    <span 
+        class="breadcrumb-list-text"
+        [class.router-active]="i === data.length - 1">
+        {{link.name}}
+    </span>
+    <mat-icon
+      class="chevron-right"
+      *ngIf="i !== data.length - 1">
+        chevron_right
+    </mat-icon>
+  </button>
+</div>

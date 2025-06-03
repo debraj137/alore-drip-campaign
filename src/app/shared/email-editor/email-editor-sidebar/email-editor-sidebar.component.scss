@@ -1,0 +1,301 @@
+.email-editor-sidebar-container {
+    cursor: pointer;
+    width: auto;
+    height: 100%;
+    border-right: 1px solid rgba(24, 24, 24, 0.1);
+    display: flex;
+    flex-direction: column;
+
+    .emailLeftContainerheader {
+        padding: 15px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+
+        p {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+            color: #181818;
+        }
+    }
+
+    .emailListContainer {
+        flex: 23;
+        padding: 0px 10px;
+        margin-top: 60px;
+        overflow-y: auto;
+
+        .nav_Objective_Screen {
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            padding-left: 18px;
+            border-radius: 5px;
+            box-shadow: none;
+
+            &:hover {
+                .down_Arrow {
+                    background-color: transparent !important;
+                    border: 1px solid #334bfa !important;
+                }
+
+                .add_Button {
+                    display: flex;
+                    background-color: transparent;
+                    border: 1px solid #334bfa !important;
+                }
+
+                &:active {
+                    .down_Arrow {
+                        background-color: #334bfa !important;
+                        color: #fff !important;
+                        border: 1px solid #fff !important;
+                    }
+
+                    .add_Button {
+                        background-color: #334bfa !important;
+                        border: 1px solid #fff !important;
+
+                        img {
+                            filter: invert(219%) sepia(2%) saturate(1%) hue-rotate(284deg) brightness(101%) contrast(254%) !important;
+                        }
+                    }
+                }
+            }
+
+            .left_Section {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 200px;
+
+                .down_Arrow {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: "Inter";
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 19px;
+                    width: 24px;
+                    height: 24px;
+                    // padding: 10px;
+                    border: 1px solid #334bfa1a;
+                    background-color: #fff;
+                    color: #334bfa;
+                    border-radius: 5px;
+                    margin-right: 10px;
+
+                    &:hover {
+                        background-color: #334bfa33;
+                    }
+                }
+
+                .nav_Objective_Screen_Text {
+                    width: 50%;
+                }
+            }
+
+            .add_Button {
+                display: none;
+                width: 24px;
+                height: 24px;
+                border: 1px solid #334bfa1a;
+                background-color: #fff;
+                color: #334bfa;
+                border-radius: 5px;
+                // display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    background-color: #334bfa33;
+                }
+
+                &:active {
+                    background-color: #334bfa !important;
+                    color: #fff;
+                    border: 1px solid #fff !important;
+                }
+            }
+        }
+
+        .currentSelectedClass {
+            background-color: rgba(24, 24, 24, 0.1) !important;
+
+            .left_Section {
+                .down_Arrow {
+                    background-color: #334bfa !important;
+                    color: #fff !important;
+                }
+
+                .nav_Objective_Screen_Text {
+                    color: #334bfa !important;
+                    width: 150px !important;
+                }
+            }
+
+            .add_Button {
+                display: flex;
+                background-color: transparent !important;
+            }
+
+            &:hover {
+
+                box-shadow: none;
+
+                .down_Arrow {
+                    background-color: #334bfa !important;
+                    border: 1px solid transparent !important;
+                }
+            }
+
+            &:active {
+
+                box-shadow: none;
+
+                .down_Arrow {
+                    background-color: #334bfa !important;
+                    border: none !important;
+                }
+
+                .nav_Objective_Screen_Text {
+                    color: #ffffff !important;
+                }
+            }
+        }
+    }
+
+    .action-button-container {
+        padding: 20px;
+        display: flex;
+
+        button {
+            width: auto;
+            flex: auto;
+        }
+    }
+}
+
+
+::ng-deep .medium_Primary_Tooltip_Ng {
+    min-width: 100px;
+    width: auto;
+    min-height: 34px;
+    max-height: auto;
+    border: none;
+    background: #334bfa;
+    border-radius: 14px !important;
+    color: #fff;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 130%;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: unset !important;
+    position: relative;
+    right: -3px;
+    top: 4px;
+}
+
+::ng-deep .medium_Primary_Tooltip_Ng::after {
+    position: absolute;
+    content: "";
+    width: 0.1px;
+    height: 0.1px;
+    border-left: 12px solid #334bfa;
+    border-top: 12px solid #334bfa;
+    display: block;
+    margin-top: -15px;
+    z-index: 2;
+    left: 123px;
+    transform: rotate(225deg);
+    bottom: -5px;
+}
+
+/*
+    MEDIUM TOOLTIP ENDS HERE */
+
+@media only screen and (max-width:1366px) {
+
+    .email-editor-sidebar-container {
+        cursor: pointer;
+        width: 221px !important;
+
+        .emailListContainer {
+            margin-top: 0px !important;
+
+            .nav_Objective_Screen {
+                width: unset !important;
+                height: unset !important;
+                padding: 7px 10px !important;
+
+                .add_Button {
+                    width: 24px !important;
+                    height: 20px !important;
+                    img{
+                        width: 10px !important;
+                    }
+                }
+
+                .left_Section {
+                    .nav_Objective_Screen_Text {
+                        width: unset !important;
+                        font-size: 15px !important;
+                    }
+
+                    .down_Arrow {
+                        font-size: 12px;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+               
+            }
+
+        }
+
+        .emailLeftContainerheader {
+            padding: 10px 10px 0px 10px !important;
+            margin-bottom: 20px !important;
+
+            p {
+                font-size: 18px;
+                line-height: 24px;
+            }
+
+            .menu_Collapse_Button_Large {
+                width: 25px !important;
+                height: 25px !important;
+
+                img {
+                    width: 14px !important;
+                }
+
+            }
+        }
+        .action-button-container {
+            padding: 10px 10px 50px 10px;
+            .alt_Button_Blue_With_Icon_Left {
+                width: unset !important;
+                font-size: 12px !important;
+                height: 32px;
+                padding: 4px 4px;
+               img{
+                width: 12px !important;
+               }
+            }
+        }
+    }
+}

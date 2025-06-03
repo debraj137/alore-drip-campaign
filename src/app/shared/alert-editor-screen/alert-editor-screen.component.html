@@ -1,0 +1,32 @@
+<section class="alert-container">
+    <div class="header_Customize_Days">
+        <section class="icon_And_Header">
+            <div class="icon_Inside_Header">
+                <img src="../../../assets/icon/icon-email-editor-save.svg" alt="" />
+            </div>
+        <div class="Text_Inside_Header">
+            <p>Save Template</p>
+            <span>Hold on!</span>
+        </div>
+        </section>
+        
+    </div>
+
+<div class="alternateText">
+    <span>
+        Changes that you made may not be saved.<br> Do you want to go ahead ?
+    </span>
+</div>
+<div class="actionButtons">
+    <button
+        (click)="dialogRef.close('save')"
+        class="primary_Normal_Button_Blue">
+        Save
+    </button>
+    <button  
+        (click)="dialogRef.close('continue')"
+        class="secondary_Normal_Button_Blue">
+        Yes, go ahead without saving
+    </button>
+</div>
+

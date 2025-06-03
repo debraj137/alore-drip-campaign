@@ -1,0 +1,8 @@
+<span [class.is-invalid]="validateEmail(cellValue)">
+    <span>{{ cellValue }}</span>&nbsp;
+    <mat-icon 
+        inline
+        *ngIf="validateEmail(cellValue)">
+        info
+    </mat-icon>
+</span>

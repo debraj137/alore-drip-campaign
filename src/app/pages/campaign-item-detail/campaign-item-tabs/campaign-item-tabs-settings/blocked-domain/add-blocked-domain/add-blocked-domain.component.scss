@@ -1,0 +1,167 @@
+.add-blocked-container {
+    padding: 40px 32px;
+    background-color: #ffffff;
+
+    .header {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(51, 75, 250, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+
+            svg {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        .label {
+            flex: auto;
+
+            p {
+                margin: 0;
+                color: #181818;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 132%;
+            }
+
+            span {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 116%;
+                color: #181818cc;
+            }
+
+        }
+
+        .close-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:active {
+                svg {
+                    stroke: white;
+                }
+            }
+
+            svg {
+                stroke: #334BFA;
+                width: 12px;
+                height: 18px;
+            }
+        }
+    }
+
+    .body {
+        width: 100%;
+        margin-top: 25px;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+
+        .form-field {
+
+            .info-icon-wrapper {
+                display: flex;
+                position: relative;
+            }
+
+            .info-icon-wrapper:hover .tooltip-content {
+                left: -10px;
+                opacity: 1;
+                top: 0;
+                transform: translateY(-107%);
+                visibility: visible;
+            }
+
+            span {
+                color: #181818;
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 600;
+                display: flex;
+                gap: 5px;
+                align-items: center;
+
+                mat-icon {
+                    color: var(--alore-main-blue);
+                }
+            }
+
+            mat-form-field {
+                width: 100%;
+                input::placeholder{
+                    font-size: 14px;
+                    
+                }
+
+                &::ng-deep {
+                    .mat-select::placeholder{
+                        font-size: 14px !important;
+                    }
+                    .mat-form-field-infix {
+                        border: none;
+                        padding: 15px 0 !important;
+                    }
+
+                    .mat-select-arrow {
+                        border-left: none !important;
+                        border-top: none !important;
+                        display: inline-block !important;
+                        border-right: 1px solid rgba(24, 24, 24, 0.4) !important;
+                        border-bottom: 1px solid rgba(24, 24, 24, 0.4) !important;
+                        width: 8px !important;
+                        height: 8px !important;
+                        transform: rotate(-315deg);
+                    }
+                }
+
+                &.select-input {
+                    &::ng-deep {
+                        .mat-select-panel-wrap {
+                            position: relative;
+                            top: 26px;
+                        }
+
+                        .mat-select-panel-wrap .mat-select-panel {
+                            min-width: calc(100% + 12px) !important;
+                            transform: translateX(4px) !important
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .action-button {
+        display: flex;
+        gap: 24px;
+        width: 100%;
+        align-items: flex-end;
+        margin-top: 30px;
+        
+        .spinner{
+            margin: auto;
+            width: 20px;
+            height: 20px;
+        }
+
+        button {
+            width: 100px;
+        }
+    }
+   
+
+
+}
+
+

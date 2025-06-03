@@ -1,0 +1,181 @@
+<div class="search-campaign-container">
+
+  <div class="header">
+    <div class="icon_Inside_Header">
+      <img src="../../../assets/common_css/setting_Icon_Popup_Modal.svg" />
+    </div>
+    <div class="desc">
+      <h3>
+        <span>
+          Search
+        </span>
+
+      </h3>
+      <p>
+        Search by a campaign name and filter by by sender’s name, owner’s name, or campaign base
+      </p>
+
+    </div>
+    <div class="close_Button_Div">
+      <button (click)="dialogRef.close()" class="alore_blue_Close_Button">
+        <img src="../assets/alore_Blue_Close.svg" alt="" />
+      </button>
+    </div>
+  </div>
+
+  <section class="search-field">
+    <button 
+    [ngClass]="{'remove-border-search-input': disabledButton == true, 'hello' : disabledButton == false}"
+    class="text_Input_Extra_Small">
+      <input [formControl]="searchCamp" type="search" placeholder="Search by a campaign name" id="input-field"
+        (click)="$event.stopPropagation()" [focus]="true" />
+      <img src="../assets/search_icon.svg" alt="" />
+
+      <!-- <span  >
+            <img (click)="clearSearchResult($event); $event.stopPropagation()" src="../assets/alore_Blue_Close.svg" alt="" />
+        </span> -->
+    </button>
+   
+  </section>
+
+
+  <section class="filter-container">
+ 
+    <button 
+    [ngClass]="{'disable-selector-button': disabledButton == false, 'disable-selector-button-archive' : teamspaceIndex == 5, 'disable-selector-button-trash' : teamspaceIndex == 6}"
+    class="dropdown-button" [matMenuTriggerFor]="createdBy">
+      <input class="button-text" type="text" [formControl]="createdByValue" [value]="selectedCreatedByValue" placeholder="Created by">
+      <button (click)="clearCreatedByValue(); $event.stopPropagation()" class="alore_blue_Close_Button">
+        <img src="../assets/alore_Blue_Close.svg" alt="" />
+      </button>
+    </button>
+
+    <button 
+    [ngClass]="{'disable-selector-button': disabledButton == false, 'disable-selector-button-archive' : teamspaceIndex == 5, 'disable-selector-button-trash' : teamspaceIndex == 6}"
+    class="dropdown-button" [matMenuTriggerFor]="senderList">
+      <input class="button-text" type="text" [formControl]="senderByValue" [value]="selectedSender" placeholder="Sender">
+      <button (click)="clearSenderValue(); $event.stopPropagation()" class="alore_blue_Close_Button">
+        <img src="../assets/alore_Blue_Close.svg" alt="" />
+      </button>
+
+    </button>
+
+    <div 
+    
+    class="team-space-container" [matMenuTriggerFor]="teamspace">
+      <button class="dropdown-button">
+        <input class="button-text" type="text" [value]="selectedTeamspace" placeholder="Work Campaign Base">
+        <img class="dropdown-img" src="../assets/icons/more_Dropdown.svg" alt="" />
+      </button>
+    </div>
+
+
+    <button 
+    [ngClass]="{'disable-selector-button': disabledButton == false, 'disable-selector-button-archive' : teamspaceIndex == 5, 'disable-selector-button-trash' : teamspaceIndex == 6}"
+    class="dropdown-button" [matMenuTriggerFor]="datePicker">
+    
+      <input class="button-text" type="text" [value]="selectedDateValue" placeholder="Date">
+      <button (click)="clearDateValue(); $event.stopPropagation()" class="alore_blue_Close_Button">
+        <img src="../assets/alore_Blue_Close.svg" alt="" />
+      </button>
+
+    </button>
+
+  </section>
+
+  <section class="campaign-list-container scroll-vertical">
+
+    <div *ngIf="searchLength == 0 && loader == false" class="empty-msg">
+      <img src="../../../assets/icon/shared-empty.svg" alt="">
+      <span *ngIf="disabledButton == true">
+        No campaign found..!!!
+      </span>
+       
+      <span *ngIf="disabledButton == false" style="color: red; font-family: 'Inter'; margin-top: 6px;">
+        Please enter more than 3 characters for search
+      </span>
+    
+    </div>
+
+    <section class="spinner-loader">
+      <div
+      *ngIf="loader == true" 
+      class="spinner"></div>
+    </section>
+  
+
+    <section>
+      <div *ngFor="let camp of getAllCampaignList; let i = index"
+      (click)="redirectToCampaign(i)"
+      class="campaign-details">
+
+        <div class="emoji-div">
+          <ngx-emoji [emoji]="camp.emoji || ''" [size]="40" [set]="'google'">
+          </ngx-emoji>
+        </div>
+
+
+        <div class="particular-campaign-detail">
+          <span class="campaign-name">{{ camp.campaignName }}</span>
+
+          <div class="campaign-data">
+            <span>Owner: {{ camp.ownerName }}</span> <span class="content-divider">|</span><span>Start date:
+              {{getDateInString(camp.date)
+              }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <section class="count-section">
+    <span>Total : {{ searchLength }}</span>
+  </section>
+
+</div>
+
+
+
+<!-- view option mat-menu  -->
+
+<mat-menu class="more-option-sender sender-mat-menu scroll-vertical" #senderList="matMenu">
+  <div *ngFor="let items of getSenderListData | sendBySearch:selectedSender; let i = index" >
+
+    <button class="baseEditButton" (click)="selectSender(items)">
+      <p>{{ items.userEmailId}}</p>
+    </button>
+  
+    
+  </div>
+</mat-menu> 
+
+
+<!-- teamspace dropdown  -->
+
+<mat-menu class="moreOption moreOptionBase" #teamspace="matMenu">
+  <div *ngFor="let items of teamspacelist; let i = index">
+    <button  class="baseEditButton" (click)="selectTeamspace(i)">
+      <p>{{ items }}</p>
+    </button>
+  </div>
+</mat-menu>
+
+<!-- created by dropdown  -->
+
+
+<mat-menu class="more-option-createdby createdby-mat-menu scroll-vertical" #createdBy="matMenu">
+  <!-- *ngIf="checkIfCreatedByPresent(items)" -->
+  <div *ngFor="let items of getCreatedList | createBySearch:selectedCreatedByValue ; let i = index">
+    <button  class="baseEditButton" (click)="selectCreatedBy(items)">
+      <p>{{ items.firstName }} {{ items.lastName }}</p>
+    </button>
+ 
+  </div> 
+</mat-menu>
+
+<!-- date picker  -->
+<mat-menu #datePicker="matMenu">
+  <app-date-picker-search-filter  (selectedRangeValueChange)="receivedDate($event)">
+  </app-date-picker-search-filter>
+</mat-menu>

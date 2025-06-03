@@ -1,0 +1,72 @@
+<div class="chart" >
+
+    <div class="chart-first-tier" *ngIf="loader == false">
+      <header class="chart-header">
+        <span class="chart-header-title">Open Rates</span>
+        <button *ngIf="!loader "
+            [matMenuTriggerFor]="dateRangePicker"
+            class="chart-dropdown">
+            <span>
+              {{diffMonth || diffDay}} {{diffMonth === 0 ? 'Days' : 'Months'}}
+            </span>
+            <mat-icon>
+                expand_more
+            </mat-icon>
+        </button>
+      </header>
+      <div class="emptyGraphContainer" *ngIf="isGraphDataEmpty == true">
+        <img src="../../../../assets/volumeGraphEmpty.svg" alt="">
+      </div>
+
+      
+      <!-- <div class="noGraph" *ngIf="loader">
+        <img src="../../../assets/no-volume-graph.svg" alt="" >
+        <span>Graph will appear after campaign starts</span>
+      </div> -->
+  
+  
+      <div class="chart-total-wrapper" *ngIf="!loader && isGraphDataEmpty == false" >
+        <h1 class="chart-total">{{totalData | number}}</h1>
+        <div class="chart-body">
+          <div class="chart-total-like-wrapper">
+            <p class="chart-desc">Open rate</p>
+            <p class="chart-desc">{{percentage | number : '1.2-2'}}%</p>
+          </div>
+          <div class="chart-demo">
+            
+            <div class="chart-icon-wrapper">
+              <div class="chart-blue-icon chart-icon"></div>
+              <p class="chart-icon-desc black-color">Delivered</p>
+            </div>
+            <div class="chart-icon-wrapper">
+              <div class="chart-purple-icon chart-icon"></div>
+              <p class="chart-icon-desc black-color">Opened</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-wrapper" *ngIf="!loader && isGraphDataEmpty == false">
+        <canvas
+          baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+        >
+        </canvas>
+      </div>
+    </div>
+  
+    <mat-menu #dateRangePicker="matMenu" >
+      <app-date-range-picker
+        (selectedRangeValueChange)="onDateChanged($event)"
+       >
+      </app-date-range-picker>
+    </mat-menu>
+    <app-graph-loader
+      [title]="'Open Rates'" 
+      *ngIf="loader == true">
+    </app-graph-loader  >
+  </div>
+  

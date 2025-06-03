@@ -1,0 +1,157 @@
+<div class="default-modal">
+  <div
+      *ngIf="activeStep"  
+      class="header">
+      <div class="icon">
+        <img
+          [src]="'../../../assets/common_css/'+activeStep.icon+'.svg'"
+        />
+      </div>
+      <div class="label">
+          <p>{{activeStep.title}}</p>
+          <span>{{activeStep.desc}}</span>
+      </div>
+      <div class="close-button">
+          <button  
+              (click)="dialogRef.close()"
+              class="alore_blue_Close_Button"
+          >
+          <img src="../assets/alore_Blue_Close.svg" alt="" />
+        </button>
+      </div>
+  </div>
+
+  <div 
+    *ngIf="activeStep && !loader"
+    [ngSwitch]="activeStepValue"
+    style="display: contents;"
+    class="control_Setting">
+    <app-page1 
+        *ngSwitchCase="1"
+        [recipeId]="recipeId"
+        [campId]="campId"
+        [step1Data]="stepTempData.step1Data!"
+        (pageAction)="onPageChanged($event)">
+    </app-page1>
+    <div class="extraDiv" *ngIf="data.createObjective">
+      <app-page2
+      *ngSwitchCase="2"
+      [campId]="campId"
+      [nextStep]="0"
+      [prevStep]="data.activeStep === 1 || data.submittedData ? 1 : 8"
+      [step2Data]="stepTempData.step2Data!"
+      [isFirstStep]="startFromStep2"
+      [isSingleStep]="data.isSingleStep"
+      (pageAction)="onPageChanged($event)">
+  </app-page2>
+    </div>
+
+    <div *ngIf="!data.createObjective">
+      <app-page2
+      *ngSwitchCase="2"
+      [campId]="campId"
+      [nextStep]="data.activeStep === 1 || data.submittedData ? 3 : 11"
+      [prevStep]="data.activeStep === 1 || data.submittedData ? 1 : 8"
+      [step2Data]="stepTempData.step2Data!"
+      [isFirstStep]="startFromStep2"
+      [isSingleStep]="data.isSingleStep"
+      (pageAction)="onPageChanged($event)">
+      </app-page2>
+    </div>
+    
+    <app-page3
+        *ngSwitchCase="3"
+        [campId]="campId"
+        [step3Data]="stepTempData.step3Data!"
+        [prevStep]="data.activeStep === 1 || data.submittedData ? 2 : 0"
+        [nextStep]="data.activeStep === 1 || data.submittedData ? 4 : 4"
+        (pageAction)="onPageChanged($event)">
+    </app-page3>
+    <app-page4
+        [campId]="campId"
+        [step4Data]="stepTempData.step4Data!"
+        [prevStep]="3"
+        [nextStep]="5"
+        *ngSwitchCase="4"
+        [isSingleStep]="data.isSingleStep"
+        (pageAction)="onPageChanged($event)">
+    </app-page4>
+    <app-page5
+        [campId]="campId"
+        [step5Data]="stepTempData.step5Data!"
+        [prevStep]="4"
+        [nextStep]="6"
+        [isSingleStep]="data.isSingleStep"
+        (pageAction)="onPageChanged($event)"
+        *ngSwitchCase="5">
+    </app-page5>
+    <app-page6
+        [campId]="campId"
+        [step5Data]="stepTempData.step5Data!"
+        [step6Data]="stepTempData.step6Data!"
+        *ngSwitchCase="6"
+        [prevStep]="5"
+        [nextStep]="7"
+        [isSingleStep]="data.isSingleStep"
+        (pageAction)="onPageChanged($event)">
+    </app-page6>
+
+    <div *ngIf="data.createObjective">
+    <app-page7
+        [campId]="campId"
+        [step3Data]="stepTempData.step3Data!"
+        [step7Data]="stepTempData.step7Data!"
+        [prevStep]="6"
+        [nextStep]="data.activeStep === 1 || data.submittedData ? 10 : 2"
+        [isSingleStep]="data.isSingleStep"
+        *ngSwitchCase="7"
+        (pageAction)="onPageChanged($event)">
+    </app-page7>
+  </div>
+
+  <div *ngIf="!data.createObjective">
+    <app-page7
+        [campId]="campId"
+        [step3Data]="stepTempData.step3Data!"
+        [step7Data]="stepTempData.step7Data!"
+        [prevStep]="6"
+        [nextStep]="8"
+        [isSingleStep]="data.isSingleStep"
+        *ngSwitchCase="7"
+        (pageAction)="onPageChanged($event)">
+    </app-page7>
+  </div>
+      <app-page8
+      
+      [campId]="campId"
+      *ngSwitchCase="8"
+      [prevStep]="7"
+      [step8Data]="stepTempData.step8Data!"
+      [nextStep]="data.activeStep === 1 || data.submittedData ? 10 : 2"
+      [createLabelPosition]="9"
+      (pageAction)="onPageChanged($event)">
+    </app-page8>
+  
+    
+    <app-page9
+      [campId]="campId"
+      *ngSwitchCase="9"
+      (pageAction)="onPageChanged($event)">
+    </app-page9>
+
+    <app-page10
+      [campId]="campId"
+      *ngSwitchCase="10"
+      [prevStep]="data.activeStep === 1 || data.submittedData ? 8 : 2"
+      [nextStep]="0"
+      (pageAction)="onPageChanged($event)">
+    </app-page10>
+
+    <app-page11
+     *ngSwitchCase="11"
+      [campId]="campId"
+      (pageAction)="onPageChanged($event)">
+    </app-page11>
+
+  </div>
+</div>

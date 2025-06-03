@@ -1,0 +1,74 @@
+.campaign-item-tabs-analytics-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    margin-top: 40px;
+
+    @media only screen and (max-width: 1200px) {
+      flex-direction: column;
+
+      app-provider-chart,
+      app-provider-open-rate-chart{
+        width: 100% !important;
+      }
+    }
+
+    app-provider-chart,
+    app-provider-open-rate-chart {
+      width: 50%;
+    }
+  
+    @media (min-width: 1000px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: 1366px) {
+.campaign-item-tabs-analytics-container {
+  margin-bottom: 50px;
+}
+}
+
+@media only screen and (max-width:480px){
+  .campaign-item-tabs-analytics-container {
+    margin-bottom: 25px;
+  }
+  ::ng-deep {
+
+    .mat-menu-panel.hide-column{
+      border-radius:10px !important;
+    }
+
+    .hide-column {
+        margin-left: unset!important;
+        .hide-column-card {
+            padding: 15px !important;
+            width: 196px !important;
+            border-radius: unset !important;
+
+            .header {
+                font-size: 16px!important;
+                margin-bottom: 10px !important;
+              
+            }
+
+            .body {
+                gap: 10px!important;
+            }
+
+            .footer {
+                gap: 10px!important;
+                margin-top: 15px!important;
+
+      
+            }
+        }
+    }
+}
+
+
+
+
+}

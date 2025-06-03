@@ -1,0 +1,93 @@
+<section class="alert-container">
+  <div class="header_Customize_Days">
+    <section class="icon_And_Header">
+      <div class="icon_Inside_Header">
+        <img src="../../../assets/common_css/setting_Icon_Popup_Modal.svg" alt="" />
+      </div>
+      <div class="Text_Inside_Header">
+        <p>Add Label</p>
+        <span>Add label Name</span>
+      </div>
+    </section>
+
+    <button (click)="dialogRef.close()" class="alore_blue_Close_Button" style="margin-bottom: 30px;">
+      <img src="../../../assets/alore_Blue_Close.svg" alt="">
+    </button>
+
+  </div>
+
+
+  <div class="campaign-name-container">
+    <p class="para_Rename">
+      Label Name
+      <span class="info_icon" matTooltipClass="small_Primary_Tooltip" mat-raised-button matTooltipPosition="above"
+        matTooltip="Enter label name">
+        <!-- {{ data.type.includes('base') ? 'Base' + ' Name' : 'Campaign' +'Name' }} -->
+        <img src="../../../assets/common_css/info_About_Time_Zone.svg" alt="" />
+      </span>
+    </p>
+    <div
+    [ngClass]="{'validationCheck': duplicate == true}"
+    class="text_Input_Extra_Small">
+      <input [focus]="true" [formControl]="labelInput" placeholder="Enter label name" [(ngModel)]="labelName" input type="text"
+        id="check" />
+    </div>
+
+    <div
+    style="color: red;"
+    *ngIf="duplicate == true">
+      <p>
+        Label already exists
+      </p>
+    </div>
+    <!-- <p *ngIf="isCampaignNameExist">campaign name already exist</p> -->
+    <div style="margin-top: 20px;">
+      <p style="margin-bottom: 10px;" >
+        Choose Color
+        <span class="info_icon" matTooltipClass="small_Primary_Tooltip" mat-raised-button matTooltipPosition="above"
+          matTooltip="Select Color">
+          <img src="../../../assets/common_css/info_About_Time_Zone.svg" alt="" />
+        </span>
+      </p>
+      <button type="button" (click)="$event.stopPropagation()"
+       [matMenuTriggerFor]="colorSelection" class="tag-color"
+        class="text_Input_Extra_Small bg-transparent-Onactive">
+        <section class="inside_Button_Div">
+          <div class="backgroundColor" id="backgroundColor" [style.backgroundColor]="color"></div>
+          <div (click)="(!arrowPosition)" [ngClass]="{ arrow_Button: arrowPosition == true }"></div>
+          <img src="../../../assets/common_css/more_Dropdown.svg" alt="" />
+        </section>
+
+
+      </button>
+
+
+
+
+    </div>
+
+    <div 
+    [ngClass]="{'disabledState': duplicate == true}"
+    class="actionButtons" >
+      <button (click)="addlabel()" class="primary_Normal_Button_Blue">
+        Add label
+      </button>
+
+    </div>
+
+
+
+
+    <!-- color picker -->
+    <mat-menu class="menu-transparent-bg" #colorSelection="matMenu" [hasBackdrop]="false">
+      <div class="color-selection-container">
+        <button *ngFor="let colors of colorSelections; index as indexOfelement"
+          (click)="color = colors; num = indexOfelement">
+          <div class="color-element" [ngStyle]="{ 'background-color': colors }"></div>
+        </button>
+      </div>
+    </mat-menu>
+
+    <!-- <button (click)="getLabelList()">
+      click
+    </button> -->

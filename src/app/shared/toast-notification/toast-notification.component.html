@@ -1,0 +1,19 @@
+<div
+    *ngFor="let notification of toastNotification.toastNotificationList | async; let i = index"
+    style="display: contents;" 
+    class="notification-container">
+    <app-toast-notification-item 
+        style="display: contents;"
+        [notification]="notification">
+    </app-toast-notification-item>
+</div>
+
+ 
+<svg display="none">
+    <symbol id="notification_icon">
+        <path d="M3.95117 3.625H5.82617C6.86171 3.625 7.70117 4.46447 7.70117 5.5C7.70117 6.53553 6.86171 7.375 5.82617 7.375C4.79064 7.375 3.95117 6.53553 3.95117 5.5V3.625Z" fill="white"/>
+        <path d="M3.95117 10.5C3.95117 9.46447 4.79064 8.625 5.82617 8.625C6.86171 8.625 7.70117 9.46447 7.70117 10.5C7.70117 11.5355 6.86171 12.375 5.82617 12.375H3.95117V10.5Z" fill="white"/>
+        <path d="M8.95117 5.5C8.95117 4.46447 9.79064 3.625 10.8262 3.625H12.7012V5.5C12.7012 6.53553 11.8617 7.375 10.8262 7.375C9.79064 7.375 8.95117 6.53553 8.95117 5.5Z" fill="white"/>
+        <path d="M8.95117 10.5C8.95117 9.46447 9.79064 8.625 10.8262 8.625C11.8617 8.625 12.7012 9.46447 12.7012 10.5V12.375H10.8262C9.79064 12.375 8.95117 11.5355 8.95117 10.5Z" fill="white"/>
+    </symbol>
+</svg>

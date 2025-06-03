@@ -1,0 +1,32 @@
+.add-daily-report-container{
+    background-color: #ffffff;
+    row-gap: 0!important;
+    width: 450px;
+
+    .body{
+        margin-top: 40px;
+    }
+
+    .action-area {
+        margin-top: 60px;
+        display: flex;
+        
+        .spinner{
+            margin: auto;
+            width: 20px;
+            height: 20px;
+        }
+
+        .primary_Normal_Button_Blue {
+            margin-right: 24px;
+            width: 100px;
+            padding: 0;
+        }
+
+        .secondary_Normal_Button_Blue {
+            width: 100px;
+            height: 40px;
+            padding: 0;
+        }
+    }
+}

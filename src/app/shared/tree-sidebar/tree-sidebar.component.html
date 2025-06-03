@@ -1,0 +1,108 @@
+<div class="custom-tree">
+  <div
+    (click)="emptyState()"
+    class="has-child"
+    *ngIf="treeItem.childrens"
+    [class.main-tree]="treeItem.level <= 30"
+    [class.sub-tree]="treeItem.level > 30"
+    [class.active]="treeItem.level <= 30 ? 
+      isActive(treeItem.name, treeItem.level) : 
+      isActive(treeItem.name, treeItem.level) && isActive(parentData?.name || '', parentData?.level || 0)">
+    <div class="expand-button"
+      (click)="getTreeChildData(false);$event.stopPropagation()">
+      <mat-icon 
+      *ngIf="!treeItem.loader"
+      (click)="pushCampaignToBase(treeItem)" >
+        {{ expanded ? "expand_more" : "chevron_right" }}
+        
+      </mat-icon>
+    </div>
+    <div *ngIf="treeItem.loader && expanded"  class="dot-flashing"></div>
+    <ngx-emoji
+      [size]="19"
+      *ngIf="treeItem?.emoji"
+      [emoji]="treeItem.emoji || ''"
+      [set]="'google'"
+    ></ngx-emoji>
+    <span  [style.font-weight]="level > 30 ? 500 : 600">
+      {{ treeItem.name }}
+    </span>
+    <button
+      (click)="openCreateBaseCampaignDialog()"
+      *ngIf="treeItem.name === 'Work Campaign Base'"
+      class="add-campaign-button"
+    >
+      <mat-icon> add </mat-icon>
+    </button>
+  </div>
+  <div
+    [class.active]="isActive(treeItem.name, treeItem.level, treeItem.data.campaignId)"
+    (click)="verifyCampaignReciepe(treeItem)"
+    *ngIf="!treeItem.childrens; false"
+    class="no-child sub-tree"
+  >
+    <mat-spinner
+   
+      *ngIf="treeService.campaignLoader.value === treeItem.data.campaignId"
+      
+      [diameter]="20"
+    >
+    </mat-spinner>
+    <ngx-emoji
+      [size]="19"
+      *ngIf="
+        treeItem?.emoji &&
+        treeService.campaignLoader.value !== treeItem.data.campaignId
+      "
+      [emoji]="treeItem.emoji || ''"
+      [set]="'google'"
+    ></ngx-emoji>
+    <span>
+      {{ treeItem.name }}
+    </span>
+  </div>
+  <div class="expansion-section" *ngIf="expanded &&  treeItem?.childrens">
+    <div
+      *ngIf="treeItem.childrens?.length! >= 1 && !childLoader"
+      [style.margin-left.px]="treeItem.level"
+      class="expansion-child"
+    >
+      <ng-container *ngFor="let tree of treeItem.childrens">
+        <div *ngIf="treeItem.name !== 'My Favorite'">
+          <app-tree-sidebar
+            [calledFrom]="treeItem.name"
+            [parentData]="treeItem"
+            [treeItem]="tree"
+          >
+          </app-tree-sidebar>
+        </div>
+        <div *ngIf="treeItem.name === 'My Favorite'">
+          <div *ngFor="let favChild of tree.childrens">
+            <app-tree-sidebar
+              [calledFrom]="tree.name"
+              [parentData]="tree"
+              [treeItem]="favChild"
+            >
+            </app-tree-sidebar>
+            
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div
+      *ngIf="childLoader" 
+      class="child-loader">
+      <div class="skeleton-box"></div>
+      <div class="skeleton-box"></div>
+      <div class="skeleton-box"></div>
+      <div class="skeleton-box"></div>
+      <div class="skeleton-box"></div>
+      <div class="skeleton-box"></div>
+    </div>
+    <div
+      class="expansion-empty"
+      *ngIf="treeItem.childrens?.length! <= 0 && !childLoader && !treeItem.loader">
+      You haven’t added any campaign on this section
+    </div>
+  </div>
+</div>

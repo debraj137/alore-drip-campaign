@@ -1,0 +1,142 @@
+<section *ngIf="showDropdown" class="drop-down">
+
+  <div class="parameter">
+    <div class="example-label-container">
+      <label id="example-name-label" class="example-name-label">Temprature</label>
+      <label class="example-value-label">{{temprature}}</label>
+    </div>
+    <mat-slider class="example-margin" [disabled]="false" [max]="1" [min]="0" [step]="0.1" discrete="thumbLabel"
+      showTickMarks="showTicks" [(ngModel)]="temprature">
+      <input matSliderThumb>
+    </mat-slider>
+  </div>
+
+  <div class="parameter">
+    <div class="example-label-container">
+      <label id="example-name-label" class="example-name-label">Maximum Length</label>
+      <label class="example-value-label">{{maximumLength}}</label>
+    </div>
+    <mat-slider class="example-margin" [disabled]="false" [max]="2048" [min]="0" [step]="1" discrete="thumbLabel"
+      showTickMarks="showTicks" [(ngModel)]="maximumLength">
+      <input matSliderThumb>
+    </mat-slider>
+  </div>
+
+  <div class="parameter">
+    <div class="example-label-container">
+      <label id="example-name-label" class="example-name-label">Top P</label>
+      <label class="example-value-label">{{topP}}</label>
+    </div>
+    <mat-slider class="example-margin" [disabled]="false" [max]="1" [min]="0" [step]="0.1" discrete="thumbLabel"
+      showTickMarks="showTicks" [(ngModel)]="topP">
+      <input matSliderThumb>
+    </mat-slider>
+  </div>
+
+  <div class="parameter">
+    <div class="example-label-container">
+      <label id="example-name-label" class="example-name-label">Frequence Penalty</label>
+      <label class="example-value-label">{{frequence_penalty}}</label>
+    </div>
+    <mat-slider class="example-margin" [disabled]="false" [max]="1" [min]="0" [step]="0.1" discrete="thumbLabel"
+      showTickMarks="showTicks" [(ngModel)]="frequence_penalty">
+      <input matSliderThumb>
+    </mat-slider>
+  </div>
+
+
+  <div class="parameter">
+    <div class="example-label-container">
+      <label id="example-name-label" class="example-name-label">Prensence Penalty</label>
+      <label class="example-value-label">{{presence_penalty}}</label>
+    </div>
+    <mat-slider class="example-margin" [disabled]="false" [max]="1" [min]="0" [step]="0.1" discrete="thumbLabel"
+      showTickMarks="showTicks" [(ngModel)]="presence_penalty">
+      <input matSliderThumb>
+    </mat-slider>
+  </div>
+
+
+  <button (click)="saveSettings()" class="alt_Button_Small_Left_Arrow width_sm">
+    <span class="alt_Button_Small_Left_Arrow_Text">
+      Save Settings
+    </span>
+  </button>
+
+  <img (click)="showDropdown = !showDropdown" src="../../../assets/alore_Chevron_Right.svg" alt="" class="pagination_Button_Arrow_Icon_Left" style="
+    width: 20px; transform: rotate(270deg);align-self: center;margin-top: 34px;">
+
+
+
+</section>
+
+<div class="main-chat_container">
+  <div>
+    <div class="header">
+      
+      <div _ngcontent-odm-c390="" class="close-button">
+        <button _ngcontent-odm-c390="" (click)="closePopup()" class="alore_blue_Close_Button">
+          <img _ngcontent-odm-c390="" src="../../../assets/alore_Blue_Close.svg" alt="">
+        </button>
+      </div>
+
+
+      <h2>Mail Recommendation</h2>
+      <button (click)="showDropdown = !showDropdown" class="burger_Icon"><svg _ngcontent-gdf-c310="" width="19"
+          height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path _ngcontent-gdf-c310="" fill-rule="evenodd" clip-rule="evenodd"
+            d="M1.19531 0.945312C0.781099 0.945312 0.445312 1.2811 0.445312 1.69531C0.445312 2.10953 0.781099 2.44531 1.19531 2.44531H17.8427C18.2569 2.44531 18.5927 2.10953 18.5927 1.69531C18.5927 1.2811 18.2569 0.945312 17.8427 0.945312H1.19531ZM1.19531 5.56978C0.781099 5.56978 0.445312 5.90557 0.445312 6.31978C0.445312 6.734 0.781099 7.06978 1.19531 7.06978H14.1433C14.5575 7.06978 14.8933 6.734 14.8933 6.31978C14.8933 5.90557 14.5575 5.56978 14.1433 5.56978H1.19531ZM0.445312 10.9438C0.445312 10.5296 0.781099 10.1938 1.19531 10.1938H10.4439C10.8581 10.1938 11.1939 10.5296 11.1939 10.9438C11.1939 11.358 10.8581 11.6938 10.4439 11.6938H1.19531C0.781099 11.6938 0.445312 11.358 0.445312 10.9438ZM1.19531 14.8183C0.781099 14.8183 0.445312 15.1541 0.445312 15.5683C0.445312 15.9825 0.781099 16.3183 1.19531 16.3183H7.6693C8.08351 16.3183 8.4193 15.9825 8.4193 15.5683C8.4193 15.1541 8.08351 14.8183 7.6693 14.8183H1.19531Z"
+            fill="#181818"></path>
+        </svg></button>
+    </div>
+    <p class="token_count">Token Left: {{tokenLeft}}</p>
+  </div>
+
+  <div class="chat_response chat_box">
+
+    <section style="height: 370px" class="outer_Container_Div_Textarea">
+      <section class="header_Div_Textarea">
+        <div>
+          Response:
+        </div>
+        <div>
+
+        </div>
+      </section>
+      <textarea class="scroll-vertical" style="width:100%; height:90%" (keydown)="clickedHighlight($event)"  matInput #message [formControl]="response"></textarea>
+    </section>
+
+  </div>
+
+  <div class="chat_prompt chat_box">
+    <section style="height: 220px" class="outer_Container_Div_Textarea">
+      <section class="header_Div_Textarea">
+        <div>
+          Prompt:
+        </div>
+        <div>
+
+        </div>
+      </section>
+
+
+  
+    <div contenteditable="true" class="prompt scroll-vertical" [innerHTML]="promptValue" (keydown)="clickedHighlight($event)" (input)="getInnnerHTML($event.target)" style="width:100%; height:90%" matInput #message 
+        placeholder="Write here..." >
+       
+    </div>
+    </section>
+  </div>
+
+  <div class="action_buttons">
+    <button (click)="sendToMailEditor()" class="alt_Button_Small_Left_Arrow width_sm"><span _ngcontent-ckp-c205=""
+        class="alt_Button_Small_Left_Arrow_Text"><img _ngcontent-ckp-c205="" src="../assets/arrow_Left.svg" alt=""> Add
+        to Editor </span></button>
+    <button  class="popup_Alt_Secondary_Small_Button width_sm" (click)="sendPrompt()"> Send Prompt
+    </button>
+    <button  class="popup_Alt_Secondary_Small_Button width_sm" (click)="openPrompt()"> Select Prompt
+    </button>
+  </div>
+
+  
+</div>

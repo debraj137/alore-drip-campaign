@@ -1,0 +1,45 @@
+<section>
+
+<div class="first-name">
+    <h5>Company Name</h5>
+</div>
+
+<mat-form-field
+  floatLabel="never"
+  class="search-user"
+  appearance="outline">
+
+ 
+  <input matInput
+         [formControl] = "companyName"
+         [value] = "company"
+         placeholder="Enter your Company Name"
+         aria-label="State"
+         autocomplete="nope"
+         
+         >
+    
+      
+</mat-form-field>
+
+<div class="first-name">
+  <h5>Job Title</h5>
+</div>
+
+<mat-form-field
+floatLabel="never"
+class="search-user"
+appearance="outline">
+
+
+<input matInput
+       [formControl] = "jobTitle"
+       [value] = "jobName"
+       placeholder="Enter your First Name"
+       aria-label="State"
+       >
+  
+    
+</mat-form-field>
+</section>
+

@@ -1,0 +1,116 @@
+<div class="main-af-data-picker-container">
+    <div class="date-picker-container">
+        <div (click)="$event.stopPropagation()" class="calendar-wrapper">
+            <mat-calendar (selectedChange)="_onSelectedChange($event)" [selected]="selectedDateRange"
+                [minDate]="minDate" [maxDate]="maxDate">
+            </mat-calendar>
+        </div>
+
+
+        <div class="action-button">
+            <button (click)="applyFilter()" [disabled]="!selectedDateRange?.end || !selectedDateRange?.start"
+                class="popup_Primary_Extra_Small_Button width_ex_sm">
+                Apply
+            </button>
+            <button class="popup_Secondary_Extra_Small_Button width_ex_sm" (click)="removeDateRange()">
+                Remove
+            </button>
+        </div>
+    </div>
+
+
+    <div class="option-action-buttons" style="font-family:'Inter'">
+
+        <div class="tittle-block">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
+                <path
+                    d="M3.91602 0V5M11.916 0V5M1.91602 2.5H13.916C14.4683 2.5 14.916 2.94772 14.916 3.5V13.5C14.916 14.0523 14.4683 14.5 13.916 14.5H1.91602C1.36373 14.5 0.916016 14.0523 0.916016 13.5V3.5C0.916016 2.94772 1.36373 2.5 1.91602 2.5Z"
+                    stroke="#181818" />
+            </svg><span>Today</span>
+        </div>
+
+        <div class="buttons-container">
+
+            <button class="disabled" [ngClass]="preDefinedDateIndex == 0 ? 'disabaled' : 'active-btn'"
+                (click)="getPredifinedDateRageIndex(0)">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="15" viewBox="0 0 13 15" fill="none">
+                        <path
+                            d="M5.5 2.4987L5.14647 2.14512L4.79284 2.4987L5.14647 2.85228L5.5 2.4987ZM6.5 1.99878H6V2.99878H6.5V1.99878ZM1 8.49487V7.99487H0V8.49487H1ZM7.14547 0.14642L5.14647 2.14512L5.85353 2.85228L7.85253 0.85358L7.14547 0.14642ZM5.14647 2.85228L7.14547 4.85097L7.85253 4.14381L5.85353 2.14512L5.14647 2.85228ZM6.5 2.99878C9.53716 2.99878 12 5.46048 12 8.49487H13C13 4.90758 10.0888 1.99878 6.5 1.99878V2.99878ZM12 8.49487C12 11.5293 9.53716 13.991 6.5 13.991V14.991C10.0888 14.991 13 12.0822 13 8.49487H12ZM6.5 13.991C3.46283 13.991 1 11.5293 1 8.49487H0C0 12.0822 2.91117 14.991 6.5 14.991V13.991Z"
+                            fill="#181818" />
+                    </svg>
+
+                </div>
+                <span>
+                    Last 7 days
+                </span>
+            </button>
+
+            <button [ngClass]="preDefinedDateIndex == 1 ? 'disabaled' : 'active-btn'"
+                (click)="getPredifinedDateRageIndex(1)">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="15" viewBox="0 0 13 15" fill="none">
+                        <path
+                            d="M5.5 2.4987L5.14647 2.14512L4.79284 2.4987L5.14647 2.85228L5.5 2.4987ZM6.5 1.99878H6V2.99878H6.5V1.99878ZM1 8.49487V7.99487H0V8.49487H1ZM7.14547 0.14642L5.14647 2.14512L5.85353 2.85228L7.85253 0.85358L7.14547 0.14642ZM5.14647 2.85228L7.14547 4.85097L7.85253 4.14381L5.85353 2.14512L5.14647 2.85228ZM6.5 2.99878C9.53716 2.99878 12 5.46048 12 8.49487H13C13 4.90758 10.0888 1.99878 6.5 1.99878V2.99878ZM12 8.49487C12 11.5293 9.53716 13.991 6.5 13.991V14.991C10.0888 14.991 13 12.0822 13 8.49487H12ZM6.5 13.991C3.46283 13.991 1 11.5293 1 8.49487H0C0 12.0822 2.91117 14.991 6.5 14.991V13.991Z"
+                            fill="#181818" />
+                    </svg>
+
+                </div>
+                <span>
+                    Last 30 Days
+                </span>
+            </button>
+
+            <button [ngClass]="preDefinedDateIndex == 2 ? 'disabaled' : 'active-btn'"
+                (click)="getPredifinedDateRageIndex(2)">
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="15" viewBox="0 0 13 15" fill="none">
+                        <path
+                            d="M5.5 2.4987L5.14647 2.14512L4.79284 2.4987L5.14647 2.85228L5.5 2.4987ZM6.5 1.99878H6V2.99878H6.5V1.99878ZM1 8.49487V7.99487H0V8.49487H1ZM7.14547 0.14642L5.14647 2.14512L5.85353 2.85228L7.85253 0.85358L7.14547 0.14642ZM5.14647 2.85228L7.14547 4.85097L7.85253 4.14381L5.85353 2.14512L5.14647 2.85228ZM6.5 2.99878C9.53716 2.99878 12 5.46048 12 8.49487H13C13 4.90758 10.0888 1.99878 6.5 1.99878V2.99878ZM12 8.49487C12 11.5293 9.53716 13.991 6.5 13.991V14.991C10.0888 14.991 13 12.0822 13 8.49487H12ZM6.5 13.991C3.46283 13.991 1 11.5293 1 8.49487H0C0 12.0822 2.91117 14.991 6.5 14.991V13.991Z"
+                            fill="#181818" />
+                    </svg>
+
+                </div>
+                <span>
+                    Last 3 months
+                </span>
+            </button>
+
+
+            <button [ngClass]="preDefinedDateIndex == 3 ? 'disabaled' : 'active-btn'"
+                (click)="getPredifinedDateRageIndex(3)">
+
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="15" viewBox="0 0 13 15" fill="none">
+                        <path
+                            d="M5.5 2.4987L5.14647 2.14512L4.79284 2.4987L5.14647 2.85228L5.5 2.4987ZM6.5 1.99878H6V2.99878H6.5V1.99878ZM1 8.49487V7.99487H0V8.49487H1ZM7.14547 0.14642L5.14647 2.14512L5.85353 2.85228L7.85253 0.85358L7.14547 0.14642ZM5.14647 2.85228L7.14547 4.85097L7.85253 4.14381L5.85353 2.14512L5.14647 2.85228ZM6.5 2.99878C9.53716 2.99878 12 5.46048 12 8.49487H13C13 4.90758 10.0888 1.99878 6.5 1.99878V2.99878ZM12 8.49487C12 11.5293 9.53716 13.991 6.5 13.991V14.991C10.0888 14.991 13 12.0822 13 8.49487H12ZM6.5 13.991C3.46283 13.991 1 11.5293 1 8.49487H0C0 12.0822 2.91117 14.991 6.5 14.991V13.991Z"
+                            fill="#181818" />
+                    </svg>
+
+                </div>
+                <span>
+                    Month to date
+                </span>
+            </button>
+
+            <button [ngClass]="preDefinedDateIndex == 4 ? 'disabaled' : 'active-btn'"
+                (click)="getPredifinedDateRageIndex(4)">
+
+                <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="15" viewBox="0 0 13 15" fill="none">
+                        <path
+                            d="M5.5 2.4987L5.14647 2.14512L4.79284 2.4987L5.14647 2.85228L5.5 2.4987ZM6.5 1.99878H6V2.99878H6.5V1.99878ZM1 8.49487V7.99487H0V8.49487H1ZM7.14547 0.14642L5.14647 2.14512L5.85353 2.85228L7.85253 0.85358L7.14547 0.14642ZM5.14647 2.85228L7.14547 4.85097L7.85253 4.14381L5.85353 2.14512L5.14647 2.85228ZM6.5 2.99878C9.53716 2.99878 12 5.46048 12 8.49487H13C13 4.90758 10.0888 1.99878 6.5 1.99878V2.99878ZM12 8.49487C12 11.5293 9.53716 13.991 6.5 13.991V14.991C10.0888 14.991 13 12.0822 13 8.49487H12ZM6.5 13.991C3.46283 13.991 1 11.5293 1 8.49487H0C0 12.0822 2.91117 14.991 6.5 14.991V13.991Z"
+                            fill="#181818" />
+                    </svg>
+
+                </div>
+                <span>
+                    Quarter to date
+                </span>
+            </button>
+
+        </div>
+
+
+    </div>
+</div>

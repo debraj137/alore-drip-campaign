@@ -1,0 +1,48 @@
+<div class="empty_State_Shared_By_Me">
+
+  <div class="titleContainer">
+    <div class="header-Container">
+      <div class="header">
+        <p>Shared By Me</p>
+        <div>
+          <app-breadcrumb [data]="breadcrumbData"></app-breadcrumb>
+        </div>
+      </div>
+
+      <!-- <section class="search-field">
+        <button
+        class="text_Input_Extra_Small"
+        [disabled]="disabledButton == true"
+        [ngClass]="{ success: successValue == true, error: errorValue == true }"
+      >
+        <input
+          [disabled]="disabledButton == true"
+          type="search"
+          placeholder="Search by a campaign name"
+          id="check"
+          selected disabled
+          (click)="openSearchCampaign()"
+          autocomplete="off"
+        />
+        <img src="../assets/search_icon.svg" alt="" />
+      </button>
+      </section> -->
+
+    </div>
+
+    <section class="search-results-container scroll-vertical">
+      <div class="baseListContainer" *ngFor="let item of baseCampaignList ,let i = index">
+        <app-base-campaign-detail (refreshBaseCampaign)="getSharedByMe()" [campaignList]="item.campaignList"
+          [baseCampaignDetail]="item.campaignBase">
+        </app-base-campaign-detail>
+      </div>
+      <app-dashboard-loading *ngIf="loading">
+    
+      </app-dashboard-loading>
+      <div *ngIf="emptyMsg">
+        <app-empty-state-msg></app-empty-state-msg>
+      </div>
+    </section>
+
+  
+</div>

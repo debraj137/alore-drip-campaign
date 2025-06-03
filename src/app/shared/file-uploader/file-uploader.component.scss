@@ -1,0 +1,174 @@
+.file-uploader-container {
+    border-style: dashed;
+    border-width: 2px;
+    border-color: var(--alore-main-blue);
+    border-radius: 10px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &.uploading {
+        background-color: #7f33fa33;
+        border-color: #7F33FA;
+    }
+
+    &.upload-success {
+        background-color: #1bd2a433;
+        border-color: #1BD2A4;
+    }
+
+    .upload-desc {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 18px;
+        color: #181818;
+        text-align: center;
+
+        svg {
+            width: 29px;
+            height: 35px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            span {
+                cursor: pointer;
+                color: var(--alore-main-blue);
+            }
+        }
+    }
+
+    .uploading-progress {
+        margin: 35px 0 40px 0;
+
+        .img-preview {
+            text-align: center;
+
+            .img-container {
+                margin: auto;
+                background-color: #ffffff;
+                width: 104.75px;
+                height: 58.69px;
+                border: 1px solid #7F33FA;
+                border-radius: 5px;
+                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+                text-align: center;
+                display: flex;
+                align-items: center;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            span {
+                color: var(--alore-main-blue);
+                font-style: normal;
+                font-weight: 600;
+                font-size: 10px;
+                line-height: 14px;
+            }
+        }
+
+        .custom-progress-bar {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            align-items: center;
+
+            span {
+                color: #181818;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 112%;
+            }
+
+            ::ng-deep {
+                .mat-progress-bar-fill::after {
+                    background-color: #7F33FA;
+                }
+
+                .mat-progress-bar-buffer {
+                    background: rgb(221, 195, 216)
+                }
+
+                .mat-progress-bar {
+                    border-radius: 2px;
+                }
+
+            }
+
+            mat-progress-bar {
+                flex: auto;
+                width: 300px;
+            }
+        }
+
+        .upload-desc {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            color: #7F33FA;
+        }
+    }
+
+    .upload-success {
+        margin: 35px 0 40px 0;
+
+        .img-preview {
+            text-align: center;
+
+            .img-container {
+                margin: auto;
+                background-color: #ffffff;
+                width: 104.75px;
+                height: 58.69px;
+                border: 1px solid #1BD2A4;
+                border-radius: 5px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .icon {
+            text-align: center;
+            margin: 33px 0 14px 0;
+
+            svg {
+                width: 23px;
+                height: 23px;
+            }
+        }
+
+        .upload-desc {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+            color: #1BD2A4;
+        }
+    }
+
+    .file-input {
+        height: 200px;
+        width: 550px;
+        opacity: 0;
+        background-color: red;
+        position: absolute;
+    }
+}

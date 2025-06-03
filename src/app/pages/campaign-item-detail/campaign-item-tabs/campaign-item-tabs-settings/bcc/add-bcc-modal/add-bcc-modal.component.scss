@@ -1,0 +1,127 @@
+.main_Container_BCC {
+  width: auto;
+  min-width: 520px;
+  height: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 56px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+  margin: 50px;
+
+  .header_Container_BCC {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .icon_And_Header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .icon_Inside_Header {
+        width: 50px;
+        height: 50px;
+        background: rgba(51, 75, 250, 0.2);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+      }
+
+      .Text_Inside_Header p {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 132%;
+        color: #181818;
+      }
+
+      .Text_Inside_Header span {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 116%;
+        color: #181818CC;
+        margin-top: 4px;
+      }
+    }
+
+    .close_Button_Div {
+      padding-bottom: 24px;
+    }
+  }
+
+  .input_Field_Section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    .bcc_Div {
+      p{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 112%;
+        letter-spacing: 0.02em;
+        margin-bottom: 8px;
+        color: #181818;
+      }
+
+      .text_Input_Extra_Small {
+        width: -webkit-fill-available;
+        margin-top: 0;
+      }
+    }
+
+    .forward_Div {
+      margin-top: 30px;
+
+      p{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 112%;
+        letter-spacing: 0.02em;
+        margin-bottom: 8px;
+        color: #181818;
+      }
+
+      .text_Input_Extra_Small {
+        width: -webkit-fill-available;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .button_Div {
+    .primary_Normal_Button_Blue {
+      margin-right: 24px;
+      width: 100px;
+      padding: 0;
+    }
+
+    .secondary_Normal_Button_Blue {
+      width: 100px;
+      padding: 0;
+      height: 40px;
+    }
+  }
+}
+
+mat-error {
+  color: #fa336f;
+}
+
+.spinner {
+  height: 30px;
+  margin: 0 auto;
+  width: 30px;
+}

@@ -1,0 +1,187 @@
+.main_Container_Customize_Days {
+    width: 530px;
+
+    .header_Customize_Days {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+
+        .icon_And_Header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .icon_Inside_Header {
+                width: 50px;
+                height: 50px;
+                background: rgba(51, 75, 250, 0.2);
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 10px;
+            }
+
+            .Text_Inside_Header p {
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 132%;
+                color: #181818;
+            }
+
+            .Text_Inside_Header span {
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 116%;
+                color: rgba(24, 24, 24, 0.8);
+                margin-top: 4px;
+            }
+        }
+
+        .close_Button_Div {
+            padding-bottom: 24px;
+        }
+    }
+
+    .choose_Days_Section {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        .seperate_Content_Div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 36px;
+
+            section {
+                flex-direction: row;
+                display: flex;
+                align-items: center;
+
+                .medium_CheckBox_Div {
+                    width: 30px;
+                    margin-right: 12px;
+                }
+
+                span {
+                    font-family: "Inter";
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 15px;
+                    line-height: 112%;
+                    letter-spacing: 0.03em;
+                    color: #181818;
+                    padding-top: 4px;
+                }
+            }
+
+            .info_Button_Div {
+                background: #fff;
+                // border: 1px solid #334BFA;
+                width: 126px;
+                height: 23px;
+                border-radius: 5px;
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 10px;
+                line-height: 116%;
+                // color: #334BFA;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            .info_Button_Blue {
+              border: 1px solid #334bfa;
+              color: #334bfa;
+            }
+          
+            .info_Button_Green {
+              border: 1px solid #1bd2a4;
+              color: #1bd2a4;
+            }
+          
+            .info_Button_Pink {
+              border: 1px solid #ff8cad;
+              color: #ff8cad;
+            }
+          
+            .info_Button_Red {
+              border: 1px solid #fa336f;
+              color: #fa336f;
+            }
+        }
+    }
+
+    .next_Button_Div {
+        margin-top: 40px;
+
+        .primary_Normal_Button_Blue {
+            margin-right: 24px;
+            width: 100px;
+            padding: 0;
+        }
+
+        .secondary_Normal_Button_Blue {
+            width: 100px;
+            padding: 0;
+            height: 40px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1207px) {
+    ::ng-deep .info_Button_Div {
+        width: 146px !important;
+       
+    }
+  }
+
+
+  @media only screen and (max-width: 1116px) {
+    ::ng-deep .info_Button_Div {
+        width: 176px !important;
+       
+    }
+  }
+
+
+  @media screen and (max-width: 1366px) and (max-height: 665px) {
+           .main_Container_Customize_Days{
+            .v-scroll-area{
+                max-height: 200px;
+            overflow: auto;
+            padding-right: 15px;  
+            scrollbar-color:var(--alore-main-blue)  #e4e4e4;
+            scrollbar-width: thin;
+        }
+        .v-scroll-area::-webkit-scrollbar {
+            width: 4px !important;
+          }
+          
+          .v-scroll-area::-webkit-scrollbar-track {
+            background:rgba(24, 24, 24, 0.1) !important;
+          }
+          
+          .v-scroll-area::-webkit-scrollbar-thumb {
+            background: #334bfa !important;
+          }
+        
+        
+          .divider {
+          
+            margin: 26px 0;
+            }
+
+            .next_Button_Div {
+                margin-top: 26px;
+           }
+        }
+  }

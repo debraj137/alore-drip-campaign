@@ -1,0 +1,130 @@
+<div class="share-modal-container default-modal">
+  <div class="header">
+    <div class="icon">
+      <img src="../../../assets/shareTopIcon.svg" alt="">
+    </div>
+    <div class="label">
+      <p>Share with your teammates</p>
+      <span>Share with your teammates</span>
+    </div>
+    <div class="close-button">
+      <button (click)="dialogRef.close()" class="alore_blue_Close_Button">
+        <img src="../../../assets/alore_Blue_Close.svg" alt="" />
+      </button>
+    </div>
+  </div>
+  <div class="body">
+
+    <!-- filter user section -->
+    <mat-form-field floatLabel="never" class="search-user" appearance="outline">
+      <input matInput (click)="!searchUser.value ? mailSelectionVisibility = false : ''"
+        placeholder="Search for a team mate by name or email" aria-label="State" [matAutocomplete]="auto"
+        [formControl]="searchUser">
+      <div matSuffix class="search-suffix">
+        <img src="../../../assets/icon/search-icon.svg" alt="">
+      </div>
+      <mat-autocomplete class="search-user-selection-container scroll-vertical" #auto="matAutocomplete">
+        <mat-option style="
+            background-color: transparent!important;
+            box-shadow: none!important;" class="custom-option" *ngIf="mailSelectionVisibility">
+          <div class="invite-mail">
+            <div class="desc">
+              <span>
+                {{searchUser.value}} isn't a teammate
+              </span>
+              <p>
+                Click on invite to invite as user & provide access
+              </p>
+            </div>
+            <button (click)="inviteUserByEmail()" class="popup_Primary_Extra_Small_Button">
+              Invite
+            </button>
+          </div>
+        </mat-option>
+        <mat-option (click)="inviteUser(searchUser)" class="search-user-selection-item"
+          *ngFor="let searchUser of filteredUser | async" [value]="searchUser.userName">
+          <div class="user-data">
+            <div class="avatar">
+              {{getUserLabel(searchUser.userName.trim() || searchUser.userEmailId) || 'DD'}}
+            </div>
+            <div class="user-label">
+              <div class="user-label-name">
+                {{searchUser.userName.trim() ? searchUser.userName : searchUser.userEmailId}}
+              </div>
+              <div *ngIf="searchUser.userName" class="user-label-email">
+                {{searchUser.userEmailId}}
+              </div>
+            </div>
+            <mat-icon>
+              expand_more
+            </mat-icon>
+          </div>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <!-- user list data -->
+    <div class="user-list-container scroll-vertical">
+      <div *ngFor="let user of invitedUserList" class="user-data">
+        <mat-checkbox (change)="$event ? user.isUserSelected = !user?.isUserSelected || false : null"
+          [checked]="user?.isUserSelected" class="checkbox_Medium_button" (click)="selectValue(user)">
+        </mat-checkbox>
+        <div *ngIf="user.firstName" class="avatar round_{{ user.firstName[0].toLowerCase() }}">
+          <span>
+            {{ user.firstName == null ? '' : user.firstName[0]}}{{ user.lastName == null ? '' : user.lastName[0] }}
+          </span>
+        </div>
+
+        <div *ngIf="!user.firstName" class="avatar round_{{ user.emailId[0].toLowerCase() }}">
+          <span>
+            {{ user.emailId[0] }}
+          </span>
+        </div>
+
+        <div class="user-label">
+          <span>
+            {{user.firstName &&
+            user.lastName ? user.firstName+' '+user.lastName :
+            user.emailId
+            }}
+          </span>
+          <small *ngIf="user.lastName && user.firstName">
+            {{user.emailId}}
+          </small>
+        </div>
+        <mat-form-field class="select-input" appearance="outline" floatLabel="never">
+          <mat-select [(ngModel)]="user.role" placeholder="Select a type of block">
+            <mat-select-trigger>
+              {{getRoleLabel(user.role)}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let access of shareAccess" [value]="access.value.toString()">
+              <div class="custom-select-container">
+                <div class="custom-select-text">
+                  <span>{{access.label}}</span>
+                </div>
+              </div>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      
+    </div>
+    <div *ngIf="!invitedUserList.length" class="empty-user-list">
+      <img src="../../../assets/icon/shared-empty.svg" alt="">
+      <span>
+        You havn’t shared this Type of asset with anyone yet!
+      </span>
+    </div>
+  </div>
+  <div class="action-button">
+    <button (click)="updateUserPermission(); sendDeselectedUserList();"
+      class="popup_Primary_Extra_Small_Button width_ex_sm">
+      Save
+    </button>
+    <button (click)="dialogRef.close()" class="popup_Secondary_Extra_Small_Button width_ex_sm">
+      Cancel
+    </button>
+  </div>
+
+</div>

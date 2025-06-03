@@ -1,0 +1,44 @@
+<div class="spam-score-container">
+    <div class="header">
+        <div class="left-side">
+            <div
+                (click)="expanded = !expanded"
+                class="expand-icon">
+                <mat-icon>
+                    {{expanded ? 'expand_more' : 'chevron_right'}}
+                </mat-icon>
+            </div>
+            <span>
+                Spam score
+            </span>
+        </div>
+        <div class="right-side">
+            {{spamScore}}
+        </div>
+    </div>
+    <div
+        *ngIf="expanded"
+        class="body">
+        <app-progress-chart [score]="spamScore"></app-progress-chart>
+        <button (click)="getScore()">
+            <span *ngIf="!loader">
+                Check spam score
+            </span>
+            <!-- <div *ngIf="loader">
+              <div class="loader triangle">
+                <svg viewBox="0 0 86 80">
+                  <polygon points="43 8 79 72 7 72"></polygon>
+                </svg>
+              </div>
+            </div> -->
+
+
+            <div *ngIf="loader" class="spinner"></div>
+        </button>
+
+        <div>
+            <p>If your score is less than 10% - you are in good shape.<p>
+                <p>If your score is more than 70% - you need to rework on your campaign</p>
+        </div>
+    </div>
+</div>

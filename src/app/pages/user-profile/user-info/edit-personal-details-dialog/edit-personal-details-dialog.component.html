@@ -1,0 +1,128 @@
+<section *ngIf = "isUserInfoDataFetched">
+    <!-- tags start here  -->
+
+    <div class="main_Container_Tag">
+        <section class="header_Div_Tag">
+            <div>
+                <section class="header_Tag_Modal">
+                    <section class="header_Img_Tag_Modal">
+                        <div class="icon_Div_Tag_Modal">
+                            <img src="../../../assets/edit-pdetails.svg" alt="" />
+                        </div>
+                        <div class="header_Div_Tag_Modal">
+                            <h2 class="top_Header_On_Tag_Modal">Edit Personal Details</h2>
+
+                            <p>All your information stays safe with us</p>
+                        </div>
+                    </section>
+                    <button class="alore_blue_Close_Button" [disabled]="disabledButton == true"
+                        (click)="dialogRef.close()">
+                        <img src="../assets/alore_Blue_Close.svg" alt="" />
+                    </button>
+                </section>
+            </div>
+
+            <div class="primary-divider"></div>
+
+            <div class="middle_div_Tag_Modal">
+                <div  class="scroll-popup">
+
+                
+
+                <section class="tab_Status_Modal">
+                    <div class="tab_Layout">
+                        <div class="tab_Layout_Item borderClassLeft"
+                            [class.tab_Layout_Item_Active]="tabLayoutActive === 0" (click)="onTabLayoutClick(0)">
+
+                            <p style="margin-left: 5.5px;" class="tab_Layout_Text">Personal</p>
+                        </div>
+                        <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActive === 1"
+                            (click)="onTabLayoutClick(1)">
+
+
+                            <p style="margin-left: 5.5px;" class="tab_Layout_Text">Company</p>
+                        </div>
+                        <div class="tab_Layout_Item borderClassRight"
+                            [class.tab_Layout_Item_Active]="tabLayoutActive === 2" (click)="onTabLayoutClick(2)">
+
+
+                            <p style="margin-left: 5.5px;" class="tab_Layout_Text">Social</p>
+                        </div>
+
+                        <div class="tab_Layout_Item borderClassRight"
+                            [class.tab_Layout_Item_Active]="tabLayoutActive === 3" (click)="onTabLayoutClick(3)">
+
+
+                            <p style="margin-left: 5.5px;" class="tab_Layout_Text">Timezone</p>
+                        </div>
+
+                        <div class="tab_Layout_Item borderClassRight"
+                            [class.tab_Layout_Item_Active]="tabLayoutActive === 4" (click)="onTabLayoutClick(4)">
+
+
+                            <p style="margin-left: 5.5px;" class="tab_Layout_Text">Contact</p>
+                        </div>
+
+                    </div>
+                </section>
+                <!-- Personal Details tabs end -->
+
+
+              
+
+                <app-personal-field 
+                [fName]="firstName"
+                [lName]="lastName"
+                (firstNameChanges) = "firstName=$event"
+                (lastNameChanges) = "lastName=$event"
+                *ngIf = "tabLayoutActive === 0">
+                </app-personal-field>
+
+                <app-company-field 
+                [company] = "companyName" 
+                [jobName] = "jobTitle"
+                (companyNameChanges) = "companyName=$event"
+                (jobTitleChanges)= "jobTitle=$event"
+                 *ngIf = "tabLayoutActive === 1">
+                </app-company-field>
+
+
+                <app-social-field 
+                [linkedinUrlValue] = "linkedInUrl"
+                [twitterUrlValue] = "twitterUrl"
+                [companyUrlValue] = "companyUrl"
+                (linkedinUrlValueChanges) = "linkedInUrl=$event"
+                (twitterUrlValueChanges) = "twitterUrl=$event"
+                (companyUrlValueChanges) = "companyUrl=$event"
+                *ngIf = "tabLayoutActive === 2">
+                </app-social-field>
+
+                <app-timezone-field 
+                [timezoneValue] = "timezone"
+                (timeZoneChanges)= "timezone=$event"
+                *ngIf = "tabLayoutActive === 3">
+                </app-timezone-field>
+
+                <app-contact-field 
+                [contactNo] = "contactNo"
+                (contactNumberChanges) = "contactNo=$event"
+                *ngIf = "tabLayoutActive === 4">
+                </app-contact-field>
+            </div>
+            </div>
+
+          
+
+            <div class="button_Div_Tag_Modal">
+                <button class="popup_Primary_Extra_Small_Button width_ex_sm" (click)="submitUserDetails(); dialogRef.close()" [disabled]="disabledButton == true">
+                    Save
+                </button>
+
+                <button class="popup_Secondary_Extra_Small_Button width_ex_sm" (click)="dialogRef.close()" [disabled]="disabledButton == true">
+                    Close
+                </button>
+            </div>
+        </section>
+    </div>
+
+</section>

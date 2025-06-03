@@ -1,0 +1,134 @@
+<div [style.width.px]='width' class="main-sidebar">
+  <div class="header">
+    <p (onmouseover)="onDragEnded($event)" >Drip Campaigner</p>
+    <button class="menu_Collapse_Button_Large display_Flex item_Center content_Center button-collapse"
+      (click)="layoutService.updateSidebarStatus(!getNavStatus)">
+      <mat-icon class="icon-arrow-back">arrow_back</mat-icon>
+    </button>
+  </div>
+
+
+  <section class="search-field">
+    <button class="text_Input_Extra_Small">
+      <input type="search" placeholder="Search by a campaign name" id="check" 
+        (click)="openSearchCampaign()" autocomplete="off" />
+      <img src="../assets/search_icon.svg" alt="" />
+    </button>
+  </section>
+
+  <div class="left-folder-subsection scroll-vertical">
+    <div *ngIf="!treeLoader" class="left-sidebar-min-height-section">
+      <!-- tree sidebar -->
+
+      <app-tree-sidebar *ngFor="let tree of treeData" [level]="20" [treeItem]="tree"
+      >
+      </app-tree-sidebar>
+
+      <!-- archive section -->
+      <button class="archive-button" (click)="openArchive()">
+        <img class="archive-icon" [src]="getIcon('archive')" alt="">
+        <img class="archive-icon-hover archive-icon" [src]="getIcon('archive-hover')" alt="">
+        Archive
+      </button>
+
+      <!-- delete section  -->
+
+      <button class="delete-button" (click)="openTrash()">
+        <img class="delete-icon" src="../../../assets/common_css/delete_Icon.svg" alt="">
+        <img class="delete-icon-hover delete-icon" src="../../../assets/common_css/delete_Hover_Icon.svg" alt="">
+
+        Trash
+      </button>
+
+
+
+
+      <div class="phone-view-product-url">
+        <p>Other Products</p>
+        <div>
+          <button class="custom-btn">
+            <div class="icon">
+              <img alt="" src="../../../../../assets/icon/blaze-icon.svg">
+            </div>
+            <span>blaze</span>
+          </button>
+
+          <button class="custom-btn">
+            <div class="icon">
+              <img alt="" src="../../../../../assets/icon/doc-icon.svg">
+            </div>
+            <span>Campaign</span>
+          </button>
+
+          <button class="custom-btn">
+            <div class="icon">
+              <img alt="" src="../../../../../assets/icon/file-icon.svg">
+            </div>
+            <span>Database</span>
+          </button>
+
+          <button class="custom-btn">
+            <div class="icon">
+              <img alt="" src="../../../../../assets/icon/envelop-icon.svg">
+            </div>
+            <span>Docs</span>
+          </button>
+
+          <button class="custom-btn">
+            <div class="icon">
+              <img alt="" src="../../../../../assets/icon/table-icon.svg">
+            </div>
+            <span>Table</span>
+          </button>
+
+        </div>
+
+        <div class="peofile-actions">
+          <button>
+            <img alt="" src="../../../../../assets/icon/icon-logout.svg">
+          </button>
+
+          <button class="profile">
+            <img alt=""
+              src="https://alorecdn.blob.core.windows.net/imagefrommediaupload/2614016110539078Logo_NewBlack48(2).png">
+          </button>
+        </div>
+      </div>
+
+
+
+
+
+
+      <!-- skeleton loader -->
+      <div *ngIf="treeData == []" class="item">
+        <div class="skeleton-box"></div>
+        <div class="skeleton-box"></div>
+      </div>
+    </div>
+    <div *ngIf="treeLoader" class="tree-loader">
+      <div class="skeleton-box"></div>
+      <div class="skeleton-box"></div>
+      <div class="skeleton-box"></div>
+      <div class="skeleton-box"></div>
+      <div class="skeleton-box"></div>
+    </div>
+  </div>
+
+  <!-- add campaign button -->
+  <div class="footer">
+    <button (click)="openCreateModal()" style="width: 232px;" class="alt_Button_Blue_With_Icon_Left cursor_Pointer ">
+      <span class="alt_Button_Blue_With_Icon_Left_Text">
+        <mat-icon>add</mat-icon>
+        Add new Campaign Base
+      </span>
+    </button>
+  </div>
+</div>
+
+<!-- sidebar expander -->
+<div class="boundary-grabber">
+  <div (cdkDragMoved)="move($event)" cdkDrag cdkDragLockAxis="x" cdkDragBoundary=".boundary-grabber"
+    class="resize-handler">
+  </div>
+</div>

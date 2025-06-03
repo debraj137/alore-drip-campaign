@@ -1,0 +1,33 @@
+.delete-modal {
+  padding: 48px 75px 60px 71px;
+  position: relative;
+}
+
+.close-icon {
+  position: absolute;
+  right: 36px;
+  top: 40px;
+
+  &:hover {
+    .icon-close {
+      color: var(--alore-main-blue);
+    }
+  }
+
+  &:active {
+    .icon-close {
+      color: var(--alore-main-white);
+    }
+  }
+}
+
+.delete-title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 29px;
+}
+
+.image-wrapper,
+.description-wrapper {
+  max-width: 458px;
+}

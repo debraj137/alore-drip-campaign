@@ -1,0 +1,31 @@
+<div class="email-editor-help-text-container">
+  <div class="header">
+    <div class="left-side">
+      <div (click)="expanded = !expanded" class="expand-icon">
+        <mat-icon>
+          {{ expanded ? "expand_more" : "chevron_right" }}
+        </mat-icon>
+      </div>
+      <span> Help Text </span>
+    </div>
+  </div>
+  <div *ngIf="expanded" class="body">
+    <p *ngIf="helpText">
+      {{ helpText }}
+    </p>
+    <p class="example-label">Example</p>
+    <div class="divider"></div>
+    <p>
+      If you are Adidas, the value proposition is creating light and convenient
+      sports apparel that other competitors don’t make.
+    </p>
+    <p>
+      If you are Pinterest, the value proposition is discovery of product with
+      help of people who have interest similar to yours.
+    </p>
+    <p>
+      If you are Uber, the value proposition is hail a cab anytime you want with
+      superior customer experience.
+    </p>
+  </div>
+</div>

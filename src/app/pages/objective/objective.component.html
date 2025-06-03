@@ -1,0 +1,138 @@
+<div class="objectiveMainLayout">
+  <div class="objectiveContainer">
+    <div class="objectivesSideNavHeader">
+      Objectives
+    </div>
+    <section class="nav_Objective_Header_Container">
+      <div class="nav_Objective_Header">
+        <span class="nav_Objective_Header_Text">By Alore community</span>
+        <!-- <div class="nav_Objective_Header_Img">
+                <img src="../assets/common_css/add_Icon_Nav.svg" alt="" />
+              </div> -->
+      </div>
+      <div class="divider_Indicator_Inactive"></div>
+    </section>
+
+    <div class="objectiveListContainer">
+      <div class="objectiveList sidebar-af-list" *ngFor="let item of aloreObjectiveList,let i = index">
+        <div class="nav_Objective_Screen" [ngClass]="{'currentSelectedClass': i == currentSelectedObj}"
+          (click)="getObjectSepcificreciepes(i)">
+
+          <span class="nav_Objective_Screen_Text">
+            {{ item.name }}
+          </span>
+
+        </div>
+      </div>
+    </div>
+    <section class="nav_Objective_Header_Container">
+      <div class="nav_Objective_Header">
+        <span class="nav_Objective_Header_Text">Your Objectives</span>
+        <div class="nav_Objective_Header_Img" (click)="createNewObjective()">
+          <img src="../assets/common_css/add_Icon_Nav.svg" alt="" />
+        </div>
+      </div>
+      <div class="divider_Indicator_Inactive"></div>
+    </section>
+    <div class="objectiveListContainer">
+      <div class="objectiveList" *ngFor="let item of yourObjectiveList,let i = index">
+        <button class="nav_Objective_Screen_With_Icon">
+          <div class="nav_Objective_Screen_Text_With_Icon">
+            <span>{{ item.name }}</span>
+          </div>
+          <div class="nav_Objective_Screen_Img_With_Icon" (click)="$event.stopPropagation()">
+            <img src="../assets/common_css/three_Dot_Nav.svg" alt="" />
+          </div>
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <div class="ObjectiveBody">
+    <div class="objectiveHeader">
+      <div class="objectiveHeaderTextConatiner">
+        <span class="objectiveHeaderText">Select a recipe</span>
+        <button
+          (click)="openReciepeForm()" 
+          class="alt_Button_Blue_With_Icon_Left">
+          <span class="alt_Button_Blue_With_Icon_Left_Text">
+            <img src="../assets/common_css/add_Icon.svg" alt="" />
+            Start from Scratch
+          </span>
+        </button>
+      </div>
+      <app-breadcrumb [data]="breadcrumbData"></app-breadcrumb>
+    </div>
+    <div class="objectiveList" [id]="'obj'+i" *ngFor="let item of newObjectList ,let i = index">
+      <div class="objectiveListHeaders">
+        {{ item.name }}
+      </div>
+      <div style="padding: 20px" class="divider_Indicator_Inactive"></div>
+      <div class="reciepeContainer">
+        <div *ngFor="let item1 of newObjectList[i].objectiveRecipesList">
+          <div class="reciepeCard" [routerLink]="['recipe-details',item1.objectiveRecipeId]">
+            <div [style.background-color]="item1.color" class="imageContainer">
+              <img src={{item1.coverImage}} alt="">
+            </div>
+            <div class="reciepeDetails">
+              <div class="reciepename">
+                {{ item1.name }}
+              </div>
+              <div class="rateType">
+                Mail sent: {{ item1.mailSent }}
+              </div>
+              <div class="rateContainer">
+                <div class="rateTypeContainer">
+                  <span class="rateType"> Open Rate: </span>
+                  <span class="openRateOfRecipe"> {{ item1.openRate }}%</span>
+                </div>
+                <div class="rateTypeContainer">
+                  <span class="rateType">Reply Rate: </span>
+                  <span class="replyRateOfRecipe"> {{ item1.replyRate }}%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- for new objective create section  -->
+
+    <div class="objectiveList" *ngFor="let item of newObjectList ,let i = index">
+      <div class="objectiveListHeaders">
+        Your Objectives
+      </div>
+      <div style="padding: 20px" class="divider_Indicator_Inactive"></div>
+      <div class="reciepeContainer">
+        <div *ngFor="let item1 of newObjectList[0].objectiveRecipesList">
+          <div class="reciepeCard" [routerLink]="['recipe-details',item1.objectiveRecipeId]">
+            <div [style.background-color]="item1.color" class="imageContainer">
+              <img src={{item1.coverImage}} alt="">
+            </div>
+            <div class="reciepeDetails">
+              <div class="reciepename">
+                {{ item1.name }}
+              </div>
+              <div class="rateType">
+                Mail sent: {{ item1.mailSent }}
+              </div>
+              <div class="rateContainer">
+                <div class="rateTypeContainer">
+                  <span class="rateType"> Open Rate: </span>
+                  <span class="openRateOfRecipe"> {{ item1.openRate }}%</span>
+                </div>
+                <div class="rateTypeContainer">
+                  <span class="rateType">Reply Rate: </span>
+                  <span class="replyRateOfRecipe"> {{ item1.replyRate }}%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

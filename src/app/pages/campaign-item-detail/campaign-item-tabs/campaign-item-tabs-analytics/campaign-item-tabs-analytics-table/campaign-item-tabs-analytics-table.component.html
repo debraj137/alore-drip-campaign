@@ -1,0 +1,398 @@
+<div class="campaign-detail-container">
+    <app-dashboard-loading *ngIf="loading">
+    </app-dashboard-loading>
+
+    <div class="table-container" *ngIf="!loading">
+        <div class="action-button">
+            <button [matMenuTriggerFor]="hideColumn" class="hide-details">
+                <img src="../assets/hide_Fields.svg" alt="">
+                {{
+                ! hidedColumn.length ?
+                'Hide fields' :
+                hidedColumn.length+' Hidden fields'
+                }}
+            </button>
+            <!-- <button class="alt_Button_Blue_With_Icon_Left">
+                <span
+                    class="alt_Button_Blue_With_Icon_Left_Text">
+                    <img src="../../../../../../assets/newAddButton.svg" alt="">
+                    New Email
+                </span>
+            </button>
+            <button class="alt_Button_Blue_With_Icon_Right">
+                <span class="alt_Button_Blue_With_Icon_Right_Text">
+                    More
+                   <img src="../../../../../../assets/more.svg" alt="">
+                </span>
+            </button> -->
+        </div>
+        <div class="
+                responsive-table-container
+                scroll-horiz
+            ">
+            <table mat-table cdkDropList [dataSource]="dataSource" cdkDropListOrientation="horizontal"
+                (cdkDropListDropped)="drop($event)">
+
+                <!-- campaign name section-->
+                <ng-container *ngFor="let column of columns; let i = index;" [matColumnDef]="column">
+                    <th mat-header-cell cdkDrag *matHeaderCellDef [class.pl-5]="column === 'mail_sequence'"
+                        [class.text-center]="column !== 'mail_sequence' && column !== 'select'">
+                        <span *ngIf="column !== 'select'">
+                            {{filterTableHeader(column)}}
+                        </span>
+                        <mat-checkbox *ngIf="column === 'select'" (click)="toggleAll()" [checked]="selection.hasValue()"
+                            [indeterminate]="selection.hasValue() && !isAllSelected()">
+                        </mat-checkbox>
+                    </th>
+                    <div *ngIf="defaultList.campaignName != '1234'">
+                        <td [routerLink]="['mail-detail',element.emailName,'Mail-Id',element.campaignName]" mat-cell
+                            *matCellDef="let element">
+                            <div *ngIf="!columnVisibility(column)"
+                                class="column-visibilty"
+                                [class.item-center]="column !== 'mail_sequence' && column !== 'select'">
+
+                                <!-- select box section -->
+                                <div class="checkBoxContainer" style="width: 28px;" *ngIf="column === 'select'">
+                                    <mat-checkbox class="customButton" (click)="$event.stopPropagation()"
+                                        (change)="$event ? selection.toggle(element) : null"
+                                        [checked]="selection.isSelected(element)">
+                                    </mat-checkbox>
+                                </div>
+
+                                <!-- campaign name section -->
+                                <div class="pl-5" style="width: 240px;" *ngIf="column === 'mail_sequence'">
+                                    <p class="label-name">
+                                        {{element.emailName}}
+                                    </p>
+                                    <p class="label-desc" *ngIf="element.subject ">{{element.subject}}</p>
+                                    <p class="label-desc" *ngIf="!element.subject ">10x the revenue in 10 minutes</p>
+                                </div>
+
+                                <!-- status section -->
+                                <div style="width: 115px;" *ngIf="column === 'status'"
+                                    class="text-center margin-center">
+                                    <div class="status {{element.status}}_State badge_Tag badge_Tag_Green">
+                                        <span class="{{element.status}}_State_Text status-text badge_Tag_Text">
+                                            {{element.status}}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- total sent section -->
+                                <div class="text-center margin-center" style="width: 75px;"
+                                    *ngIf="column === 'total_sent'">
+                                    <div class="count">
+                                        {{element.totalMailSend}}
+                                    </div>
+                                </div>
+
+                                <!-- to be sent section -->
+                                <div class="text-center margin-center" style="width: 75px;"
+                                    *ngIf="column === 'to_be_sent'">
+                                    <div class="count">
+                                        {{element.totalMailPending}}
+                                    </div>
+                                </div>
+
+                                <!-- open rate section -->
+                                <div class="text-center margin-center rate-copy" style="width: 115px;"
+                                    *ngIf="column === 'open_rate'">
+                                    <span class="green-color">
+                                        {{element.openRate}}%
+                                    </span>
+                                    <mat-icon *ngIf="element.openStatus == 'FALSE'" class="red-color" inline>
+                                        trending_down
+                                    </mat-icon>
+                                    <mat-icon *ngIf="element.openStatus == 'TRUE'" class="green-color" inline>
+                                        trending_up
+                                    </mat-icon>
+                                </div>
+
+                                <!-- reply rate section -->
+                                <div class="text-center margin-center rate-copy" style="width: 115px;"
+                                    *ngIf="column === 'reply_rate'">
+                                    <span class="green-color">
+                                        {{element.replyRate}}%
+                                    </span>
+                                    <mat-icon *ngIf="element.replyStatus == 'FALSE'" class="red-color" inline>
+                                        trending_down
+                                    </mat-icon>
+                                    <mat-icon *ngIf="element.replyStatus == 'TRUE'" class="green-color" inline>
+                                        trending_up
+                                    </mat-icon>
+                                </div>
+
+                                <!-- bounce rate section -->
+                                <div class="text-center margin-center" style="width: 115px;
+                                gap: 10px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;" *ngIf="column === 'bounce_rate'">
+                                    <span class="green-color">
+                                        {{element.bounceRate}}%
+                                    </span>
+                                    <mat-icon *ngIf="element.bounceStatus == 'FALSE'" class="red-color" inline>
+                                        trending_down
+                                    </mat-icon>
+                                    <mat-icon *ngIf="element.bounceStatus == 'TRUE'" class="green-color" inline>
+                                        trending_up
+                                    </mat-icon>
+                                </div>
+
+                                <!-- positive section -->
+                                <!-- <div
+                                class="text-center margin-center"
+                                style="width: 75px;"
+                                *ngIf="column === 'positive'">
+                                <span [class.green-color]="column === 'positive'">
+                                    {{element.positive}}
+                                </span>
+                            </div> -->
+                                <!-- negative section -->
+                                <!-- <div
+                                class="text-center margin-center"
+                                style="width: 75px;"
+                                *ngIf="column === 'negative'">
+                                <span [class.red-color]="column === 'negative'">
+                                    {{element.negative}}
+                                </span>
+                            </div> -->
+                                <!-- neutral section -->
+                                <!-- <div
+                                class="text-center margin-center"
+                                style="width: 75px;"
+                                *ngIf="column === 'neutral'">
+                                <span
+                                    [class.yellow-color]="column === 'neutral'">
+                                    {{element.neutral}}
+                                </span>
+                            </div> -->
+
+                                <!-- reply count section  -->
+
+                                <div style="width: 100px; text-align: center;" class="date-copy margin-center"
+                                    *ngIf="column === 'reply_count'">
+                                    <span>
+                                        {{element.replyCount}}
+                                    </span>
+                                </div>
+
+                                <!-- open count section  -->
+
+                                <div style="width: 100px; text-align: center;" class="date-copy margin-center"
+                                    *ngIf="column === 'open_count'">
+                                    <span>
+                                        {{element.openCount}}
+                                    </span>
+                                </div>
+
+                                <!-- create date section -->
+                                <div style="width: 100px; text-align: center;" class="date-copy margin-center"
+                                    *ngIf="column === 'create_date'">
+                                    <div>
+                                        <b>{{element.createdOn | date: 'MMM dd,yyyy'}}</b>
+                                        
+                                        <small>{{getDateDifference(element.createdOn)}}</small>
+                                  
+                                    </div>
+                                </div>
+
+                                <!-- email last sent section -->
+                                <div style="width: 100px; text-align: center;" class="date-copy margin-center"
+                                    *ngIf="column === 'email_last_sent'">
+                                    <div>
+                                        <b *ngIf="element.lastOpenDate !== 'NA'">{{element.lastOpenDate | date: 'MMM dd,yyyy'}}</b>
+                                        <b *ngIf="element.lastOpenDate === 'NA'">-</b>
+                                        <small>{{getDateDifference(element.lastSentDate)}}</small>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                    </div>
+
+                    <div class="emptyState" *ngIf="defaultList.campaignName == '1234'">
+                        <td [routerLink]="['mail-detail',defaultList.emailName,'Mail-Id',defaultList.campaignName]"
+                            mat-cell *matCellDef="let element">
+                            <div *ngIf="!columnVisibility(column)" class="column-visibilty"
+                                [class.item-center]="column !== 'mail_sequence' && column !== 'select'">
+
+                                <!-- select box section -->
+                                <div class="checkBoxContainer" style="width: 28px;" *ngIf="column === 'select'">
+                                    <mat-checkbox class="customButton" (click)="$event.stopPropagation()"
+                                        (change)="$event ? selection.toggle(element) : null"
+                                        [checked]="selection.isSelected(element)">
+                                    </mat-checkbox>
+                                </div>
+
+                                <!-- campaign name section -->
+                                <div class="pl-5" style="width: 240px;" *ngIf="column === 'mail_sequence'">
+                                    <p class="label-name">
+                                        {{defaultList.emailName}}
+                                    </p>
+                                    <p class="label-desc" *ngIf="defaultList.subject ">{{defaultList.subject}}</p>
+                                    <p class="label-desc" *ngIf="!defaultList.subject ">10x the revenue in 10 minutes
+                                    </p>
+                                </div>
+
+                                <!-- status section -->
+                                <div style="width: 115px;" *ngIf="column === 'status'"
+                                    class="text-center margin-center">
+                                    <div class="status {{defaultList.status}}_State badge_Tag badge_Tag_Green">
+                                        <span class="{{defaultList.status}}_State_Text status-text badge_Tag_Text">
+                                            {{defaultList.status}}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- total sent section -->
+                                <div class="text-center margin-center" style="width: 75px;"
+                                    *ngIf="column === 'total_sent'">
+                                    <div class="count">
+                                        {{defaultList.totalMailSend}}
+                                    </div>
+                                </div>
+
+                                <!-- to be sent section -->
+                                <div class="text-center margin-center" style="width: 75px;"
+                                    *ngIf="column === 'to_be_sent'">
+                                    <div class="count">
+                                        {{defaultList.totalMailPending}}
+                                    </div>
+                                </div>
+
+                                <!-- open rate section -->
+                                <div class="text-center margin-center rate-copy" style="width: 115px;"
+                                    *ngIf="column === 'open_rate'">
+                                    <span class="green-color">
+                                        {{defaultList.openRate}}%
+                                    </span>
+                                    <mat-icon *ngIf="element.openStatus == 'FALSE'" class="red-color" inline>
+                                        trending_down
+                                    </mat-icon>
+                                    <mat-icon *ngIf="element.openStatus == 'TRUE'" class="green-color" inline>
+                                        trending_up
+                                    </mat-icon>
+                                </div>
+
+                                <!-- reply rate section -->
+                                <div class="text-center margin-center rate-copy" style="width: 115px;"
+                                    *ngIf="column === 'reply_rate'">
+                                    <span class="green-color">
+                                        {{defaultList.replyRate}}%
+                                    </span>
+                                    <mat-icon *ngIf="defaultList.replyStatus == 'FALSE'" class="red-color" inline>
+                                        trending_down
+                                    </mat-icon>
+                                    <mat-icon *ngIf="defaultList.replyStatus == 'TRUE'" class="green-color" inline>
+                                        trending_up
+                                    </mat-icon>
+                                </div>
+
+                                <!-- bounce rate section -->
+                                <div class="text-center margin-center" style="width: 115px;
+                                gap: 10px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;" *ngIf="column === 'bounce_rate'">
+                                    <span class="green-color">
+                                        {{defaultList.bounceRate}}%
+                                    </span>
+                                    <mat-icon *ngIf="defaultList.bounceStatus == 'FALSE'" class="red-color" inline>
+                                        trending_down
+                                    </mat-icon>
+                                    <mat-icon *ngIf="defaultList.bounceStatus == 'TRUE'" class="green-color" inline>
+                                        trending_up
+                                    </mat-icon>
+                                </div>
+
+                                <!-- positive section -->
+                                <div class="text-center margin-center" style="width: 75px;"
+                                    *ngIf="column === 'positive'">
+                                    <span [class.green-color]="column === 'positive'">
+                                        {{defaultList.positive}}
+                                    </span>
+                                </div>
+                                <!-- negative section -->
+                                <div class="text-center margin-center" style="width: 75px;"
+                                    *ngIf="column === 'negative'">
+                                    <span [class.red-color]="column === 'negative'">
+                                        {{defaultList.negative}}
+                                    </span>
+                                </div>
+                                <!-- neutral section -->
+                                <div class="text-center margin-center" style="width: 75px;"
+                                    *ngIf="column === 'neutral'">
+                                    <span [class.yellow-color]="column === 'neutral'">
+                                        {{defaultList.neutral}}
+                                    </span>
+                                </div>
+                                <!-- create date section -->
+                                <!-- <div style="width: 100px; text-align: center;" class="date-copy margin-center"
+                                    *ngIf="column === 'create_date'">
+                                    <div>
+                                        <b>{{defaultList.createdOn | date: 'MMM dd,yyyy'}}</b>
+                                        <small>{{getDateDifference(defaultList.createdOn)}}</small>
+                                    </div>
+                                </div> -->
+
+                                <!-- email last sent section -->
+                                <div style="width: 100px; text-align: center;" class="date-copy margin-center"
+                                    *ngIf="column === 'email_last_sent'">
+                                    <div>
+                                        <b *ngIf="element.lastOpenDate !== 'NA'">{{defaultList.lastOpenDate | date: 'MMM dd,yyyy'}}</b>
+                                        <b *ngIf="element.lastOpenDate === 'NA'">-</b>
+                                        <small>{{getDateDifference(defaultList.lastSentDate)}}</small>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </td>
+                    </div>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="getFilteredColumn; sticky: true">
+                </tr>
+                <tr mat-row *matRowDef="let row; columns: getFilteredColumn;">
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<!-- show hide menu dialog -->
+<mat-menu class="hide-column" #hideColumn="matMenu">
+    <div class="hide-column-card">
+        <div class="header">
+            <span>Hide Columns</span>
+        </div>
+        <div (click)="$event.stopPropagation()" class="body scroll-vertical">
+            <div class="column-label-wrapper" *ngFor="let col of filteredColumnList,let i = index">
+                <label *ngIf="col !== 'select'" class="toggle_Primary_Small_Label">
+                    <input #checkBoxEl type="checkbox" [disabled]="col == 'mail_sequence'"
+                        [checked]="!columnVisibility(col)" (change)="onHideColumn(col, checkBoxEl.checked)"
+                        class="toggle_Primary_Small_Input">
+                    <span class="toggle_Primary_Small_Inner round"></span>
+                </label>
+                <span *ngIf="col !== 'select'" class="column-label">
+                    {{filterTableHeader(col)}}
+                </span>
+            </div>
+        </div>
+        <div (click)="$event.stopPropagation()" class="footer">
+            <button [disabled]="hidedColumn.length <= 0" (click)="hidedColumn = []"
+                class="popup_Primary_Extra_Extra_Small_Button">
+                Show All
+            </button>
+            <button class="popup_Primary_Extra_Extra_Small_Button"
+                [disabled]="hidedColumn.length === columnsWithoutFirstIndex.length"
+                (click)="hidedColumn = columnsWithoutFirstIndex">
+                Hide All
+            </button>
+        </div>
+    </div>
+</mat-menu>

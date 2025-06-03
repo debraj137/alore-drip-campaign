@@ -1,0 +1,221 @@
+.profileContainer {
+    left: 0px;
+    height:auto;
+  
+    .proPhotoSection {
+      height: 217px;
+      row-gap: 15px;
+      margin-top: 50px;
+  
+      .photo {
+        .uploadImageContainer {
+          padding: 0px;
+          right: -11px;
+          bottom: -5px;
+        }
+      }
+  
+      .proName {
+        margin: 0px;
+      }
+  
+      .secondary_Normal_Button_Blue {
+        width: 250px !important;
+        padding: 0px 15px !important;
+        height: 38px !important;
+      }
+    }
+  
+    .divider {
+      margin-top: 10px !important;
+      height: 3px !important;
+    }
+  
+    .proCardsContainer {
+      border: none !important;
+      max-height: 240px !important;
+      min-height: auto !important;
+      overflow-y: scroll;
+      // overflow-y: scroll;
+  
+      .proFlexContainer {
+
+        height: inherit;
+
+
+
+        .proCard {
+          cursor: pointer;
+          &:hover {
+            .signoutButton {
+              background: #334bfa11 !important;
+              z-index: 9999;
+            }
+          }
+  
+          &:active {
+            background-color: #334bfa;
+  
+            .cardDetails {
+              .proCardName {
+                color: #fff !important;
+              }
+              .proCardEmail {
+                color: #fff !important;
+              }
+            }
+  
+            .signoutButton {
+              color: #fff !important;
+  
+            }
+  
+            .addNewAccountCard {
+              justify-content: flex-start;
+  
+              img {
+                margin-right: 10px;
+              }
+            }
+          }
+  
+          justify-content: flex-start !important;
+          .small_Avatar_Image_Not_Online {
+            margin-left: 12px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  
+    .profooter {
+      .secondary_Normal_Button_Blue {
+        width: 250px !important;
+        padding: 0px 15px !important;
+        height: 38px !important;
+        margin: 20px 0px 0px 0px !important;
+      }
+  
+      .secondary_Normal_Button_Purple {
+        width: 250px !important;
+        padding: 0px 15px !important;
+        height: 38px !important;
+      }
+  
+      .privacy {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+  
+        .privacyButton {
+          width: 113px;
+          height: 24px;
+          padding: 5px;
+          border-radius: 5px;
+          font-family: 'Inter';
+  
+          &:hover {
+            background-color: #334bfa33;
+            color: #334bfa;
+          }
+          &:active {
+            background-color: #334bfa;
+            color: #fff;
+          }
+        }
+  
+        .termButton {
+          width: 113px;
+          height: 24px;
+          padding: 5px;
+          border-radius: 5px;
+          font-family: 'Inter';
+  
+          &:hover {
+            background-color: #334bfa33;
+            color: #334bfa;
+          }
+          &:active {
+            background-color: #334bfa;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  
+  ::ng-deep .mat-dialog-container {
+    border-radius: 5px !important;
+  }
+  
+  .profooter {
+    height: 60px;
+    padding-bottom: 25px;
+  }
+  
+  .signoutButton {
+    padding: 0px;
+  }
+  
+
+  .dailoge-heading {
+    text-align: center;
+    padding:29px;
+}
+
+.dailoge-heading .d-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #181818;
+    margin: 15px 0px;
+}
+
+.dailoge-heading .d-sub-title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: #181818;
+}
+
+.d-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    backdrop-filter: blur(6px);
+    background-color: #0000007e;
+    height: 100%;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.dailoge-heading {
+  .close_Button_Div {
+    display: flex;
+    justify-content: end;
+  }
+}
+
+.emptyMsg {
+  color: #FA336F;
+  font-family: "Inter";
+}
+
+.small_Avatar_No_Image_Not_Online {
+  margin-left: 10px;
+}
+
+.cardDetails {
+  margin-left: 10px;
+}
+
+

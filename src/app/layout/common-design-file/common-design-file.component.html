@@ -1,0 +1,448 @@
+<!-- Dropdown starts here -->
+<section class="dropdownSection">
+  <button class="dropButton">
+    <mat-select class="accessList">
+      <mat-option class="matOption" [value]="item.type" *ngFor="let item of accesslist">
+        <img src={{item.image}} alt="">
+        <div class="accessType">
+          <span class="mainAccess">{{item.type}}</span>
+          <span class="subAccess">{{item.desc}}</span>
+        </div>
+      </mat-option>
+    </mat-select>
+  </button>
+
+
+  <!-- ----------------------------------  -->
+
+  <div class="drop_Down_Button_With_Icon">
+    <mat-select class="mat_Select_With_Icon">
+      <mat-option class="mat_Option_With_Icon" [value]="item.type" *ngFor="let item of accesslist">
+        <img src={{item.image}} alt="">
+
+        <div class="access_Type_Div">
+          <span class="main_Access">{{item.type}}</span>
+          <span class="sub_Access">{{item.desc}}</span>
+        </div>
+      </mat-option>
+    </mat-select>
+  </div>
+
+  <!-- -----------------------------------------------  -->
+
+  <!-- type 2 -->
+  <button class="dropButton">
+    <mat-select class="accessList">
+      <mat-option class="matOption" [value]="item.type" *ngFor="let item of accesslist">
+        <div class="accessType">
+          <span class="mainAccess">{{item.type}}</span>
+          <span class="subAccess">{{item.desc}}</span>
+        </div>
+      </mat-option>
+    </mat-select>
+  </button>
+  <!-- type 2 -->
+  <!-- type 3 -->
+  <button class="dropButton">
+    <mat-select panelClass="my-select-panel-class">
+      <mat-option class="matOption" [value]="item.type" *ngFor="let item of accesslist">
+        <div class="accessType">
+          <span class="mainAccess">{{item.type}}</span>
+        </div>
+      </mat-option>
+    </mat-select>
+  </button>
+</section>
+<!-- type 3 -->
+<!-- Dropdown ends here -->
+
+
+
+<!-- ALL CHECKBOX WITHOUT CAPTION STARTS HERE  -->
+<section style="display: flex; justify-content: space-between; margin-top: 50px;">
+
+  <!-- LARGE CHECKBOX STARTS HERE -->
+
+  <div class="large_CheckBox_Div">
+    <mat-checkbox class="checkbox_Large_button" [disabled]="disabledButton == true" [(ngModel)]="neutral">
+    </mat-checkbox>
+    <div class="large_Label_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label</div>
+  </div>
+
+
+  <!-- LARGE CHECKBOX ENDS HERE -->
+
+  <!-- MEDIUM CHECKBOX STARTS HERE  -->
+
+  <div class="medium_CheckBox_Div">
+    <!-- <button class="checkbox_Medium" (click)="checkBoxMedium()" [ngClass]="{'checkedMedium': clickedMedium == true}"
+        [disabled]="disabledButton == true">
+        <img src="../assets/tick.svg" alt="">
+      </button> -->
+
+    <mat-checkbox class="checkbox_Medium_button" [disabled]="disabledButton == true" [(ngModel)]="neutral">
+    </mat-checkbox>
+    <div class="medium_Label_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label</div>
+  </div>
+  <!-- MEDIUM CHECKBOX ENDS HERE  -->
+
+  <!-- SMALL CHECKBOX STARTS HERE  -->
+
+  <div class="small_CheckBox_Div">
+    <!-- <button class="checkbox_Small" (click)="checkBoxSmall()" [ngClass]="{'checkedSmall': clickedSmall == true}"
+        [disabled]="disabledButton == true">
+        <img src="../assets/tick.svg" alt="">
+      </button> -->
+    <mat-checkbox class="checkbox_Small_button" [disabled]="disabledButton == true" [(ngModel)]="neutral">
+    </mat-checkbox>
+    <div class="small_Label_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label</div>
+  </div>
+
+  <!-- SMALL CHECKBOX ENDS HERE  -->
+
+</section>
+
+
+
+<!-- ALL CHECKBOX WITHOUT CAPTION ENDS HERE  -->
+
+
+<!-- ALL CHECKBOX WITH CAPTION STARTS HERE  -->
+
+<section style="display: flex; justify-content: space-between; margin-top: 50px;">
+
+  <!-- LARGE CHECKBOX STARTS HERE -->
+
+  <div class="large_CheckBox_With_Caption_Div">
+    <mat-checkbox class="checkbox_Large_button" [disabled]="disabledButton == true" [(ngModel)]="neutral">
+    </mat-checkbox>
+    <div class="large_Label_With_Caption_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label
+      <div class="large_Caption" [ngClass]="{'captionDisable': disabledButton == true}">Caption</div>
+    </div>
+  </div>
+
+  <!-- LARGE CHECKBOX ENDS HERE -->
+
+  <!-- MEDIUM CHECKBOX STARTS HERE  -->
+
+  <div class="medium_CheckBox_With_Caption_Div">
+    <mat-checkbox class="checkbox_Medium_button" [disabled]="disabledButton == true" [(ngModel)]="neutral">
+    </mat-checkbox>
+    <div class="medium_Label_With_Caption_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label
+      <div class="medium_Caption" [ngClass]="{'captionDisable': disabledButton == true}">Caption</div>
+    </div>
+  </div>
+  <!-- MEDIUM CHECKBOX ENDS HERE  -->
+
+  <!-- SMALL CHECKBOX STARTS HERE  -->
+
+  <div class="small_CheckBox_With_Caption_Div">
+    <mat-checkbox class="checkbox_Small_button" [disabled]="disabledButton == true" [(ngModel)]="neutral">
+    </mat-checkbox>
+    <div class="small_Label_With_Caption_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label
+      <div class="small_Caption" [ngClass]="{'captionDisable': disabledButton == true}">Caption</div>
+    </div>
+  </div>
+
+  <!-- SMALL CHECKBOX ENDS HERE  -->
+
+</section>
+
+<!-- ALL CHECKBOX WITH CAPTION ENDS HERE  -->
+
+
+
+<!-- All RADIO BUTTON WITHOUT CAPTION STARTS HERE  -->
+
+<section style="display: flex; justify-content: space-between; margin-top: 50px;">
+
+  <!-- LARGE RADIO BUTTON STARTS HERE -->
+
+  <div class="large_Radio_Div">
+
+    <mat-radio-button [disabled]="disabledButton == true" class="radio_Large_button" value="1"></mat-radio-button>
+    <div class="large_Label_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label</div>
+  </div>
+
+  <!-- LARGE RADIO BUTTON ENDS HERE  -->
+
+  <!-- MEDIUM RADIO BUTTON STARTS HERE -->
+
+  <div class="medium_Radio_Div">
+
+    <mat-radio-button [disabled]="disabledButton == true" class="radio_Medium_button" value="1"></mat-radio-button>
+    <div class="medium_Label_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label</div>
+  </div>
+  <!-- MEDIUM RADIO BUTTON ENDS HERE -->
+
+  <div class="small_Radio_Div">
+
+
+    <mat-radio-button [disabled]="disabledButton == true" class="radio_Small_button" value="1"></mat-radio-button>
+    <div class="small_Label_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label</div>
+  </div>
+</section>
+
+<!-- All RADIO BUTTON WITHOUT CAPTION ENDS HERE -->
+
+<!-- All RADIO BUTTON WITH CAPTION STARTS HERE  -->
+
+<section style="display: flex; justify-content: space-between; margin-top: 50px;">
+
+  <!-- LARGE RADIO BUTTON STARTS HERE -->
+
+  <div class="large_Radio_Div">
+
+    <mat-radio-button [disabled]="disabledButton == true" class="radio_Large_button" value="1"></mat-radio-button>
+    <div class="large_Label_With_Caption_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label
+      <div class="large_Caption" [ngClass]="{'captionDisable': disabledButton == true}">Caption</div>
+    </div>
+  </div>
+
+  <!-- LARGE RADIO BUTTON ENDS HERE  -->
+
+  <!-- MEDIUM RADIO BUTTON STARTS HERE -->
+
+  <div class="medium_Radio_Div">
+
+    <mat-radio-button [disabled]="disabledButton == true" class="radio_Medium_button" value="1"></mat-radio-button>
+    <div class="medium_Label_With_Caption_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label
+      <div class="medium_Caption" [ngClass]="{'captionDisable': disabledButton == true}">Caption</div>
+    </div>
+  </div>
+  <!-- MEDIUM RADIO BUTTON ENDS HERE -->
+
+  <div class="small_Radio_Div">
+
+    <mat-radio-button [disabled]="disabledButton == true" class="radio_Small_button" value="1"></mat-radio-button>
+    <div class="small_Label_With_Caption_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label
+      <div class="small_Caption" [ngClass]="{'captionDisable': disabledButton == true}">Caption</div>
+    </div>
+  </div>
+</section>
+
+<!-- All RADIO BUTTON WITH CAPTION ENDS HERE -->
+
+
+
+<!-- All PRIMARY SIZE TOOLTIP STARTS HERE  -->
+
+<section style="display: flex; justify-content: space-between; margin-top: 50px;">
+
+
+  <h2>Primary tooltip </h2>
+
+
+
+  <!-- SMALL TOOLTIP STARTS HERE  -->
+  <div>
+    <button matTooltipClass="small_Primary_Tooltip" mat-raised-button matTooltipPosition="above"
+      matTooltip="Cody Fisher">
+      Cody Fisher
+    </button>
+
+  </div>
+
+  <!-- SMALL TOOLTIP ENDS HERE  -->
+
+  <!-- MEDIUM TOOLTIP STARTS HERE  -->
+
+  <div>
+    <button matTooltipClass="medium_Primary_Tooltip" mat-raised-button matTooltipPosition="above"
+      matTooltip="Cody  Fishethere r">
+      Cody Fishethere r
+    </button>
+  </div>
+
+  <!-- MEDIUM TOOLTIP ENDS HERE  -->
+
+  <!-- LARGE TOOLTIP STARTS HERE  -->
+  <div>
+    <button #tooltip="matTooltip" matTooltipClass="large_Primary_Tooltip" mat-raised-button matTooltipPosition="above"
+      matTooltip="Cody Fisher Chandan Ka bhai">
+      Cody Fisher Chandan Ka bhai
+    </button>
+  </div>
+
+  <!-- LARGE TOOLTIP ENDS HERE  -->
+</section>
+
+<!-- All PRIMARY SIZE TOOLTIP ENDS HERE  -->
+
+<!-- All ALERT SIZE TOOLTIP STARTS HERE  -->
+<section style="display: flex; justify-content: space-between; margin-top: 50px;">
+  <h2>Alert tooltip </h2>
+
+
+
+  <!-- SMALL TOOLTIP STARTS HERE  -->
+  <div>
+    <button matTooltipClass="small_Alert_Tooltip" mat-raised-button matTooltipPosition="above" matTooltip="Cody Fisher">
+      Cody Fisher
+    </button>
+
+  </div>
+
+  <!-- SMALL TOOLTIP ENDS HERE  -->
+
+  <!-- MEDIUM TOOLTIP STARTS HERE  -->
+
+  <div>
+    <button matTooltipClass="medium_Alert_Tooltip" mat-raised-button matTooltipPosition="above"
+      matTooltip="Cody  Fishethere r">
+      Cody Fishethere r
+    </button>
+  </div>
+
+  <!-- MEDIUM TOOLTIP ENDS HERE  -->
+
+  <!-- LARGE TOOLTIP STARTS HERE  -->
+  <div>
+    <button matTooltipClass="large_Alert_Tooltip" mat-raised-button matTooltipPosition="above"
+      matTooltip="Cody Fisher Chandan Ka bhai">
+      Cody Fisher Chandan Ka bhai
+    </button>
+  </div>
+
+  <!-- LARGE TOOLTIP ENDS HERE  -->
+</section>
+
+<!-- All ALERT SIZE TOOLTIP ENDS HERE  -->
+
+
+<!-- All SECONDARY SIZE TOOLTIP STARTS HERE  -->
+<section style="display: flex; justify-content: space-between; margin-top: 50px;">
+
+  <h2>Secondary tooltip </h2>
+
+
+
+  <!-- SMALL TOOLTIP STARTS HERE  -->
+  <div>
+    <button matTooltipClass="small_Secondary_Tooltip" mat-raised-button matTooltipPosition="above"
+      matTooltip="Cody Fisher">
+      Cody Fisher
+    </button>
+
+  </div>
+
+  <!-- SMALL TOOLTIP ENDS HERE  -->
+
+  <!-- MEDIUM TOOLTIP STARTS HERE  -->
+
+  <div>
+    <button matTooltipClass="medium_Secondary_Tooltip" mat-raised-button matTooltipPosition="above"
+      matTooltip="Cody  Fishethere r">
+      Cody Fishethere r
+    </button>
+  </div>
+
+  <!-- MEDIUM TOOLTIP ENDS HERE  -->
+
+  <!-- LARGE TOOLTIP STARTS HERE  -->
+  <div>
+    <button matTooltipClass="large_Secondary_Tooltip" mat-raised-button matTooltipPosition="above"
+      matTooltip="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...!!!!">
+      Cody Fisher Chandan Ka bhai
+      <!-- <div class="arrow_Div"></div> -->
+    </button>
+
+  </div>
+
+  <!-- LARGE TOOLTIP ENDS HERE  -->
+</section>
+
+<!-- All SECONDARY SIZE TOOLTIP ENDS HERE  -->
+
+
+
+<!-- add a bcc or forward emails starts here  -->
+
+<div style="display: flex; justify-content: center; align-items: center;">
+
+  <section class="main_Container_BCC">
+    <div class="header_Container_BCC">
+      <section class="icon_And_Header">
+        <div class="icon_Inside_Header">
+          <img src="../../../assets/common_css/user_Icon_BCC.svg" alt="" />
+        </div>
+        <div class="Text_Inside_Header">
+          <p>Add a BCC or Forward Email</p>
+          <span>Add a domain to don’t-send-a-mail list 🤓</span>
+        </div>
+      </section>
+      <div class="close_Button_Div">
+        <button class="alore_blue_Close_Button">
+          <img src="../assets/alore_Blue_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <section class="input_Field_Section">
+      <div class="bcc_Div">
+        <p>BCC Email</p>
+
+        <button class="text_Input_Extra_Small" [disabled]="disabledButton == true"
+          [ngClass]="{ success: successValue == true, error: errorValue == true }">
+          <input [disabled]="disabledButton == true" type="search" placeholder="Search for team" [(ngModel)]="value"
+            (ngModelChange)="getvalue()" id="check" />
+        </button>
+      </div>
+
+      <div class="forward_Div">
+        <p>Forward Email</p>
+
+        <button class="text_Input_Extra_Small" [disabled]="disabledButton == true"
+          [ngClass]="{ success: successValue == true, error: errorValue == true }">
+          <input [disabled]="disabledButton == true" type="search" placeholder="Search for team" [(ngModel)]="value"
+            (ngModelChange)="getvalue()" id="check" />
+        </button>
+      </div>
+    </section>
+
+    <div class="button_Div">
+      <section>
+        <button class="primary_Normal_Button_Blue width_ex_sml">Next</button>
+
+        <button class="secondary_Normal_Button_Blue width_ex_sml">
+          Back
+        </button>
+      </section>
+    </div>
+
+
+  </section>
+
+</div>
+
+<!-- add a bcc or forward emails ends here  -->
+
+
+<!-- customize time zone form starts here   -->
+
+<div style="display: flex; justify-content: center; align-items: center;">
+
+  <section class="main_Container_TimeZone">
+    <div class="header_TimeZone">
+      <section class="icon_And_Header">
+        <div class="icon_Inside_Header">
+          <img src="../../../assets/common_css/setting_Icon_Popup_Modal.svg" alt="" />
+        </div>
+        <div class="Text_Inside_Header">
+          <p>Select a timezone</p>
+          <span>Choose the time-zone in which you want to send the mail</span>
+        </div>
+      </section>
+      <div class="close_Button_Div">
+        <button class="alore_blue_Close_Button">
+          <img src="../assets/alore_Blue_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+  </section>
+</div>
+
+
+<!-- customize time zone form starts here  -->

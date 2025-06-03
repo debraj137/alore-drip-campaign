@@ -1,0 +1,290 @@
+app-page1, app-page2, app-page3, app-page4, app-page5, app-page6, app-page7{
+  display: contents;
+}
+.default-modal{
+  background-color: #ffffff;
+  
+  .header{
+    // margin-bottom: 50px;
+  }
+
+  ::ng-deep{
+    input[type="number"] {     
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button{
+          display: none;
+      }
+      -moz-appearance: textfield;
+    }
+  }
+}
+
+::ng-deep {
+  // active and hover states
+  // small checkbox here
+  ::ng-deep.mat-checkbox-checked.mat-accent.mat-checkbox-disabled .mat-checkbox-background {
+    background-color: rgba(51, 75, 250, 0.5);
+  }
+
+  ::ng-deep.mat-checkbox-checked.mat-accent.mat-checkbox-disabled .mat-checkbox-frame {
+    background-color: rgba(24, 24, 24, 0.1) !important;
+    border-color: transparent;
+  }
+
+  ::ng-deep.mat-checkbox-checked.mat-accent.mat-checkbox-disabled:hover .mat-checkbox-frame {
+    border-color: transparent;
+  }
+
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #334bfa;
+    border-radius: 6px;
+  }
+
+  ::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+    background-color: black !important;
+  }
+
+  ::ng-deep .mat-checkbox:hover .mat-checkbox-frame {
+    background-color: rgba(51, 75, 250, 0.2);
+    border-color: #334bfa;
+  }
+
+  ::ng-deep .mat-checkbox.mat-checkbox-disabled:hover .mat-checkbox-frame {
+    background-color: transparent;
+    border-color: #b0b0b0;
+  }
+
+  ::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color: rgba(24, 24, 24, 0.5);
+    border-radius: 6px;
+  }
+
+  ::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+    display: none;
+  }
+
+
+  /* Medium checkbox button class starts  */
+  ::ng-deep .mat-checkbox.checkbox_Medium_button .mat-checkbox-inner-container {
+    height: 24px;
+    width: 24px;
+  }
+
+  /* Small checkbox button class starts  */
+  ::ng-deep .mat-checkbox.checkbox_Small_button .mat-checkbox-inner-container {
+    height: 20px;
+    width: 20px;
+  }
+
+  .small_CheckBox_Div {
+    display: flex;
+    align-items: center;
+    width: 60px;
+    justify-content: space-between;
+  }
+
+  .small_Label_Div {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 112%;
+    letter-spacing: 0.03em;
+    color: #181818;
+  }
+
+  /* Small checkbox button class ends  */
+
+
+  .info_Button_Blue {
+    border: 1px solid #334bfa;
+    color: #334bfa;
+  }
+
+  .info_Button_Green {
+    border: 1px solid #1bd2a4;
+    color: #1bd2a4;
+  }
+
+  .info_Button_Pink {
+    border: 1px solid #ff8cad;
+    color: #ff8cad;
+  }
+
+  .info_Button_Red {
+    border: 1px solid #fa336f;
+    color: #fa336f;
+  }
+
+ .selectedTime {
+    background-color: #334bfa !important;
+    border-color: #334bfa !important;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.5);
+
+ 
+
+    .img_Div {
+      border-color: #fff !important;
+    }
+
+      img {
+        filter: invert(100%) sepia(99%) saturate(2%) hue-rotate(51deg) brightness(1004%) contrast(100%) !important;
+      }
+  
+
+    .text_Div {
+      p {
+        color: #fff !important;
+      }
+
+      span {
+        color: #fff !important;
+      }
+    }
+  }
+
+  textarea:focus,
+  input:focus {
+    outline: none;
+  }
+
+  ::ng-deep .small_Primary_Tooltip {
+    width: 134px;
+    min-height: 34px;
+    max-height: auto;
+    border: none;
+    background: #334bfa;
+    border-radius: 14px !important;
+    color: #fff;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: unset !important;
+    right: -50px;
+  }
+
+  ::ng-deep .small_Primary_Tooltip::after {
+    position: absolute;
+    content: "";
+    width: 0.1px;
+    height: 0.1px;
+    border-left: 12px solid #334bfa;
+    border-top: 12px solid #334bfa;
+    transform: rotate(45deg);
+    display: block;
+    margin-top: -15px;
+    z-index: 2;
+    left: 20px;
+    bottom: -6px;
+  }
+
+  .text_Input_Extra_Small input:focus {
+    color: #334bfa;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 116%;
+  }
+
+  // label dropdown
+
+  .search_Dropdown {
+    width: 505px;
+    margin-top: 2px !important;
+    height: 200px;
+    background: #FFFFFF;
+    border: 2px solid #334BFA;
+    box-shadow: 0px 8px 12px rgb(0 0 0 / 8%), 0px 4px 48px rgb(0 0 0 / 8%);
+    border-radius: 10px;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 10px 5px;
+    position: absolute;
+    z-index: 99999;
+  }
+
+  .inside_Content_Div {
+    display: flex;
+    justify-content: flex-start;
+    gap: 23px;
+    align-items: center;
+    width: 490px;
+    height: 48px;
+    border-radius: 5px;
+    padding: 0px 8px;
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+
+  .inside_Content_Div .avatar_user_Info {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .inside_Content_Div .small_Avatar_Image_Not_Online {
+    margin-right: 8px;
+  }
+
+  .inside_Content_Div:hover {
+    background: rgba(51, 75, 250, 0.2);
+  }
+
+  .inside_Content_Div:hover .user_Info_Div {
+    color: #334BFA;
+  }
+
+  .inside_Content_Div:hover .user_Info_Div span {
+    color: rgba(51, 75, 250, 0.5);
+  }
+
+  .inside_Content_Div:active {
+    background-color: #334BFA;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .inside_Content_Div:active .user_Info_Div {
+    color: #fff;
+  }
+
+  .inside_Content_Div:active .user_Info_Div span {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .inside_Content_Div:active .plus_Button {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(194deg) brightness(155%) contrast(101%);
+  }
+
+  .user_Info_Div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 112%;
+    color: #181818;
+  }
+
+  .user_Info_Div span {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 112%;
+    color: rgba(24, 24, 24, 0.7);
+  }
+
+
+  // label dropdown
+}
+

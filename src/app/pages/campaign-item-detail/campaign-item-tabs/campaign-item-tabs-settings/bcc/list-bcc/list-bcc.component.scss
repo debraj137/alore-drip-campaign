@@ -1,0 +1,14 @@
+.list-bcc-container{
+    display: contents;
+
+    tr{
+        &.border-top {
+            td{
+                padding-bottom: 0!important;
+                @media (max-width: 1366px){
+                    padding-bottom: 15px !important;
+                }
+            }
+        }
+    }
+}

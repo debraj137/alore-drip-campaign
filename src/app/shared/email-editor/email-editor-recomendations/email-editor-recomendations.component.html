@@ -1,0 +1,50 @@
+<div class="close-button">
+<div class="email-editor-recomendation-container">
+  <div class="header">
+    <div class="left-side">
+      <div (click)="expanded = !expanded" class="expand-icon">
+        <mat-icon>
+          {{ expanded ? "expand_more" : "chevron_right" }}
+        </mat-icon>
+      </div>
+      <span> Recommendations </span>
+    </div>
+    <div class="badge-container">
+      <div class="badge_Green">
+        {{ scoreService.recomendation.value[0].length }}
+      </div>
+      <div class="badge_Yellow">
+        {{ scoreService.recomendation.value[1]===undefined?0: scoreService.recomendation.value[1].length }}
+      </div>
+      <div class="badge_Red">
+        {{ scoreService.recomendation.value[2]===undefined?0: scoreService.recomendation.value[2].length }}
+      </div>
+    </div>
+  </div>
+  <div *ngIf="expanded" class="body">
+    <div
+      *ngIf="scoreService.recomendation.value[0]?.length"
+      style="display: contents;">
+      <p *ngFor="let recomendation of scoreService.recomendation.value[0]">
+        {{ recomendation }}
+      </p>
+      <div class="custom-divider"></div>
+    </div>
+    <div
+      *ngIf="scoreService.recomendation.value[1]?.length"
+      style="display: contents;">
+      <p *ngFor="let recomendation of scoreService.recomendation.value[1]">
+        {{ recomendation }}
+      </p>
+      <div class="custom-divider"></div>
+    </div>
+    <div
+      *ngIf="scoreService.recomendation.value[2]?.length"
+      style="display: contents;">
+      <p *ngFor="let recomendation of scoreService.recomendation.value[2]">
+        {{ recomendation }}
+      </p>
+    </div>
+  </div>
+</div>
+

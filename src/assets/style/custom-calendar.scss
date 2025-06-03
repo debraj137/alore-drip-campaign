@@ -1,0 +1,145 @@
+::ng-deep .mat-calendar-body-today{
+    background: #33FAE3 !important;
+    border-radius: 8px !important;
+    border:none !important;
+}
+// ::ng-deep .mat-datepicker-content{
+//     width:420px;
+//     height: 450px;
+//     // margin-left: 50px;
+//     background: #FFFFFF !important;
+// /* Shadow/24dp */
+
+//     box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.08), 0px 4px 56px rgba(0, 0, 0, 0.08) !important;
+//     border-radius: 24px !important;
+// }
+// ::ng-deep .mat-datepicker-content .mat-calendar{
+//     width: 360px !important;
+//     height: 325px !important;
+    
+// }
+
+::ng-deep .mat-calendar-content{
+    // border-bottom: 2px dotted rgba(24, 24, 24, 0.2) !important;
+}
+::ng-deep .mat-calendar-table-header-divider::after{
+    background: none !important;
+    // border-bottom:2px dotted rgba(24, 24, 24, 0.2) !important;
+}
+// ::ng-deep .mat-calendar-content{
+//     padding: 0px 0px 0px 35px !important;
+// }
+::ng-deep .mat-datepicker-content{
+    // width: unset !important;
+    // height: unset !important;
+    // padding: 30px !important;
+    box-shadow: none !important;
+    display: block !important;
+    position: absolute !important;
+    padding:0px 0px 0px 32px !important;
+}
+::ng-deep .mat-calendar-period-button {
+    letter-spacing: 0.01em !important;
+
+    color: #181818 !important;
+    font-family: 'Inter' !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    line-height: 135% !important;
+}
+
+::ng-deep .mat-calendar-body-selected{
+    background: #FA7F33 !important;
+    border-radius: 8px !important;
+    color:  #FFFFFF !important;
+}
+// ::ng-deep .mat-calendar-body-cell:hover{
+//     background-color: rgba(127, 51, 250, 0.4) !important;
+//     border-radius: 8px !important;
+// }
+::ng-deep .mat-calendar-body-cell:hover:not(:active) .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical):not(.mat-calendar-body-today){
+    background-color: rgba(250, 127, 51, 0.4) !important;
+    border-radius: 8px !important;
+}
+::ng-deep .mat-calendar-body-cell:active .mat-calendar-body-cell-content{
+    background-color: #FA7F33 !important;
+    border-radius: 8px !important;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+    color: #FFFFFF !important;
+}
+::ng-deep .mat-calendar-body-cell-content{
+    font-size: 14px !important;
+    letter-spacing: 0.02em !important;
+    color: #181818 ;
+    font-family: 'Inter' !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+}
+::ng-deep .mat-calendar-body-cell-content{
+    height: 40px !important;
+    width:  36px !important;
+}
+::ng-deep .mat-calendar-body-range-end{
+    width: 70% !important;
+}
+#calContainer{
+    width: 565px;
+    height: 455px;
+    display: none;
+    left: 49px;
+    top: -35px;
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 12px 16px rgb(0 0 0 / 8%), 0px 4px 56px rgb(0 0 0 / 8%);
+    border-radius: 24px;
+}
+.mat-form-field{
+    margin-left:50px;
+}
+#calButtonSection{
+    display: block;
+    background: white;
+    z-index: 1005;
+    height: 435px;
+    width: 200px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+    
+.buttonSection{
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    button{
+        border: none;
+        background-color: #ffffff;
+    }
+}
+::ng-deep .mat-datepicker-actions{
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    padding: 40px 0px 0px 0px !important;
+    flex-direction: row-reverse !important;
+    width: 345px !important;
+    button{
+        width: 150px;
+    }
+}
+::ng-deep .mat-calendar-body-in-range::before{
+    background-color: rgba(250, 127, 51, 0.4) !important;
+}
+::ng-deep .mat-calendar-body-range-start:not(.mat-calendar-body-in-comparison-range)::before{
+    width: 72% !important;
+}
+::ng-deep .mat-calendar-body-cell::before{
+    width: 77% !important;
+}
+// ::ng-deep .cdk-overlay-container{
+ 
+//     height: fit-content !important;
+//     width: fit-content !important;
+// }

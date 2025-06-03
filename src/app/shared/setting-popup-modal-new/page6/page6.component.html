@@ -1,0 +1,86 @@
+<section class="main_Customize_Select_Options">
+
+  <div class="v-scroll-area">
+    <div class="divider"></div>
+    <section class="select_Time_Body">
+      <div class="tab_Layout" *ngIf="showdays">
+        <div class="tab_Layout_Item" *ngFor="let item of dayList; let i = index"
+          [class.tab_Layout_Item_Active]="item === selectedDay" (click)="changeDayTab(item)">
+          <p class="tab_Layout_Text">{{ item.dayData.day }}</p>
+        </div>
+      </div>
+
+      <section *ngIf="dayList.length >= 1" class="select_Option_Content">
+        <div class="inside_Button_Div">
+          <span> Select </span>
+          <section class="button_Section_Select_Option">
+            <div *ngFor="let time of timeSelection" class="button_And_Recom_Div">
+              <button (click)="selectTime(time)" [class.selectedTime]="isTimeSelected(time)">
+                <div class="img_Div">
+                  <img [src]="'../../../assets/common_css/'+time.icon+'.svg'" />
+                </div>
+
+                <section class="text_Div">
+                  <p>{{time.label}}</p>
+                  <span>{{time.time}}</span>
+                </section>
+              </button>
+
+              <div class="recommended_Button_Div" *ngIf="selectedDay.recomendedTIme === time.time">
+                <img src="../../../assets/common_css/recommeded_Icon.svg" alt="" />
+                <span>Recommended</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section *ngFor="let item of dayList; let i = index" class="manual_Edit_Section">
+        <div style="display: contents;" *ngIf="item.dayData == selectedDay.dayData">
+          <p>Or Enter the hours</p>
+          <div class="manual_Edit_Button_Div">
+            <input mask="Hh:m0" class="from_Input" (keydown)="changeTime($event, selectedDay, 'start')"
+              placeholder="From" [(ngModel)]="selectedDay.startTime" />
+            <input mask="Hh:m0" [disabled]="!selectedDay.startTime" [min]="selectedDay.startTime" class="until_Input"
+              (keydown)="changeTime($event, selectedDay, 'end')" placeholder="Until"
+              [(ngModel)]="selectedDay.endTime" />
+            <!-- <ngx-mat-timepicker #start></ngx-mat-timepicker>
+          <ngx-mat-timepicker #end></ngx-mat-timepicker> -->
+          </div>
+        </div>
+      </section>
+    </section>
+    <div *ngIf="disableSave"  class="error-msg">
+      <p>*End Time cannot be lesser than Start Time</p>
+    </div>
+  </div>
+  <div class="divider second_Divider"></div>
+
+  <section class="radio_switch_Option_Section">
+    <div class="para_And_Span">
+      <p>I want to reach out at the same time on all selected days</p>
+      <span> Don’t worry, you can always change it later. </span>
+    </div>
+
+    <label class="toggle_Primary_Medium_Label">
+      <input #checkboxDays id="checkboxDays" [checked]="!showdays" (change)="radioChecked(checkboxDays.checked)"
+        type="checkbox" class="toggle_Primary_Medium_Input" />
+      <span class="toggle_Primary_Medium_Inner round"></span>
+    </label>
+  </section>
+
+  <div class="next_Button_Div">
+    <button [disabled]="disableSave" class="primary_Normal_Button_Blue width_ex_sml" (click)="nextPage()">
+      {{isSingleStep? 'Save' : 'Next'}}
+    </button>
+
+    <button (click)="pageAction.emit({page : isSingleStep ? 0 : prevStep})"
+      class="secondary_Normal_Button_Blue width_ex_sml">
+      {{isSingleStep? 'Close' : 'Back'}}
+    </button>
+  </div>
+
+
+
+
+</section>

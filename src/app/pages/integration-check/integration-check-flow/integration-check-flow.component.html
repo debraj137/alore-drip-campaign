@@ -1,0 +1,73 @@
+<!-- profile info starts here -->
+
+<div class="d-wrapper">
+<div class="profileContainer">
+
+
+  <div class="dailoge-heading">
+
+    <div class="close_Button_Div" (click)="dialogRef.close()">
+      <button class="alore_blue_Close_Button">
+        <img src="../assets/alore_Blue_Close.svg" alt="" />
+      </button>
+  </div>
+
+  <section>
+    <img src="../../../assets/icon/d-logo.svg" alt="" />
+ 
+    <h1 class="d-title">Choose an account to integrate</h1>
+    <h3 class="d-sub-title">These are the accounts which are integrated with Alore</h3>
+  </section>
+     
+  </div>
+    <!-- <button class="popup_Secondary_Medium">Manage your profile</button> -->
+    
+
+  <div class="divider"></div>
+
+  <div class="proCardsContainer scroll-vertical">
+
+    <div class="emptyMsg" *ngIf="integratedUserList.length == 0">
+      You haven't integrated any email yet.
+    </div>
+    <div *ngIf="isListLoaded" class="proFlexContainer" >
+      <div class="proCard stateClass" *ngFor="let item of integratedUserList; let i for index">
+        <button class="small_Avatar_No_Image_Not_Online">
+          <span class="small_Avatar_No_Image_Not_Online_Initial">
+            {{ item.email[0] }}
+          </span>
+          <!-- <img src="{{ item.photo }}" alt=""> -->
+        </button>
+
+        <!-- <div class="small_Avatar_Image_Not_Online">
+          <img src="{{ item.photo }}" alt="">
+        </div> -->
+
+        <div class="cardDetails" (click)="clickIndex(i)" >
+          <h3 class="proCardName">{{ item.userName || '-' }}</h3>
+          <!-- <h3 class="proCardName">{{ item.firstName }} {{ item.lastName }}</h3> -->
+          <h3 class="proCardEmail">{{ item.email }}</h3>
+        </div>
+        <!-- <button class="signoutButton">sign out</button> -->
+      </div>
+    </div>
+
+  </div>
+
+  <div class="addNewAccountCard" (click)="openGmailModal()" >
+    <img src="../../../assets/icon/add-Icon-profile.svg" alt="" />
+    <span>Add a new account</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="profooter">
+    
+    <div class="privacy">
+      <button class="privacyButton">Privacy Policy</button>
+      <button class="termButton">Terms of Service</button>
+    </div>
+  </div>
+</div>
+
+</div>

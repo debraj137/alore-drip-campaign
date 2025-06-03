@@ -1,0 +1,186 @@
+.mainBody {
+    font-family: 'Inter' !important;
+
+    .baseHeader {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        align-items: center;
+
+        .titleContainer {
+            p {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 30px;
+                line-height: 36px;
+                color: #181818;
+                margin-bottom: 0px;
+                overflow: hidden;
+                max-width: 330px;
+                display: -webkit-box;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 1;
+                /* number of lines to show */
+                line-clamp: 1;
+                -webkit-box-orient: vertical;
+            }
+        }
+
+        .search-field {
+
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #334BFA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #334BFA33;
+            }
+
+            &:active {
+                background-color: #334BFA;
+
+                img {
+                    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(195deg) brightness(175%) contrast(180%);
+                }
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+            // width: auto;
+            // height: auto;
+
+            // .text_Input_Extra_Small {
+            //     margin-top: 0px;
+            //     height: 40px;
+            //     border-radius: 5px;
+            //     // border: 1px solid transparent;
+
+            //     &:focus {
+            //         border: 1px solid transparent !important;
+            //     }
+            
+            //     .text_Input_Extra_Small:focus-within img {
+            //         display: block;
+            //       }
+            
+            
+            //       .text_Input_Extra_Small input::-webkit-search-cancel-button {
+            //         display: block;
+            //       }
+            
+            
+            // input:focus{
+            //     outline: none;
+            // }
+            // }
+        }
+
+        .button-Div {
+            display: flex;
+
+            .cursor_Pointer {
+                width: 160px;
+                margin-right: 15px
+            }
+        }
+    }
+
+
+    .disabled {
+        background: rgba(24, 24, 24, 0.1);
+        color: #18181880;
+        box-shadow: none;
+        cursor: no-drop;
+    }
+}
+
+.search-results-container{
+    padding-right: 20px;
+    height: 83vh;
+    overflow: auto;
+    display: none;
+}
+
+.heightData {
+    height: 72vh;
+}
+
+
+@media only screen and (max-width: 1366px) {
+
+    .baseHeader {
+        margin-bottom: 0px !important;
+
+        .titleContainer {
+
+            p {
+                font-size: 20px !important;
+            }
+        }
+
+        .alt_Button_Blue_With_Icon_Left {
+            width: 204px;
+            height: 36px;
+            padding: 4px 6px;
+        }
+
+        .button-Div.cursor_Pointer {
+            width: 137px;
+            margin-right: 15px;
+        }
+    }
+}
+
+@media only screen and (max-width:480px){
+    .mainBody{
+        .baseHeader{
+            flex-wrap: wrap;
+            gap:10px;
+
+            .button-Div{
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+        }
+    }
+}
+.loaderInfiniteScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.displayAfterLoader {
+    display: block !important;
+}
+
+.spinner {
+    width: 35px;
+    height: 35px;
+    margin-top: 10px;
+}
+
+
+
+@media (min-width: 1000px) and (max-width: 1580px) {
+    .baseHeader {
+
+        .text_Input_Extra_Small {
+            width: 180px;
+            margin-right: 10px;
+            input {
+                width: 40px !important;
+            }
+        }
+  
+        
+    }
+}

@@ -1,0 +1,35 @@
+<div *ngIf="params.displayName">
+    <div class="customHeaderLabel">
+        <img src="../../../../assets/icon/icon-user.svg" alt="">
+        {{ params.displayName }}
+        <div
+            [matMenuTriggerFor]="headerOption" 
+            class="expand-icon">
+            <mat-icon>
+                expand_more
+            </mat-icon>
+        </div>
+    </div>
+</div>
+<div
+    class="checkbox-database-header"
+    *ngIf="!params.displayName">
+    <mat-checkbox
+        (click)="checkedHeader()"
+        [checked]="headerChecked">
+    </mat-checkbox>
+</div>
+  
+<mat-menu class="ag-grid-haeder-option scroll-vertical" #headerOption="matMenu">
+    <div
+        *ngFor="let header of layoutService.databaseHeaderOrigin| async, let i = index"  
+        style="display: contents;">
+        <button
+            (click)="changeHeader(i)"
+            [class.active]="header.headerName === params.displayName"
+            *ngIf="header.headerName" 
+            class="baseEditButton">
+          <span>{{header.headerName}}</span>
+        </button>
+    </div>
+</mat-menu>

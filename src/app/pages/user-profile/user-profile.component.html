@@ -1,0 +1,56 @@
+<div *ngIf = "isActivityLoaded && isUserInfoLoaded" class="empty_State_User_Profile">
+  <div class="titleContainer">
+    <div class="header-Container">
+      <div class="header-content">
+        <div class="header">
+          <p>User Profile</p>
+          <div>
+            <app-breadcrumb [data]="breadcrumbData"></app-breadcrumb>
+          </div>
+        </div>
+      <button (click) = "removeProfile()"style= "width: 100px"  class="delete_Button width_ex_sml"  [disabled]="disabledButton == true">
+        Delete Account
+      </button>
+    </div>
+    </div>
+    <section class="tab_Status_Modal">
+      <div class="tab_Layout">
+        <div
+          class="tab_Layout_Item borderClassLeft"
+          [class.tab_Layout_Item_Active]="tabLayoutActive === 0"
+          (click)="onTabLayoutClick(0)"
+        >
+        <svg width="19" height="15" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.5 3.5H14.5M2 7.5H8M10 7.5H13M0.5 1.5L0.5 9.5C0.5 10.0523 0.947716 10.5 1.5 10.5L13.5 10.5C14.0523 10.5 14.5 10.0523 14.5 9.5V1.5C14.5 0.947716 14.0523 0.500001 13.5 0.500001L1.5 0.5C0.947716 0.5 0.5 0.947716 0.5 1.5Z" stroke="#181818" stroke-opacity="0.7"/>
+          </svg>
+          <p style="margin-left: 5.5px;"class="tab_Layout_Text">User Info</p>
+        </div>
+        <div
+          class="tab_Layout_Item"
+          [class.tab_Layout_Item_Active]="tabLayoutActive === 1"
+          (click)="onTabLayoutClick(1)"
+        >
+        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.5 6H6.5M9.5 10H10.5M10.5 5.5L5.5 10.5M7.30145 1.28935L6.17243 2.41837C5.98717 2.60363 5.73589 2.70772 5.47389 2.70772H3.69561C3.15001 2.70772 2.70772 3.15001 2.70772 3.69561V5.47389C2.70772 5.73589 2.60363 5.98717 2.41837 6.17243L1.28935 7.30145C0.903551 7.68725 0.903551 8.31275 1.28935 8.69855L2.41837 9.82757C2.60363 10.0128 2.70772 10.2641 2.70772 10.5261V12.3044C2.70772 12.85 3.15001 13.2923 3.69561 13.2923H5.47389C5.73589 13.2923 5.98717 13.3964 6.17243 13.5816L7.30145 14.7107C7.68725 15.0964 8.31275 15.0964 8.69855 14.7107L9.82757 13.5816C10.0128 13.3964 10.2641 13.2923 10.5261 13.2923H12.3044C12.85 13.2923 13.2923 12.85 13.2923 12.3044V10.5261C13.2923 10.2641 13.3964 10.0128 13.5816 9.82757L14.7107 8.69855C15.0964 8.31275 15.0964 7.68725 14.7107 7.30145L13.5816 6.17243C13.3964 5.98717 13.2923 5.73589 13.2923 5.47389V3.69561C13.2923 3.15001 12.85 2.70772 12.3044 2.70772H10.5261C10.2641 2.70772 10.0128 2.60363 9.82757 2.41837L8.69855 1.28935C8.31275 0.903551 7.68725 0.903551 7.30145 1.28935Z" stroke="#181818" stroke-opacity="0.7"/>
+          </svg>
+          <p style="margin-left: 5.5px;" class="tab_Layout_Text">Security</p>
+        </div>
+        <div
+          class="tab_Layout_Item borderClassRight"
+          [class.tab_Layout_Item_Active]="tabLayoutActive === 2"
+          (click)="onTabLayoutClick(2)"
+        >
+        <svg width="17" height="19" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.5 0.5V0C0.223858 0 0 0.223858 0 0.5L0.5 0.5ZM12.5 0.5H13C13 0.223858 12.7761 0 12.5 0V0.5ZM12.5 14.5L12.2764 14.9472C12.4314 15.0247 12.6155 15.0164 12.7629 14.9253C12.9103 14.8342 13 14.6733 13 14.5H12.5ZM10.5 13.5L10.7236 13.0528C10.5828 12.9824 10.4172 12.9824 10.2764 13.0528L10.5 13.5ZM8.5 14.5L8.27639 14.9472C8.41716 15.0176 8.58284 15.0176 8.72361 14.9472L8.5 14.5ZM6.5 13.5L6.72361 13.0528C6.58284 12.9824 6.41716 12.9824 6.27639 13.0528L6.5 13.5ZM4.5 14.5L4.27639 14.9472C4.41716 15.0176 4.58284 15.0176 4.72361 14.9472L4.5 14.5ZM0.5 14.5H0C0 14.6733 0.0897262 14.8342 0.237134 14.9253C0.384543 15.0164 0.568613 15.0247 0.723607 14.9472L0.5 14.5ZM2.5 13.5L2.72361 13.0528C2.58284 12.9824 2.41716 12.9824 2.27639 13.0528L2.5 13.5ZM0.5 1H12.5V0H0.5V1ZM12 0.5V14.5H13V0.5H12ZM12.7236 14.0528L10.7236 13.0528L10.2764 13.9472L12.2764 14.9472L12.7236 14.0528ZM10.2764 13.0528L8.27639 14.0528L8.72361 14.9472L10.7236 13.9472L10.2764 13.0528ZM8.72361 14.0528L6.72361 13.0528L6.27639 13.9472L8.27639 14.9472L8.72361 14.0528ZM6.27639 13.0528L4.27639 14.0528L4.72361 14.9472L6.72361 13.9472L6.27639 13.0528ZM1 14.5V0.5H0V14.5H1ZM4.72361 14.0528L2.72361 13.0528L2.27639 13.9472L4.27639 14.9472L4.72361 14.0528ZM2.27639 13.0528L0.276393 14.0528L0.723607 14.9472L2.72361 13.9472L2.27639 13.0528ZM3 5H5V4H3V5ZM7 5H10V4H7V5ZM3 8H5V7H3V8ZM7 8H10V7H7V8ZM7 11H10V10H7V11Z" fill="#181818" fill-opacity="0.7"/>
+          </svg>
+          <p style="margin-left: 5.5px;" class="tab_Layout_Text">Activity</p>
+        </div>
+      </div>
+    </section>
+    <!-- User Info tab -->
+    <app-user-info [userInfo]="userInfo" *ngIf = "tabLayoutActive === 0"></app-user-info>
+    <!-- Security tab -->
+    <app-user-security [email] = "email" [lastPasswordChangeDate] = "lastPasswordChangeDate" *ngIf = "tabLayoutActive === 1"></app-user-security>
+    <!-- Activity tab -->
+    <app-user-activity [activityItem] = "activityList" *ngIf = "tabLayoutActive === 2"></app-user-activity>
+</div>

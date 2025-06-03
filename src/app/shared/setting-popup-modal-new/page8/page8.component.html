@@ -1,0 +1,90 @@
+<section class="main_Container_Label_Div">
+    
+      <div class="empty_Msg_Div" *ngIf="labelEmptyMsgDiv == true">
+        <img src="../../../assets/common_css/label_Empty_Msg.svg" alt="" />
+    
+        <section>
+          <p>
+            You haven’t added any labels yet. Click <span (click)="pageAction.emit({page : 9})">here</span> to add labels
+          </p>
+        </section>
+      </div>
+    
+      <div *ngIf="labelEmptyMsgDiv == false">
+        <button
+          class="text_Input_Extra_Small"
+          [ngClass]="{ success: successValue == true, error: errorValue == true }"
+        >
+          <input
+            type="search"
+            placeholder="Search for Label"
+            (keyup)="getvalueOfLabel($event.target)"
+            id="check"
+          />
+          <img src="../assets/search_icon.svg" alt="" />
+        </button>
+        <div class="search_Dropdown"  (clickOutside)="checkClickOutside()" *ngIf="showResultsForLabel == true">
+          <div class="notExistInList" *ngIf="shownotExist == true">
+            <div>
+              <h5>
+                {{labelSearchvalue}} isnt a label
+              </h5>
+              <p>
+                click on create to add as label
+              </p>
+            </div>
+            <button class="primary_Normal_Button_Blue labelResultAdd" (click)="addNewLabel();pageAction.emit({page : 9})">
+              Add
+            </button>
+          </div>
+          <div
+            class="inside_Content_Div"
+            (click)="showResultsForLabel = false;clickedOnLabelResults(item,i)"
+            *ngFor="let item of labelListResult,let i = index"
+          >
+            <div style="width: 25px;
+            height: 25px;
+            border-radius: 50%;" [style.background-color]="item.labelColor">
+            </div>
+            <div class="user_Info_Div">
+              {{ item.labelName }}
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <section class="add_Label_Section scroll-vertical-new" >
+        <div *ngFor="let item of labelList; let i = index">
+          <section class="radio_Value_Section">
+            <div class="medium_CheckBox_With_Caption_Div" >
+              <mat-checkbox class="checkbox_Medium_button"
+              (click)="$event.stopPropagation();labelchecked()"
+            (change)="$event ? labelSelection.toggle(item) : null"
+            [checked]="labelSelection.isSelected(item)"> </mat-checkbox>
+            </div>
+    
+            <p>{{ item.labelName }}</p>
+          </section>
+    
+          <div [style.background-color]="item.labelColor" class="color_Div"></div>
+        </div>
+      </section>
+    
+      <div class="next_Button_Div">
+        <section>
+          <button class="primary_Normal_Button_Blue width_ex_sml" (click)="nextOnLabel()">Next</button>
+    
+          <button
+            (click)="pageAction.emit({page : prevStep})"
+            class="secondary_Normal_Button_Blue width_ex_sml"
+          >
+            Back
+          </button>
+        </section>
+        <section 
+            class="add_Info"
+            (click)="pageAction.emit({page : createLabelPosition})">
+            Click to Add/Edit Labels
+        </section>
+      </div>
+</section>

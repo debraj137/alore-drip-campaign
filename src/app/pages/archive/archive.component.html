@@ -1,0 +1,29 @@
+<div class="empty_State_Archive">
+
+  <div class="titleContainer">
+    <div class="header">
+      <p>
+        Archive
+      </p>
+      <div>
+        <app-breadcrumb [data]="breadcrumbData"></app-breadcrumb>
+      </div>
+    </div>
+  </div>
+
+  <div class="baseListContainer" *ngFor="let item of baseCampaignList ,let i = index">
+    <app-base-campaign-detail
+      (refreshBaseCampaign)="getArchieve()"
+      [campaignList]="item.campaignList"
+      [baseCampaignDetail]="item.campaignBase">
+    </app-base-campaign-detail>
+  </div>
+
+  <app-dashboard-loading *ngIf="loading">
+
+  </app-dashboard-loading>
+  <div *ngIf="emptyMsg">
+    <app-empty-state-msg></app-empty-state-msg>
+  </div>
+
+</div>

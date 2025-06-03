@@ -1,0 +1,38 @@
+<form
+    [formGroup]="formControl"
+    class="prospect-step4">
+    <div
+        *ngFor="let attribute of attributeData"
+        class="prospect-form-field">
+        <label>
+            {{replaceUnderscore(attribute)}}
+            {{isMandatoryField(attribute)}}
+        </label>
+        
+        <mat-form-field
+            class="select-input"
+            appearance="outline"
+            floatLabel="never">
+            <mat-select
+                [formControlName]="attribute"
+                >
+                <mat-option
+                    [disabled]="getFormControlValue.includes(column)"
+                    *ngFor="let column of csvColumn"
+                    [value]="column">
+                    <div class="custom-select-container">
+                        <div class="custom-select-text">
+                            <span>{{
+                                replaceUnderscore(camelToUnderscore(column))
+                            }}</span>
+                        </div>
+                    </div>
+                </mat-option>
+            </mat-select>
+
+            <button (click)="clearSpecificProspectInput(attribute); $event.stopPropagation()" class="alore_blue_Close_Button">
+                <img src="../assets/alore_Blue_Close.svg" alt="" />
+              </button>
+        </mat-form-field>
+    </div>
+</form>

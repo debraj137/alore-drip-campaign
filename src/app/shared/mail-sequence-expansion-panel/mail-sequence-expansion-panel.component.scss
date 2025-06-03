@@ -1,0 +1,560 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 32px;
+  flex-wrap: wrap;
+  border: 1px solid rgba(24, 24, 24, 0.1);
+  border-radius: 10px;
+  gap: 16px;
+  width: auto;
+}
+
+.mat-expansion-panel {
+  background: #FFF;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  border: 1px solid #1818181A;
+}
+
+.mat-expansion-panel:hover {
+  background-color: #fff;
+  border: 1px solid #334bfa;
+  box-shadow: 0px 4px 4px rgba(51, 75, 250, 0.25) !important;
+}
+
+.mat-expansion-panel:hover .divider {
+  background-image: linear-gradient(to right,
+      #334bfa 20%,
+      rgba(255, 255, 255, 0) 0%) !important;
+}
+
+.mat-expansion-panel:hover .mat-expansion-panel-header {
+  color: #334bfa;
+}
+
+// .mat-expansion-panel:active {
+//   background: #334bfa;
+//   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+// }
+// .mat-expansion-panel:active .mat-expansion-panel-header {
+//   color: #ffffff;
+// }
+// .mat-expansion-panel:active .divider {
+//   background-image: linear-gradient(
+//     to right,
+//     #fff 20%,
+//     rgba(255, 255, 255, 0) 0%
+//   ) !important;
+// }
+.mat-expansion-panel-header {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 147%;
+  padding: 0px 20px !important;
+  display: flex;
+  height: 56px;
+  align-items: center;
+  color: #181818;
+}
+
+::ng-deep .mat-expansion-indicator {
+  display: none !important;
+}
+
+.mat-expanded {
+  /* background-color: rgba(24, 24, 24, 0.05) !important; */
+  // background: rgba(24, 24, 24, 0.05);
+  background-color: #FFF;
+}
+
+.mat-expanded .mat-expansion-panel-header {
+  background-color: transparent;
+  color: #334bfa;
+}
+
+::ng-deep .mat-expanded:hover .mat-expansion-panel-content {
+  color: #334bfa !important;
+}
+
+.mat-expanded:hover .minusButton {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+.heading {
+  margin: 0px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 132%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.01em;
+  font-feature-settings: "liga" off;
+  color: #1d1929;
+}
+
+.mail-sequence-mails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+.acordian_Main_Div {
+  max-width: 100%;
+
+
+  .empty-sequence-message {
+    font-family: "Inter";
+    text-align: center;
+    margin: 30px 0;
+    font-weight: 500;
+    color: rgb(234, 87, 87);
+  }
+
+
+  .divider {
+    margin-bottom: 16px;
+    height: 2px;
+    margin-top: 0;
+  }
+}
+
+/* plus button starts here */
+.mat-expanded .plusButton {
+  display: none;
+}
+
+.expand-icon {
+  // background-color: var(--alore-main-blue);
+  background-color: #ffffff;
+  color: #334bfa;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* ::ng-deep .mat-expansion-panel-header.mat-expanded {
+   height: 24px !important;
+   padding: 16px 16px !important;
+} */
+.mat-expansion-panel:hover .plusButton {
+  cursor: pointer;
+  background-image: url("../../../assets/plus_button/PlusCircleHover.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mat-expansion-panel:active .plusButton {
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #334bfa;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-image: url("../../../assets/plus_button/PlusCirclePressed.svg");
+  background-position: center;
+}
+
+.plusButton:disabled {
+  cursor: no-drop;
+  background-image: url("../../../assets/plus_button/PlusCircleDisabled.svg");
+  background-position: center;
+}
+
+/* plus button ends here */
+
+.minusButton {
+  display: none;
+  min-width: 25px;
+  min-height: 25px;
+  margin-right: 16px;
+  background-size: 26px;
+  background-image: url("../../../assets/minus_button/MinusCircleDefault.svg");
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 50%;
+  background-position: center;
+  padding: 0px;
+}
+
+.mat-expanded .minusButton {
+  display: block;
+}
+
+// ::ng-deep .mat-expansion-panel.mat-expanded:active {
+//   color: #ffffff;
+//   background-color: #334bfa;
+//   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25),
+//     0px 4px 4px rgba(51, 75, 250, 0.25) !important;
+// }
+.mat-expansion-panel.mat-expanded:active .minusButton {
+  background-image: url("../../../assets/minus_button/MinusCirclePressed.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #334bfa;
+  box-shadow: none !important;
+}
+
+// ::ng-deep .mat-expanded:active .mat-expansion-panel-content {
+//   color: #ffffff !important;
+// }
+.expandHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  align-items: center;
+}
+
+::ng-deep .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled="true"]) {
+  background: none !important;
+}
+
+.mailSequenceAction {
+  cursor: pointer;
+}
+
+// .mailSequenceAction:hover {
+//   filter: invert(23%) sepia(92%) saturate(4474%) hue-rotate(230deg)
+//     brightness(99%) contrast(202%);
+// }
+
+/* MEDIUM TOOLTIP STARTS HERE */
+
+::ng-deep .medium_Primary_Tooltip_Ng {
+  min-width: 100px;
+  width: auto;
+  min-height: 34px;
+  max-height: auto;
+  border: none;
+  background: #334bfa;
+  border-radius: 14px !important;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 130%;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: unset !important;
+  position: relative;
+  right: -3px;
+  top: 4px;
+}
+
+::ng-deep .medium_Primary_Tooltip_Ng::after {
+  position: absolute;
+  content: "";
+  width: 0.1px;
+  height: 0.1px;
+  border-left: 12px solid #334bfa;
+  border-top: 12px solid #334bfa;
+  display: block;
+  margin-top: -15px;
+  z-index: 2;
+  left: 62px;
+  transform: rotate(225deg);
+  bottom: 42px;
+}
+
+/*
+  MEDIUM TOOLTIP ENDS HERE */
+.subjectOfEmail {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+::ng-deep .medium_Primary_Tooltip_Ng::after {
+  transform: rotate(225deg) !important;
+  bottom: -5px !important;
+}
+
+.main-Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: -webkit-fill-available;
+  width: 100%;
+
+  .icon-Text-Container {
+    flex-direction: row;
+    display: flex;
+  }
+
+  .badge_Red {
+    width: 29.5px;
+    height: 26.5px;
+  }
+}
+
+
+.main_Div_Basic_Plus {
+  border: 1px solid rgba(51, 75, 250, 0.1);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    border: 1px solid #334bfa;
+
+  }
+
+  &:active {
+    border: 1px solid transparent !important;
+
+
+  }
+
+  svg path {
+    fill: #334bfa;
+  }
+
+
+}
+
+
+/* MEDIUM TOOLTIP STARTS HERE */
+
+::ng-deep .medium_Alert_Tooltip_Angular {
+  width: 157px;
+  min-height: 34px;
+  max-height: auto;
+  border: none;
+  background: #fa336f;
+  border-radius: 14px !important;
+  color: #fff;
+  font-family: "Inter";
+  position: relative;
+  right: -60px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 130%;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: unset !important;
+}
+
+::ng-deep .medium_Alert_Tooltip_Angular::after {
+  position: absolute;
+  content: "";
+  width: 0.1px;
+  height: 0.1px;
+  border-left: 12px solid #fa336f;
+  border-top: 12px solid #fa336f;
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -15px;
+  z-index: 2;
+  left: 20px;
+  bottom: -6px;
+}
+
+
+.state-change:hover {
+  background: rgba(51, 75, 250, 0.2);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+
+.state-change:hover svg path {
+  fill: #334bfa;
+}
+
+.state-change:active {
+  background: #334BFA;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.state-change:active svg path {
+  fill: #fff;
+}
+
+
+.edit.icon-align.state-change {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+
+
+
+.edit.icon-align.state-change .main-Container {
+  align-items: center;
+}
+
+.buttonContainer .medium_Primary_Tooltip {
+  padding: 4px !important;
+}
+
+::ng-deep .mat-content {
+  overflow: visible !important;
+}
+
+
+
+.medium_Primary_Tooltip.mailSequenceAction.disabled-main-s-btn.ng-star-inserted {
+  background: rgba(24, 24, 24, 0.05);
+  border-radius: 5px;
+}
+
+.medium_Primary_Tooltip.mailSequenceAction.disabled-main-sb-btn.ng-star-inserted:hover button {
+  border-color: rgba(24, 24, 24, 0.1) !important;
+  background-color: rgba(24, 24, 24, 0.2) !important;
+}
+
+.medium_Primary_Tooltip.mailSequenceAction.disabled-main-sb-btn.ng-star-inserted button {
+  border-color: rgba(24, 24, 24, 0.1) !important;
+  background-color: rgba(24, 24, 24, 0.2) !important;
+}
+
+.medium_Primary_Tooltip.mailSequenceAction.disabled-main-sb-btn.ng-star-inserted button:active {
+  box-shadow: none !important;
+}
+
+.medium_Primary_Tooltip.mailSequenceAction.disabled-main-sb-btn.ng-star-inserted button svg path {
+  fill: rgba(24, 24, 24, 0.5);
+}
+
+.medium_Primary_Tooltip.mailSequenceAction.disabled-main-s-btn.ng-star-inserted svg path,
+.medium_Primary_Tooltip.mailSequenceAction.disabled-main-s-btn.ng-star-inserted button svg path,
+.medium_Primary_Tooltip.mailSequenceAction.disabled-main-s-btn.ng-star-inserted button:hover svg path {
+  fill: rgba(24, 24, 24, 0.35) !important;
+}
+
+
+::ng-deep .acordian_Main_Div img {
+  max-height: 200px;
+  object-fit: contain;
+
+}
+
+/* 
+MEDIUM TOOLTIP ENDS HERE */
+
+.position-spinner {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 1366px) {
+  .container {
+    padding: 15px !important;
+
+  }
+  .heading {
+    font-size: 18px;
+  }
+
+  .expandHeader{
+  .buttonContainer {
+    gap: 10px;
+
+    &> div {
+      padding: 1px 4px !important;
+      svg {
+        width: 18px;
+      }
+    }
+    .main_Div_Basic_Plus {
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+}
+  .mat-expansion-panel-header {
+    font-size: 16px !important;
+    padding: 0px 10px !important;
+    height: 50px !important;
+    font-weight: 500;
+  }
+  ::ng-deep .acordian_Main_Div {
+    .mat-expansion-panel-body {
+      padding: 0 14px 10px !important;
+    }
+  }
+  .mat-expansion-panel {
+    border-radius: 7px !important;
+  }
+  .expand-icon {
+    width: 20px !important;
+    height: 20px !important;
+
+  }
+  .acordian_Main_Div{
+  .main-Container{
+   
+    section{
+      &:nth-child(2){
+        align-items: center;
+      }
+    }
+    .badge_Red {
+      width: 25.5px !important;
+      height: 20.5px !important;
+    }
+
+  } 
+}
+  .edit.icon-align.state-change svg{
+    width:20px;
+  }
+
+  ::ng-deep .medium_Primary_Tooltip_Ng {
+    right: 24px !important;
+  }
+  
+}
+
+
+@media only screen and(max-width:480px){
+  .heading {
+    font-size: 14px;
+}
+
+.container{
+  padding: 10px !important;
+}
+
+.subjectOfEmail {
+  font-size: 14px !important;
+}
+
+.expand-icon{
+  margin-right: 5px !important;
+}
+
+.acordian_Main_Div .mat-expansion-panel-body {
+  padding: 0 7px 7px !important;
+}
+}

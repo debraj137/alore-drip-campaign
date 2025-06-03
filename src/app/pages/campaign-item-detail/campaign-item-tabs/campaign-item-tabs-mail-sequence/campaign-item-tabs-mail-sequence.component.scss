@@ -1,0 +1,34 @@
+.accordionContainer {
+    display: flex;
+    justify-content: space-between;
+    
+    @media only screen and (max-width: 1200px) {
+        flex-direction: column;
+        gap: 20px;
+
+        .componentContainer{
+            max-width: unset!important;
+        }
+    }
+
+    .componentContainer {
+        flex: 1;
+        max-width: 48%;
+    }
+}
+
+
+@media only screen and (max-width: 1366px) {
+
+    .accordionContainer {
+        gap: 15px;
+    }
+
+    .accordionContainer  {
+        .componentContainer{
+            max-width: 50%;
+        }
+
+    } 
+
+}

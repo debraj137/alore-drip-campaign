@@ -1,0 +1,62 @@
+<div class="main_Container_Daily_Volume">
+  <div class="divider"></div>
+  <section class="select_Volume_Div">
+    <div class="inside_Button_Div">
+      <span> Select </span>
+
+      <section class="button_Section">
+        <div
+          *ngFor="let volume of volumeSelection" 
+          class="button_Div">
+          <button 
+            class="volume_Modal_select_Button" 
+            (click)="volumeValue = volume" 
+            [ngClass]="{
+              preSelectedState: volumeValue == volume}">
+            <span> {{volume}} </span>
+          </button>
+
+          <div 
+            *ngIf="volume === 100"
+            class="recommended_Value_Div">
+            <img src="../../../assets/common_css/recommeded_Icon.svg" alt="" />
+            <span>Recommended</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="input_div">
+      <span> Or Enter the volume </span>
+      <button
+        class="text_Input_Extra_Small"
+        [ngClass]="{
+          error: !volumeValue
+        }"
+      >
+        <input 
+          type="number" 
+          placeholder="Play it safe, tiger"
+          (keyup)="imposeMinMax($event.target)"
+          [(ngModel)]="volumeValue"
+          id="check" />
+      </button>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <div class="next_Button_Div">
+    <button
+      class="primary_Normal_Button_Blue width_ex_sml"
+      [disabled]="!volumeValue"
+      (click)="sendVolume()">
+      {{isSingleStep? 'Save' : 'Next'}}
+    </button>
+    <button 
+      (click)="pageAction.emit({page : isSingleStep ? 0 : prevStep})" 
+      class="secondary_Normal_Button_Blue width_ex_sml">
+      {{isSingleStep? 'Close' : 'Back'}}
+    </button>
+  </div>
+
+</div>

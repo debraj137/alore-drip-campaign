@@ -1,0 +1,72 @@
+
+
+    <section class="alert-container">
+        <div class="header_Customize_Days">
+          <section class="icon_And_Header">
+            <div class="icon_Inside_Header">
+              <img src="../../../assets/common_css/{{ data.img }}.svg" alt="" />
+            </div>
+            <div class="Text_Inside_Header">
+              <p>{{data.title }}</p>
+              <span>{{data.subHeading}}</span>
+            </div>
+          </section>
+
+          <button
+          (click)="dialogRef.close()"
+          class="alore_blue_Close_Button" style="margin-bottom: 30px;"
+          
+          >
+          <img src="../../../assets/alore_Blue_Close.svg" alt="">
+        </button>
+
+        </div>
+
+    <div class="alternateText">
+        <span>
+            {{data.message}}
+        </span>
+    </div>
+    
+    <div class="actionButtons">
+      <button
+          (click)="dialogRef.close(true)"
+          class="primary_Normal_Button_Blue">
+              Close
+      </button>
+  </div>
+
+
+
+
+
+
+    <div class="actionButtons" *ngIf="data.title !== 'Test Mail Sent'">
+        <button
+            (click)="dialogRef.close(true)"
+            class="primary_Normal_Button_Blue">
+                Yes
+        </button>
+        <button
+            *ngIf="data.isMandatory"
+            (click)="dialogRef.close()"
+            class="secondary_Normal_Button_Blue">
+            No
+        </button>
+    </div>
+
+   <!-- only for save template popup  -->
+
+    <div class="actionButtons" *ngIf="data.title !== 'Test Mail Sent'">
+      <button
+          (click)="dialogRef.close(true)"
+          class="primary_Normal_Button_Blue">
+              Save
+      </button>
+      <button
+          *ngIf="data.isMandatory"
+          (click)="dialogRef.close()"
+          class="secondary_Normal_Button_Blue saveTemp">
+          Yes, go ahead without saving
+      </button>
+  </div>

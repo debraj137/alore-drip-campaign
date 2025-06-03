@@ -1,0 +1,192 @@
+.alert-container {
+  width: auto;
+  min-width: 430px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 56px rgb(0 0 0 / 8%);
+  border-radius: 20px;
+  padding: 40px 32px;
+  row-gap: 26px;
+  display: flex;
+  flex-direction: column;
+
+  .header_Customize_Days {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    //   margin-bottom: 40px;
+    .icon_And_Header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .icon_Inside_Header {
+        width: 50px;
+        height: 50px;
+        background: rgba(51, 75, 250, 0.2);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+      }
+
+      .Text_Inside_Header p {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 132%;
+        color: #181818;
+        // margin-bottom: 20px;
+      }
+
+      .Text_Inside_Header span {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 116%;
+        color: rgba(24, 24, 24, 0.8);
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .alertHeader {
+    color: #181818;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 132%;
+    color: #181818;
+    font-family: "Inter";
+  }
+
+  .alternateText {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 116%;
+    color: #181818cc;
+    text-align: start;
+    font-family: "Inter";
+  }
+
+  .actionButtons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 24px;
+    align-items: center;
+    margin-top: 40px;
+
+    .primary_Normal_Button_Blue {
+      width: 100px;
+      font-size: 14px !important;
+    }
+
+    .secondary_Normal_Button_Blue {
+      width: 100px;
+      height: 40px;
+    }
+
+    .saveTemp {
+      width: 230px;
+    }
+  }
+
+  .text_Input_Extra_Small {
+    margin-top: 0px;
+    padding-top: 8px;
+  }
+}
+
+.campaign-name-container {
+  .para_Rename {
+    margin-bottom: 10px;
+  }
+}
+
+::ng-deep {
+  .menu-transparent-bg {
+    box-shadow: none;
+    background-color: transparent;
+  }
+}
+
+.color-selection-container {
+  display: grid;
+  background-color: #ffffff;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  gap: 10px;
+
+  button {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: #334bfa33;
+    }
+
+    .color-element {
+      border-radius: 20px;
+      width: 22px;
+      height: 22.25px;
+    }
+  }
+}
+
+
+.inside_Button_Div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: inherit;
+
+  .backgroundColor {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    border-radius: 50%;
+  }
+
+  .arrow {
+    display: block;
+  }
+
+  .arrow_Button {
+    transform: rotateX(180deg);
+  }
+
+  img {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+// .disabledInput {
+//   border: 1px solid red;
+// }
+
+.disabledState button {
+  background-color: rgba(24, 24, 24, 0.1);
+  color: #18181880;
+  box-shadow: none;
+  cursor: no-drop;
+}
+
+.validationCheck {
+  border: 1px solid red;
+}

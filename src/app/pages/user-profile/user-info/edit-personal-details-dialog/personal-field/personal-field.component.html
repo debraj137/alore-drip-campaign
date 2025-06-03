@@ -1,0 +1,46 @@
+<section>
+    
+
+    <div class="first-name">
+        <h5>First Name</h5>
+    </div>
+
+    <mat-form-field
+      floatLabel="never"
+      class="search-user"
+      appearance="outline">
+
+     
+      <input matInput
+             [formControl] = "firstName"
+             [value] = "fName"
+             placeholder="Enter your First Name"
+             aria-label="State"
+             >
+        
+          
+    </mat-form-field>
+    
+    
+    <div class="last-name">
+        <h5>Last Name</h5>
+        <mat-form-field
+         floatLabel="never"
+         class="search-user"
+         appearance="outline">
+
+     
+        <input matInput   
+          [formControl] = "lastName" 
+          [value] = "lName"
+          placeholder="Enter your Last Name"
+          aria-label="State"
+        >
+        
+          
+    </mat-form-field>
+    </div>
+    
+    
+    
+</section>

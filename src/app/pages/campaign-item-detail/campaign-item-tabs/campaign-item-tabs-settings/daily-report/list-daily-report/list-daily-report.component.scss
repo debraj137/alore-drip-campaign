@@ -1,0 +1,22 @@
+.list-daily-report-container{
+    display: contents;
+
+    tr{
+        &.border-top {
+            td{
+                padding-bottom: 0!important;
+                @media (max-width: 1366px){
+                    padding-bottom: 15px !important;
+                }
+            }
+        }
+
+        td{
+            .spinner{
+                margin: auto;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}

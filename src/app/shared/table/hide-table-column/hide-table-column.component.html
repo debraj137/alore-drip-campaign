@@ -1,0 +1,47 @@
+<div class="hide-column-card">
+    <div class="header">
+        <span>Hide Columns</span>
+    </div>
+    <div  class="divider"></div>
+    <div
+        (click)="$event.stopPropagation()"
+        class="body scroll-vertical">
+        <div
+            class="column-label-wrapper"
+            *ngFor="let col of columns">
+            <label
+                *ngIf="col !== 'select'"
+                class="toggle_Primary_Small_Label">
+                <input
+                    #checkBoxEl
+                    type="checkbox"
+                    [disabled]="col == 'campaign_name'"
+                    [checked]="!columnVisibility(col)"
+                    (change)="onHideColumn(col, checkBoxEl.checked)"
+                    class="toggle_Primary_Small_Input">
+                <span class="toggle_Primary_Small_Inner round"></span>
+            </label>
+            <span
+                *ngIf="col !== 'select'"
+                class="column-label">
+                {{filterTableHeader(col)}}
+            </span>
+        </div>
+    </div>
+    <div
+        (click)="$event.stopPropagation()"
+        class="footer">
+        <button
+            [disabled]="hidedColumn.length <= 0"
+            (click)="showAll()"
+            class="popup_Primary_Extra_Extra_Small_Button">
+            Show All
+        </button>
+        <button
+            [disabled]="(hidedColumn.length + 1) === columns?.length"
+            (click)="hideAll()"
+            class="popup_Primary_Extra_Extra_Small_Button">
+            Hide All
+        </button>
+    </div>
+</div>

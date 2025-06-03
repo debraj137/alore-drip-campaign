@@ -1,0 +1,86 @@
+<div class="chart" *ngIf="!loader">
+  <div class="chart-first-tier">
+    <header class="chart-header">
+      <span class="chart-header-title">Daily Link Clicks</span>
+    </header>
+    <div class="noGraph" *ngIf="isDataEmpty">
+      <img src="../../../assets/no-volume-graph.svg" alt="" >
+      <span>Daily link clicks data empty</span>
+    </div>
+
+    <!-- <button
+          [matMenuTriggerFor]="dateRangePicker"
+          class="chart-dropdown">
+          <span>
+            {{diffMonth || diffDay}} {{diffMonth === 0 ? 'Days' : 'Months'}}
+          </span>
+          <mat-icon>
+              expand_more
+          </mat-icon>
+      </button> -->
+
+    <div
+      *ngIf="!isDataEmpty"
+      class="chart-total-wrapper">
+      <div class="chart-body">
+        <div class="chart-total-like-wrapper">
+          <p class="chart-desc">Total Link Clicks: {{reqId}}</p>
+        </div>
+        
+        <div  class="chart-demo">
+
+          <div *ngFor="let elem of lineChartData; let i = index" class="chart-icon-wrapper">
+            <div class="chart-icon" [style.backgroundColor]="elem.borderColor"></div>
+            <p class="chart-icon-desc">Link {{i+1}}</p>
+          </div>
+       
+
+
+          
+        </div>
+      </div>
+    </div>
+    <div
+      *ngIf="!isDataEmpty"
+      class="chart-bar-chart-wrapper">
+      <canvas baseChart id="myChart" #myChart
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [legend]="lineChartLegend"
+          [type]="lineChartType"
+          [plugins]="lineChartPlugins">
+      </canvas>
+    </div>
+  </div>
+</div>
+<app-graph-loader
+  [title]="'Daily Link Clicks'"
+  *ngIf="loader">
+</app-graph-loader>
+
+<!--
+<mat-menu #dateRangePicker="matMenu" >
+  <app-date-range-picker
+  (selectedRangeValueChange)="onDateChanged($event)"
+  >
+  </app-date-range-picker>
+</mat-menu>
+<app-graph-loader
+  [title]="'Daily Volume'"
+  *ngIf="loader == true">
+</app-graph-loader > -->
+
+
+<!-- let resp  = {
+  columns : ["27th jan", "28th jan", "29th jan", "30th jan"],
+  data: [{
+    links : [1,2,5,6]
+  },
+  {
+    links: [1,8,4,19]
+  },
+  {
+    links: [1,5]
+  }]
+}  -->

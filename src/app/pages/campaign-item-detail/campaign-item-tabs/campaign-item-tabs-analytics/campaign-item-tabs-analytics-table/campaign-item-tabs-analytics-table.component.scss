@@ -1,0 +1,253 @@
+.campaign-detail-container {
+    margin-bottom: 50px;
+
+    .table-container {
+        font-family: "Inter" !important;
+
+        .header {
+            display: flex;
+            margin-bottom: 37px;
+
+            h2 {
+                flex: auto;
+                margin: 0;
+            }
+        }
+
+        .action-button {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+
+
+            .hide-details {
+                color: #181818;
+                width: 103px;
+                height: 43px;
+                background-color: transparent;
+                border-radius: 5px;
+                border: none;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                font-size: 15px;
+                gap: 5px;
+                padding: 0 10px;
+                transition: background-color 300ms linear;
+                font-family: 'Inter';
+                line-height: 14px;
+
+                &:hover {
+
+
+                    img {
+                        filter: invert(99%) sepia(100%) saturate(6800%) hue-rotate(230deg) brightness(98%) contrast(100%);
+                    }
+
+                    color: var(--alore-main-blue);
+                    background-color: var(--alore-blue-hover);
+                }
+
+                &:active {
+                    color: #ffffff;
+
+                    background-color: var(--alore-main-blue);
+                    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+
+                    img {
+
+                        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(1008%) contrast(101%);
+                    }
+                }
+
+                Img {
+                    width: 20px;
+                    height: 20px;
+                }
+
+            }
+
+            .alt_Button_Blue_With_Icon_Left {
+                width: 140px;
+                padding: 0;
+
+                .alt_Button_Blue_With_Icon_Left span {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+            }
+
+            .alt_Button_Blue_With_Icon_Right {
+                width: 100px;
+                padding: 0;
+
+                .alt_Button_Blue_With_Icon_Right_Text {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+            }
+        }
+    }
+
+    .emptyState {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        margin-top: 50px;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            position: absolute;
+            height: 250px;
+        }
+    }
+}
+
+.badge_Tag_Green {
+    background: rgba(36, 202, 73, 0.1);
+    border: 1px solid #1BD2A4;
+
+    .badge_Tag_Text {
+        color: #1BD2A4;
+        letter-spacing: 0.1;
+    }
+}
+
+.label-desc {
+    color: rgba(24, 24, 24, 0.7);
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 170%;
+    padding-top: 5px;
+    display: flex;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+::ng-deep mat-checkbox {
+    z-index: 9999;
+    border-radius: 5px !important;
+
+    .mat-checkbox-inner-container {
+        height: 24px;
+        width: 24px;
+
+        &:hover {
+            border-color: #334bfa !important;
+            background-color: rgba(51, 75, 250, 0.2) !important;
+            border-radius: 5px !important;
+
+            .mat-checkbox-frame {
+                transition: none;
+                border-color: #334bfa;
+            }
+
+            .mat-ripple {
+                display: none;
+            }
+        }
+    }
+}
+
+::ng-deep {
+    .hide-column {
+        margin-left: -230px;
+        border-radius: 30px !important;
+        font-family: 'Inter';
+
+        .hide-column-card {
+            padding: 30px;
+            border-radius: 20px;
+            width: 240px;
+
+            .header {
+                color: #181818E5;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 132%;
+                letter-spacing: 0.01em;
+                margin-bottom: 15px;
+                font-family: 'Inter';
+            }
+
+            .body {
+                max-height: fit-content;
+                display: flex;
+                gap: 10px;
+                flex-direction: column;
+                font-family: 'Inter';
+
+                .column-label-wrapper {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    .column-label {
+                        text-transform: capitalize;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 14px;
+                    }
+                }
+            }
+
+            .footer {
+                display: flex;
+                gap: 24px;
+                margin-top: 20px;
+
+                button {
+                    flex: 1;
+                }
+            }
+        }
+    }
+}
+
+.margin-center {
+    margin: 0 auto;
+}
+
+.pl-5 {
+    padding-left: 5px;
+}
+
+.item-center {
+    margin: 0 auto;
+}
+
+
+@media (max-width: 1366px) {
+    .campaign-item-tabs-analytics-container {
+        margin-bottom: 50px;
+
+    }
+
+    .campaign-detail-container {
+
+        .action-button {
+            .hide-details {
+                height: 35px !important;
+                font-size: 12px !important;
+                gap: 0px;
+                padding: 0 7px !important;
+
+                img {
+                    width: 15px !important;
+                    height: 15px !important;
+
+                }
+
+
+            }
+        }
+
+    }
+}

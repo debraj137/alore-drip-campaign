@@ -1,0 +1,345 @@
+// chart 1 starts here
+.chart {
+    margin-bottom: 30px;
+
+    @media (min-width: 1000px) {
+        margin-bottom: 0;
+        margin-right: 30px;
+    }
+}
+
+.chart-first-tier {
+    height: 100%;
+}
+
+.chartLoader {
+    width: 100%;
+    display: flex;
+    margin-right: 30px;
+}
+
+.chart-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 14px;
+    font-family: 'Inter';
+}
+
+.chart-total-wrapper {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 117%;
+}
+
+.black-color {
+    color: #181818 !important;
+}
+
+.pageSection {
+    position: absolute;
+    width: 712px;
+    height: 408px;
+    background: #ffffff;
+    box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.08), 0px 4px 56px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    margin: 15px;
+}
+
+.chart-header {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 132%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+    font-feature-settings: "liga" off;
+    color: #334bfa;
+}
+
+.likesIcon {
+    width: 12px;
+    height: 12px;
+    left: 0px;
+    top: 0px;
+    position: relative;
+    display: flex;
+    background: #334bfa;
+    border-radius: 4px;
+}
+
+.followsIcon {
+    width: 12px;
+    height: 12px;
+    left: 0px;
+    top: 0px;
+    position: relative;
+    display: flex;
+    background: #7f33fa;
+    border-radius: 4px;
+}
+
+// chart 1 ends here
+// Common styles starts here
+
+.totalSectionHead {
+    color: #181818;
+    width: 648px;
+    height: 40px;
+    left: 0px;
+    top: 0px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 117%;
+    display: flex;
+    align-items: center;
+    margin: 0px auto;
+}
+
+.totalNumSubSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    position: static;
+    width: 648px;
+    height: 16px;
+    left: 0px;
+    top: 40px;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px auto;
+    justify-content: space-between;
+}
+
+.chart-wrapper {
+    margin-top: 20px;
+
+    canvas{
+        height: 260px!important;
+
+        @media (max-width: 1300px) {
+            height: auto!important;
+        }
+    }
+}
+
+.numberSection {
+    width: 32%;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+    color: rgba(24, 24, 24, 0.7);
+}
+
+.demoButtons {
+    width: 28%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    width: 82px;
+    column-gap: 10px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: rgba(24, 24, 24, 0.7);
+}
+
+.follows {
+    display: flex;
+    align-items: center;
+    width: 90px;
+    column-gap: 10px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: rgba(24, 24, 24, 0.7);
+}
+
+// Common styles ends here
+
+.chart {
+
+
+    // calender starts here
+    ::ng-deep .mat-calendar-body-today {
+        background: #33FAE3 !important;
+        border-radius: 8px !important;
+        border: none !important;
+    }
+
+    // ::ng-deep .mat-datepicker-content{
+    //     width:420px;
+    //     height: 450px;
+    //     // margin-left: 50px;
+    //     background: #FFFFFF !important;
+    // /* Shadow/24dp */
+
+    //     box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.08), 0px 4px 56px rgba(0, 0, 0, 0.08) !important;
+    //     border-radius: 24px !important;
+    // }
+    // ::ng-deep .mat-datepicker-content .mat-calendar{
+    //     width: 360px !important;
+    //     height: 325px !important;
+
+    // }
+
+    ::ng-deep .mat-calendar-content {
+        border-bottom: 2px dotted rgba(24, 24, 24, 0.2) !important;
+    }
+
+    ::ng-deep .mat-calendar-table-header-divider::after {
+        background: none !important;
+        border-bottom: 2px dotted rgba(24, 24, 24, 0.2) !important;
+    }
+
+    // ::ng-deep .mat-calendar-content{
+    //     padding: 0px 0px 0px 35px !important;
+    // }
+    ::ng-deep .mat-datepicker-content .mat-calendar {
+        // width: unset !important;
+        // height: unset !important;
+        // padding: 30px !important;
+    }
+
+    ::ng-deep .mat-calendar-period-button {
+        letter-spacing: 0.01em !important;
+
+        color: #181818 !important;
+        font-family: 'Inter' !important;
+        font-style: normal !important;
+        font-weight: 700 !important;
+        font-size: 18px !important;
+        line-height: 135% !important;
+    }
+
+    ::ng-deep .mat-calendar-body-selected {
+        background: #7F33FA !important;
+        border-radius: 8px !important;
+        color: #FFFFFF !important;
+    }
+
+    // ::ng-deep .mat-calendar-body-cell:hover{
+    //     background-color: rgba(127, 51, 250, 0.4) !important;
+    //     border-radius: 8px !important;
+    // }
+    ::ng-deep .mat-calendar-body-cell:hover:not(:active) .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical):not(.mat-calendar-body-today) {
+        background-color: rgba(127, 51, 250, 0.4) !important;
+        border-radius: 8px !important;
+    }
+
+    ::ng-deep .mat-calendar-body-cell:active .mat-calendar-body-cell-content {
+        background-color: #7F33FA !important;
+        border-radius: 8px !important;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+        color: #FFFFFF !important;
+    }
+
+    ::ng-deep .mat-calendar-body-cell-content {
+        font-size: 14px !important;
+        letter-spacing: 0.02em !important;
+        color: #181818;
+        font-family: 'Inter' !important;
+        font-style: normal !important;
+        font-weight: 500 !important;
+    }
+
+    ::ng-deep .mat-calendar-body-cell-content {
+        height: 40px !important;
+        width: 50px !important;
+    }
+}
+
+#calContainer {
+    width: 420px;
+    height: 634px;
+    display: none;
+    left: 49px;
+    top: -20px;
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0px 12px 16px rgb(0 0 0 / 8%), 0px 4px 56px rgb(0 0 0 / 8%);
+    border-radius: 24px;
+}
+
+.mat-form-field {
+    margin-left: 50px;
+}
+
+#calButtonSection {
+    display: block;
+    background: white;
+    z-index: 1005;
+    height: 188px;
+    bottom: 0px;
+    position: absolute;
+    width: 419px;
+}
+
+.noGraph {
+    display: flex;
+    width: 86%;
+    position: absolute;
+    height: 80%;
+    flex-wrap: wrap;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+// ::ng-deep .cdk-overlay-container{
+
+//     height: fit-content !important;
+//     width: fit-content !important;
+// }
+.emptyGraphContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 110px 0px;
+}
+
+@media (min-width: 1000px) and (max-width: 1299px) {
+    .emptyGraphContainer {
+        margin: 60px 0px !important;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .chart {
+    margin-right:10px !important;
+    }
+}
+
+@media only screen and (max-width:480px){
+     .chart{
+        margin-right:0px !important;
+        .chart-total-wrapper {
+            font-size: unset !important;
+            line-height: 117%;
+        }
+     }
+}

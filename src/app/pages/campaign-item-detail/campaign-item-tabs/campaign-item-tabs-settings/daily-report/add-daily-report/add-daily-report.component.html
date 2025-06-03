@@ -1,0 +1,69 @@
+<div  class="add-daily-report-container default-modal">
+    <div class="header">
+        <div class="icon">
+            <img src="../../../assets/common_css/hash_Tag_Icon.svg" alt="" />
+        </div>
+        <div class="label">
+            <p>Add an email to send daily</p>
+            <span>Put a email address to send-a-mail list 🤓</span>
+        </div>
+        <div class="close-button">
+            <button
+                (click)="dialogRef.close()"
+                class="alore_blue_Close_Button"
+            >
+            <img src="../assets/alore_Blue_Close.svg" alt="" />
+            </button>
+        </div>
+    </div>
+    <form
+        [formGroup]="formControl"
+        class="body">
+        <div class="form-field">
+            <span>
+                Email address
+            </span>
+            <mat-form-field
+                floatLabel="never"
+                appearance="outline">
+                <input
+                    formControlName="email"
+                    matInput
+                    placeholder="Enter a valid email"
+                    [focus]="true"
+                    >
+                <mat-error>
+                    Email invalid
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+
+    <div class="action-area">
+      <button
+        (click)="submitDailyReport()"
+        [disabled]="!formControl.valid"
+        class="primary_Normal_Button_Blue width_ex_sml">
+        <!-- <div
+            *ngIf="submitLoader">
+
+            <div class="loader triangle">
+              <svg viewBox="0 0 86 80">
+                <polygon points="43 8 79 72 7 72"></polygon>
+              </svg>
+            </div>
+
+        </div> -->
+
+        <div *ngIf="submitLoader" class="spinner"></div>
+        <span *ngIf="!submitLoader">
+            Save
+        </span>
+      </button>
+      <button
+        (click)="dialogRef.close()"
+        class="secondary_Normal_Button_Blue width_ex_sml">
+        Cancel
+      </button>
+    </div>
+</div>

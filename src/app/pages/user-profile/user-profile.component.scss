@@ -1,0 +1,45 @@
+.empty_State_User_Profile {
+  .titleContainer{
+    .header-Container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      .header-content{
+        width: 100%;
+        display:  flex;
+        justify-content: space-between;
+      }
+      .header {
+        display: flex;
+        flex-direction: column;
+        p{
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 30px;
+          line-height: 36px;
+          color: #181818;
+          margin-bottom: 12px;
+      }
+      }
+    .button-Div {
+      .cursor_Pointer {
+        width: 160px;
+        margin-right: 15px
+      }
+  }
+    }
+  }
+}
+::ng-deep .tab_Layout_Item::after {
+  background-color: transparent !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+

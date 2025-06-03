@@ -1,0 +1,23 @@
+<div class="step2">
+    <mat-radio-group 
+        (change)="valueChanges()"
+        [(ngModel)]="step2Model">
+        <mat-radio-button class="radio_Medium_button"
+            *ngFor="let step1 of step2Selection['selection'+step1Model]; let i = index"
+            [value]="i+1">
+            <div class="desc">
+                <span>
+                    {{step1.label}}
+                </span>
+                <p>
+                    {{step1.desc}}
+                </p>
+                <div *ngIf="i === 0"
+                     class="recommended_Value_Div">
+                    <img src="../../../../../assets/common_css/recommeded_Icon.svg" alt="" />
+                    <span>Most often used</span>
+                </div>
+            </div>
+        </mat-radio-button>
+    </mat-radio-group>
+</div>

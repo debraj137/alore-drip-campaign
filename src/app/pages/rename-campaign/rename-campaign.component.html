@@ -1,0 +1,44 @@
+<section class="alert-container">
+  <div class="header_Customize_Days">
+    <section class="icon_And_Header">
+      <div class="icon_Inside_Header">
+        <img src="../../../assets/common_css/setting_Icon_Popup_Modal.svg" alt="" />
+      </div>
+      <div class="Text_Inside_Header">
+        <p>Rename Campaign</p>
+        <span>Edit the campaign name</span>
+      </div>
+    </section>
+
+    <button
+    (click)="dialogRef.close()"
+    class="alore_blue_Close_Button" style="margin-bottom: 30px;">
+      <img src="../../../assets/alore_Blue_Close.svg" alt="">
+    </button>
+
+  </div>
+
+  
+  <div class="campaign-name-container">
+    <p class="para_Rename" >
+      Campaign Name
+      <span class="info_icon" matTooltipClass="small_Primary_Tooltip" mat-raised-button matTooltipPosition="above"
+        matTooltip="
+              Enter Campaign Name
+            ">
+        <!-- {{ data.type.includes('base') ? 'Base' + ' Name' : 'Campaign' +'Name' }} -->
+        <img src="../../../assets/common_css/info_About_Time_Zone.svg" alt="" />
+      </span>
+    </p>
+    <div [formGroup]="rename" class="text_Input_Extra_Small">
+      <input formControlName="renameInput" [(ngModel)]="campaignName" input type="text"  id="check" />
+    </div>
+    <!-- <p *ngIf="isCampaignNameExist">campaign name already exist</p> -->
+  </div>
+
+  <div class="actionButtons" (click)="click()">
+    <button class="primary_Normal_Button_Blue">
+      Rename
+    </button>
+
+  </div>

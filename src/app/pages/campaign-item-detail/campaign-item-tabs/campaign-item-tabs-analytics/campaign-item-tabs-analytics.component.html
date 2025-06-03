@@ -1,0 +1,54 @@
+<div
+  class="
+    campaign-item-tabs-analytics-container
+    scroll-horiz
+  ">
+  <app-volume-chart
+    [baseId]="baseId"
+    [campaignId]="campaignId">
+  </app-volume-chart>
+  <app-open-rates
+    [baseId]="baseId"
+    [campaignId]="campaignId">
+  </app-open-rates>
+  
+</div>
+
+<!-- uncomment this for provider graph -->
+<section class="tab_Status_Modal" style="margin-top: 30px;">
+  
+  <div class="tab_Layout">
+    <div
+      class="tab_Layout_Item borderClassLeft"
+      [class.tab_Layout_Item_Active]="tabLayoutActive === 0"
+      (click)="onTabLayoutClick(0)"
+    >
+    <img  src="../../../../assets/icon/icon-google.svg" alt="">
+      <p style="margin: 0px 0px 0px 5.5px;"class="tab_Layout_Text">Gmail</p>
+    </div>
+    <div
+      class="tab_Layout_Item"
+      [class.tab_Layout_Item_Active]="tabLayoutActive === 1"
+      (click)="onTabLayoutClick(1)"
+    >
+    <img class="img-mail" src="../../../../assets/img/outlook.png" alt="">
+
+      <p style="margin: 0px 0px 0px 5.5px;" class="tab_Layout_Text">Outlook</p>
+    </div>
+    <div
+      class="tab_Layout_Item borderClassRight"
+      [class.tab_Layout_Item_Active]="tabLayoutActive === 2"
+      (click)="onTabLayoutClick(2)"
+    >
+     <img class="img-mail" src="../../../../assets/img/others.png" alt="">
+      <p  style="margin: 0px 0px 0px 5.5px;" class="tab_Layout_Text">Others</p>
+    </div>
+  </div>
+
+  
+  <app-provider-graph [providerIndex]="tabLayoutActive"></app-provider-graph>
+</section>
+
+
+<app-campaign-item-tabs-analytics-table>
+</app-campaign-item-tabs-analytics-table>

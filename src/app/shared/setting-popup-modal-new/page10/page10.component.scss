@@ -1,0 +1,124 @@
+.page10-container{
+    max-width: 512px;
+
+    .desc{
+        margin-bottom: 25px;
+
+        h1{
+            font-size: 28px;
+            margin: 0 0 5px 0;
+            margin-bottom: 28px!important;
+        }
+
+        p{
+            margin: 5px 0;
+        }
+
+        span, p{
+            color: var(--alore-para-light);
+            font-size: 14px;
+            text-align: justify;
+            line-height: 20px;
+
+            a{
+                text-decoration: none;
+                color: var(--alore-main-blue);
+                position: relative;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+
+        small{
+            font-size: 15px;
+            color: var(--alore-secondary-text);
+        }
+    }
+    .body{
+        display: flex;
+        gap: 22px;
+        justify-content: space-between;
+
+        .integration-button{
+            border-radius: 7px;
+            flex: auto;
+            font-size: 16px;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-weight: 600;
+            text-transform: capitalize;
+            max-width: 135.672px;
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            &:nth-child(1) {
+                .icon{
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+
+            &:nth-child(2){
+                background-color: #EAF8FF;
+                transition: background-color linear 500ms;
+
+                &:hover{
+                    background-color: #c2dce9;
+                }
+            }
+            &:nth-child(3){
+                background-color: #FFF6DC;
+                transition: background-color linear 500ms;
+
+                &:hover{
+                    background-color: #f5eac9;
+                }
+            }
+
+            small{
+                color: #f24f4f;
+                font-size: 8px;
+            }
+
+            .icon{
+                margin-bottom: 19px;
+                height: 78px;
+                width: 78px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #ffffff;
+                border-radius: 100px;
+
+                img{
+                    width: 50%;
+                }
+                svg{
+                    width: 139px;
+                    height: 35px;
+                }
+            }
+        }
+    }
+
+    .action-button {
+        display: flex;
+        gap: 24px;
+        width: 100%;
+        align-items: flex-end;
+        margin-top: 20px;
+
+        button {
+            width: 100px;
+        }
+    }
+}

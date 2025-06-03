@@ -1,0 +1,16 @@
+<div style="text-align: center; ">
+   
+  <div *ngIf = "gotValue" [matMenuTriggerFor]="prospectList" >
+   {{ value }}
+  </div>
+</div>
+
+
+<mat-menu class="prospect-mat-menu" #prospectList="matMenu" >
+
+    <button *ngFor="let data of statusValue; let i = index" (click)="changeProspectData(i)" >
+                  <span >{{ data.status }}</span>
+    </button>
+
+                  
+</mat-menu>

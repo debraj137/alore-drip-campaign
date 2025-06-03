@@ -1,0 +1,1236 @@
+// ----------------------------------------
+
+.drop_Down_Button_With_Icon {
+  width: 150px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #334bfa;
+  border-radius: 10px;
+  padding: 0 16px;
+}
+
+::ng-deep .mat-select-arrow-wrapper {
+  display: none !important;
+}
+
+::ng-deep .mat-select-panel {
+  border-radius: 5px !important;
+  padding: 8px;
+  border: 1px solid #334bfa;
+  box-sizing: border-box;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.08), 0px 4px 48px rgba(0, 0, 0, 0.08);
+  width: 224px;
+  height: 187px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+::ng-deep .mat-select-panel .mat-option.mat_Option_With_Icon {
+  display: flex !important;
+  height: 51px !important;
+  width: 214px !important;
+  // margin: 0 auto !important;
+}
+
+.mat_Option_With_Icon {
+  border-radius: 5px;
+}
+
+// ---------------------------------------
+/* Dropdown starts here */
+// ::ng-deep .mat-select-panel {
+//     border-radius: 16px !important;
+//     border: 1px solid #334bfa;
+//     box-sizing: border-box;
+//     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.08), 0px 4px 48px rgba(0, 0, 0, 0.08);
+//     width: 224px;
+//     height: 174px;
+//   }
+
+// ::ng-deep .mat-select-panel .mat-option {
+//   display: flex !important;
+//   height: 50px !important;
+//   width: 140px !important;
+//   margin: 0 auto !important;
+// }
+
+.matOption {
+  width: 96%;
+  margin: 5px auto;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  height: 50px !important;
+  background: #fff;
+}
+
+.matOption:hover {
+  background: rgba(51, 75, 250, 0.2) !important;
+  /* color: #334bfa !important; */
+}
+
+.matOption:active {
+  opacity: 1 !important;
+  background-color: #334bfa !important;
+  /* color: #fff !important; */
+  box-shadow: inset 0px 4px 4px rgba(0, 23, 187, 0.25) !important;
+}
+
+.matOption:active .accessType span {
+  color: #ffffff !important;
+}
+
+.matOption:hover .accessType span {
+  color: #334bfa;
+}
+
+.matOption:active img {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(197deg) brightness(201%) contrast(103%);
+}
+
+.matOption:disabled {
+  background: rgba(24, 24, 24, 0.1) !important;
+}
+
+.matOption:disabled .accessType span {
+  color: rgba(24, 24, 24, 0.1) !important;
+}
+
+.matOption img {
+  height: 22px;
+  width: 22px;
+}
+
+.accessType {
+  display: flex;
+  width: 85%;
+  flex-wrap: wrap;
+}
+
+.dropButton {
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid rgba(24, 24, 24, 0.5);
+}
+
+.mainAccess {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  height: 20px;
+  display: flex;
+  color: #181818;
+  width: 100%;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.subAccess {
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  height: 20px;
+}
+
+::ng-deep .mat-option-text {
+  display: flex !important;
+  height: 50px !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ::ng-deep .mat-option-text-hover {
+      color: #334BFA;
+  } */
+
+::ng-deep .mat-select-text {
+  color: rgba(24, 24, 24, 0.5);
+}
+
+::ng-deep .mat-select-panel {
+  margin-top: -45px;
+  position: fixed;
+  margin-left: 8px;
+}
+
+::ng-deep .my-select-panel-class {
+  min-width: 0px !important;
+  width: 150px !important;
+  height: 120px !important;
+  border-radius: 5px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+::ng-deep .my-select-panel-class .mat-option {
+  height: 30px !important;
+}
+
+.dropdownSection {
+  display: flex;
+  margin: 50px;
+  width: 800px;
+  justify-content: space-between;
+}
+
+/* Dropdown ends here */
+
+//* ALL CHECKBOX WITHOUT CAPTION BUTTON STARTS HERE  */
+::ng-deep.mat-checkbox-checked.mat-accent.mat-checkbox-disabled .mat-checkbox-background {
+  background-color: rgba(51, 75, 250, 0.5);
+}
+
+::ng-deep.mat-checkbox-checked.mat-accent.mat-checkbox-disabled .mat-checkbox-frame {
+  background-color: rgba(24, 24, 24, 0.1) !important;
+  border-color: transparent;
+}
+
+::ng-deep.mat-checkbox-checked.mat-accent.mat-checkbox-disabled:hover .mat-checkbox-frame {
+  border-color: transparent;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #334bfa;
+  border-radius: 6px;
+}
+
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+  background-color: black !important;
+}
+
+::ng-deep .mat-checkbox:hover .mat-checkbox-frame {
+  background-color: rgba(51, 75, 250, 0.2);
+  border-color: #334bfa;
+}
+
+::ng-deep .mat-checkbox.mat-checkbox-disabled:hover .mat-checkbox-frame {
+  background-color: transparent;
+  border-color: #b0b0b0;
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+  border-color: rgba(24, 24, 24, 0.5);
+  border-radius: 6px;
+}
+
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+  display: none;
+}
+
+/* large checkbox button class starts */
+::ng-deep .mat-checkbox.checkbox_Large_button .mat-checkbox-inner-container {
+  height: 32px;
+  width: 32px;
+}
+
+::ng-deep .mat-checkbox-disabled .mat-checkbox-frame {
+  background: #1818181a !important;
+  border: 2px solid #18181840 !important;
+  border-radius: 6px !important;
+}
+
+.large_CheckBox_Div {
+  display: flex;
+  align-items: center;
+  /* width: 80px; */
+  justify-content: space-between;
+}
+
+.large_Label_Div {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 112%;
+  letter-spacing: 0.03em;
+  color: #181818;
+}
+
+/* large checkbox button class ends  */
+/* Medium checkbox button class starts  */
+::ng-deep .mat-checkbox.checkbox_Medium_button .mat-checkbox-inner-container {
+  height: 24px;
+  width: 24px;
+}
+
+.medium_CheckBox_Div {
+  display: flex;
+  align-items: center;
+  width: 74px;
+  justify-content: space-between;
+}
+
+.medium_Label_Div {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 112%;
+  letter-spacing: 0.03em;
+  color: #181818;
+}
+
+/* Medium checkbox button class ends  */
+/* Small checkbox button class starts  */
+::ng-deep .mat-checkbox.checkbox_Small_button .mat-checkbox-inner-container {
+  height: 20px;
+  width: 20px;
+}
+
+.small_CheckBox_Div {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  justify-content: space-between;
+}
+
+.small_Label_Div {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 112%;
+  letter-spacing: 0.03em;
+  color: #181818;
+}
+
+/* Small checkbox button class ends  */
+/* // MEDIUM CHECKBOX STARTS HERE */
+/* // ALL CHECKBOX WITHOUT CAPTION BUTTON ENDS HERE  */
+/* // ALL CHECKBOX WITH CAPTION STARTS HERE  */
+.large_CheckBox_With_Caption_Div {
+  display: flex;
+  align-items: center;
+}
+
+.medium_CheckBox_With_Caption_Div {
+  display: flex;
+  align-items: center;
+}
+
+.small_CheckBox_With_Caption_Div {
+  display: flex;
+  align-items: center;
+}
+
+.large_Label_With_Caption_Div {
+  margin-left: 10px;
+  margin-top: 2px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 112%;
+  letter-spacing: 0.03em;
+  color: #181818;
+}
+
+.medium_Label_With_Caption_Div {
+  margin-left: 10px;
+  margin-top: 2px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 112%;
+  letter-spacing: 0.03em;
+  color: #181818;
+}
+
+.small_Label_With_Caption_Div {
+  margin-left: 10px;
+  margin-top: 2px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 112%;
+  letter-spacing: 0.03em;
+  color: #181818;
+}
+
+.large_Caption {
+  font-size: 12px !important;
+  color: #181818cc !important;
+}
+
+.medium_Caption {
+  font-size: 12px !important;
+  color: #181818cc !important;
+}
+
+.small_Caption {
+  font-size: 10px !important;
+  color: #181818cc !important;
+}
+
+.captionDisable {
+  color: #18181850 !important;
+}
+
+// ALL CHECKBOX WITH CAPTION ENDS HERE
+
+// All RADIO BUTTON STARTS HERE */
+
+/* // LARGE RADIO BUTTON STARTS HERE */
+
+.large_Radio_Div {
+  display: flex;
+  align-items: center;
+}
+
+.radio_Large {
+  width: 32px;
+  height: 32px;
+  border: 2px solid rgba(24, 24, 24, 0.5);
+  box-sizing: border-box;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.radio_Large:hover {
+  border: 2px solid #334bfa;
+  background: #334bfa33;
+}
+
+.radio_Large:active {
+  background-color: #334bfa !important;
+}
+
+.radioLargeDiv {
+  border: 2px solid #334bfa !important;
+  background-color: #334bfa !important;
+}
+
+.radioActiveLarge {
+  background-color: #fff;
+  width: 25px;
+  height: 16px;
+  border-radius: 100px;
+  display: block;
+}
+
+.radioLargeDiv:disabled {
+  opacity: 0.5;
+}
+
+.radio_Large:disabled {
+  background: rgba(24, 24, 24, 0.1);
+  border: 2px solid rgba(24, 24, 24, 0.25);
+}
+
+/* // LARGE RADIO BUTTON ENDS HERE  */
+
+::ng-deep .mat-radio-button.mat-accent:not(.mat-radio-disabled):hover .mat-radio-outer-circle {
+  background-color: rgba(51, 75, 250, 0.2);
+  border-color: #334bfa;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: transparent;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-ripple {
+  display: none;
+}
+
+/* large radio button starts here  */
+
+::ng-deep .mat-radio-button.radio_Large_button.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #334bfa;
+  border-width: 8px;
+  /* width: 32px;
+    height: 32px; */
+}
+
+::ng-deep .mat-radio-button.radio_Large_button .mat-radio-label .mat-radio-container .mat-radio-outer-circle {
+  width: 32px;
+  height: 32px;
+}
+
+::ng-deep .mat-radio-button.radio_Large_button .mat-radio-container {
+  width: 32px;
+  height: 32px;
+}
+
+/* large radio button ends here  */
+
+/* medium radio button starts here  */
+
+::ng-deep .mat-radio-button.radio_Medium_button.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #334bfa;
+  border-width: 6px;
+  /* width: 32px;
+    height: 32px; */
+}
+
+::ng-deep .mat-radio-button.radio_Medium_button .mat-radio-label .mat-radio-container .mat-radio-outer-circle {
+  width: 24px;
+  height: 24px;
+}
+
+::ng-deep .mat-radio-button.radio_Medium_button .mat-radio-container {
+  width: 24px;
+  height: 24px;
+}
+
+/* medium radio button ends here  */
+
+/* small radio button starts here  */
+
+::ng-deep .mat-radio-button.radio_Small_button.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #334bfa;
+  border-width: 6px;
+  /* width: 32px;
+    height: 32px; */
+}
+
+::ng-deep .mat-radio-button.radio_Small_button .mat-radio-label .mat-radio-container .mat-radio-outer-circle {
+  width: 20px;
+  height: 20px;
+}
+
+::ng-deep .mat-radio-button.radio_Small_button .mat-radio-container {
+  width: 20px;
+  height: 20px;
+}
+
+/* small radio button ends here  */
+
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked.mat-radio-disabled .mat-radio-outer-circle {
+  border-color: rgba(51, 75, 250, 0.5);
+}
+
+::ng-deep.mat-radio-button.mat-accent:not(.mat-radio-checked).mat-radio-disabled .mat-radio-outer-circle {
+  background-color: rgba(24, 24, 24, 0.1);
+}
+
+::ng-deep .mat-radio-ripple .mat-ripple-element {
+  display: none;
+}
+
+/* // MEDIUM RADIO BUTTON STARTS  */
+
+.medium_Radio_Div {
+  display: flex;
+  align-items: center;
+}
+
+.radio_Medium {
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(24, 24, 24, 0.5);
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+}
+
+.radio_Medium:hover {
+  border: 2px solid #334bfa;
+  background: #334bfa33;
+}
+
+.radio_Medium:active {
+  background-color: #334bfa !important;
+}
+
+.radioMediumDiv {
+  border: 2px solid #334bfa !important;
+  background-color: #334bfa !important;
+}
+
+.radioActiveMedium {
+  background-color: #fff;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radioMediumDiv:disabled {
+  opacity: 0.5;
+}
+
+.radio_Medium:disabled {
+  background: rgba(24, 24, 24, 0.1);
+  border: 2px solid rgba(24, 24, 24, 0.25);
+}
+
+/* // MEDIUM RADIO BUTTON ENDS HERE
+
+
+// SMALL RADIO BUTTON STARTS HERE */
+
+.small_Radio_Div {
+  display: flex;
+  align-items: center;
+}
+
+.radio_small {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(24, 24, 24, 0.5);
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+}
+
+.radio_small:hover {
+  border: 2px solid #334bfa;
+  background: #334bfa33;
+}
+
+.radio_small:active {
+  background-color: #334bfa !important;
+}
+
+.radioSmallDiv {
+  border: 2px solid #334bfa !important;
+  background-color: #334bfa !important;
+}
+
+.radioActiveSmall {
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio_Medium:disabled {
+  background: #1818181a !important;
+  border: 2px solid #18181840 !important;
+}
+
+/* 
+// SMALL RADIO BUTTON ENDS HERE
+
+
+// All RADIO BUTTON ENDS HERE */
+
+/* 
+// All PRIMARY SIZE TOOLTIP STARTS HERE 
+
+// SMALL TOOLTIP STARTS HERE  */
+
+::ng-deep .small_Primary_Tooltip {
+  width: 117px;
+  min-height: 34px;
+  max-height: auto;
+  border: none;
+  background: #334bfa;
+  border-radius: 14px !important;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: unset !important;
+}
+
+::ng-deep .small_Primary_Tooltip::after {
+  position: absolute;
+  content: "";
+  width: 0.1px;
+  height: 0.1px;
+  border-left: 12px solid #334bfa;
+  border-top: 12px solid #334bfa;
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -15px;
+  z-index: 2;
+  left: 20px;
+  bottom: -6px;
+}
+
+/* // SMALL TOOLTIP ENDS HERE
+
+// MEDIUM TOOLTIP STARTS HERE */
+
+::ng-deep .medium_Primary_Tooltip {
+  width: 157px;
+  min-height: 34px;
+  max-height: auto;
+  border: none;
+  background: #334bfa;
+  border-radius: 14px !important;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 130%;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: unset !important;
+}
+
+::ng-deep .medium_Primary_Tooltip::after {
+  position: absolute;
+  content: "";
+  width: 0.1px;
+  height: 0.1px;
+  border-left: 12px solid #334bfa;
+  border-top: 12px solid #334bfa;
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -15px;
+  z-index: 2;
+  left: 20px;
+  bottom: -6px;
+}
+
+/* 
+// MEDIUM TOOLTIP ENDS HERE
+
+// LARGE TOOLTIP STARTS HERE  */
+
+::ng-deep .large_Primary_Tooltip {
+  width: 235px;
+  min-height: 34px;
+  max-height: auto;
+  border: none;
+  background: #334bfa;
+  border-radius: 14px !important;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px !important;
+  line-height: 130%;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: unset !important;
+}
+
+::ng-deep .large_Primary_Tooltip::after {
+  position: absolute;
+  content: "";
+  width: 0.1px;
+  height: 0.1px;
+  border-left: 12px solid #334bfa;
+  border-top: 12px solid #334bfa;
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -15px;
+  z-index: 2;
+  left: 20px;
+  bottom: -6px;
+}
+
+/* // LARGE TOOLTIP ENDS HERE
+
+// All PRIMARY SIZE TOOLTIP ENDS HERE */
+
+/* // All ALERT SIZE TOOLTIP STARTS HERE 
+
+// SMALL TOOLTIP STARTS HERE  */
+
+::ng-deep .small_Alert_Tooltip {
+  width: 117px;
+  min-height: 34px;
+  max-height: auto;
+  border: none;
+  background: #fa336f;
+  border-radius: 14px !important;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 130%;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: unset !important;
+}
+
+::ng-deep .small_Alert_Tooltip::after {
+  position: absolute;
+  content: "";
+  width: 0.1px;
+  height: 0.1px;
+  border-left: 12px solid #fa336f;
+  border-top: 12px solid #fa336f;
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -15px;
+  z-index: 2;
+  left: 20px;
+  bottom: -6px;
+}
+
+/* // SMALL TOOLTIP ENDS HERE
+
+// MEDIUM TOOLTIP STARTS HERE */
+
+::ng-deep .medium_Alert_Tooltip {
+  width: 157px;
+  min-height: 34px;
+  max-height: auto;
+  border: none;
+  background: #fa336f;
+  border-radius: 14px !important;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 130%;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: unset !important;
+}
+
+::ng-deep .medium_Alert_Tooltip::after {
+  position: absolute;
+  content: "";
+  width: 0.1px;
+  height: 0.1px;
+  border-left: 12px solid #fa336f;
+  border-top: 12px solid #fa336f;
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -15px;
+  z-index: 2;
+  left: 20px;
+  bottom: -6px;
+}
+
+/* 
+// MEDIUM TOOLTIP ENDS HERE
+
+// LARGE TOOLTIP STARTS HERE  */
+
+::ng-deep .large_Alert_Tooltip {
+  width: 235px;
+  min-height: 34px;
+  max-height: auto;
+  border: none;
+  background: #fa336f;
+  border-radius: 14px !important;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px !important;
+  line-height: 130%;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: unset !important;
+}
+
+::ng-deep .large_Alert_Tooltip::after {
+  position: absolute;
+  content: "";
+  width: 0.1px;
+  height: 0.1px;
+  border-left: 12px solid #fa336f;
+  border-top: 12px solid #fa336f;
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -15px;
+  z-index: 2;
+  left: 20px;
+  bottom: -6px;
+}
+
+/* // LARGE TOOLTIP ENDS HERE
+
+// All ALERT SIZE TOOLTIP ENDS HERE
+
+
+// All SECONDARY SIZE TOOLTIP STARTS HERE
+
+// SMALL TOOLTIP STARTS HERE  */
+
+::ng-deep .small_Secondary_Tooltip {
+  width: 117px;
+  min-height: 34px;
+  max-height: auto;
+  border: none;
+  background: #7f33fa;
+  border-radius: 14px !important;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  /* line-height: 130%; */
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: unset !important;
+}
+
+::ng-deep .small_Secondary_Tooltip::after {
+  position: absolute;
+  content: "";
+  width: 0.1px;
+  height: 0.1px;
+  border-left: 12px solid #7f33fa;
+  border-top: 12px solid #7f33fa;
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -15px;
+  z-index: 2;
+  left: 20px;
+  bottom: -6px;
+}
+
+/* // SMALL TOOLTIP ENDS HERE
+
+// MEDIUM TOOLTIP STARTS HERE */
+
+::ng-deep .medium_Secondary_Tooltip {
+  width: 157px;
+  min-height: 34px;
+  max-height: auto;
+  border: none;
+  background: #7f33fa;
+  border-radius: 14px !important;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 130%;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: unset !important;
+}
+
+::ng-deep .medium_Secondary_Tooltip::after {
+  position: absolute;
+  content: "";
+  width: 0.1px;
+  height: 0.1px;
+  border-left: 12px solid #7f33fa;
+  border-top: 12px solid #7f33fa;
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -15px;
+  z-index: 2;
+  left: 20px;
+  bottom: -6px;
+}
+
+/* // MEDIUM TOOLTIP ENDS HERE
+
+// LARGE TOOLTIP STARTS HERE  */
+
+::ng-deep .large_Secondary_Tooltip {
+  width: 235px;
+  /* min-height: 34px;
+    max-height: auto; */
+  height: auto;
+  border: none;
+  background: #7f33fa;
+  border-radius: 14px !important;
+  color: #fff;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px !important;
+  line-height: 130%;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: unset !important;
+}
+
+::ng-deep .large_Secondary_Tooltip::after {
+  position: absolute;
+  content: "";
+  width: 0.1px;
+  height: 0.1px;
+  border-left: 12px solid #7f33fa;
+  border-top: 12px solid #7f33fa;
+  transform: rotate(45deg);
+  display: block;
+  margin-top: -15px;
+  z-index: 2;
+  left: 20px;
+  bottom: -6px;
+}
+
+/* // LARGE TOOLTIP ENDS HERE
+
+
+// All SECONDARY SIZE TOOLTIP STARTS HERE */
+
+// add a bcc or forward emails starts here
+
+.main_Container_BCC {
+  width: auto;
+  min-width: 520px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 56px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
+  margin: 50px;
+
+  .header_Container_BCC {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .icon_And_Header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .icon_Inside_Header {
+        width: 50px;
+        height: 50px;
+        background: rgba(51, 75, 250, 0.2);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+      }
+
+      .Text_Inside_Header p {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 132%;
+        color: #181818;
+      }
+
+      .Text_Inside_Header span {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 116%;
+        color: rgba(24, 24, 24, 0.8);
+        margin-top: 4px;
+      }
+    }
+
+    .close_Button_Div {
+      padding-bottom: 24px;
+    }
+  }
+
+  .input_Field_Section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    .bcc_Div {
+      p {
+        margin-bottom: 8px;
+      }
+
+      .text_Input_Extra_Small {
+        width: -webkit-fill-available;
+        margin-top: 0;
+      }
+    }
+
+    .forward_Div {
+      p {
+        margin-bottom: 8px;
+      }
+
+      .text_Input_Extra_Small {
+        width: -webkit-fill-available;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .button_Div {
+    .primary_Normal_Button_Blue {
+      margin-right: 24px;
+      width: 100px;
+      padding: 0;
+    }
+
+    .secondary_Normal_Button_Blue {
+      width: 100px;
+      padding: 0;
+      height: 40px;
+    }
+  }
+}
+
+// add a bcc or forward emails ends here
+
+// customize time zone form starts here
+
+.main_Container_TimeZone {
+  width: 484px;
+  height: 672px;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 56px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 40px 32px;
+  // row-gap: 50px;
+  display: flex;
+  flex-direction: column;
+
+  .header_TimeZone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .icon_And_Header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .icon_Inside_Header {
+        width: 50px;
+        height: 50px;
+        background: rgba(51, 75, 250, 0.2);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+      }
+
+      .Text_Inside_Header p {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 132%;
+        color: #181818;
+      }
+
+      .Text_Inside_Header span {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 116%;
+        color: rgba(24, 24, 24, 0.8);
+        margin-top: 4px;
+      }
+    }
+
+    .close_Button_Div {
+      padding-bottom: 24px;
+    }
+  }
+
+  .divide {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .body {
+    p {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 112%;
+      color: #181818;
+      margin-bottom: 25px;
+    }
+
+    div {
+      display: flex;
+    flex-direction: row;
+    row-gap: 25px;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    justify-content: space-between;
+
+      .details_Container_Section {
+        display: flex;
+        border: 2px solid #181818b2;
+        flex-direction: row;
+        width: 106px;
+        height: 45px;
+        padding: 0px 10px;
+        border-radius: 5px;
+        align-items: center;
+
+        .image_Div {
+          border-right: 1px solid #181818B2;
+          width: 25px;
+          height: 24px;
+          padding-right: 5px;
+        }
+
+        .main_Details {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-left: 5px;
+
+          .para {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 116%;
+            color: #181818B2;
+            margin-bottom: 5px;
+          }
+
+          span {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 116%;
+            color: #181818B2;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+// customize time zone form starts here

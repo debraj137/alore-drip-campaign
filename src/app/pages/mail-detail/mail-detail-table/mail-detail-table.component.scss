@@ -1,0 +1,257 @@
+.campaign-detail-container{
+  margin-bottom: 50px;
+
+  .table-container{
+      font-family: "Inter" !important;
+      .header{
+          display: flex;
+          margin-bottom: 37px;
+
+          h2{
+              flex: auto;
+              margin: 0;
+          }
+      }
+
+      .action-button{
+          display: flex;
+          gap: 12px;
+          justify-content: flex-end;
+
+          .hide-details{
+            width: 103px;
+            height: 43px;
+              color: #181818;
+              background-color: transparent;
+              border-radius: 5px;
+              border: none;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              font-size: 15px;
+              gap: 5px;
+              padding: 0 10px;
+              transition: background-color 300ms linear;
+
+              &:hover{
+                  color: var(--alore-main-blue);
+                  background-color: var(--alore-blue-hover);
+                  img{
+                    filter:invert(99%) sepia(100%) saturate(6800%) hue-rotate(230deg) brightness(98%) contrast(100%);
+                }
+              }
+
+              &:active{
+                  color: #ffffff;
+                  background-color: var(--alore-main-blue);
+                  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    img{
+
+                        filter:invert(100%) sepia(0%) saturate(0%) hue-rotate(150deg) brightness(1008%) contrast(101%);
+                    }
+              }
+
+              Img {
+                width: 20px;
+                height: 20px;
+              }
+          }
+          .alt_Button_Blue_With_Icon_Left {
+            width: 140px;
+            padding: 0;
+
+            .alt_Button_Blue_With_Icon_Left span {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+           }
+      }
+  }
+}
+
+.label-desc {
+  color: rgba(24, 24, 24, 0.7);
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 170%;
+}
+
+::ng-deep{
+  .hide-column{
+      margin-left: -230px;
+      border-radius: 30px !important;
+    font-family: 'Inter';
+      .hide-column-card{
+          padding: 30px;
+          border-radius: 20px;
+          width: 240px;
+
+          .header{
+              color: #181818E5;
+              font-weight: 700;
+              font-size: 18px;
+              line-height: 132%;
+              letter-spacing: 0.01em;
+            //   border-bottom: 2px dashed #18181833;
+              padding-bottom: 15px;
+              font-family: 'Inter';
+              margin-bottom: 15px;
+          }
+          .body{
+              max-height: fit-content;
+              display: flex;
+              gap: 10px;
+              flex-direction: column;
+              font-family: 'Inter';
+              .column-label-wrapper{
+                  display: flex;
+                  gap: 10px;
+                  align-items: center;
+
+                  .column-label{
+                      text-transform: capitalize;
+                      font-weight: 500;
+                      font-size: 14px;
+                      line-height: 14px;
+                  }
+              }
+          }
+          .footer{
+              display: flex;
+              gap: 24px;
+              margin-top: 20px;
+
+              button{
+                  flex: 1;
+              }
+          }
+      }
+  }
+}
+
+.date-copy {
+  justify-content: flex-start !important;
+}
+
+.align-center-td {
+  margin: 0 auto;
+}
+
+.date-text {
+  font-family: 'Inter';
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.responsive-table-container{
+    table{
+        ::ng-deep{
+            tbody{
+                tr{
+                    cursor: default !important;
+                    &:hover{
+                        td{
+                            &:nth-child(1) p{
+                              
+                             }
+
+                             background-color: transparent !important;
+                           
+                          
+                          
+                           
+                        }
+                    }
+                    &:active{
+                        background-color: transparent!important;
+                        box-shadow: none !important;
+                        td {
+
+                            &:nth-child(2) p{
+                             
+                             }
+                            border-width: 2px 0;
+                            border-style: solid;
+                         
+
+                            .label-desc,
+                            .label-name {
+                                color: #ffffff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width:480px){
+
+    ::ng-deep{
+        .hide-column{
+            margin-left:unset !important;
+            border-radius: 10px !important;
+            .hide-column-card{
+                padding: 15px !important;
+                border-radius: unset !important;
+                width: 193px !important;
+      
+                .header{
+                    font-size: 16px !important;
+                    margin-bottom: 15px;
+                    padding-bottom:0px !important;
+                }
+
+                .footer {
+                    gap: 10px !important;
+                    margin-top: 15px;
+                }
+             
+             
+            }
+        }
+      }
+
+}
+
+
+::ng-deep   .small_Primary_Tooltip {
+    width: 100%;
+    position: relative;
+    right: 30px;
+    min-height: 34px;
+    max-height: auto;
+    border: none;
+    background: #334BFA;
+    border-radius: 14px !important;
+    color: #fff;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: unset !important;
+  }
+  ::ng-deep .small_Primary_Tooltip::after {
+    position: absolute;
+    content: "";
+    width: 0.1px;
+    height: 0.1px;
+    border-left: 12px solid #334BFA;
+    border-top: 12px solid #334BFA;
+    transform: rotate(45deg);
+    display: none;
+    margin-top: -15px;
+    z-index: 2;
+    left: 59px !important;
+    bottom: -6px;
+  }

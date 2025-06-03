@@ -1,0 +1,44 @@
+<div class="page-1-container">
+
+  <section class="control_Setting">
+    <div class="main_Div_Center">
+      <div class="control_setting_Value">
+        <div class="medium_Radio_Div">
+          <mat-radio-button class="radio_Medium_button" [checked]="selectedOption == 1" (change)="selectedOption = 1"
+            value="1"></mat-radio-button>
+          <!-- <div class="medium_Label_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label</div> -->
+        </div>
+
+        <section class="desc_Beside_Radio">
+          <p>Yes, I would like you continue with same setting</p>
+          <span>Don’t worry you can always edit the settings</span>
+        </section>
+      </div>
+
+
+      <div class="control_setting_Value">
+        <div class="medium_Radio_Div">
+          <mat-radio-button class="radio_Medium_button" [checked]="selectedOption == 2" (change)="selectedOption = 2"
+            value="1"></mat-radio-button>
+          <!-- <div class="medium_Label_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label</div> -->
+        </div>
+
+        <section class="desc_Beside_Radio">
+          <p>No, I would like customise the settings to my needs</p>
+          <span>We are all up for it!</span>
+        </section>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="button_Div">
+    <button (click)="checkSelection()" class="primary_Normal_Button_Blue">
+      Next
+    </button>
+
+    <button (click)="pageAction.emit(0)" class="secondary_Normal_Button_Blue width_ex_sml">
+      Cancel
+    </button>
+  </div>
+</div>

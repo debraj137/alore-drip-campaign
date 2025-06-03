@@ -1,0 +1,25 @@
+<div
+    [class]="notification.status"
+    *ngIf="display"
+    class="message">
+    <div class="icon">
+        <svg>
+            <use xlink:href="#notification_icon" />
+        </svg>
+    </div>
+    <div class="message-container">
+        <span>
+            {{notification.title}}
+        </span>
+        <p>
+            {{notification.message}}
+        </p>
+    </div>
+    <div class="close-icon">
+        <mat-icon
+            (click)="display = false"
+            inline>
+            close
+        </mat-icon>
+    </div>
+</div>

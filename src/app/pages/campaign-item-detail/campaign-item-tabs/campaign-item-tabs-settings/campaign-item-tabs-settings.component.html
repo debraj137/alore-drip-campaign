@@ -1,0 +1,111 @@
+<div class="campaign-item-tab-settings scroll-horiz">
+  <table>
+    <!-- table header -->
+    <tr class="border-top border-bottom">
+      <td>
+        <div class="mail-Integration-Div">
+          <p>
+            <img
+              class="integration"
+              src="../assets/custom_icons/Integration.svg"
+              alt=""
+            />
+            <b class="left_First_Header">Mail Integration</b>
+          </p>
+
+          <img class="not-Integrated-Img" *ngIf="!isIntegrated" src="../../../../../assets/common_css/not_Integrated.svg" alt="">
+        </div>
+
+      </td>
+      <td class="integrated_Using">Integrated using:</td>
+      <td>
+        <p *ngIf="isIntegrated">
+          
+          <img 
+          *ngIf="campaignDetails.provider == 'gmail'"
+          src="../../../../../assets/google_logo.svg" alt="" />
+          <img class="outlook_img"
+          *ngIf="campaignDetails.provider == 'ews'"
+          src="../../../../../assets/outlook.png" alt="" />
+          <span class="color_green">{{campaignDetails?.email}}</span>
+        </p>
+
+        <p class="color-red" *ngIf="!isIntegrated">
+          You have not integrated any email
+        </p>
+      </td>
+      <td>
+        <span class="color-red" *ngIf="!isIntegrated">Not Integrated</span>
+        <span class="color_green" *ngIf="isIntegrated"> Active </span>
+      </td>
+
+      <td class="re_intergate_Button">
+        <button *ngIf="isIntegrated"
+          [disabled]="getUserRole"
+          (click)="removeEmailIntegration()"
+          class="primary_Normal_Button_Blue width_ex_sml">
+          Re-integrate
+        </button>
+        <button *ngIf="!isIntegrated"
+          [disabled]="getUserRole"
+          (click)="openIntegrateModal()"
+          class="primary_Normal_Button_Blue width_ex_sml">
+          Integrate
+        </button>
+
+        <!-- <button 
+            
+           (click)="launchVesselConnect()"
+          class="primary_Normal_Button_Blue width_ex_sml">
+          Push to CRM
+        </button> -->
+      </td>
+    </tr>
+
+    <!-- email block list -->
+    <app-list-blocked-email
+      style="display: contents;"
+      (refreshData)="getBlockedData()"
+      [campaignId]="campaignId"
+      [blockedEmailData]="blockedEmailData">
+    </app-list-blocked-email>
+
+    <!-- domain block list -->
+    <app-list-blocked-domain
+      style="display: contents;"
+      (refreshData)="getBlockedData()"
+      [campaignId]="campaignId"
+      [blockedDomainData]="blockedDomainData">
+    </app-list-blocked-domain>
+
+    <!-- Add bcc layout -->
+    <app-list-bcc
+      style="display: contents;"
+      [campaignId]="campaignId">
+    </app-list-bcc>
+
+    <app-list-daily-report
+      style="display: contents;"
+      (refreshData)="getReportData()"
+      [dailyReportData]="dailyReportData"
+      [campaignId]="campaignId">
+    </app-list-daily-report>
+
+    <app-list-weekly-report
+      style="display: contents;"
+      (refreshData)="getReportData()"
+      [weeklyReportData]="weeklyReportData"
+      [campaignId]="campaignId">
+    </app-list-weekly-report>
+
+    <!-- notification section -->
+    <app-email-notification-setting
+      style="display: contents;"
+      [campaignId]="campaignId">
+    </app-email-notification-setting>
+  </table>
+</div>
+
+
+
+

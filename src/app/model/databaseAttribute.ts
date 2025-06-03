@@ -1,0 +1,22 @@
+export interface databaseAttribute{
+email ?: string;
+firstName ?: string;
+lastName ?: string;
+phone ?: string;
+workPhone ?: string;
+address ?: string;
+city ?: string;
+state ?: string;
+title ?: string;
+company ?: string;
+companyDomain ?: string;
+country ?: string;
+linkedinUrl ?: string;
+profilePhoto ?: string;
+qualification ?: string;
+industry ?: string;
+tags ?: string;
+campaignId ?: string;
+Status ?: string;
+AloreId ?: string;
+}

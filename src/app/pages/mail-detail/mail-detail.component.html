@@ -1,0 +1,28 @@
+<div class="mail-detail">
+  <div class="mail-detail-header">
+    <h1 class="mail-detail-header-title">
+      <ngx-emoji class="dynamicEmoji" [set]="'google'" [emoji]="currentEmailEmoji" [size]="30">
+      </ngx-emoji>{{mailId}} </h1>
+      <button class="{{ currentTemplateStatus }}_State">
+        <span class="{{ currentTemplateStatus }}_State_Text">
+           {{ currentTemplateStatus }}
+        </span>
+    </button>
+  </div>
+  <app-breadcrumb [data]="breadcrumbData"></app-breadcrumb>
+  <div class="mail-detail-body">
+    <div class="mail-detail-charts">
+      <app-daily-links-click
+        [mailId]="personalizedEmailId"
+        [campaignId]="campaignId">
+      </app-daily-links-click>
+      <app-daily-open-rates
+        [mailId]="personalizedEmailId"
+        [campaignId]="campaignId">
+      </app-daily-open-rates>
+    </div>
+    <div>
+      <app-mail-detail-table [campaignId]="campaignId" [mailId]="personalizedEmailId"></app-mail-detail-table>
+    </div>
+  </div>
+</div>

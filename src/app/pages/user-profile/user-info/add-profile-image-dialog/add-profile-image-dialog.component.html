@@ -1,0 +1,62 @@
+<section >
+    <!-- tags start here  -->
+
+    <div class="main_Container_Tag">
+        <section class="header_Div_Tag">
+            <div>
+                <section class="header_Tag_Modal">
+                    <section class="header_Img_Tag_Modal">
+                        <div class="icon_Div_Tag_Modal">
+                            <img src="../../../assets/edit-pdetails.svg" alt="" />
+                        </div>
+                        <div class="header_Div_Tag_Modal">
+                            <h2 class="top_Header_On_Tag_Modal">Upload Image</h2>
+
+                            <p>All your information stays safe with us</p>
+                        </div>
+                    </section>
+                    <button class="alore_blue_Close_Button" [disabled]="disabledButton == true"
+                        (click)="dialogRef.close()">
+                        <img src="../assets/alore_Blue_Close.svg" alt="" />
+                    </button>
+                </section>
+            </div>
+
+            <div class="primary-divider"></div>
+
+            <div class="middle_div_Tag_Modal">
+
+                <div  class="file-uploader-container">
+
+                    <div>
+                        <input type="file" class="file-input" (change)="onFileSelected($event)">
+                        <div  class="upload-desc">
+
+                            <img *ngIf = "!isImageUploaded" src = "../../../../../assets/icon/upload-icon.svg" alt="">
+                            <img *ngIf = "isImageUploaded" width="90" height="90" src = {{img}} alt="">
+                            <p class="text-upload">Drag and Drop your file (only .jpg, .png & .jpeg files)</p>
+                            <p class="text-upload">or</p>
+                            <p class="text-upload"> Click <span>here</span> to browse
+                            </p>
+                        </div>
+                    </div>
+            
+                </div>
+
+
+  
+            </div>
+
+            <div class="button_Div_Tag_Modal">
+                <button class="popup_Primary_Extra_Small_Button width_ex_sm" (click)="dialogRef.close(); uploadImage()" [disabled]="disabledButton == true">
+                    Save
+                </button>
+
+                <button class="popup_Secondary_Extra_Small_Button width_ex_sm" (click)="dialogRef.close()" [disabled]="disabledButton == true">
+                    Close
+                </button>
+            </div>
+        </section>
+    </div>
+
+</section>

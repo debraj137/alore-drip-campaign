@@ -1,0 +1,79 @@
+.error-screen-container {
+    background-color: #F4F0EB;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .error-info-card {
+      
+        display: flex;
+        background-color: white;
+        /* gap: 64px;*/
+
+        .left-side {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            font-family: 'Inter';
+            font-style: normal;
+
+            h2 {
+                font-weight: 600;
+                font-size: 60px;
+                line-height: 72px;
+                letter-spacing: -0.02em;
+                cursor: default;
+                user-select: none; 
+                color: #101828;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+                margin-top: 24px;
+                cursor: default;
+                user-select: none; 
+                max-width: 480px;
+                color: #667085;
+            }
+
+            button {
+                background-color: #7F33FA;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                color: #ffffff;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                width: 99px;
+                line-height: 116%;
+                padding: 13px 15px;
+                cursor: pointer;
+                margin-top: 61px;
+            }
+        }
+
+        
+    }
+}
+
+
+.error-info-card > div {
+    width: 50%;
+}
+
+.right-side img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.inner-content {
+    padding: 0px 20px 0px 112px;
+}

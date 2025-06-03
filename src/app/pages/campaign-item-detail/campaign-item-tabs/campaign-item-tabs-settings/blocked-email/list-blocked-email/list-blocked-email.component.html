@@ -1,0 +1,136 @@
+<div class="list-blocked-mail-container">
+    <tr
+      class="border-top border-bottom"
+      *ngIf="blockedEmailData.length <= 0">
+      <td>
+        <div
+          class="div_first">
+          <p>
+            <img
+              class="unheartBlue"
+              src="../assets/custom_icons/unheartBlue.svg"
+              alt=""
+            />
+            <b class="left_First_Header">Email Block List</b>
+          </p>
+          <button
+              *ngIf="!getUserRole"
+              [disabled]="getUserRole"
+              (click)="openAddBlockedMail()"
+              class="main_Div_Basic_Plus">
+
+              <img src="../assets/custom_icons/add_Icon_Setting.svg" alt="">
+             
+            </button>
+
+            <button
+              *ngIf="getUserRole"
+               class = "disabled-add-button"
+              >
+
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="24" height="24" rx="5" fill="#181818" fill-opacity="0.2"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.25C12.1989 6.25 12.3897 6.32902 12.5303 6.46967C12.671 6.61032 12.75 6.80109 12.75 7V11.25H17C17.1989 11.25 17.3897 11.329 17.5303 11.4697C17.671 11.6103 17.75 11.8011 17.75 12C17.75 12.1989 17.671 12.3897 17.5303 12.5303C17.3897 12.671 17.1989 12.75 17 12.75H12.75V17C12.75 17.1989 12.671 17.3897 12.5303 17.5303C12.3897 17.671 12.1989 17.75 12 17.75C11.8011 17.75 11.6103 17.671 11.4697 17.5303C11.329 17.3897 11.25 17.1989 11.25 17V12.75H7C6.80109 12.75 6.61032 12.671 6.46967 12.5303C6.32902 12.3897 6.25 12.1989 6.25 12C6.25 11.8011 6.32902 11.6103 6.46967 11.4697C6.61032 11.329 6.80109 11.25 7 11.25H11.25V7C11.25 6.80109 11.329 6.61032 11.4697 6.46967C11.6103 6.32902 11.8011 6.25 12 6.25Z" fill="#181818" fill-opacity="0.5"/>
+              <rect x="0.5" y="0.5" width="23" height="23" rx="4.5" stroke="#181818" stroke-opacity="0.1"/>
+              </svg>
+             
+            </button>
+        </div>
+      </td>
+      <td>
+        <div class="integrated_Email_Div">
+          <p>No data</p>
+        </div>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr
+      [class.border-top]="i === 0"
+      [class.border-bottom]="i + 1 === blockedEmailData.length"
+      *ngFor="let emailData of blockedEmailData; let i = index">
+      <td>
+        <div
+          *ngIf="i === 0"
+          class="div_first">
+          <p>
+            <img
+              class="unheartBlue"
+              src="../assets/custom_icons/unheartBlue.svg"
+              alt=""
+            />
+            <b class="left_First_Header">Email Block List</b>
+          </p>
+          <button
+              (click)="openAddBlockedMail()"
+              class="main_Div_Basic_Plus">
+              <img src="../assets/custom_icons/add_Icon_Setting.svg" alt="">
+          </button>
+        </div>
+      </td>
+      <td class="col-email">
+          <div class="integrated_Email_Div">
+            
+            <p>{{(emailData.emailId.length>12)? (emailData.emailId | slice:0:12)+'...':(emailData.emailId) || 'email empty'}}</p>
+          </div>
+      </td>
+      <td>
+          <div class="gmail_Button_Div">
+            <button [ngClass]="emailData.blockType === 1 ? 'warning' : 'danger'" class="secondary_Normal_Button_Orange_With_Icon_Right"
+              [matMenuTriggerFor]="menu">
+              <span class="secondary_Normal_Button_Orange_With_Icon_Right_Text">
+                {{
+                  emailData.blockType === 1 ?
+                    'For this Campaign' :
+                    'For all Campaigns'
+                }}
+                <img src="../assets/common_css/more_Purple_Icon.svg" alt="" />
+              </span>
+            </button>
+            <mat-menu #menu="matMenu" class="campaign-menu">
+              <button class="button-mat-menu"
+                [class.btn-active-campaign]="emailData.blockType === 1"
+                (click)="onChangingEmailData(i, 1)">
+                For this Campaign
+              </button>
+              <button class="button-mat-menu"
+                [class.btn-active-campaign]="emailData.blockType !== 1"
+                (click)="onChangingEmailData(i, 2)">
+                For all Campaigns
+              </button>
+            </mat-menu>
+        </div>
+      </td>
+
+
+
+      <td>
+        <div class="small_Avatar_Image_Not_Online">
+            <img src="../assets/Image.svg" alt="" />
+        </div>
+      </td>
+      <td>
+        <div class="first_Remove_Button">
+          <button
+            [disabled]="!emailData.emailId"
+            (click)="removeBlockedEmail(emailData.emailId || '')"
+            class="delete_Button">
+            <!-- <div
+                *ngIf="rowLoader === emailData.emailId">
+                <div class="loader triangle">
+                  <svg viewBox="0 0 86 80">
+                    <polygon points="43 8 79 72 7 72"></polygon>
+                  </svg>
+                </div>
+            </div> -->
+
+            <div *ngIf="rowLoader === emailData.emailId" class="spinner"></div>
+            <span *ngIf="rowLoader !== emailData.emailId">
+              Remove
+            </span>
+          </button>
+        </div>
+      </td>
+    </tr>
+</div>

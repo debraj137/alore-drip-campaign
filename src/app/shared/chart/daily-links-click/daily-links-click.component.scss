@@ -1,0 +1,74 @@
+.chart-color-icon {
+  background-color: var(--alore-main-blue);
+}
+
+// .chart-pink-icon {
+//   background-color: #FA336F;
+// }
+
+// .chart-yellow-icon {
+//   background-color: #FFCE56;
+// }
+
+// .chart-grey-icon {
+//   background-color: #E7E9ED;
+// }
+
+.chart-icon {
+  border-radius: 4px;
+  height: 12px;
+  width: 12px;
+}
+
+.chart-icon-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.chart-icon-wrapper + .chart-icon-wrapper {
+  margin-left: 32px;
+}
+
+.chart-bar-chart-wrapper {
+  margin-top: 32px;
+  margin-bottom: 20px;
+  
+  canvas{
+      height: 260px!important;
+
+      @media (max-width: 1300px) {
+          height: auto!important;
+      }
+  }
+}
+.chart-first-tier {
+  height: 100%;
+}
+
+.noGraph{
+  display: flex;
+  width: 100%;
+  // position: absolute;
+  height: 100%;
+  // flex-wrap: wrap;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width:480px){
+  .noGraph{
+    width: 100%;
+    position: static;
+    top:unset;
+    margin-top:25px;
+ 
+  }
+}
+
+// .chart-first-tier {
+//   display: flex;
+//   justify-content: space-between;
+// }

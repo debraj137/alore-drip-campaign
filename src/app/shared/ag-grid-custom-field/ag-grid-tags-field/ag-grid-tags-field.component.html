@@ -1,0 +1,12 @@
+
+<section *ngIf = "isLoaded" (click) = "triggerDropDown">
+  
+  <mat-form-field class = "tagSection"  *ngIf = "!triggerDropDown">
+    <mat-select [formControl]="tagControl" multiple>
+      <mat-option *ngFor="let tag of tags" [value] = "selectedTags">{{tag}}</mat-option>
+    </mat-select>
+  </mat-form-field> 
+</section>
+
+  
+

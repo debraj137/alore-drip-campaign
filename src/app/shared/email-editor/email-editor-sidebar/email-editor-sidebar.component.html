@@ -1,0 +1,55 @@
+<div *ngIf="getNavStatus" class="email-editor-sidebar-container">
+
+    <div class="emailLeftContainerheader">
+        <p>
+            Edit Emails
+        </p>
+
+        <button
+            (click)="layoutService.updateSidebarStatus(!getNavStatus)" 
+            class="menu_Collapse_Button_Large">
+            <img src="../assets/backButtonLarge.svg" alt="" />
+        </button>
+    </div>
+
+    <section class="emailListContainer scroll-vertical">
+        <div class="nav_Objective_Screen"
+             (click)="clikedOnEmail(item)"
+             *ngFor="let item of SideMenuTreeService.currentTemplateList | async,let i = index"
+             
+             [ngClass]="{
+                'currentSelectedClass': 
+                item.personalizedEmailId == 
+                SideMenuTreeService.activeEmailSidebar.value?.personalizedEmailId}">
+                <section class="left_Section">
+                    <div class="down_Arrow">
+                        {{ i+1 }}
+                    </div>
+                    <span class="nav_Objective_Screen_Text">
+                        Email {{ i+1 }}
+                    </span>
+                </section>
+                <div
+                matTooltipClass="medium_Primary_Tooltip_Ng"
+        mat-raised-button
+        matTooltipPosition="above"
+        matTooltip="Add new mail in the sequence"
+        class="medium_Primary_Tooltip"
+                   
+                    (click)="addEmail(); $event.stopPropagation()" 
+                    class="add_Button">
+                    <img src="../../../assets/common_css/add_Icon.svg" alt="">
+                    
+                </div>
+        </div>
+    </section>
+
+    <div (click)="addEmail(); $event.stopPropagation()" class="action-button-container">
+        <button class="alt_Button_Blue_With_Icon_Left">
+            <span class="alt_Button_Blue_With_Icon_Left_Text">
+            <img src="../assets/common_css/add_Icon.svg" alt="" />
+            Add a new mail to sequence
+            </span>
+      </button>
+    </div>
+</div>

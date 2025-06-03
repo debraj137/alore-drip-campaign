@@ -1,0 +1,76 @@
+// Naming should start with dc (drip campaign).
+// This is design system component so it should be able to use accross project
+// to minimize duplicate css style
+
+.dc-listview-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  position: relative;
+  width: 100%;
+
+  &:hover {
+    background-color: rgba(51, 75, 250, 0.2);
+    color: var(--alore-main-blue);
+  }
+}
+
+.dc-icon-button {
+  border: 1px solid var(--alore-light-black);
+  border-radius: 5px;
+  cursor: pointer;
+  height: 24px;
+  transition: background-color 100ms;
+  width: 24px;
+
+  &:hover {
+    background-color: var(--alore-mid-blue);
+
+    mat-icon {
+      color: var(--alore-main-blue);
+    }
+  }
+}
+
+.dc-headline--headline-2 {
+  font-size: 26px !important;
+  font-weight: 600 !important;
+  line-height: 31px !important;
+}
+
+.dc-headline--headline-3 {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  line-height: 29px !important;
+}
+
+.dc-headline--headline-4 {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+}
+
+.display_Flex {
+  display: flex;
+}
+
+.item_Center {
+  align-items: center;
+}
+
+.content_Space_Evenly {
+  justify-content: space-evenly;
+}
+
+.content_Center {
+  justify-content: center;
+}
+
+.cursor_Pointer {
+  cursor: pointer;
+}

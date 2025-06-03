@@ -1,0 +1,53 @@
+.templateDivs{
+    border-top: 2px solid #000000;
+    margin-top: 30px;
+}
+
+::ng-deep .templateDivs:hover{
+    background: transparent !important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.templateDivs:active{
+   
+    /* border-bottom: 2px solid #334bfa; */
+    border-top: 2px solid #000000;
+    box-shadow: none !important;
+}
+
+
+.password{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    display: flex;
+    gap: 5px;
+    
+    
+    color: #181818;
+}
+
+.subHeading{
+ 
+height: 18px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 130%;
+/* or 18px */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.03em;
+
+color: #181818;
+
+
+}
+

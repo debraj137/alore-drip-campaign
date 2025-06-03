@@ -1,0 +1,77 @@
+<div class="mainContainer">
+    <div class="editor">
+        <div class="editorHeader">
+            <div class="desc">
+                <p style="cursor:default">
+                    Edit Emails - {{ currentTemplateList[0]?.campaignName }}
+                </p>
+              
+            </div>
+
+            <!-- <div class="medium_Primary_Tooltip_Width" *ngIf="isLoaded && !isEmailPresent"> -->
+
+                <button disabled="true" *ngIf= "isLoaded && !isEmailPresent"
+                class="alt_Button_Purple_With_Icon_Left medium_Primary_Tooltip" style = "margin-right: 25px">
+                    <p class="alt_Button_Purple_With_Icon_Left_Text">
+                        Test Sample Mail
+                    </p>
+
+                    <span class="medium_Primary_TooltipText"
+                    >Email is not integrated</span
+                  >
+
+                  
+                    
+                </button>
+                
+               <!-- </div> -->
+           <div class="button-container-email-editor">
+            <button *ngIf= "isLoaded && isEmailPresent"  (click)="openResponseNotification()"
+            class="alt_Button_Purple_With_Icon_Left" style = "margin-right: 25px">
+                 
+                <span *ngIf = "!testMailLoader" class="alt_Button_Purple_With_Icon_Left_Text">
+                    <img src="../assets/common_css/add_Icon.svg" alt="" />
+                    Test Sample Mail
+                </span>
+
+                <div *ngIf = "testMailLoader" class="spinner" style = "margin: auto; height:35px; width: 35px;"></div>
+
+            </button>
+
+            <div class="action-button">
+
+                
+            <div style = "text-align: center;">
+                <button style= "margin: auto" [disabled]="saveEmailLoader" matTooltipClass="tooltip-custom bottom" matTooltipPosition="below"
+                    matTooltip="Save" (click)="updatePersonalizedEmail()">
+                    
+                    <div *ngIf="saveEmailLoader" class="spinner"></div>
+
+                    <img *ngIf="!saveEmailLoader" src="../../../assets/icon/icon-email-editor-save.svg" alt="">
+
+                </button>
+
+                <p  class="save-btn-info" style="color: rgba(24, 24, 24, 0.7); font-size: 12px; margin: 0;font-weight: 600;">{{dateDifference}}</p>
+         
+            </div>
+
+                <button matTooltipClass="tooltip-custom bottom" matTooltipPosition="below" matTooltip="Delete Template"
+                    (click)="deleteTemplateConfirmation()">
+                    <img src="../../../assets/icon/icon-email-editor-delete.svg" alt="">
+                </button>
+            </div>
+        </div>
+        </div>
+
+        <div class="email-editor-breadcumbcontainer">
+        <app-breadcrumb (selectedLink)="selectedLink = $event" [data]="breadcrumbData">
+        </app-breadcrumb>
+    </div>
+        <div class="editorCont">
+            <app-email-editor *ngIf="!loader" [isHelperTextShown]="isHelperTextShown" [isDataSavedParent]="isDataSaved" (body)="getMailBody($event)" (subject)="getSubjectBody($event)"
+            (isDataSaved)="isDataSaved = $event" (lastSaveDate)="getLastSaveDate($event)" (updatedHtml)="updatefunc($event)" (updatePersonalizedEmail)="autoSave()"
+            >
+            </app-email-editor>
+        </div>
+    </div>
+</div>

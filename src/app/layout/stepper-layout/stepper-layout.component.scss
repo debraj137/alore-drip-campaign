@@ -1,0 +1,13 @@
+.stepper-layout-container{
+    display: flex;
+    background-color: #E5E5E5;
+    height: 100%;
+
+    .content-container{
+        flex: auto;
+
+        .content{
+            padding: 40px 70px;
+        }
+    }
+}

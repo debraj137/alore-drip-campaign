@@ -1,0 +1,70 @@
+<div class="create-prompt-container">
+    <div class="header">
+        <div class="icon">
+            <img  src="../../../../assets/custom_icons/file_Move.svg" alt="" class="file_Move">
+        </div>
+        <div class="label">
+            <p>Select Prompt</p>
+            <span>Select from Prompts made for you</span>
+        </div>
+        <div class="close-button">
+            <button class="alore_blue_Close_Button" (click)="dialogRef.close()">
+                <img src="../assets/alore_Blue_Close.svg" alt="" />
+            </button>
+        </div>
+    </div>
+
+
+    <div class="v-scroll-area">
+
+        <section class="section scroll-vertical">
+
+
+            <div *ngFor="let domain of domains">
+
+                <div class="nav_Objective_Screen" (click)="chooseDomain(domain)" >
+                    <span class="nav_Objective_Screen_Text">{{domain.type}}</span>
+                </div>
+
+            </div>
+
+
+          
+
+
+        </section>
+
+        <section class="section scroll-vertical">
+
+            <div *ngFor="let subDomain of subDomains;  trackBy: trackByName">
+
+                <div (click)="setCurrentPrompt(subDomain.subTypeId)" class="nav_Objective_Screen" [ngClass]="{ disabled_Button_Nav: disabledButton == true }">
+                    <span class="nav_Objective_Screen_Text">{{subDomain.subType}}</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section scroll-vertical">
+
+            <div class="prompt">
+
+                <div [innerText]="currentPromt" style="color:rgba(163,172,177); margin-left: 7px; font-family: 'Inter'"><p>PREVIEW:</p></div>
+
+            </div>
+
+        </section>
+    </div>
+
+    <div class="action-button">
+        <div class="first-div">
+            <button (click)="usePrompt()" class="popup_Primary_Extra_Small_Button width_ex_sm">
+                Use Prompt
+            </button>
+            <button (click)="dialogRef.close()" class="popup_Secondary_Extra_Small_Button width_ex_sm">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>

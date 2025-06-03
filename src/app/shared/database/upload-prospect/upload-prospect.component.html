@@ -1,0 +1,140 @@
+<div
+    *ngIf="step !== 6" 
+    class="upload-prospect-container">
+    <div class="default-modal">
+        <div class="header">
+            <button *ngIf="step > 1"
+                (click)="changeStep(-1)"
+              class="menu_Collapse_Button_Large">
+              <img src="../assets/backButtonLarge.svg" alt=""/>
+            </button>
+
+            <div class="icon">
+              <img src="../../../../assets/common_css/upload_Icon_Database.svg" alt="">
+            </div>
+            <div class="label">
+                <p>
+                    Upload new leads or update leads in bulk
+                </p>
+                <span>
+                    Upload using a CSV or XLS file to add new leads or edit existing ones
+                </span>
+            </div>
+            <div class="close-button">
+                <button
+                    (click)="dialogRef.close()"
+                    class="alore_blue_Close_Button"
+                >
+                <img src="../assets/alore_Blue_Close.svg" alt="" />
+              </button>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="body scroll-vertical">
+            <div
+                *ngIf="step <= 3"
+                class="video-body">
+                <iframe
+                    src="https://www.youtube.com/embed/GTJmcazoW1U"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div
+                *ngFor="let description of stepDescription; let i = index"
+                class="step-question">
+                <div
+                    *ngIf="i + 1 === step"
+                    class="step-description">
+                    <small
+                        [class.no-margin]="i > 2">
+                        Step {{i + 1}}
+                    </small>
+                    <p>
+                        {{description}}
+                    </p>
+                </div>
+            </div>
+            <div [ngSwitch]="step">
+                <app-prospect1
+                [campaignId]="campaignId"
+                    [step1Model]="step1Model"
+                    (selectionChanges)="step1Model = $event"
+                    *ngSwitchCase="1">
+                </app-prospect1>
+                <app-prospect2
+                    [step2Model]="step2Model"
+                    [step1Model]="step1Model"
+                    (selectionChanges)="step2Model = $event"
+                    *ngSwitchCase="2">
+                </app-prospect2>
+                <app-prospect3
+                [campaignId]="campaignId"
+                    [isFileEmpty]="!columnList?.length && !csvId"
+                    [resetInput]="resetFile"
+                    (fileSelected)="fileSelected($event)"
+                    *ngSwitchCase="3">
+                </app-prospect3>
+                <app-prospect4
+                    *ngSwitchCase="4"
+                    [tempFormValue]="step4Model"
+                    [csvId]="csvId"
+                    [step2Model]="step2Model"
+                    (formChanged)="submitButtonCondition = $event"
+                    (formValue)="step4Model = $event"
+                    [csvColumn]="columnList">
+                </app-prospect4>
+                <app-prospect5
+                    [step5Model]="step5Model"
+                    *ngSwitchCase="5">
+                </app-prospect5>
+            </div>
+
+            <div class="action-button">
+                <button
+                    [disabled]="nextButtonCondition"
+                    *ngIf="step !== 6"
+                    (click)="changeStep(1)"
+                    class="primary_Normal_Button_Blue_With_Icon_Right">
+                    <span class="primary_Normal_Button_Blue_With_Icon_Right_Text">
+                        {{step === 5 ? 'Edit & Upload' : 'Next'}}
+                        <img src="../assets/common_css/right_Icon_Button.svg" alt="" />
+                    </span>
+                </button>
+
+                <button
+                [disabled]="nextButtonCondition"
+                (click)="changeStep(1)"
+                *ngIf="step === 6"
+                class="primary_Normal_Button_Blue_With_Icon_Right">
+                <span class="primary_Normal_Button_Blue_With_Icon_Right_Text">
+                    Edit & Upload
+                    <img src="../assets/common_css/right_Icon_Button.svg" alt="" />
+                </span>
+            </button>
+
+                <button
+                    (click)="reselectFile()"
+                    [disabled]="!columnList?.length && !csvId"
+                    *ngIf="step === 3"
+                    class="secondary_Normal_Button_Blue">
+                    Re-Select
+                </button>
+                <button
+                    (click)="processCsv()"
+                    *ngIf="step === 5"
+                    class="secondary_Normal_Button_Blue">
+                    Skip & Upload
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-prospect6
+    [csvId]="csvId"
+    (isUploadSuccess)="processCsv()"
+    *ngIf="step === 6">
+</app-prospect6>

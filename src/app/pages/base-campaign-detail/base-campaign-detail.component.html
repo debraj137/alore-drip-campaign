@@ -1,0 +1,422 @@
+<div class="campaign-detail-container">
+  <div class="table-container">
+    <div class="action-button">
+      <div class="baseDetails" (click)="viewBaseCampaign(baseCampaignDetail.campaignBaseId)">
+        <ngx-emoji class="ngx-emoji" [emoji]="baseCampaignDetail.emoji || ''" [set]="'google'">
+        </ngx-emoji>
+        <p matTooltipClass="tooltip-custom" matTooltipPosition="below"
+          [matTooltipDisabled]="baseCampaignDetail.campaignBaseName.length <= 23"
+          [matTooltip]="baseCampaignDetail.campaignBaseName">
+          {{baseCampaignDetail.campaignBaseName}}
+        </p>
+        <!-- <div>
+          <app-breadcrumb [data]="breadcrumbData"></app-breadcrumb>
+        </div> -->
+      </div>
+
+      <div *ngIf="areCampiagnsSeleted"  class="actionButtons">
+        <button class="hide-details" (click)="deleteSelectedCampaigns()">
+          <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M10.2298 0.250213L10.121 0.250105C9.60842 0.24934 9.15851 0.248668 8.75762 0.406335C8.40709 0.5442 8.09677 0.767864 7.85513 1.05682C7.57878 1.38727 7.43715 1.8143 7.27577 2.30085L7.24147 2.4041L6.95943 3.25021H3.5H1.5C1.08579 3.25021 0.75 3.586 0.75 4.00021C0.75 4.41443 1.08579 4.75021 1.5 4.75021H2.79282L3.39693 15.0201L3.39881 15.052C3.45958 16.0851 3.5078 16.9051 3.59968 17.5654C3.69376 18.2415 3.84057 18.8115 4.13159 19.3289C4.60467 20.1699 5.3227 20.847 6.1901 21.2698C6.72368 21.53 7.30125 21.6431 7.98175 21.6973C8.64635 21.7502 9.4677 21.7502 10.5027 21.7502H10.5346H12.4654H12.4973C13.5323 21.7502 14.3537 21.7502 15.0182 21.6973C15.6987 21.6431 16.2763 21.53 16.8099 21.2698C17.6773 20.847 18.3953 20.1699 18.8684 19.3289C19.1594 18.8115 19.3062 18.2415 19.4003 17.5654C19.4922 16.9051 19.5404 16.0853 19.6012 15.0522L19.6012 15.0521L19.6031 15.0201L20.2072 4.75021H21.5C21.9142 4.75021 22.25 4.41443 22.25 4.00021C22.25 3.586 21.9142 3.25021 21.5 3.25021H19.5H16.0406L15.7585 2.4041L15.7242 2.30084C15.5629 1.8143 15.4212 1.38727 15.1449 1.05682C14.9032 0.767864 14.5929 0.5442 14.2424 0.406335C13.8415 0.248668 13.3916 0.24934 12.879 0.250105L12.7702 0.250213H10.2298ZM15.4825 4.75021C15.4941 4.75048 15.5057 4.75048 15.5173 4.75021H18.7046L18.1057 14.932C18.0426 16.0042 17.9973 16.7645 17.9146 17.3587C17.8332 17.9439 17.7226 18.3063 17.561 18.5935C17.2373 19.169 16.7461 19.6322 16.1526 19.9215C15.8564 20.0659 15.4881 20.1551 14.8991 20.202C14.3011 20.2497 13.5394 20.2502 12.4654 20.2502H10.5346C9.46057 20.2502 8.69893 20.2497 8.10087 20.202C7.51191 20.1551 7.1436 20.0659 6.84742 19.9215C6.25394 19.6322 5.76265 19.169 5.43897 18.5935C5.27743 18.3063 5.16679 17.9439 5.08537 17.3587C5.00269 16.7645 4.95741 16.0042 4.89434 14.932L4.29541 4.75021H7.4827C7.49433 4.75048 7.50594 4.75048 7.51751 4.75021H15.4825ZM14.4594 3.25021L14.3355 2.87844C14.1186 2.22761 14.0633 2.10174 13.9942 2.01908C13.9137 1.92276 13.8102 1.84821 13.6934 1.80225C13.5931 1.76282 13.4562 1.75021 12.7702 1.75021H10.2298C9.54379 1.75021 9.40691 1.76282 9.30663 1.80225C9.18979 1.84821 9.08635 1.92276 9.0058 2.01908C8.93668 2.10174 8.88144 2.22761 8.66449 2.87844L8.54057 3.25021H14.4594Z"
+              fill="#334BFA" />
+          </svg>
+          Delete
+        </button>
+
+        <button [matMenuTriggerFor]="hideColumn" class="hide-details">
+          <img src="../assets/hide_Fields.svg" alt="">
+          {{
+          ! hidedColumn.length ?
+          'Hide fields' :
+          hidedColumn.length+' Hidden fields'
+          }}
+        </button>
+        <!-- <button
+          class="alt_Button_Blue_With_Icon_Left"
+          (click)="openCreateCampaignModal(false)"
+          *ngIf="!(campaignService.parentDetail===1 || campaignService.parentDetail===2 || campaignService.parentDetail===5)"
+          >
+          <img src="../assets/common_css/add_Icon.svg" alt="" />
+          New Campaign
+        </button> -->
+        <button class="alt_Button_Blue_With_Icon_Right" [matMenuTriggerFor]="moreOptionBase">
+          More
+          <img src="../assets/common_css/more_Dropdown.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="responsive-table-container scroll-horiz">
+      <table mat-table cdkDropList [dataSource]="dataSource" cdkDropListOrientation="horizontal"
+        (cdkDropListDropped)="drop($event)">
+        <ng-container *ngFor="let column of columns" [matColumnDef]="column">
+          <!-- campaign header section-->
+          <th mat-header-cell cdkDrag *matHeaderCellDef [class.pl-5]="column === 'campaign_name'"
+            [class.text-center]="column !== 'campaign_name' && column !== 'select'">
+            <span *ngIf="column !== 'select'">
+              {{filterTableHeader(column)}}
+            </span>
+            <mat-checkbox *ngIf="column === 'select'" (click)="toggleAll()" [checked]="selection.hasValue()"
+              [indeterminate]="selection.hasValue() && !isAllSelected">
+            </mat-checkbox>
+          </th>
+
+          <td (click)="verifyCampaignReciepe(element.campaignId, element.campaignName)" mat-cell
+            *matCellDef="let element; let i = index">
+            <div *ngIf="!columnVisibility(column)" class="column-visibilty">
+
+              <!-- select box section -->
+              <div class="checkBoxContainer" style="width: 25px;" *ngIf="column === 'select'">
+                <mat-checkbox (click)="  $event.stopPropagation();" (change)="$event ? selection.toggle(element) : null"
+                  [checked]="selection.isSelected(element)">
+                </mat-checkbox>
+              </div>
+
+              <!-- campaign name section -->
+              <div class="first-cell" style="min-width: 250px;"
+                [style.max-width]="hidedColumn.length === 8 ? 'auto' : '250px'" *ngIf="column === 'campaign_name'">
+                <p class="label-name pl-5">
+                  {{element.campaignName}}
+                </p>
+                <div class="tagsContainer">
+                  <div *ngFor="let tag of element.tags; let i = index" style="display: contents;">
+                    <div *ngIf="i < 2" matTooltipClass="medium_Primary_Tooltip_Thread" mat-raised-button
+                      matTooltipPosition="above" matTooltip="{{ tag.name }}"
+                      class="campaign-details-tag medium_Primary_Tooltip round_{{ tag.name[0].toLowerCase() }} ">
+                      <span>
+                        {{ tag.name }}
+                      </span>
+
+                    </div>
+                    <div *ngIf="i == 2" matTooltipClass="medium_Primary_Tooltip_Thread" mat-raised-button
+                      matTooltipPosition="above" matTooltip="{{ tag.name }}"
+                      class="campaign-details-tag medium_Primary_Tooltip"
+                      [ngStyle]="{'background': 'rgba(244, 134, 195, 0.2)', 'color': '#f486c3'}">
+                      + {{element.tags.length - 2}}
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <!-- status section -->
+              <div style="width: 100px;" *ngIf="column === 'status'">
+                <div class="status {{element.status}}_State">
+                  <span class="{{element.status}}_State_Text status-text">
+                    {{element.status}}
+                  </span>
+                </div>
+              </div>
+
+              <!-- sender section -->
+              <div class="text-center" style="width: 150px;" *ngIf="column === 'sender'">
+                <div
+                  class="medium_Avatar_No_Image_Not_Online round_{{ getUserInitial(element.userName)[0].toLowerCase()}}">
+                  <span class="medium_Avatar_No_Image_Not_Online_Initial">
+                    {{getUserInitial(element.userName) }}
+                  </span>
+                </div>
+                <span class="small-bold">
+                  {{(element.userName===null || element.userName===undefined || element.userName.trim() == " ") ?
+                  "NA":element.userName}}
+                </span>
+              </div>
+
+              <!-- total sent section -->
+              <div class="text-center" style="width: 80px;" *ngIf="column === 'total_sent'">
+                <b>
+                  {{element.totalMailSent || '-'}}
+                </b>
+              </div>
+
+
+              <!-- open rate section -->
+              <div class="text-center" style="width: 100px;" *ngIf="column === 'open_rate'">
+                <div *ngIf="element.openRate" style="display: contents;">
+                  <span class="green-color">
+                    {{element.openRate}}%
+                  </span>
+                  <mat-icon *ngIf="element.openStatus === 1" class="green-color" inline>
+                    trending_up
+                  </mat-icon>
+                  <mat-icon *ngIf="element.openStatus === 0" class="red-color" inline>
+                    trending_down
+                  </mat-icon>
+                </div>
+                <span *ngIf="!element.openRate">
+                  -
+                </span>
+              </div>
+
+
+              <!-- create date section -->
+              <div class="text-center" style="width: 120px;" *ngIf="column === 'create_date'">
+                <b>{{element.createdDate | date: 'MMM dd,yyyy'}}</b>
+                <small>{{getDateDifference(element.createdDate)}}</small>
+              </div>
+
+              <!-- email last sent section -->
+              <div class="text-center" style="width: 100px;" *ngIf="column === 'email_last_sent'">
+
+                <b>{{ getDateDifference(element.lastSentDate) }}</b>
+
+              </div>
+
+              <!-- email last sent section -->
+              <!-- <div style="width: 150px;" *ngIf="column === 'objective'">
+                <div class="form-field"> -->
+
+              <!--
+                  <div class="text-Content">
+                    {{ value }}
+                  </div>
+
+                  <mat-icon>chevron_right</mat-icon> -->
+
+              <!-- <mat-form-field floatLabel='never' (click)="$event.stopPropagation()" class="table-mat-select"
+                    appearance="outline">
+                    <mat-select >
+                      <mat-option
+                        *ngFor="let obj of dummySelect;let i = index"
+                        [value]="obj.value"
+                        class="custom-select-container">
+                        {{obj.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div> -->
+
+              <!-- action section -->
+              <div (click)="$event.stopPropagation(); selectedCampaignId = element.campaignId"
+                style="width: 100px; text-align: center;" *ngIf="column === 'action'" [matMenuTriggerFor]="moreOption"
+                (click)="threeDotClick(element)">
+                <div *ngIf="selectedCampaignLoader === element.campaignId">
+                  <div class="loader triangle">
+                    <svg viewBox="0 0 86 80">
+                      <polygon points="43 8 79 72 7 72"></polygon>
+                    </svg>
+                  </div>
+                </div>
+                <mat-icon *ngIf="selectedCampaignLoader !== element.campaignId">
+                  more_vert
+                </mat-icon>
+              </div>
+
+              <mat-menu class="moreOption" #moreOption="matMenu">
+                <button *ngIf="!router.url.includes('trash')" (click)="renameCampaignName(element.campaignId) ">
+                  <span>Rename</span>
+                </button>
+                <button *ngIf="!router.url.includes('trash') && element.status!='Completed'"
+                  (click)="changeCampaignStatus(element.campaignId, 5) ">
+                  <span>Mark as complete</span>
+                </button>
+                <button *ngIf="!router.url.includes('trash') && element.status=='Completed'"
+                  (click)="changeCampaignStatus(element.campaignId, 1) ">
+                  <span>Mark as active</span>
+                </button>
+                <button *ngIf="!router.url.includes('trash')" [disabled]="getUserRole(element.role)"
+                  (click)="duplicateCamp(element.campaignId)">
+                  <span>Duplicate</span>
+                </button>
+                <button [disabled]="getUserRole(element.role)"
+                  *ngIf="campaignService.parentDetail!=5 && !router.url.includes('trash')"
+                  (click)="addArchive(element)">
+                  <span>Add to Archive</span>
+                </button>
+                <button [disabled]="getUserRole(element.role)"
+                  *ngIf="campaignService.parentDetail==5 && !router.url.includes('trash')"
+                  (click)="removeArchive(element)">
+                  <span>Remove from Archive</span>
+                </button>
+                <button [disabled]="getUserRole(element.role)"
+                  *ngIf="campaignService.parentDetail!=1 && !router.url.includes('trash') " (click)="addToFavourite()">
+                  <span>Add to Favorite</span>
+                </button>
+                <button [disabled]="getUserRole(element.role)"
+                  *ngIf="campaignService.parentDetail==1 && !router.url.includes('trash')" (click)="removeFav()">
+                  <span>Remove from Favorite</span>
+                </button>
+
+                <button [disabled]="getUserRole(element.role)"
+                  *ngIf="element.role == 1 && !router.url.includes('trash')"
+                  (click)="deleteCampaignConfirmation(element.campaignId)">
+                  <span>Delete Campaign</span>
+                </button>
+                <button [disabled]="getUserRole(element.role)"
+                  *ngIf="element.status === 'Running' || element.status === 'Paused'" (click)="changeStatus(element)">
+                  <span>
+                    {{element.status === 'Running' ? 'Pause' : 'Resume'}}
+                    Campaign
+                  </span>
+                </button>
+                <button [disabled]="getUserRole(element.role)"
+                  *ngIf="element.status === 'Running' && !router.url.includes('trash')"
+                  (click)="restartCampaign(element)">
+                  <span>Restart Campaign</span>
+                </button>
+                <button (click)="restoreCampaign(element)" *ngIf="router.url.includes('trash')">
+                  <span>Restore</span>
+                </button>
+              </mat-menu>
+            </div>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="getFilteredColumn;
+          sticky: true">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: getFilteredColumn;">
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="emptyState" *ngIf="!campaignList?.length">
+    <span>
+      You haven't created any campaign in this base yet
+    </span>
+  </div>
+
+  <!-- show hide menu dialog -->
+  <mat-menu class="hide-column" #hideColumn="matMenu">
+    <app-hide-table-column (onHideColumnChanged)="onHideColumn($event)" [columns]="filteredColumnList">
+    </app-hide-table-column>
+  </mat-menu>
+
+  <mat-menu class="moreOption moreOptionBase" #moreOptionBase="matMenu">
+    <button (click)="addBaseToWorkBase()"
+      [ngClass]="{'disabled':  campaignService.parentDetail == 2 || campaignService.parentDetail ==5}"
+      class="baseEditButton">
+
+
+      <svg width="46" height="28" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M9 3.25C7.20507 3.25 5.75 4.70507 5.75 6.5C5.75 8.29493 7.20507 9.75 9 9.75C10.7949 9.75 12.25 8.29493 12.25 6.5C12.25 4.70507 10.7949 3.25 9 3.25ZM4.25 6.5C4.25 3.87665 6.37665 1.75 9 1.75C11.6234 1.75 13.75 3.87665 13.75 6.5C13.75 9.12335 11.6234 11.25 9 11.25C6.37665 11.25 4.25 9.12335 4.25 6.5ZM1.25 19.3C1.25 16.2348 3.73482 13.75 6.8 13.75H11.2C14.2652 13.75 16.75 16.2348 16.75 19.3C16.75 21.4815 14.9815 23.25 12.8 23.25H11.5C11.0858 23.25 10.75 22.9142 10.75 22.5C10.75 22.0858 11.0858 21.75 11.5 21.75H12.8C14.1531 21.75 15.25 20.6531 15.25 19.3C15.25 17.0632 13.4368 15.25 11.2 15.25H6.8C4.56325 15.25 2.75 17.0632 2.75 19.3C2.75 20.6531 3.8469 21.75 5.2 21.75H6.5C6.91421 21.75 7.25 22.0858 7.25 22.5C7.25 22.9142 6.91421 23.25 6.5 23.25H5.2C3.01848 23.25 1.25 21.4815 1.25 19.3ZM20.75 7.5C20.75 7.08579 20.4142 6.75 20 6.75C19.5858 6.75 19.25 7.08579 19.25 7.5V9.75H17C16.5858 9.75 16.25 10.0858 16.25 10.5C16.25 10.9142 16.5858 11.25 17 11.25H19.25V13.5C19.25 13.9142 19.5858 14.25 20 14.25C20.4142 14.25 20.75 13.9142 20.75 13.5V11.25H23C23.4142 11.25 23.75 10.9142 23.75 10.5C23.75 10.0858 23.4142 9.75 23 9.75H20.75V7.5Z"
+          fill="#334BFA" />
+      </svg>
+
+
+      <span>Add to Work Campaign Base</span>
+
+    </button>
+
+    <button (click)="openCreateCampaignModal(true)"
+      [ngClass]="{'disabled': campaignService.parentDetail == 2 || campaignService.parentDetail ==5}"
+      class="baseEditButton">
+
+
+      <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M9.47216 1.75H9.5H11.5H12C12.4142 1.75 12.75 2.08579 12.75 2.5C12.75 2.91421 12.4142 3.25 12 3.25H11.5H9.5C8.32488 3.25 7.48111 3.25041 6.81528 3.29584C6.15618 3.34081 5.72641 3.42737 5.3736 3.57351C4.33223 4.00486 3.50486 4.83223 3.07351 5.8736C2.92737 6.22641 2.84081 6.65618 2.79584 7.31528C2.75041 7.98111 2.75 8.82488 2.75 10V10.5C2.75 10.9142 2.41421 11.25 2 11.25C1.58579 11.25 1.25 10.9142 1.25 10.5V10V9.97216V9.97214C1.25 8.83086 1.25 7.93603 1.29932 7.21317C1.3495 6.4777 1.45323 5.86562 1.68769 5.29957C2.27128 3.89066 3.39066 2.77128 4.79957 2.18769C5.36562 1.95323 5.9777 1.8495 6.71317 1.79932C7.43603 1.75 8.33086 1.75 9.47214 1.75H9.47216ZM22 11.75C22.4142 11.75 22.75 12.0858 22.75 12.5V13V14.5V14.5336V14.5336V14.5337C22.75 15.9053 22.75 16.9807 22.6794 17.8451C22.6075 18.7252 22.4586 19.4523 22.1233 20.1104C21.572 21.1924 20.6924 22.072 19.6104 22.6233C18.9523 22.9586 18.2252 23.1075 17.3451 23.1794C16.4807 23.25 15.4053 23.25 14.0337 23.25H14.0336H14.0336H14H9.5H9.47215C8.33087 23.25 7.43603 23.25 6.71317 23.2007C5.9777 23.1505 5.36562 23.0468 4.79957 22.8123C3.39066 22.2287 2.27128 21.1093 1.68769 19.7004C1.45323 19.1344 1.3495 18.5223 1.29932 17.7868C1.25 17.064 1.25 16.1691 1.25 15.0279V15.0278V15V14.5C1.25 14.0858 1.58579 13.75 2 13.75C2.41421 13.75 2.75 14.0858 2.75 14.5V15C2.75 16.1751 2.75041 17.0189 2.79584 17.6847C2.84081 18.3438 2.92737 18.7736 3.07351 19.1264C3.50486 20.1678 4.33223 20.9951 5.3736 21.4265C5.72641 21.5726 6.15618 21.6592 6.81528 21.7042C7.48111 21.7496 8.32488 21.75 9.5 21.75H14C15.4125 21.75 16.4268 21.7494 17.2229 21.6844C18.0103 21.62 18.518 21.4964 18.9295 21.2868C19.7291 20.8793 20.3793 20.2291 20.7868 19.4295C20.9964 19.018 21.12 18.5103 21.1844 17.7229C21.2494 16.9268 21.25 15.9125 21.25 14.5V13V12.5C21.25 12.0858 21.5858 11.75 22 11.75ZM19.8408 4.40345C19.364 3.97009 18.636 3.97009 18.1592 4.40345C18.1405 4.42046 18.1161 4.44456 18.0303 4.53033L17.7233 4.83733C17.6991 5.91352 18.5865 6.80094 19.6627 6.77667L19.9697 6.46967C20.0554 6.3839 20.0795 6.35949 20.0965 6.34079C20.5299 5.86403 20.5299 5.13597 20.0965 4.65921C20.0795 4.64051 20.0554 4.6161 19.9697 4.53033C19.8839 4.44456 19.8595 4.42046 19.8408 4.40345ZM18.3917 8.04761L17.9697 8.46967C17.6768 8.76256 17.6768 9.23744 17.9697 9.53033C18.2626 9.82322 18.7374 9.82322 19.0303 9.53033L21.0303 7.53033L21.0429 7.51777L21.043 7.51767C21.1103 7.45037 21.1622 7.39853 21.2065 7.34973C22.1599 6.30086 22.1599 4.69914 21.2065 3.65027C21.1621 3.60146 21.1103 3.5496 21.0429 3.48227L21.0429 3.48224L21.0303 3.46967L21.0177 3.45707L21.0177 3.45704L21.0177 3.45702C20.9504 3.3897 20.8985 3.33785 20.8497 3.29348C19.8009 2.34008 18.1991 2.34008 17.1503 3.29348C17.1015 3.33784 17.0496 3.38969 16.9823 3.457L16.9823 3.45704L16.9822 3.45709L16.9697 3.46967L12.7232 7.71619L12.6791 7.76028L12.679 7.76029L12.679 7.7603C12.2545 8.18477 11.9807 8.4585 11.755 8.77245C11.555 9.05063 11.3857 9.34963 11.2501 9.66423C11.097 10.0193 11.0031 10.3949 10.8576 10.9774L10.8425 11.0379L10.2724 13.3181C10.2085 13.5737 10.2834 13.844 10.4697 14.0303C10.656 14.2166 10.9263 14.2915 11.1819 14.2276L14.4959 13.3991C15.0767 13.2539 15.607 12.9536 16.0303 12.5303L16.5303 12.0303C16.8232 11.7374 16.8232 11.2626 16.5303 10.9697C16.2374 10.6768 15.7626 10.6768 15.4697 10.9697L14.9697 11.4697C14.7386 11.7007 14.4491 11.8646 14.1321 11.9439L12.0308 12.4692L12.2977 11.4017C12.4634 10.7387 12.5285 10.4878 12.6275 10.2582C12.7203 10.0429 12.8361 9.83832 12.9729 9.64799C13.1189 9.44495 13.3006 9.26007 13.7838 8.77685L16.4524 6.10827C16.798 6.99363 17.5064 7.70196 18.3917 8.04761Z"
+          fill="#334BFA" />
+      </svg>
+
+
+      <span>Edit Base Name</span>
+    </button>
+
+    <button class="baseDeleteButton" (click)="deleteBaseConfirm()"
+      [ngClass]="{'disabled':  campaignService.parentDetail == 2 || campaignService.parentDetail ==5}">
+
+      <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M10.2298 0.250213L10.121 0.250105C9.60842 0.24934 9.15851 0.248668 8.75762 0.406335C8.40709 0.5442 8.09677 0.767864 7.85513 1.05682C7.57878 1.38727 7.43715 1.8143 7.27577 2.30085L7.24147 2.4041L6.95943 3.25021H3.5H1.5C1.08579 3.25021 0.75 3.586 0.75 4.00021C0.75 4.41443 1.08579 4.75021 1.5 4.75021H2.79282L3.39693 15.0201L3.39881 15.052C3.45958 16.0851 3.5078 16.9051 3.59968 17.5654C3.69376 18.2415 3.84057 18.8115 4.13159 19.3289C4.60467 20.1699 5.3227 20.847 6.1901 21.2698C6.72368 21.53 7.30125 21.6431 7.98175 21.6973C8.64635 21.7502 9.4677 21.7502 10.5027 21.7502H10.5346H12.4654H12.4973C13.5323 21.7502 14.3537 21.7502 15.0182 21.6973C15.6987 21.6431 16.2763 21.53 16.8099 21.2698C17.6773 20.847 18.3953 20.1699 18.8684 19.3289C19.1594 18.8115 19.3062 18.2415 19.4003 17.5654C19.4922 16.9051 19.5404 16.0853 19.6012 15.0522L19.6012 15.0521L19.6031 15.0201L20.2072 4.75021H21.5C21.9142 4.75021 22.25 4.41443 22.25 4.00021C22.25 3.586 21.9142 3.25021 21.5 3.25021H19.5H16.0406L15.7585 2.4041L15.7242 2.30084C15.5629 1.8143 15.4212 1.38727 15.1449 1.05682C14.9032 0.767864 14.5929 0.5442 14.2424 0.406335C13.8415 0.248668 13.3916 0.24934 12.879 0.250105L12.7702 0.250213H10.2298ZM15.4825 4.75021C15.4941 4.75048 15.5057 4.75048 15.5173 4.75021H18.7046L18.1057 14.932C18.0426 16.0042 17.9973 16.7645 17.9146 17.3587C17.8332 17.9439 17.7226 18.3063 17.561 18.5935C17.2373 19.169 16.7461 19.6322 16.1526 19.9215C15.8564 20.0659 15.4881 20.1551 14.8991 20.202C14.3011 20.2497 13.5394 20.2502 12.4654 20.2502H10.5346C9.46057 20.2502 8.69893 20.2497 8.10087 20.202C7.51191 20.1551 7.1436 20.0659 6.84742 19.9215C6.25394 19.6322 5.76265 19.169 5.43897 18.5935C5.27743 18.3063 5.16679 17.9439 5.08537 17.3587C5.00269 16.7645 4.95741 16.0042 4.89434 14.932L4.29541 4.75021H7.4827C7.49433 4.75048 7.50594 4.75048 7.51751 4.75021H15.4825ZM14.4594 3.25021L14.3355 2.87844C14.1186 2.22761 14.0633 2.10174 13.9942 2.01908C13.9137 1.92276 13.8102 1.84821 13.6934 1.80225C13.5931 1.76282 13.4562 1.75021 12.7702 1.75021H10.2298C9.54379 1.75021 9.40691 1.76282 9.30663 1.80225C9.18979 1.84821 9.08635 1.92276 9.0058 2.01908C8.93668 2.10174 8.88144 2.22761 8.66449 2.87844L8.54057 3.25021H14.4594Z"
+          fill="#334BFA" />
+      </svg>
+
+
+
+      <span>Delete Base</span>
+    </button>
+  </mat-menu>
+</div>
+
+<!-- mobile ui -->
+
+<div class="campaign-detail-container-for-mobile">
+  <div class="camaign-card" *ngFor="let element of campList"
+    (click)="verifyCampaignReciepe(element.campaignId, element.campaignName)">
+    <div class="avtar-emoji">
+
+      <ngx-emoji [emoji]="baseCampaignDetail.emoji || ''" [set]="'google'">
+      </ngx-emoji>
+
+      <div class="status-indicator">
+        <div class="status {{element.status}}_State">
+          <span class="{{element.status}}_State_Text status-text">
+            {{element.status}}
+          </span>
+        </div>
+      </div>
+
+      <div class="action-btn">
+        <div class="mat-menu-trigger ng-star-inserted">
+          <mat-icon [matMenuTriggerFor]="moreOption" (click)="$event.stopPropagation()"> more_vert </mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="camaign-info">
+      <h3> {{element.campaignName}} </h3>
+      <div>
+        <p>Total Sent</p><span>{{element.totalMailSent || '-'}}</span>
+      </div>
+      <div class="open-rate-data">
+        <p>Open Rate</p><span>{{element.openRate}}%</span>
+      </div>
+      <div>
+        <p>Last Sent</p><span>{{ getDateDifference(element.lastSentDate) }}</span>
+      </div>
+    </div>
+    <div class="custom-card-footer">
+      <span>{{(element.userName===null || element.userName===undefined || element.userName == " ") ?
+        "NA":element.userName}}</span>
+      <span class="created-date">{{element.createdDate | date: 'MMM dd,yyyy'}} <br>
+        <small>{{getDateDifference(element.createdDate)}}</small></span>
+
+    </div>
+
+    <mat-menu class="moreOption" #moreOption="matMenu">
+      <button *ngIf="!router.url.includes('trash')" (click)="renameCampaignName(element.campaignId)">
+        <span>Rename</span>
+      </button>
+      <button *ngIf="!router.url.includes('trash')" [disabled]="getUserRole(element.role)"
+        (click)="duplicateCamp(element.campaignId)">
+        <span>Duplicate</span>
+      </button>
+      <button [disabled]="getUserRole(element.role)"
+        *ngIf="campaignService.parentDetail!=5 && !router.url.includes('trash')" (click)="addArchive(element)">
+        <span>Add to Archive</span>
+      </button>
+      <button [disabled]="getUserRole(element.role)"
+        *ngIf="campaignService.parentDetail==5 && !router.url.includes('trash')" (click)="removeArchive(element)">
+        <span>Remove from Archive</span>
+      </button>
+      <button [disabled]="getUserRole(element.role)"
+        *ngIf="campaignService.parentDetail!=1 && !router.url.includes('trash')" (click)="addToFavourite()">
+        <span>Add to Favorite</span>
+      </button>
+      <button [disabled]="getUserRole(element.role)"
+        *ngIf="campaignService.parentDetail==1 && !router.url.includes('trash')" (click)="removeFav()">
+        <span>Remove from Favorite</span>
+      </button>
+      <button [disabled]="getUserRole(element.role)" *ngIf="element.role == 1 && !router.url.includes('trash')"
+        (click)="deleteCampaignConfirmation(element.campaignId)">
+        <span>Delete Campaign</span>
+      </button>
+      <button [disabled]="getUserRole(element.role)" *ngIf="element.status === 'Running' || element.status === 'Paused'"
+        (click)="changeStatus(element)">
+        <span>
+          {{element.status === 'Running' ? 'Pause' : 'Resume'}}
+          Campaign
+        </span>
+      </button>
+      <button [disabled]="getUserRole(element.role)" *ngIf="element.status === 'Running'"
+        (click)="restartCampaign(element)">
+        <span>Restart Campaign</span>
+      </button>
+      <button (click)="restoreCampaign(element)" *ngIf="router.url.includes('trash')">
+        <span>Restore</span>
+      </button>
+    </mat-menu>
+  </div>
+</div>

@@ -1,0 +1,127 @@
+<div 
+    class="
+        email-editor-change-color-container
+        default-modal
+    ">
+    <div class="header">
+        <div class="icon">
+            <svg>
+                <use xlink:href="#color" />
+            </svg>
+        </div>
+        <div class="label">
+            <p>Change {{data.title}} Color</p>
+            <span>Customize to your brand colors</span>
+        </div>
+        <div class="close-button">
+            <button  
+                (click)="dialogRef.close()"
+                class="alore_blue_Close_Button"
+            >
+            <img src="../assets/alore_Blue_Close.svg" alt="" />
+          </button>
+        </div>
+    </div>
+    <div
+        class="body">
+        <span>
+            Choose from the list
+        </span>
+        <div class="color-container">
+            <div
+                *ngFor="let color of colorList" 
+                class="color-group">
+                <div
+                    (click)="changeColor(color)"
+                    [ngStyle]="{'background-color': color}" 
+                    class="color-element">
+                </div>
+            </div>
+        </div>
+        <div
+            class="custom-color" 
+            *ngIf="customColor.length >= 1 || customColorLoader">
+            <span>
+                Custom Colors
+            </span>
+            <div
+                *ngIf="!customColorLoader" 
+                class="color-container">
+                <div
+                    *ngFor="let color of customColor" 
+                    class="color-group">
+                    <div
+                        (click)="changeColor(color.textColor)"
+                        [ngStyle]="{'background-color': color.textColor}" 
+                        class="color-element">
+                    </div>
+                    <button
+                        (click)="deleteColor(color.colorSettingsId)" 
+                        class="delete-color">
+                        <mat-icon inline>
+                            close
+                        </mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div
+                *ngIf="customColorLoader" 
+                class="color-container">
+                <div
+                    *ngFor="let colorLoader of customColorLoaderItem" 
+                    class="color-group">
+                    <div class="skeleton-box color-element"></div>
+                </div>
+            </div>
+        </div>
+        <div class="input-area">
+            <div class="hex-input">
+                <span>
+                    Enter Hex Code:
+                </span>
+                <div class="text_Input_Extra_Small">
+                    <span>#</span>
+                    <div class="divider"></div>
+                    <input 
+                        [(ngModel)]="selectedColor"
+                        type="text"
+                        placeholder="Enter the Hex code">
+                </div>
+            </div>
+            <div class="selected-color">
+                <span>
+                    Selected Color:
+                </span>
+                <div 
+                    [ngStyle]="{'background-color': '#'+selectedColor}" 
+                    class="active-color">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+        class="action-button">
+        <button
+            [disabled]="!isHexColor(selectedColor)"
+            (click)="applyColor()"
+            class="primary_Normal_Button_Blue">
+            Apply
+        </button>
+        <button
+            [disabled]="!isHexColor(selectedColor)"
+            (click)="addColor()"
+            class="secondary_Normal_Button_Blue">
+            Apply & Save as Custom Color
+        </button>
+    </div>
+</div>
+
+<svg display="none">
+    <symbol id="color">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.0595 1.58677C10.9075 1.5479 10.592 1.5479 10.44 1.58677C10.2327 1.63979 10.1168 1.71293 9.63842 2.0588C8.31047 3.01889 6.35883 4.61291 4.74557 6.6633C3.12935 8.71744 1.90039 11.168 1.90039 13.8582C1.90039 16.7249 3.00858 18.825 4.63788 20.2192C6.28305 21.6269 8.50237 22.3493 10.75 22.3493C12.9976 22.3493 15.2169 21.627 16.8621 20.2192C18.4914 18.825 19.5996 16.7249 19.5996 13.8582C19.5996 11.168 18.3706 8.71742 16.7542 6.66327C15.1409 4.61288 13.1891 3.01886 11.8611 2.05877C11.3827 1.71291 11.2667 1.63977 11.0595 1.58677ZM10.0683 0.133557C10.4642 0.0323116 11.0353 0.0323032 11.4311 0.133537C11.9391 0.26344 12.2746 0.506342 12.6877 0.805414C12.705 0.817902 12.7224 0.830488 12.7399 0.843169C14.1281 1.8468 16.2009 3.5344 17.9331 5.73571C19.6622 7.93326 21.0996 10.7045 21.0996 13.8582C21.0996 17.1523 19.8079 19.6727 17.8373 21.3589C15.8826 23.0315 13.3022 23.8493 10.75 23.8493C8.19782 23.8493 5.61734 23.0315 3.66265 21.3589C1.6921 19.6727 0.40039 17.1523 0.400391 13.8582C0.400391 10.7045 1.83767 7.93331 3.56672 5.73577C5.29872 3.53447 7.37139 1.84687 8.75957 0.843222C8.77711 0.830543 8.79449 0.817957 8.81174 0.805468C9.22485 0.506386 9.56037 0.263476 10.0683 0.133557Z" fill="#334BFA"/>    
+    </symbol>
+    <symbol id="close">
+        <path d="M1.5 10.5L10.5 1.5M1.5 1.5L10.5 10.5" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+    </symbol>
+</svg>

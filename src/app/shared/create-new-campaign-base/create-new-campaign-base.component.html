@@ -1,0 +1,227 @@
+<div (click)="showEmoji = false; showBaseCampaign = false; showColorPicker = false" *ngIf="isDefaultBaseNameLoaded"
+  class="create-new-campaign-base-container">
+  <div>
+    <div class="header">
+      <div class="icon_Inside_Header">
+        <img src="../../../assets/common_css/setting_Icon_Popup_Modal.svg" />
+      </div>
+      <div class="desc">
+        <h3>
+          <span *ngIf="data.type.includes('base')">
+            Create a new base
+          </span>
+          <span *ngIf="data.type.includes('campaign')">
+            Create a new campaign
+          </span>
+        </h3>
+        <p *ngIf="data.type.includes('base')">
+          Campaign bases are like folder - so that you can organise campaigns as
+          per your needs
+        </p>
+        <p *ngIf="data.type.includes('campaign')">Name your campaign</p>
+      </div>
+      <div class="close_Button_Div">
+        <button (click)="dialogRef.close()" class="alore_blue_Close_Button">
+          <img src="../assets/alore_Blue_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="v-scroll-area">
+      <form [formGroup]="formControl" class="body">
+        <section class="input_Main_Div">
+
+          <div *ngIf="data.type.includes('campaign')" class="input-with-close">
+            <p>
+              Choose Base
+              <span class="info_icon" matTooltipClass="small_Primary_Tooltip" mat-raised-button
+                matTooltipPosition="above" matTooltip="Choose Base">
+                <img src="../../../assets/common_css/info_About_Time_Zone.svg" alt="" />
+              </span>
+            </p>
+
+            <div (click)="
+              showBaseCampaign = true;
+              showEmoji = false;
+              showColorPicker = false;
+              $event.stopPropagation()
+            " [matMenuTriggerFor]="baseDrop" class="text_Input_Extra_Small">
+              <input type="text" formControlName="baseName" placeholder="Type to search or add"
+                [value]="formControl.get('baseName')?.value" [focus]="true" />
+
+            </div>
+            <button (click)="clearChooseBaseInput();$event.stopPropagation()"
+              class="alore_blue_Close_Button input-close">
+              <img src="../assets/alore_Blue_Close.svg" alt="" />
+            </button>
+          </div>
+
+          <p>
+            {{ data.type.includes("base") ? "Base Name" : "Campaign Name" }}
+            <span class="info_icon" matTooltipClass="small_Primary_Tooltip" mat-raised-button matTooltipPosition="above"
+              [matTooltip]="
+              'Enter ' +
+              (this.data.type.includes('base') ? 'Base Name' : 'Campaign Name')
+            ">
+              <!-- {{ data.type.includes('base') ? 'Base' + ' Name' : 'Campaign' +'Name' }} -->
+              <img src="../../../assets/common_css/info_About_Time_Zone.svg" alt="" />
+            </span>
+          </p>
+          <div class="campaign-name-container">
+            <div class="text_Input_Extra_Small">
+              <input input formControlName="campaigName" type="text" placeholder="{{ getToolTipData() }}" id="check" />
+            </div>
+            <p *ngIf="isCampaignNameExist">campaign name already exists</p>
+          </div>
+
+          <div *ngIf="!data.type.includes('edit')" style="display: contents">
+            <p>
+              Choose Emoji
+              <span class="info_icon" matTooltipClass="small_Primary_Tooltip" mat-raised-button
+                matTooltipPosition="above" matTooltip="Select Emoji">
+                <img src="../../../assets/common_css/info_About_Time_Zone.svg" alt="" />
+              </span>
+            </p>
+            <div (click)="
+              showEmoji = true;
+              showBaseCampaign = false;
+              showColorPicker = false;
+              $event.stopPropagation()
+            " [matMenuTriggerFor]="emojiDropdown" *ngIf="!objectiveCampaign" class="text_Input_Extra_Small">
+              <ngx-emoji input [size]="24" [emoji]="formControl.get('campaignIcon')?.value" [set]="'google'">
+              </ngx-emoji>
+              <div class="arrow" (click)="(!arrowPosition)">
+                <img src="../../../assets/common_css/more_Dropdown.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div *ngIf="!data.type.includes('edit')" style="display: contents">
+            <p>
+              Choose Color
+              <span class="info_icon" matTooltipClass="small_Primary_Tooltip" mat-raised-button
+                matTooltipPosition="above" matTooltip="Select Color">
+                <img src="../../../assets/common_css/info_About_Time_Zone.svg" alt="" />
+              </span>
+            </p>
+            <button type="button" (click)="
+              showColorPicker = true;
+              showEmoji = false;
+              showBaseCampaign = false;
+              $event.stopPropagation()
+            " [matMenuTriggerFor]="colorSelection" class="tag-color"
+              class="text_Input_Extra_Small bg-transparent-Onactive">
+              <section class="inside_Button_Div">
+                <div class="backgroundColor" id="backgroundColor" [style.backgroundColor]="color"></div>
+                <div (click)="(!arrowPosition)" [ngClass]="{ arrow_Button: arrowPosition == true }"></div>
+                <img src="../../../assets/common_css/more_Dropdown.svg" alt="" />
+              </section>
+
+
+            </button>
+
+
+
+
+          </div>
+        </section>
+      </form>
+    </div>
+  </div>
+
+  <div class="next_Button_Div">
+    <button *ngIf="!data.type.includes('edit')" (click)="onSubmit()"
+      [disabled]="!formControl.valid || submitLoader || isCampaignNameExist"
+      class="primary_Normal_Button_Blue width_ex_sml">
+      <!-- <div *ngIf="submitLoader">
+        <div class="loader triangle">
+          <svg viewBox="0 0 86 80">
+            <polygon points="43 8 79 72 7 72"></polygon>
+          </svg>
+        </div>
+      </div> -->
+
+      <div *ngIf="submitLoader" class="spinner"></div>
+
+      <span *ngIf="!submitLoader"> Create </span>
+    </button>
+    <button *ngIf="data.type.includes('edit')" (click)="onSubmitEdit()" [disabled]="!formControl.valid"
+      class="primary_Normal_Button_Blue width_ex_sml">
+      <!-- <div *ngIf="submitLoader">
+        <div class="loader triangle">
+          <svg viewBox="0 0 86 80">
+            <polygon points="43 8 79 72 7 72"></polygon>
+          </svg>
+        </div>
+      </div> -->
+
+      <div *ngIf="submitLoader" class="spinner"></div>
+      <span *ngIf="!submitLoader"> Update </span>
+    </button>
+
+    <button (click)="dialogRef.close()" class="secondary_Normal_Button_Blue width_ex_sml">
+      Cancel
+    </button>
+  </div>
+</div>
+
+<mat-menu class="menu-transparent-bg" #emojiDropdown="matMenu" [hasBackdrop]="false">
+  <emoji-mart *ngIf="showEmoji" class="emojiPicker emoji-selection" [set]="'google'" [totalFrequentLines]="1"
+    [showPreview]="false" (emojiSelect)="onSelectEmoji($event)" [darkMode]="false" [skin]="1" [style]="{
+      position: 'relative',
+      width: '652px',
+      height: '460px'
+    }" [i18n]="{
+      search: 'Search',
+      categories: {
+        search: 'Search results',
+        recent: 'Frequently Used'
+      }
+    }">
+  </emoji-mart>
+</mat-menu>
+
+<!-- color picker -->
+<mat-menu class="menu-transparent-bg" #colorSelection="matMenu" [hasBackdrop]="false">
+  <div *ngIf="showColorPicker" class="color-selection-container">
+    <button *ngFor="let colors of colorSelections; index as indexOfelement"
+      (click)="color = colors; num = indexOfelement">
+      <div class="color-element" [ngStyle]="{ 'background-color': colors }"></div>
+    </button>
+  </div>
+</mat-menu>
+
+<!-- for base dropdown  -->
+<mat-menu class="menu-transparent-bg" class="base-Div scroll-vertical" #baseDrop="matMenu">
+  <main *ngIf="showBaseCampaign">
+
+    <div *ngIf="!isWorkBaseListLoaded || !isPersonalBaseListLoaded" class="loader triangle center">
+      <svg viewBox="0 0 86 80">
+        <polygon points="43 8 79 72 7 72"></polygon>
+      </svg>
+    </div>
+
+    <section *ngIf="isWorkBaseListLoaded && isPersonalBaseListLoaded" class="header">
+      <p class="dropdown-title">Work Campaign Base</p>
+
+
+      <div *ngFor="let list of filteredBaseCampaignList; let i = index" (click)="selectCampaignBase(list)">
+        <section class="base-Name-Section">
+          <div class="color-Div" [ngStyle]="{ 'background-color': list.color }"></div>
+          <p>{{ list.campaignBaseName }}</p>
+        </section>
+      </div>
+
+      <p class="dropdown-title">My Campaign Base</p>
+
+      <div *ngFor="let list of personalCampaignList" (click)="selectPersonalBase(list)">
+        <section class="base-Name-Section">
+          <div class="color-Div" [ngStyle]="{ 'background-color': list.color }"></div>
+          <p>{{ list.campaignBaseName }}</p>
+        </section>
+      </div>
+
+    </section>
+
+  </main>
+</mat-menu>

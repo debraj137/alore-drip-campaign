@@ -1,0 +1,26 @@
+<div
+    class="date-picker-container">
+    <div
+        (click) = "$event.stopPropagation()"
+        class="calendar-wrapper">
+        <mat-calendar
+        [(selected)]="selectedDate"
+        [minDate]="todayDate"
+        [maxDate]="maxDate">
+        </mat-calendar>
+    </div>
+
+
+    <div class="action-button">
+        <button
+
+            [disabled]="!selectedDate"
+            (click)="selectDate()"
+            class="popup_Primary_Extra_Small_Button width_ex_sm">
+            Apply
+        </button>
+        <button class="popup_Secondary_Extra_Small_Button width_ex_sm">
+            Cancel
+        </button>
+    </div>
+</div>

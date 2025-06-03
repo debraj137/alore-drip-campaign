@@ -1,0 +1,384 @@
+.main_Container_Date_To_Start {
+    width: 528px;
+
+    .main_Recipe_Right_Column_Interval_List_Value_Div {
+        margin: 0px 0 40px 0px;
+        padding-right: 5px;
+        width: 100%;
+        height: 300px;
+        overflow-y: scroll;
+        scrollbar-color:var(--alore-main-blue)  #e4e4e4;
+        scrollbar-width: thin;
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .mailIntervalContainer {
+            width: 100%;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 5px;
+
+            &:nth-child(1) {
+                .top_Main_Div{
+                    .text_Inside_Top_Container{
+                        color: #181818;
+                    }
+                }
+            }
+
+            &:nth-child(n) {
+                .top_Main_Div{
+                    .mailButton{
+                        background-color: rgba(51, 75, 250, 0.2);
+                      
+            span {
+                color: #334bfa;
+            }
+
+            .dynamicSvg img {
+                filter: invert(18%) sepia(81%) saturate(4431%) hue-rotate(236deg) brightness(103%) contrast(96%);
+                
+                
+            }
+                    }
+                }
+            }
+
+            &:nth-child(2n) {
+                .top_Main_Div{
+                    .mailButton{
+                        background-color: rgba(32, 217, 210, 0.2);
+                        span {
+                            color: #20D9D2;
+                        }
+            
+                        .dynamicSvg img {
+                            filter: invert(76%) sepia(95%) saturate(879%) hue-rotate(125deg) brightness(91%) contrast(83%);
+                            
+                            
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(3n) {
+                .top_Main_Div{
+                    .mailButton{
+                        background-color: rgba(151, 71, 255, 0.2);
+                        span {
+                            color: #9747FF;
+                        }
+            
+                        .dynamicSvg img {
+                            filter: invert(40%) sepia(99%) saturate(3560%) hue-rotate(246deg) brightness(96%) contrast(111%);
+                            
+                            
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(4n) {
+                .top_Main_Div{
+                    .mailButton{
+                        background-color: rgba(6, 160, 155, 0.2);
+                        span {
+                            color: #06A09B;
+                        }
+            
+                        .dynamicSvg img {
+                            filter: invert(45%) sepia(75%) saturate(3620%) hue-rotate(151deg) brightness(95%) contrast(95%);
+                            
+                            
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(5n) {
+                .top_Main_Div{
+                    .mailButton{
+                        background-color: rgba(232, 149, 0, 0.2);
+                        span {
+                            color: #E89500;
+                        }
+            
+                        .dynamicSvg img {
+                            filter: invert(56%) sepia(57%) saturate(1814%) hue-rotate(7deg) brightness(99%) contrast(101%);
+                            
+                            
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(6n) {
+                .top_Main_Div{
+                    .mailButton{
+                        background-color: rgba(51, 138, 23, 0.2);
+
+                        span {
+                            color: #338A17;
+                        }
+            
+                        .dynamicSvg img {
+                            filter: invert(38%) sepia(87%) saturate(567%) hue-rotate(62deg) brightness(94%) contrast(84%);
+                            
+                            
+                        }
+                    }
+                }
+            }
+        }
+
+        .top_Main_Div {
+            display: flex;
+            // justify-content: space-between;
+            align-items: center;
+
+            .mailButton {
+                border: none;
+                height: 50px;
+                width: 100px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0px;
+                column-gap: 10px;
+
+                span {
+                    font-family: "Inter";
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 112%;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    color: #334bfa;
+                }
+            }
+
+            .text_Inside_Top_Container {
+                margin-left: 15px;
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px!important;
+                line-height: 112%;
+                margin-right: 15px;
+                color: #18181880;
+
+                div{
+                    display: contents;
+                }
+            }
+
+            .calender_Option {
+                width: 130px;
+                height: 20px;
+                border-bottom: 1px solid #18181833;
+                padding: 0px 5px 4px 5px;
+                text-align: start;
+                cursor: pointer;
+                
+                &[aria-expanded="true"]{
+                    border-bottom: 1px solid #334bfa !important;
+                    span{
+                        color: #334bfa !important;
+                    }
+                    img{
+                        transform: rotate(180deg);
+                        filter: invert(85%) sepia(84%) saturate(3859%) hue-rotate(218deg) brightness(100%) contrast(215%);
+                    }
+                    
+                }
+
+                span {
+                    font-family: "Inter";
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 112%;
+                    color: #181818;
+                    margin-right: 10px;
+
+                }
+
+             
+                
+
+            }
+        }
+
+
+        // static button start shere
+        .mailButton {
+            border: none;
+            height: 50px;
+            width: 100px;
+            border-radius: 5px;
+            background-color: rgba(51, 75, 250, 0.2);
+            color: #334bfa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            column-gap: 10px;
+
+            span {
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 112%;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                color: #334bfa;
+            }
+        }
+
+        .text_Inside_Top_Container {
+            margin-left: 15px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 112%;
+            color: #181818;
+        }
+
+        // static ends here
+        .intervalValue {
+            display: flex;
+            height: 60px;
+            width: 360px;
+            align-items: center;
+            justify-content: flex-start;
+            margin-left: 32px;
+            border-left: 2px solid rgba(24, 24, 24, 0.4);
+            padding-left: 16px;
+
+            span {
+                font-family: "Inter";
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 112%;
+                display: flex;
+                align-items: center;
+                color: #181818;
+
+                .button_Div_Inside_Top_Container {
+                    background: #ffffff;
+                    border: 1px solid rgba(24, 24, 24, 0.4);
+                    border-radius: 5px;
+                    width: 154px;
+                    height: 40px;
+                    padding: 4px 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 0 10px;
+
+                    &:focus-within{
+                        border: 1px solid var(--alore-main-blue);
+                    }
+
+                    button {
+                        width: 24px;
+                        height: 24px;
+                        background-color: #fff;
+                        border: 1px solid #334bfa1a;;
+                        border-radius: 5px;
+                        padding: 0;
+                        color: var(--alore-main-blue);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        &:disabled{
+                            background-color:  #18181833!important;
+                            border: 1px solid #1818181a!important;
+                            color: #18181880!important;
+                            cursor: not-allowed;
+                        }
+
+                        &:active{
+                            background: #334BFA!important;
+                            color: #ffffff!important;
+                            border: 1px solid #334BFA!important;
+                            box-shadow: inset 0px 4px 4px #00000080;
+                        }
+
+                        &:hover{
+                            border: 1px solid #334BFA;
+                            background-color: #334bfa33;;
+                        }
+                    }
+
+                    input {
+                        border: none;
+                        text-align: center;
+                        font-weight: 700;
+                        width: 65px;
+                        -moz-appearance: textfield;
+                    }
+                }
+            }
+        }
+
+        .dynamicSvg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    .next_Button_Div {
+        .primary_Normal_Button_Blue {
+            margin-right: 24px;
+            width: 100px;
+            padding: 0;
+        }
+
+        .secondary_Normal_Button_Blue {
+            width: 100px;
+            height: 40px;
+            padding: 0;
+        }
+    }
+}
+
+.calender_Option:hover {
+    border-bottom: 1px solid #334bfa !important;
+}
+
+.calender_Option:hover span {
+    color: #334bfa !important;
+}
+
+.calender_Option:hover  img{
+    filter: invert(85%) sepia(84%) saturate(3859%) hue-rotate(218deg) brightness(100%) contrast(215%);
+}
+
+
+@media screen and (max-width: 1366px) and (max-height: 688px) {
+
+    .main_Container_Date_To_Start{
+ 
+
+        .main_Recipe_Right_Column_Interval_List_Value_Div{
+
+            overflow-y: scroll;
+        margin: 0px 0 26px 0px;
+        height: 217px !important;
+        }
+      
+    
+}
+}
+ 

@@ -1,0 +1,417 @@
+.accordionContainer {
+    display: flex;
+    gap: 73px;
+}
+
+.main_Recipe_Right_Column_Container{
+    width: auto;
+}
+
+.mailButton {
+    border: none;
+    height: 50px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: rgba(51, 75, 250, 0.2);
+    color: #334BFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    column-gap: 10px;
+
+    span {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 112%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #334BFA;
+    }
+}
+
+.main_Recipe_Right_Column_Days_And_Timing_Value_Div{
+    section{
+        &:nth-child(n) {
+            .right_Column_Button{
+                background-color: #7f33fa;
+            }
+        }
+        &:nth-child(2n) {
+            .right_Column_Button{
+                background-color: #1bd2a4;
+            }
+        }
+        &:nth-child(3n) {
+            .right_Column_Button{
+                background-color: #0013ff;
+            }
+        }
+        &:nth-child(4n) {
+            .right_Column_Button{
+                background-color: #20d9d2;
+            }
+        }
+        &:nth-child(5n) {
+            .right_Column_Button{
+                background-color: #e89500;
+            }
+        }
+        &:nth-child(6n) {
+            .right_Column_Button{
+                background-color: #18bfff;
+            }
+        }
+        &:nth-child(7n) {
+            .right_Column_Button{
+                background-color: #f486c3;
+            }
+        }
+    }
+}
+
+.mailIntervalContainer {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 5px;
+
+    &:nth-child(n) {
+        .mailButton {
+            background-color: rgba(51, 75, 250, 0.2);
+
+            span {
+                color: #334bfa;
+            }
+
+            .dynamicSvg img {
+                filter: invert(18%) sepia(81%) saturate(4431%) hue-rotate(236deg) brightness(103%) contrast(96%);
+                
+                
+            }
+        }
+    }
+
+    &:nth-child(2n) {
+        .mailButton {
+            background-color: rgba(32, 217, 210, 0.2);
+
+            span {
+                color: #20D9D2;
+            }
+
+            .dynamicSvg img {
+                filter: invert(76%) sepia(95%) saturate(879%) hue-rotate(125deg) brightness(91%) contrast(83%);
+                
+                
+            }
+        }
+    }
+
+    &:nth-child(3n) {
+        .mailButton {
+            background-color: rgba(151, 71, 255, 0.2);
+
+            span {
+                color: #9747FF;
+            }
+
+            .dynamicSvg img {
+                filter: invert(40%) sepia(99%) saturate(3560%) hue-rotate(246deg) brightness(96%) contrast(111%);
+                
+                
+            }
+        }
+    }
+
+    &:nth-child(4n) {
+        .mailButton {
+            background-color: rgba(6, 160, 155, 0.2);
+
+            span {
+                color: #06A09B;
+            }
+
+            .dynamicSvg img {
+                filter: invert(45%) sepia(75%) saturate(3620%) hue-rotate(151deg) brightness(95%) contrast(95%);
+                
+                
+            }
+        }
+    }
+
+    &:nth-child(5n) {
+        .mailButton {
+            background-color: rgba(232, 149, 0, 0.2);
+
+            span {
+                color: #E89500;
+            }
+
+            .dynamicSvg img {
+                filter: invert(56%) sepia(57%) saturate(1814%) hue-rotate(7deg) brightness(99%) contrast(101%);
+                
+                
+            }
+        }
+    }
+
+    &:nth-child(6n) {
+        .mailButton {
+            background-color: rgba(51, 138, 23, 0.2);
+
+            span {
+                color: #338A17;
+            }
+
+            .dynamicSvg img {
+                filter: invert(38%) sepia(87%) saturate(567%) hue-rotate(62deg) brightness(94%) contrast(84%);
+                
+                
+            }  
+            
+        }
+    }
+}
+
+.width88{
+    width: 88px;
+}
+
+.intervalValue {
+    display: flex;
+    height: 60px;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 32px;
+    border-left: 2px solid rgba(24, 24, 24, 0.4);
+    padding-left: 16px;
+
+    span {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 112%;
+        display: flex;
+        align-items: center;
+        color: #181818;
+    }
+}
+
+.dynamicSvg {
+    width: 25px;
+    height: 25px;
+}
+
+.divider_Indicator_Inactive {
+    margin-top: 5px;
+}
+
+.nav_Objective_Screen_Img_With_Icon {
+    padding: 4px;
+    border-radius: 5px;
+    width: 21px;
+    height: 35px;
+
+    svg{
+        width: 5px;
+        height: 25px;
+    }
+
+    &:hover{
+        box-shadow: 0px 4px 4px rgba(0, 23, 187, 0.25);
+        
+        svg{
+            fill: var(--alore-main-blue)
+        };
+    }
+
+    &:active{
+        box-shadow: inset 0px 4px 4px #00000040;
+        
+        svg{
+            fill: #ffffff
+        };
+    }
+}
+
+::ng-deep {
+    .edit-campaign-detail-menu {
+        display: flex;
+        padding: 8px 5px;
+        flex-direction: column;
+        border: 1px solid var(--alore-main-blue);
+        border-radius: 5px;
+
+        button {
+            text-align: left;
+            outline: none;
+            border: none;
+            background-color: #ffffff;
+            width: auto;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 5px;
+
+            &:nth-child(1) {
+                svg {
+                    stroke: var(--alore-main-blue);
+                }
+
+                &:hover {
+                    svg {
+                        stroke: var(--alore-main-blue);
+                    }
+                }
+
+                &:active{
+                    svg{
+                        stroke: #fff;
+                    }
+                }
+            }
+
+            svg {
+                width: 25px;
+                height: 25px;
+                fill: var(--alore-main-blue);
+            }
+
+            &:hover {
+                color: #334bfa;
+                background-color: rgba(51, 75, 250, 0.2);
+                svg {
+                    fill: var(--alore-main-blue);
+                }
+
+            }
+            &:active{
+                 color: #fff;
+                background-color: var(--alore-main-blue);
+                 box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+                 svg {
+                    fill: #ffffff;
+                }
+            }
+               
+            
+        }
+    }
+}
+::ng-deep .campaignSettingEditDropDown{
+    border-radius: 5px !important;
+}
+
+
+.disable-btn-icon svg {
+    fill: rgba(24, 24, 24, 0.35);
+}
+
+.nav_Objective_Screen_Img_With_Icon.disable-btn-icon.ng-star-inserted:hover {
+    box-shadow: none !important;
+    
+}
+
+.nav_Objective_Screen_Img_With_Icon.disable-btn-icon.ng-star-inserted:hover  svg{
+    fill: rgba(24, 24, 24, 0.35);
+}
+.nav_Objective_Screen_Img_With_Icon.disable-btn-icon.ng-star-inserted:active {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.nav_Objective_Screen_Img_With_Icon.disable-btn-icon.ng-star-inserted:active svg{
+    fill: rgba(24, 24, 24, 0.35);
+}
+
+@media only screen and (max-width: 1366px) {
+     .main_Recipe_Right_Column_Container{
+        padding: 15px 15px !important;
+     .main_Recipe_Right_Column {
+        row-gap: 20px !important;
+    }
+
+     .main_Recipe_Right_Column_Title{
+
+        font-size: 18px !important;
+
+     }
+
+
+    .main_Recipe_Right_Column_Days_And_Timing_Title , .main_Recipe_Right_Column_Interval_Title , 
+    .main_Recipe_Right_Column_Daily_Limit_Title , .main_Recipe_Right_Column_IntervalList_Title {
+        font-size: 14px !important;
+    }
+
+    .width88 {
+        width: 70px  !important;
+    }
+  
+    .main_Recipe_Right_Column_Interval_Value , .main_Recipe_Right_Column_Daily_Limit_Value{
+        font-size:14px !important;
+    }
+
+    .main_Recipe_Right_Column_Days_And_Timing_Value_Div span {
+        font-size: 14px !important;
+        line-height: 128% !important;
+       
+    }
+
+    .right_Column_Button {
+        padding: 8px 9px  !important;
+        border-radius: 5px !important;
+        font-size: 13px  !important;
+       
+    }
+
+    .mailButton {
+        border: none;
+        height: 38px;
+        width: 77px;
+        border-radius: 5px;
+        column-gap: 5px;
+
+        span{
+            font-size:12px !important;
+        }
+
+        .dynamicSvg img{
+            width:20px !important;
+        }
+    }
+
+    
+
+}
+.edit-campaign-detail-menu button {
+    padding: 5px 8px !important;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap:7px;
+
+    span{
+        font-size:14px !important;
+    }
+}
+
+.intervalValue span {
+    font-size: 12px !important;
+}
+}
+
+
+@media only screen and (max-width:480px){
+    .main_Recipe_Right_Column_Container{
+        padding:10px 10px !important;
+
+        .main_Recipe_Right_Column_Title{
+            font-size:14px !important;
+        }
+    }
+}

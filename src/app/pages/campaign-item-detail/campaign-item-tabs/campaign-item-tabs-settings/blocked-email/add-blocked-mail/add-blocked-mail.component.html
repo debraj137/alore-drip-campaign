@@ -1,0 +1,120 @@
+<div class="add-blocked-container">
+    <div class="header">
+        <div class="icon">
+            <svg>
+                <use xlink:href="#at" />
+            </svg>
+        </div>
+        <div class="label">
+            <p>Add an email to block-list</p>
+            <span>Put a email address to don’t-send-a-mail list 🤓</span>
+        </div>
+        <div class="close-button">
+            <button  (click)="dialogRef.close()"
+            class="alore_blue_Close_Button"
+          >
+            <img src="../assets/alore_Blue_Close.svg" alt="" />
+          </button>
+        </div>
+    </div>
+    <form
+        [formGroup]="formControl"
+        class="body">
+        <div class="form-field">
+            <span>
+                Email address
+            </span>
+            <mat-form-field
+                floatLabel="never"
+                appearance="outline">
+                <input
+                    formControlName="email"
+                    matInput
+                    placeholder="Enter a valid email"
+                    [focus]="true"
+                    >
+                <mat-error>
+                    Email invalid
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-field">
+            <span>
+                Block type
+                <div class="info-icon-wrapper">
+                  <mat-icon class="info-icon">
+                      info_outline
+                  </mat-icon>
+                  <div class="tooltip-content medium_Primary_TooltipText">
+                    Choose whether you want to block
+                    for all campaigns or just this one
+                  </div>
+                </div>
+            </span>
+            <mat-form-field
+                class="select-input"
+                appearance="outline"
+                floatLabel="never">
+                <mat-select
+                    formControlName="blockType"
+                    placeholder="Select a type of block" class="add-blocked-mail-model">
+                    <mat-select-trigger>
+                        {{formControl.controls['blockType'].value?.label}}
+                    </mat-select-trigger>
+                    <mat-option
+                        *ngFor="let type of blockType"
+                        [value]="type">
+                        <div class="custom-select-container">
+                            <img class="custom-select-icon" src="../../../../../../assets/icon/icon-{{type.icon}}.svg" alt="">
+                            <div class="custom-select-text">
+                                <span>{{type.label}}</span>
+                                <p>{{type.subLabel}}</p>
+                            </div>
+                        </div>
+                    </mat-option>
+                </mat-select>
+                <mat-error class="select-error">
+                    Block type invalid
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+    <div class="action-button">
+        <button
+            (click)="addBlockedMail()"
+            [disabled]="!formControl.valid"
+            class="primary_Normal_Button_Blue width_ex_sm">
+            <!-- <div
+                *ngIf="submitLoader">
+                <div class="loader triangle">
+                  <svg viewBox="0 0 86 80">
+                    <polygon points="43 8 79 72 7 72"></polygon>
+                  </svg>
+                </div>
+            </div> -->
+
+            <div *ngIf="submitLoader" class="spinner"></div>
+
+            <span *ngIf="!submitLoader">
+                Save
+            </span>
+        </button>
+        <button
+            (click)="dialogRef.close()"
+            class="secondary_Normal_Button_Blue width_ex_sm">
+            Cancel
+        </button>
+    </div>
+</div>
+
+<svg display="none">
+    <symbol id="at">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M10.5661 0.25H10.6H11.4H11.4339C13.0854 0.249996 14.3708 0.249993 15.4019 0.334236C16.4488 0.419771 17.2994 0.595875 18.0644 0.985706C19.3345 1.63285 20.3671 2.66547 21.0143 3.93556C21.4041 4.70065 21.5802 5.55124 21.6658 6.59814C21.75 7.6292 21.75 8.91456 21.75 10.5659V10.566V10.566V10.6V11.4V11.434V11.434V11.4341C21.75 13.0854 21.75 14.3708 21.6658 15.4019C21.5802 16.4488 21.4041 17.2994 21.0143 18.0644C20.3671 19.3345 19.3345 20.3671 18.0644 21.0143C17.2994 21.4041 16.4488 21.5802 15.4019 21.6658C14.3708 21.75 13.0854 21.75 11.4341 21.75H11.434H11.434H11.4H10.6H10.566H10.566H10.5659C8.91456 21.75 7.6292 21.75 6.59814 21.6658C5.55124 21.5802 4.70065 21.4041 3.93556 21.0143C2.66547 20.3671 1.63285 19.3345 0.985706 18.0644C0.595875 17.2994 0.419771 16.4488 0.334236 15.4019C0.249993 14.3708 0.249996 13.0854 0.25 11.4339V11.4V10.6V10.5661C0.249996 8.91462 0.249993 7.62922 0.334236 6.59814C0.419771 5.55124 0.595875 4.70065 0.985706 3.93556C1.63285 2.66547 2.66547 1.63285 3.93556 0.985706C4.70065 0.595875 5.55124 0.419771 6.59814 0.334236C7.62922 0.249993 8.91462 0.249996 10.5661 0.25ZM6.72029 1.82925C5.76615 1.90721 5.13493 2.05809 4.61655 2.32222C3.6287 2.82555 2.82555 3.6287 2.32222 4.61655C2.05809 5.13493 1.90721 5.76615 1.82925 6.72029C1.75058 7.68317 1.75 8.90747 1.75 10.6V11.4C1.75 13.0925 1.75058 14.3168 1.82925 15.2797C1.90721 16.2338 2.05809 16.8651 2.32222 17.3834C2.82555 18.3713 3.6287 19.1744 4.61655 19.6778C5.13493 19.9419 5.76615 20.0928 6.72029 20.1707C7.68317 20.2494 8.90747 20.25 10.6 20.25H11.4C13.0925 20.25 14.3168 20.2494 15.2797 20.1707C16.2338 20.0928 16.8651 19.9419 17.3834 19.6778C18.3713 19.1744 19.1744 18.3713 19.6778 17.3834C19.9419 16.8651 20.0928 16.2338 20.1707 15.2797C20.2494 14.3168 20.25 13.0925 20.25 11.4V10.6C20.25 8.90747 20.2494 7.68317 20.1707 6.72029C20.0928 5.76615 19.9419 5.13493 19.6778 4.61655C19.1744 3.6287 18.3713 2.82555 17.3834 2.32222C16.8651 2.05809 16.2338 1.90721 15.2797 1.82925C14.3168 1.75058 13.0925 1.75 11.4 1.75H10.6C8.90747 1.75 7.68317 1.75058 6.72029 1.82925ZM11 8.75C9.75736 8.75 8.75 9.75736 8.75 11C8.75 12.2426 9.75736 13.25 11 13.25C12.2426 13.25 13.25 12.2426 13.25 11C13.25 9.75736 12.2426 8.75 11 8.75ZM14.75 11C14.75 8.92893 13.0711 7.25 11 7.25C8.92893 7.25 7.25 8.92893 7.25 11C7.25 13.0711 8.92893 14.75 11 14.75C12.0444 14.75 12.9891 14.323 13.669 13.6342C13.9754 14.0891 14.4838 14.45 15.2 14.45C16.1397 14.45 16.8039 13.8927 17.1964 13.2256C17.5802 12.5734 17.75 11.7588 17.75 11C17.75 7.27208 14.7279 4.25 11 4.25C7.27208 4.25 4.25 7.27208 4.25 11C4.25 14.7279 7.27208 17.75 11 17.75C12.0763 17.75 13.0957 17.4976 14.0004 17.048C14.3714 16.8636 14.5226 16.4135 14.3383 16.0425C14.154 15.6716 13.7038 15.5203 13.3329 15.7047C12.631 16.0535 11.8395 16.25 11 16.25C8.10051 16.25 5.75 13.8995 5.75 11C5.75 8.1005 8.10051 5.75 11 5.75C13.8995 5.75 16.25 8.1005 16.25 11C16.25 11.562 16.1199 12.0974 15.9036 12.465C15.6961 12.8177 15.4603 12.95 15.2 12.95C15.1061 12.95 15.0547 12.9283 15.0231 12.909C14.9873 12.8872 14.9446 12.848 14.9009 12.7773C14.8055 12.6225 14.75 12.3861 14.75 12.1669V12.1668L14.75 11Z"
+            fill="#334BFA" />
+    </symbol>
+    <symbol id="close">
+        <path d="M1.5 10.5L10.5 1.5M1.5 1.5L10.5 10.5" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+    </symbol>
+</svg>

@@ -1,0 +1,123 @@
+<div class="main-header">
+    <div class="app-tag">
+        <div class="left-menu-trigger">
+            <mat-icon>
+                menu
+            </mat-icon>
+        </div>
+        <h1 class="main-header-title">
+            Campaigns
+        </h1>
+    </div>
+    <div class="search">
+        <form [formGroup]="formControl">
+            <div
+                class="search-bar">
+                <mat-icon>search</mat-icon>
+                Search your folder
+            </div>
+        </form>
+        <div
+            class="mobile-view-search-trigger">
+            <mat-icon>
+                search
+            </mat-icon>
+        </div>
+    </div>
+    <div
+        class="notification">
+        <div
+            class="main-icon">
+            <img [src]="getIcon('recieve')">
+        </div>
+        <div
+            class="main-icon">
+            <img [src]="getIcon('teacher')">
+        </div>
+        <div
+            class="main-icon"
+            (click)="layoutService.notificatioNTrigger.next(true);"
+            [matMenuTriggerFor]="notificationHeader">
+            <img [src]="getIcon('notification')">
+        </div>
+        <div class="icon-more-trigger">
+            <mat-icon>
+                more_horiz
+            </mat-icon>
+        </div>
+        <div class="profile">
+            <div
+                (click)="setUserList()"
+                class="user-data">
+                <div
+                    [matTooltip]="getActiveUser?.firstName + ' ' + getActiveUser?.lastName"
+                    [matMenuTriggerFor]="userList"
+                    class="profile-img">
+                    {{getAcronymName(getActiveUser)}}
+                </div>
+                <span>
+                    {{getActiveUser?.firstName + ' ' + getActiveUser?.lastName}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- user list -->
+<mat-menu
+    #userList="matMenu"
+    class="custom-menu header-user-list">
+    <div class="userlist-header">
+        <div class="header">
+            <div class="add-button-container">
+                <span>Add an account</span>
+                <button
+                    (click)="redirectToAccountLoginPage()"
+                    mat-flat-button>
+                    Add Account
+                </button>
+            </div>
+        </div>
+        <div class="content">
+            <div
+                *ngFor="let user of allUser"
+                (click)="changeUser(user)"
+                class="user-item colorized-container">
+                <div class="profile-icon">
+                    <span>
+                        {{getAcronymName(user)}}
+                    </span>
+                </div>
+                <div class="desc">
+                    <span>
+                        {{uppercaseFirstLetter(user.firstName)}}
+                        {{uppercaseFirstLetter(user.lastName)}}
+                    </span>
+                    <small>
+                        {{user.email}}
+                    </small>
+                </div>
+                <div
+                    *ngIf="user.userId == getActiveUser?.userId"
+                    class="action">
+                    <span>Active</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            18 days left
+            <button mat-flat-button>
+                Upgrade Plan
+            </button>
+        </div>
+    </div>
+</mat-menu>
+
+<!-- notification -->
+<mat-menu
+    #notificationHeader="matMenu"
+    class="custom-menu header-notification-list">
+    <app-notifications
+        (click)="$event.stopPropagation()">
+    </app-notifications>
+</mat-menu>

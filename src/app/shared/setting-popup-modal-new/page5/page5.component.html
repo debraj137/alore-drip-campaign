@@ -1,0 +1,57 @@
+
+<section class="main_Container_Customize_Days">
+  
+    <section class="choose_Days_Section">
+
+      <div class="v-scroll-area">
+      <div
+        *ngFor="let element of weekData" 
+        class="seperate_Content_Div">
+        <section>
+          <div class="medium_CheckBox_Div">
+            <mat-checkbox
+              *ngIf = "isSingleStep"
+              class="checkbox_Medium_button"
+              (change)="selectDay(element, $event.checked)"
+              [checked]= "isSelected(element)"
+            >
+            </mat-checkbox>
+            <mat-checkbox
+              *ngIf = "!isSingleStep"
+              class="checkbox_Medium_button"
+              (change)="selectDay(element, $event.checked)"
+              [checked]= "isSelected(element) || element.day == 'Tuesdays' || element.day == 'Fridays'"
+            >
+            </mat-checkbox>
+          </div>
+          <span>{{ element.day }}</span>
+        </section>
+  
+        <button class="info_Button_Div info_Button_{{ element.color }}">
+          <div>
+            <img src="../../../assets/common_css/{{ element.icon }}.svg" alt="" />
+          </div>
+  
+          {{ element.opentype }}
+        </button>
+      </div>
+    </div>
+    </section>
+  
+    <div class="next_Button_Div">
+      <button
+        class="primary_Normal_Button_Blue width_ex_sml"
+        [disabled]="selectedDay.length <= 0"
+        (click)="onDaysNext()"
+      >
+        {{isSingleStep? 'Save' : 'Next'}}
+      </button>
+  
+      <button
+      (click)="pageAction.emit({page : isSingleStep ? 0 : prevStep})"
+        class="secondary_Normal_Button_Blue width_ex_sml"
+      >
+        {{isSingleStep? 'Close' : 'Back'}}
+      </button>
+    </div>
+  </section>

@@ -1,0 +1,16 @@
+<div class="delete-modal">
+  <button class="close_Button_Normal close-icon cursor_Pointer display_Flex item_Center content_Center"
+      (click)="onCloseButtonClick()">
+    <mat-icon class="icon-close">close</mat-icon>
+  </button>
+  <header class="description-wrapper">
+    <h3 class="delete-title">Delete campaign objective?</h3>
+    <p>Deleting campaign objective will delete all the campaigns within it. Are you sure about it?</p>
+  </header>
+  <figure class="image-wrapper">
+    <img [src]="getIcon('dissapoinment')" alt="Leaving">
+  </figure>
+  <footer>
+    <button class="delete_Button_Large_Normal_State cursor_Pointer" (click)="onCloseButtonClick()">Yes, delete</button>
+  </footer>
+</div>

@@ -1,0 +1,47 @@
+<section class="main-Container">
+
+    <div class="top-header">
+        <h3>Pick date & time</h3>
+
+
+        <button
+    (click)="dialogRef.close()"
+    class="alore_blue_Close_Button" style="margin-bottom: 30px;">
+      <img src="../../../assets/alore_Blue_Close.svg" alt="">
+    </button>
+    </div>
+    
+
+    <div class="content">
+
+        <div class="date-picker-container">
+            <div (click)="$event.stopPropagation()" class="calendar-wrapper">
+                <mat-calendar (click)="dateChange()" [(selected)]="selectedDate" [minDate]="todayDate" [maxDate]="maxDate">
+                </mat-calendar>
+            </div>
+           
+        </div>
+
+        <div class="add-date-time">
+            <input type="text" [value]="fullDate" name="date">
+
+            <input 
+            
+            mask="Hh:mm"
+            [(ngModel)]="time" 
+            name="time"
+            type="text">
+        </div>
+    </div>
+
+
+    <div class="action-button">
+        <button (click)="snoozeDate(data.messageId,data.status)" class="popup_Primary_Extra_Small_Button width_ex_sm">
+            Apply
+        </button>
+        <button (click)="dialogRef.close()" class="popup_Secondary_Extra_Small_Button width_ex_sm">
+            Cancel
+        </button>
+    </div>
+
+</section>

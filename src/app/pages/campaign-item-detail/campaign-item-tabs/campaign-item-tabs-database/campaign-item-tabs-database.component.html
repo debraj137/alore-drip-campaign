@@ -1,0 +1,201 @@
+<div class="campaign-item-tabs-database-container">
+  <div *ngIf="rowCounter >= 1" class="multi-Option-Div">
+
+    <div class="firstHalf">
+      <section [matMenuTriggerFor]="filter">
+        <img src="../../../../../assets/common_css/filter-Icon.svg" alt="" />
+        {{totalFilterUsed ? totalFilterUsed + ' Filter Applied' : 'Add a filter'}}
+      </section>
+
+      <section (click)="downloadCsv()">
+        <svg>
+          <use xlink:href="#download-prospect" />
+        </svg>
+      </section>
+
+      <section >
+        <div  matTooltipClass="medium_Primary_Tooltip_Thread" mat-raised-button matTooltipPosition="above"
+          matTooltip="Add prospects" class="medium_Primary_Tooltip state-change">
+          <button (click)="addProspectToDb()" _ngcontent-pfc-c324="" class="main_Div_Basic_Plus">
+            <img _ngcontent-pfc-c324="" src="../../../../../assets/custom_icons/basic_Plus_Button.svg" alt="">
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <div class="countStatus">
+
+      <span *ngIf="liveProspectStatus!= 0">
+        Currently processing on prospect- {{ liveProspectStatus | number}}
+      </span>
+
+      <span>
+        Total Row Count - {{ rowCounter | number}}
+      </span>
+
+    </div>
+
+  </div>
+
+  <div *ngIf="isDataEmpty" class="empty-data-message">
+    <img src="../../../../../assets/emptyStateIlustration.svg" alt="">
+    'No Data found! Try again
+  </div>
+
+  <div *ngIf="!loader">
+    <ag-grid-angular 
+    [class.hide]="isDataEmpty" 
+    style="width: 100%; height: 600px" 
+    class="ag-theme-alpine" 
+    id="ag-grid"
+    [rowData]="tableData" 
+    [rowModelType]="'infinite'" 
+    [cacheBlockSize]="100" 
+    [maxConcurrentDatasourceRequests]="2"
+    
+    [headerHeight]="40" 
+    [cacheOverflowSize]="2" 
+    [rowHeight]="rowHeight" 
+    [enterMovesDown]="true"
+    [paginationPageSize]="100" 
+    [enterMovesDownAfterEdit]="true" 
+    [components]="components"
+    [columnDefs]="layoutService.databaseHeader.value" 
+    [defaultColDef]="defaultColDef"
+    (gridReady)="onGridReady($event)" 
+    (firstDataRendered)="onFirstDataRendered($event)"
+    (rowEditingStarted)="onRowEditingStarted($event)" 
+    (cellEditingStopped)="onCellEditingStopped($event)">
+
+    </ag-grid-angular>
+  </div>
+
+</div>
+<table *ngIf="loader" class="item-tab-database-loader">
+  <tr>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+  </tr>
+  <tr>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+  </tr>
+  <tr>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+    <td class="skeleton-box"></td>
+  </tr>
+</table>
+
+<mat-menu class="filterMatDiv" #filter="matMenu">
+  <div class="filter-container scroll-horiz">
+    <section (click)="$event.stopPropagation();" *ngFor="let filter of filterData; let i = index"
+      class="content-section">
+      <div (click)="removeFilter(filter.id); $event.stopPropagation()" *ngIf="i >= 1" class="close-icon">
+        <mat-icon>
+          close
+        </mat-icon>
+      </div>
+
+      <div (click)="resetFilter()" *ngIf="i == 0" class="close-icon">
+        <mat-icon>
+          close
+        </mat-icon>
+      </div>
+      <div class="text">
+        <span *ngIf="i !== 1 || filterData.length >= 3">
+          {{filter.type}}
+        </span>
+        <mat-select *ngIf="i === 1 && filterData.length <= 2" [(ngModel)]="filter.type" placeholder="Column">
+          <mat-select-trigger>
+            {{filter.type}}
+          </mat-select-trigger>
+          <mat-option [value]="'and'">
+            And
+          </mat-option>
+          <mat-option [value]="'or'">
+            Or
+          </mat-option>
+        </mat-select>
+      </div>
+      <div class="form-field">
+        <mat-form-field class="select-input" appearance="outline" floatLabel="never">
+          <mat-select [(ngModel)]="filter.column" placeholder="Column">
+            <mat-select-trigger>
+              {{filter.column?.headerName}}
+            </mat-select-trigger>
+            <div *ngFor="let header of layoutService.databaseHeaderOrigin.value" style="display: contents;">
+              <mat-option *ngIf="header.headerName" [value]="header">
+                <span>{{header.headerName}}</span>
+              </mat-option>
+            </div>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <mat-form-field class="select-input" appearance="outline" floatLabel="never">
+          <mat-select [(ngModel)]="filter.contains" placeholder="Contains">
+            <mat-select-trigger>
+              {{replaceUnderscore(camelToUnderscore(filter.contains))}}
+            </mat-select-trigger>
+            <mat-option *ngFor="let containValue of getContainType(filter.column?.field)" [value]="containValue">
+              <span>
+                {{replaceUnderscore(camelToUnderscore(containValue))}}
+              </span>
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <mat-form-field floatLabel="never" appearance="outline">
+          <input matInput [(ngModel)]="filter.value" placeholder="Type to enter">
+          <mat-error>
+            Email invalid
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </section>
+  </div>
+  <section class="button-Section" style="padding: 0px 20px 40px 20px;">
+    <button (click)="applyFilter()" [disabled]="isFilterButtonEnabled" class="primary_Normal_Button_Blue">
+      Press to filter
+    </button>
+    <button (click)="$event.stopPropagation(); addFilter()" class="alt_Button_Blue_With_Icon_Left width_sml">
+      <span class="alt_Button_Blue_With_Icon_Left_Text">
+        <img src="../assets/common_css/add_Icon.svg" alt="" />
+        Add a new filter
+      </span>
+    </button>
+  </section>
+</mat-menu>
+
+<svg display="none">
+  <symbol id="download-prospect">
+    <path
+      d="M14.527 14.3768L9.41491 19.4889C9.33841 19.5704 9.24602 19.6354 9.14344 19.6798C9.04086 19.7242 8.93027 19.7471 8.81849 19.7471C8.70671 19.7471 8.59612 19.7242 8.49354 19.6798C8.39096 19.6354 8.29857 19.5704 8.22207 19.4889L3.10993 14.3768C2.9858 14.2627 2.90085 14.1123 2.86719 13.947C2.83353 13.7818 2.85288 13.6102 2.92248 13.4566C2.9864 13.301 3.09495 13.1678 3.23444 13.0738C3.37394 12.9798 3.53814 12.9292 3.70635 12.9283H7.11444V2.70405C7.11444 2.25211 7.29397 1.81868 7.61355 1.4991C7.93312 1.17953 8.36655 1 8.81849 1C9.27043 1 9.70386 1.17953 10.0234 1.4991C10.343 1.81868 10.5225 2.25211 10.5225 2.70405V12.9283H13.9306C14.0988 12.9292 14.263 12.9798 14.4025 13.0738C14.542 13.1678 14.6506 13.301 14.7145 13.4566C14.7841 13.6102 14.8034 13.7818 14.7698 13.947C14.7361 14.1123 14.6512 14.2627 14.527 14.3768Z" />
+    <path
+      d="M3.70635 12.8033L3.70572 12.8033C3.51283 12.8043 3.32454 12.8623 3.16459 12.9701C3.00524 13.0775 2.88111 13.2295 2.80771 13.407C2.728 13.5841 2.70595 13.7817 2.74471 13.972C2.78344 14.1621 2.88091 14.3352 3.02332 14.467L8.13234 19.576C8.22025 19.6692 8.32625 19.7436 8.44387 19.7945C8.56213 19.8457 8.68963 19.8721 8.81849 19.8721C8.94735 19.8721 9.07484 19.8457 9.1931 19.7945C9.31072 19.7436 9.41672 19.6692 9.50463 19.576L14.6136 14.467C14.7561 14.3353 14.8535 14.1621 14.8923 13.972C14.931 13.7817 14.909 13.5841 14.8293 13.4071C14.7559 13.2295 14.6317 13.0775 14.4724 12.9701C14.3124 12.8623 14.1241 12.8043 13.9313 12.8033H13.9306H10.6475V2.70405C10.6475 2.21895 10.4548 1.75373 10.1118 1.41072C9.76881 1.0677 9.30358 0.875 8.81849 0.875C8.3334 0.875 7.86817 1.0677 7.52516 1.41072C7.18214 1.75373 6.98944 2.21895 6.98944 2.70405V12.8033L3.70635 12.8033Z"
+      stroke-width="0.25" />
+    <path
+      d="M15.4369 25.0001H2.19978C1.90722 25.0001 1.62664 24.8839 1.41977 24.6771C1.2129 24.4702 1.09668 24.1896 1.09668 23.897C1.09668 23.6045 1.2129 23.3239 1.41977 23.117C1.62664 22.9102 1.90722 22.7939 2.19978 22.7939H15.4369C15.7295 22.7939 16.0101 22.9102 16.2169 23.117C16.4238 23.3239 16.54 23.6045 16.54 23.897C16.54 24.1896 16.4238 24.4702 16.2169 24.6771C16.0101 24.8839 15.7295 25.0001 15.4369 25.0001Z" />
+    <path
+      d="M2.19978 25.1251H15.4369C15.7626 25.1251 16.075 24.9958 16.3053 24.7654C16.5356 24.5351 16.665 24.2228 16.665 23.897C16.665 23.5713 16.5356 23.259 16.3053 23.0286C16.075 22.7983 15.7626 22.6689 15.4369 22.6689H2.19978C1.87406 22.6689 1.56169 22.7983 1.33138 23.0286C1.10107 23.259 0.97168 23.5713 0.97168 23.897C0.97168 24.2228 1.10107 24.5351 1.33138 24.7654C1.56169 24.9958 1.87406 25.1251 2.19978 25.1251Z" />
+  </symbol>
+</svg>

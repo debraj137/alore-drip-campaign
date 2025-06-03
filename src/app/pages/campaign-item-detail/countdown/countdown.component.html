@@ -1,0 +1,26 @@
+<div>
+    <div   [@openClose]="!isMailScheduled ? 'open' : 'closed'"  class="mail-schedule-hide">
+      <div>
+        <p class = "next-mail">Next Mail Scheduled</p>
+      </div>
+      <div>
+        <p class="time" *ngIf="isCampaignActive">{{countdownDay}}d: {{countdownHour}}h: {{countdownMinute}}m: {{countdownSeconds}}s</p>
+      </div>
+      
+      <!-- <div>
+        <p class="time" *ngIf="isCampaignActive">{{tempCountDownDate}}</p>
+      </div> -->
+      <div>
+        <p class="text" *ngIf="!isCampaignActive">{{message}}</p>
+      </div>
+      <div>
+        <span class="hide" (click)="toggleScheduleCountdown()">Hide</span>
+      </div>
+    </div>
+    
+    <div *ngIf="isMailScheduled" class="schedule-icon" (click)="toggleScheduleCountdown()">
+      <img src="../../../assets/icon/showTime.svg">
+    </div>
+  
+  </div>
+  

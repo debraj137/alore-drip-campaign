@@ -1,0 +1,22 @@
+<div class="faq_Right_Side_Div">
+    <div class="faq_Right_Side_accordian_Div" *ngFor="let data of faqStructure">
+        <div class="header">
+            <div class="left-side">
+                <div (click)="data.expanded = !data.expanded" class="expand-icon">
+                    <mat-icon>
+                        {{data.expanded ? 'expand_more' : 'chevron_right'}}
+                    </mat-icon>
+                </div>
+                <span>
+                    {{ data.question }}
+                </span>
+            </div>
+        </div>
+        <div *ngIf="data.expanded" class="body">
+            <p>
+                {{ data.answer }}
+            </p>
+        </div>
+    </div>
+
+</div>

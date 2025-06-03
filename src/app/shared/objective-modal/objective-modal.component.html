@@ -1,0 +1,85 @@
+<mat-dialog-content class="objective">
+  <aside class="objective-aside">
+    <header class="objective-aside-header">
+      <h2 class="dc-headline--headline-2">Objective</h2>
+      <h3 class="dc-headline--headline-3 subheader-title">By Alore community</h3>
+    </header>
+    <div class="objective-aside-body">
+      <ng-container *ngFor="let program of programs">
+        <button class="dc-listview-button objective-aside-button">{{program.name}}</button>
+      </ng-container>
+    </div>
+    <div>
+      <h3 class="dc-headline--headline-4 subheader-title objective-aside-workspace">
+        Your workspace
+        <div class="add-button dc-icon-button">
+          <mat-icon class="add-button-icon">add</mat-icon>
+        </div>
+      </h3>
+      <button class="dc-listview-button objective-aside-button" (click)="onWorkspaceClick()">
+        Category
+        <button class="menu-trigger"
+            [matMenuTriggerFor]="moreAction"
+            mat-flat-button>
+          <mat-icon class="more-icon">more_horiz</mat-icon>
+        </button>
+      </button>
+    </div>
+    <div>
+      <h3 class="dc-headline--headline-4 subheader-title objective-aside-personal">
+        Personal
+        <div class="add-button dc-icon-button">
+          <mat-icon class="add-button-icon">add</mat-icon>
+        </div>
+      </h3>
+      <button class="dc-listview-button objective-aside-button">
+        Category 1
+        <button class="menu-trigger"
+            [matMenuTriggerFor]="moreAction"
+            mat-flat-button>
+          <mat-icon class="more-icon">more_horiz</mat-icon>
+        </button>
+      </button>
+    </div>
+  </aside>
+  <div class="objective-content-header">
+    <button class="small_Button_Normal_State objective-content-button cursor_Pointer">
+      <span class="small_Button_Normal_State_Text">Create from Scratch</span>
+    </button>
+    <button class="close_Button_Normal objective-content-close cursor_Pointer display_Flex item_Center content_Center"
+        (click)="onCloseButtonClick()">
+      <mat-icon class="icon-close">close</mat-icon>
+    </button>
+  </div>
+  <div class="objective-content">
+    <div class="objective-content-main-wrapper">
+      <div class="objective-content-main" *ngFor="let content of contents">
+        <h2 class="dc-headline--headline-3">{{content.title}}</h2>
+        <div class="objective-article-wrapper">
+          <app-objective-card
+              *ngFor="let article of content.articles"
+              [article]="article">
+          </app-objective-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-menu #moreAction="matMenu"
+    class="custom-menu selection-list leftbar-more-action">
+  <div>
+    <button mat-menu-item>
+    <img [src]="getIcon('rename')" alt="">
+      <span>Edit objective details</span>
+    </button>
+    <button mat-menu-item (click)="deleteCampaign()">
+      <img [src]="getIcon('delete')" alt="">
+      <span>Delete objective</span>
+    </button>
+    <button mat-menu-item>
+      <img [src]="getIcon('share')" alt="">
+      <span>Share folder</span>
+    </button>
+  </div>
+</mat-menu>

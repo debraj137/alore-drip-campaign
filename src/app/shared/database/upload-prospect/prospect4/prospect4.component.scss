@@ -1,0 +1,62 @@
+.prospect-step4{
+    .prospect-form-field{
+        label{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 112%;
+            display: block;
+            color: #181818;
+            text-transform: capitalize;
+        }
+        mat-form-field{
+            width: 100%;
+            margin-bottom: 20px;
+
+            &.mat-option-disabled{
+              background-color: #1818181a!important;
+            }
+
+            &::ng-deep {
+                .mat-form-field-outline-start {
+                    border-radius: 10px 0 0 10px !important;
+                    min-width: 10px !important;
+                }
+
+                .mat-form-field-outline-end {
+                    border-radius: 0 10px 10px 0 !important;
+                }
+                .mat-form-field-infix {
+                    border: none;
+                    padding: 20px 10px !important;
+                    display: flex;
+                    align-items: center;
+
+                    .mat-select-arrow-wrapper {
+                        display: none;
+                    }
+                }
+        
+                .mat-select-arrow {
+                    border-left: none !important;
+                    border-top: none !important;
+                    display: inline-block !important;
+                    border-right: 1px solid rgba(24, 24, 24, 0.4) !important;
+                    border-bottom: 1px solid rgba(24, 24, 24, 0.4) !important;
+                    width: 8px !important;
+                    height: 8px !important;
+                    transform: rotate(-315deg);
+                }
+            }
+        }
+    }
+}
+
+// .select-input {
+//     display: flex;
+// }
+
+.custom-select-text{
+    text-transform: capitalize;
+}

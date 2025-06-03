@@ -1,0 +1,25 @@
+.graph-loader-container{
+    height: 100%;
+
+    p {
+      color: var(--alore-main-blue);
+      display: flex;
+      font-family: "Inter";
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 132%;
+      margin-bottom: 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .skeleton-container{
+        display: flex;
+        height: 90%;
+        gap: 10px;
+
+        .skeleton-box{
+            height: 100%;
+            flex: 1;
+        }
+    }
+}

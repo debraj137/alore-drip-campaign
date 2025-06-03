@@ -1,0 +1,127 @@
+// .example-chip-list {
+//   width: 100%;
+//   padding: 0 !important;
+// }
+
+// mat-form-field{
+//   font-size: 100%;
+//   line-height: 0;
+// }
+
+// ::ng-deep .mat-form-field-infix{
+//   border-top-width: 0px !important; 
+//   padding-bottom: 2px !important;
+//   padding-top: 2px  !important;
+//   border-top: 5px !important;
+//   border-top-width: 5px !important;
+
+// }
+
+// mat-form-field-flex{
+//   padding: 0 !important;
+// }
+
+// ::ng-deep .mat-form-field-wrapper{
+//   padding-bottom: 0 !important; 
+// }
+
+// span{
+//   padding-top: 0;
+// }
+
+// ::ng-deep .mat-form-field-subscript-wrapper{
+//   margin-top: 0px;
+// }
+
+
+// mat-chip{
+//   padding-left: 9px !important;
+//   padding-right: 5px !important;
+//   margin-top: 1px !important;
+//   margin-bottom: 1px !important;
+//   margin-left: 4px !important;
+//   min-height: 27px !important;
+// }
+
+// ::ng-deep .mat-form-field-underline{
+//   display: none;
+// }
+
+// ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+//  background-color: #ffffff;
+// }
+
+// ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+//   border-radius: 4px 4px 0 0;
+//   padding: 0px !important;
+// }
+
+
+.cell-css {
+  background: rgba(51, 138, 23, 0.2);
+  border: 1px solid #338A17;
+  color: #338A17;
+  font-size: 14px;
+  height: 22px;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.onWrapCellsOn {
+  white-space: nowrap;
+  flex-wrap: wrap;
+}
+
+
+.selectedTagSection {
+  font-size: 14px;
+  height: 22px;
+  display: flex;
+  overflow: hidden;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  border-radius: 5px;
+
+  line-height: 22px;
+  padding: 0 5px;
+  margin: 10px 0px 0px 0;
+  max-width: fit-content;
+  /*default tags color starts here*/
+  background: rgba(68, 68, 68, 0.2);
+  color: rgb(68, 68, 68);
+  border: 1px solid rgb(68, 68, 68);
+  /*default tags color ends here*/
+}
+
+.selectedTagText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.clearItemIcon {
+  border: none;
+  cursor: pointer;
+  margin: 0 0 0 5px;
+  padding: 0;
+  background: transparent;
+}
+
+
+.clearItemIcon, .clearItemIcon i {
+  background: transparent;
+  line-height: 0;
+}
+
+.clearItemIcon i {
+ border-radius: 50%;
+  width: 17px;
+  height: auto;
+  padding: 1px 5px 2px;
+}
+
+.clearItemIcon i:hover {
+  background: hsla(0,0%,100%,.3);
+}
+
+

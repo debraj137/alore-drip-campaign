@@ -1,0 +1,100 @@
+.default-modal {
+    padding: 40px 32px;
+    border-radius: 10px;
+    font-family: 'Inter';
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    // width: 532px;
+
+    .header {
+        display: flex;
+        // gap: 10px;
+        align-items: center;
+
+        .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(51, 75, 250, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            margin-right: 10px;
+
+            svg {
+                width: 22px;
+                height: 22px;
+            }
+        }
+
+        .label {
+            flex: auto;
+
+            p {
+                margin: 0;
+                color: #181818;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 132%;
+                font-family: 'Inter';
+            }
+
+            span {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 116%;
+                color: #181818CC;
+                font-family: 'Inter';
+            }
+
+        }
+
+        .close-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 24px;
+
+            &:active {
+                svg {
+                    stroke: white;
+                }
+            }
+
+            svg {
+                stroke: #334BFA;
+                width: 12px;
+                height: 18px;
+            }
+        }
+    }
+
+    .action-button {
+        display: flex;
+        gap: 24px;
+        width: 100%;
+        align-items: flex-end;
+        margin-top: 13px;
+
+        .primary_Normal_Button_Blue {
+            width: 100px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 116%;
+        }
+
+        .secondary_Normal_Button_Blue {
+            width: 237px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 116%;
+            height: 38px;
+        }
+
+    }
+}

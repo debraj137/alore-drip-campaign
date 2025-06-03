@@ -1,0 +1,174 @@
+.drop-down {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    padding: 10px 10px 10px 11px;
+    font-family: 'INTER';
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+
+    .parameter {
+
+        .example-margin {
+            margin: 8px 8px 8px 0;
+
+        }
+
+    }
+
+
+}
+
+.main-chat_container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    padding: 10px;
+    box-sizing: border-box;
+
+
+    .header {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .burger_Icon {
+            margin-top: 0px !important
+        }
+
+    }
+
+    .token_count {
+
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        display: block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        line-height: 130%;
+        letter-spacing: 0.03em;
+        color: rgba(24, 24, 24, 0.4);
+
+    }
+
+
+
+    .chat_box {
+
+        .outer_Container_Div_Textarea {
+            width: auto;
+           
+            max-width: 95%;
+
+            .prompt{
+                overflow-y: scroll;
+            }
+
+
+
+
+        }
+    }
+
+
+    .action_buttons {
+        display: flex;
+        gap: 15px;
+    }
+}
+
+
+.mat-slider-horizontal {
+    height: 48px;
+    min-width: 98%;
+}
+
+.example-label-container {
+
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+
+@media only screen and (max-height: 700px) {
+    .drop-down {
+        display: flex;
+        gap: 0px;
+    }
+}
+
+.highlight {
+
+    display: inline;
+    min-width: 100px;
+    justify-content: center;
+    border: none;
+    margin: 2px 0;
+    outline: none;
+    font-family: "Arial";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #334bfab3;
+    line-height: 40px;
+    word-break: break-all;
+
+    padding: 8px 5px 8px 5px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #334bfa33;
+    border-color: var(--alore-main-blue);
+
+    // &.number {
+    //     &.invalid {
+    //         &::before {
+    //             content: url(../../../assets/icon/icon-custom-input-number-suffix-invalid.svg);
+    //         }
+    //     }
+
+    //     &::before {
+    //         content: url(../../../assets/icon/icon-custom-input-number-suffix-valid.svg);
+    //     }
+    // }
+
+    // &.invalid {
+    //     border-color: #fa336f !important;
+    //     background-color: #fa336f33 !important;
+
+    //     &::before {
+    //         margin: 5px 0 0px -25px;
+    //         position: relative;
+    //         content: url(../../../assets/icon/icon-custom-input-suffix-invalid.svg);
+    //     }
+    // }
+
+    // &::before {
+    //     margin: 5px 0 0px -25px;
+    //     position: relative;
+    //     content: url(../../../assets/icon/icon-custom-input-suffix-valid.svg);
+    // }
+}
+
+.highlight:hover{
+    border-width: 2px;
+}
+
+.highlight:active{
+    border-width: 2px;
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
+  }

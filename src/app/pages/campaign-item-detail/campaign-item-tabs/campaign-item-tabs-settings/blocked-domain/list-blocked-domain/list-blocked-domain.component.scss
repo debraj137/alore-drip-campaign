@@ -1,0 +1,53 @@
+.list-blocked-domain-container {
+  display: contents;
+
+  tr {
+    &.border-top {
+      td {
+        padding-bottom: 0 !important;
+        @media (max-width: 1366px){
+          padding-bottom: 15px !important;
+      }
+      }
+    }
+
+    td {
+      .spinner {
+        margin: auto;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+::ng-deep .campaign-menu .button-mat-menu {
+  width: inherit;
+  height: 43px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 112%;
+  border: none;
+  background-color: #fff;
+}
+
+::ng-deep .campaign-menu .button-mat-menu:hover {
+  background-color: #334bfa33;
+  color: #334bfa;
+  border-radius: 5px;
+}
+
+::ng-deep .campaign-menu .button-mat-menu:active {
+  background-color: #334bfa;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.truncate{
+  white-space: nowrap;
+    overflow: hidden;
+  text-overflow: ellipsis;
+
+}

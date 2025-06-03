@@ -1,0 +1,20 @@
+<div class="step3-prospect">
+    <app-file-uploader
+        *ngIf="fileInputvisibility"
+        [isFileUploaded]="isFileUploaded"
+        [isBase64]="false"
+        [validAttachmentList]="['csv', 'xls']"
+        (uploadCompleted)="isUploadCompleted = $event"
+        (fileSelected)="onFileSelected($event)">
+    </app-file-uploader>
+
+    <section class="checkbox_Div">
+        <div class="medium_CheckBox_Div">
+            <mat-checkbox class="checkbox_Medium_button"  [(ngModel)]="isFirstrowAsDataType">
+            </mat-checkbox>
+          </div>
+        <p>
+            Use first row as identifier for the column data type
+        </p>
+    </section>
+</div>

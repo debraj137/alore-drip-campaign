@@ -1,0 +1,27 @@
+.empty_State_Container {
+  .empty_State_Section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10% auto;
+
+    img {
+      width: 400px;
+      height: 400px;
+    }
+
+    div {
+      margin-top: 60px;
+      p {
+        color: #fa336f;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 130%;
+      }
+    }
+  }
+}

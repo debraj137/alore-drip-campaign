@@ -1,0 +1,234 @@
+<div class="prospect6-container">
+    <div class="header">
+        <div class="icon">
+            <svg>
+                <use xlink:href="#edit-prospect" />
+            </svg>
+        </div>
+        <p>
+            <span>
+                Edit & Upload
+            </span>
+            <span>
+                Edit the newly added leads or edit existing ones
+            </span>
+        </p>
+    </div>
+    <div class="body">
+        <div class="filter-section">
+            <div class="multi-Option-Div">
+                <section [matMenuTriggerFor]="filter">
+                <img src="../../../../../assets/common_css/filter-Icon.svg" alt="" />
+                {{totalFilterUsed ? totalFilterUsed + ' Filter Applied' : 'Add a filter'}}
+                </section>
+                <section [matMenuTriggerFor]="headerHeight">
+                <img src="../../../../../assets/common_css/sort-Icon.svg" alt="" />
+                </section>
+                <section (click)="downloadCsv()">
+                <img src="../../../../../assets/common_css/download-Icon.svg" alt="" />
+                </section>
+                <span>
+                  Total Row Count - {{rowCounter | number}}
+                </span>
+            </div>
+            <button
+                (click)="uploadData()" 
+                class="submit-button">
+                Upload & Save
+                <img src="../../../../../assets/icon/icon-arrow-right.svg" alt="">
+            </button>
+        </div>
+        <div
+            *ngIf="!tableHeader.length || !tableData.length"
+            class="empty-data-message"
+        >
+            <img src="../../../../../assets/emptyStateIlustration.svg" alt="">
+            No Data found! Try again.
+        </div>
+        <div class="ag-grid-container">
+            <ag-grid-angular
+                style="width: 100%; height: 700px"
+                class="ag-theme-alpine"
+                [rowData]="getTableData"
+                [headerHeight]="40"
+                [cacheBlockSize]="50"
+                [rowHeight]="rowHeight"
+                [defaultColDef]="defaultColDef"
+                [columnDefs]="tableHeader"
+                [rowModelType]="'infinite'"
+                (gridReady)="onGridReady($event)"
+                (cellEditingStopped)="onCellEditingStopped($event)"
+            >
+            </ag-grid-angular>
+        </div>
+    </div>
+        
+    <!-- <table *ngIf="loader" class="item-tab-database-loader">
+    <tr>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+    </tr>
+    <tr>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+    </tr>
+    <tr>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+        <td class="skeleton-box"></td>
+    </tr>
+    </table> -->
+</div>
+
+<mat-menu class="filterMatDiv" #filter="matMenu">
+    <div
+        [style.padding-right.px]="filterData.length >= 4 ? 10 : 0"
+        class="filter-container scroll-horiz">
+        <section 
+        (click)="$event.stopPropagation();" 
+        *ngFor="let filter of filterData; let i = index"
+        class="content-section">
+        <div
+            (click)="resetFilter(); $event.stopPropagation()"
+            *ngIf="i <= 0" 
+            class="close-icon">
+            <mat-icon>
+            close
+            </mat-icon>
+        </div>
+        <div
+            (click)="removeFilter(filter.id); $event.stopPropagation()"
+            *ngIf="i >= 1" 
+            class="close-icon">
+            <mat-icon>
+            close
+            </mat-icon>
+        </div>
+        <div class="text">
+            <span *ngIf="i !== 1 || filterData.length >= 3">
+            {{filter.type}}
+            </span>
+            <mat-select
+                *ngIf="i === 1 && filterData.length <= 2"
+                [(ngModel)]="filter.type"
+                placeholder="Column">
+                <mat-select-trigger>
+                {{filter.type}}
+                </mat-select-trigger>
+                <mat-option
+                    [value]="'and'">
+                    And
+                </mat-option>
+                <mat-option
+                    [value]="'or'">
+                    Or
+                </mat-option>
+            </mat-select>
+        </div>
+        <div class="form-field">
+            <mat-form-field
+                class="select-input"
+                appearance="outline"
+                floatLabel="never">
+                <mat-select
+                    [(ngModel)]="filter.column"
+                    placeholder="Column">
+                    <mat-select-trigger>
+                    {{filter.column?.headerName}}
+                    </mat-select-trigger>
+                    <mat-option
+                        *ngFor="let header of tableHeader"
+                        [value]="header">
+                        <span>{{header.headerName}}</span>
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-field">
+            <mat-form-field
+                class="select-input"
+                appearance="outline"
+                floatLabel="never">
+                <mat-select
+                    [(ngModel)]="filter.contains"
+                    placeholder="Contains">
+                    <mat-select-trigger>
+                    {{replaceUnderscore(camelToUnderscore(filter.contains))}}
+                    </mat-select-trigger>
+                    <mat-option
+                        *ngFor="let containValue of getContainType(filter.column?.field)"
+                        [value]="containValue">
+                        <span>
+                        {{replaceUnderscore(camelToUnderscore(containValue))}}
+                        </span>
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-field">
+            <mat-form-field
+                floatLabel="never"
+                appearance="outline">
+                <input
+                    matInput
+                    [type]="
+                    filter.column?.field === 'phone' ||
+                    filter.column?.field === 'workPhone' ?
+                    'number' : 'text'
+                    "
+                    [(ngModel)]="filter.value"
+                    placeholder="Type to enter">
+                <mat-error>
+                    Email invalid
+                </mat-error>
+            </mat-form-field>
+        </div>
+        </section>
+    </div>
+    <section class="button-Section">
+        <button
+            (click)="applyFilter()" 
+            [disabled]="isFilterButtonEnabled"
+            class="primary_Normal_Button_Blue">
+            Press to filter
+        </button>
+        <button 
+            (click)="$event.stopPropagation(); addFilter()" 
+            class="alt_Button_Blue_With_Icon_Left width_sml">
+            <span class="alt_Button_Blue_With_Icon_Left_Text">
+                <img src="../assets/common_css/add_Icon.svg" alt="" />
+                Add a new filter
+            </span>
+        </button>
+    </section>
+</mat-menu>
+<mat-menu class="row-height" #headerHeight="matMenu">
+    <button
+        (click)="changeGridHeight(row.value)" 
+        *ngFor="let row of rowHeightSelection" mat-menu-item>
+        {{row.label}}
+    </button>
+</mat-menu>
+
+<svg display="none">
+    <symbol id="edit-prospect">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.4451 3.70811C17.7948 3.53479 18.2054 3.5348 18.5552 3.70812C18.7112 3.78543 18.8817 3.94197 19.4698 4.53003C20.0578 5.11807 20.2143 5.28864 20.2916 5.44464C20.4649 5.79436 20.4649 6.20497 20.2916 6.5547C20.2143 6.7107 20.0578 6.88126 19.4697 7.46929L18.7028 8.23627C17.1451 8.09503 15.9047 6.8547 15.7634 5.29703L16.5305 4.53C17.1185 3.94196 17.2891 3.78541 17.4451 3.70811ZM14.5092 6.55125L6.90057 14.1598C6.37301 14.6874 6.17478 14.8894 6.0191 15.1126C5.87317 15.3218 5.75239 15.5475 5.65924 15.785C5.55986 16.0383 5.50174 16.3153 5.35542 17.0469L4.95608 19.0436L6.95279 18.6443C7.68437 18.498 7.96136 18.4398 8.21471 18.3405C8.45219 18.2473 8.67788 18.1265 8.88711 17.9806C9.11033 17.8249 9.31234 17.6267 9.83989 17.0991L17.4485 9.49052C16.0732 9.01548 14.9843 7.9265 14.5092 6.55125ZM19.2212 2.36411C18.4518 1.98281 17.5485 1.9828 16.7791 2.36408C16.3719 2.56587 16.0157 2.9226 15.5556 3.38341L15.4698 3.46933L5.83991 13.0991L5.79168 13.1474C5.32831 13.6106 5.02953 13.9093 4.78877 14.2545C4.57549 14.5603 4.39896 14.8902 4.26282 15.2373C4.10913 15.6291 4.02633 16.0434 3.89791 16.6859L3.88455 16.7527L3.26458 19.8526C3.2154 20.0985 3.29236 20.3527 3.46968 20.53C3.647 20.7073 3.9012 20.7843 4.1471 20.7351L7.24696 20.1151L7.31383 20.1018L7.31386 20.1018C7.95635 19.9734 8.37064 19.8906 8.76244 19.7369C9.10952 19.6007 9.43937 19.4242 9.74518 19.2109C10.0904 18.9702 10.3891 18.6714 10.8523 18.208L10.9005 18.1598L20.5304 8.52995L20.6163 8.44413L20.6163 8.44411C21.0771 7.98407 21.4339 7.62793 21.6356 7.22075C22.0169 6.45135 22.0169 5.54801 21.6357 4.77861C21.4339 4.37142 21.0772 4.01527 20.6164 3.55521L20.5304 3.46939L20.4446 3.38346C19.9846 2.92264 19.6284 2.5659 19.2212 2.36411Z"/>
+    </symbol>
+</svg>

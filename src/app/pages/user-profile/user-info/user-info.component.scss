@@ -1,0 +1,173 @@
+::ng-deep input{
+    // margin-top: 10px;
+    border-top-width: 0px  !important;
+    border-right-width: 0px !important;
+    border-left-width: 0px !important;
+    border-bottom-width: 0px !important;
+}
+.userInfoHeading {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #181818;
+    align-self: stretch;
+    margin-bottom:8px;
+}
+.userInfoGroup {
+    margin: 50px 0 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: space-between;
+}
+.userInfoData {
+    height: 22px ;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(24, 24, 24, 0.8);
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+::ng-deep .delete_Button {
+    width: 136px !important;
+}
+.userTitle{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+color: rgba(24, 24, 24, 0.8);
+}
+.name-avtar-btn{
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+.large_circuler_avtar {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0px;
+    border: 0px;
+    position: relative;
+    background-color: #d8dafd5d;
+}
+.large_circuler_avtar > img{
+
+    height:100%;
+    width:100%;
+  
+    border-radius: 50%;
+    object-position: top;
+}
+.name_avtar {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+@media screen and (max-width:1400px) {
+    .name_avtar {
+        width:422px;
+    }
+}
+::ng-deep .tab_Layout_Item_Active svg {
+    filter: invert(22%) sepia(60%) saturate(2890%) hue-rotate(220deg) brightness(91%) contrast(84%);
+}
+::ng-deep .tab_Layout_Item:active svg {
+    filter: invert(1);
+}
+button.upload-img {
+    background: #fff;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    position: absolute;
+    bottom: 2px;
+    right: -15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+}
+button.upload-img svg {
+    filter: #fff;
+    filter: grayscale(1);
+}
+button.upload-img:hover{
+    background: rgba(51, 75, 250, 0.2);
+}
+button.upload-img:hover svg{
+    filter: none;
+}
+button.upload-img:active{
+    background: #334BFA;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+button.upload-img:active svg{
+    filter: brightness(0) invert(1);
+    
+}
+
+
+@media only screen and (max-width:1366px){
+    .userInfoGroup {
+      margin: 25px 0 0 0px;
+  }
+
+  .userInfoHeading {
+    font-size: 15px !important;
+}
+
+.userTitle {
+    font-size: 14px;
+}
+
+.name_avtar {
+    gap: 15px !important;
+}
+
+.primary_Normal_Button_Blue {
+    width: 83px !important;
+    height: 33px !important;
+}
+::ng-deep .empty_State_User_Profile{
+.tab_Layout_Item {
+    padding: 11px 23px !important;
+
+    svg{
+        width:20px !important;
+    }
+}
+.tab_Layout_Text {
+    font-size: 12px !important;
+}
+
+.delete_Button {
+    width: 113px !important;
+    height: 38px !important;
+}
+
+.primary_Normal_Button_Blue {
+    width: 110px !important;
+    height: 38px !important;
+    padding: 4px 10px !important;
+
+}
+
+}
+  }

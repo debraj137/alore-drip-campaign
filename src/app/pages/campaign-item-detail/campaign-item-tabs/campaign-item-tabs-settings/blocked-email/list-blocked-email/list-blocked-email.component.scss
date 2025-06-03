@@ -1,0 +1,31 @@
+.list-blocked-mail-container{
+    display: contents;
+
+    tr{
+        &.border-top {
+            td{
+                padding-bottom: 0!important;
+
+                @media (max-width: 1366px){
+                    padding-bottom: 15px !important;
+                }
+            }
+
+           
+        }
+
+        td{
+            .spinner{
+                margin: auto;
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+
+::ng-deep .disabled-add-button{
+    border: 0px !important;
+    padding: 0 !important;
+    background-color:transparent;
+}

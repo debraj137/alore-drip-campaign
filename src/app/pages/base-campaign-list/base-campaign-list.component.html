@@ -1,0 +1,70 @@
+<div class="mainBody">
+  <div class="baseHeader">
+    <div class="titleContainer">
+      <p>
+        {{ parentName }}
+      </p>
+
+    </div>
+    <!-- <section (click)="openSearchCampaign()" class="search-field">
+      <img src="../assets/searchCampaign.svg" alt="" />
+    </section> -->
+
+    <div class="button-Div">
+      <button [ngClass]="{ 'disabled' : loading }" (click)="openCreateCampaignModal(false)"
+        class="alt_Button_Blue_With_Icon_Left cursor_Pointer">
+        <span class="alt_Button_Blue_With_Icon_Left_Text">
+          <mat-icon>add</mat-icon>
+          New Campaign
+        </span>
+      </button>
+
+      <button [ngClass]="{ 'disabled' : loading }" (click)="openCreateBaseModal()"
+        class="alt_Button_Blue_With_Icon_Left">
+        <span class="alt_Button_Blue_With_Icon_Left_Text">
+          <mat-icon>add</mat-icon>
+          Add new Campaign Base
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div>
+    <app-breadcrumb [data]="breadcrumbData"></app-breadcrumb>
+  </div>
+
+
+
+  <div
+  [ngClass]="{'displayAfterLoader': loading == false, 'heightData': scrollData == true}" class="search-results-container scroll-vertical"
+    infinite-scroll [scrollWindow]="false" [infiniteScrollDistance]='3' (scrolled)="onScroll()" async>
+    <div *ngFor="let item of baseCampaignList; let i = index">
+      <app-base-campaign-detail class="baseListContainer" (refreshBaseCampaign)="getAllBase()"
+        [campaignList]="item.campaignList" [baseCampaignDetail]="item.campaignBase">
+
+      </app-base-campaign-detail>
+    </div>
+
+  </div>
+
+
+ <app-pagination-loader *ngIf="scrollData == true"> </app-pagination-loader>
+
+
+  <!-- <section class="loaderInfiniteScreen" >
+    <div class="spinner">
+
+    </div>
+  </section> -->
+
+
+  <app-dashboard-loading *ngIf="loading"> </app-dashboard-loading>
+
+  <div *ngIf="emptyMsg">
+    <app-empty-state-msg></app-empty-state-msg>
+  </div>
+
+
+
+
+</div>

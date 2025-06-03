@@ -1,0 +1,44 @@
+<div class="main_Container_Number_Mail">
+    <section class="input_Section">
+      <div class="head_Input_Section">
+        <span> Number of Emails in sequence </span>
+        <img
+          matTooltipClass="small_Primary_Tooltip"
+          mat-raised-button
+          matTooltipPosition="above"
+          matTooltip="Fill Number's"
+          src="../../../assets/common_css/info_About_Time_Zone.svg"
+          alt=""
+        />
+      </div>
+      <div class="inputContainer timeZoneDropDown">
+        <input 
+          class="input_Value" 
+          type="number"
+          (keyup)="imposeMinMaxOfSeq($event.target)"
+          [min]="1"
+          [max]="20"
+          placeholder="Enter number of mails"
+          [(ngModel)]="emailCountNumber"
+          [(value)]="emailCountNumber" />
+      </div>
+    </section>
+  
+    <div class="next_Button_Div">
+      <button
+        class="primary_Normal_Button_Blue width_ex_sml"
+        [disabled]="emailCountNumber < 1"
+        (click)="addEmailSequenceNumber()"
+      >
+        Next
+      </button>
+  
+      <button
+        *ngIf="prevStep"
+        (click)="pageAction.emit({page : prevStep})"
+        class="secondary_Normal_Button_Blue width_ex_sml"
+      >
+        Back
+      </button>
+    </div>
+</div>

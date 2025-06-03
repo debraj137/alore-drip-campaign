@@ -1,0 +1,56 @@
+.chart-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.black-color {
+    color: #181818;
+}
+
+// .noGraph {
+//     display: flex;
+//     width: 86%;
+//     position: absolute;
+//     height: 80%;
+//     flex-wrap: wrap;
+//     gap: 5px;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+.chart-first-tier {
+    font-family: 'Inter';
+}
+
+.chart-bar-chart-wrapper {
+    canvas{
+        height: 260px!important;
+
+        @media (max-width: 1300px) {
+            height: auto!important;
+        }
+    }
+}
+
+.chartLoader {
+    width: 100%;
+    display: flex;
+    margin-right: 30px;
+}
+
+.emptyGraphContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 140px 0px;
+    // height: 395px;
+}
+
+@media (min-width: 1000px) and (max-width: 1299px) {
+    .emptyGraphContainer {
+        margin: 94px 0px !important;
+    }
+}

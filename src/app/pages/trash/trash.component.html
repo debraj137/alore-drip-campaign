@@ -1,0 +1,28 @@
+<div class="empty-State-Trash">
+
+  <div class="titleContainer">
+    <p>
+      Trash
+    </p>
+    <div>
+      <app-breadcrumb [data]="breadcrumbData"></app-breadcrumb>
+    </div>
+  </div>
+
+
+  <div class="baseListContainer" *ngFor="let item of baseCampaignList ,let i = index">
+    <app-base-campaign-detail
+      (refreshBaseCampaign)="getAllTrash()"
+      [campaignList]="item.campaignList"
+      [baseCampaignDetail]="item.campaignBase">
+    </app-base-campaign-detail>
+  </div>
+
+  <app-dashboard-loading *ngIf="loading">
+
+  </app-dashboard-loading>
+  <div *ngIf="emptyMsg">
+    <app-empty-state-msg></app-empty-state-msg>
+  </div>
+
+</div>

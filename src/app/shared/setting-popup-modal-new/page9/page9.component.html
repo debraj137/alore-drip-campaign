@@ -1,0 +1,135 @@
+
+<div class="craete-tags-container">
+    <div class="body">
+      <div class="search">
+        <div class="text_Input_Extra_Small">
+          <input
+            [(ngModel)]="searchTag"
+            type="search"
+            placeholder="Search for a label"
+          />
+          <img src="../assets/search_icon.svg" alt="" />
+        </div>
+      </div>
+      <div>
+        <p class="tag-notice">You have not created any options</p>
+  
+        <form
+          (keyup.enter)="addLabel()"
+          [formGroup]="formControl"
+          class="tags without-dot"
+        >
+          <button
+            [ngStyle]="{
+              'background-color': formControl.controls['color'].value
+            }"
+            type="button"
+            (click)="tempSelectedTag = ''"
+            [matMenuTriggerFor]="colorSelection"
+            class="tag-color"
+          >
+            <img src="../assets/custom_icons/white_Arrow_dropdown.svg" alt="" />
+          </button>
+          <!-- <div
+            > -->
+            <div class="text_Input_Extra_Small"
+            [ngClass]="{
+              invalid:
+                !formControl.controls['tag'].valid &&
+                formControl.controls['tag'].touched
+            }"
+            >
+              <input formControlName="tag" (keyup)="checkTag()" type="text" placeholder="Add a label" />
+              <img class="close_Img_Tag_Form" src="../assets/alore_Blue_Close.svg" alt="" />
+            </div>
+            <!-- <input
+                  class="add_Tag_Input"
+                  placeholder="Add a tag"
+                  
+                  formControlName="tag"
+                /> -->
+          <!-- </div> -->
+        </form>
+        <p *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </p>
+  
+        <form
+          cdkDropList
+          (cdkDropListDropped)="drop($event)"
+          [ngStyle]="{ 'padding-right.px': tagsData.length >= 5 ? '10' : '0' }"
+          class="tags-container scroll-vertical-new"
+          [formGroup]="tagsControl"
+        >
+          <!-- tag data foreach -->
+          <div cdkDrag *ngFor="let tag of tagsData" class="tags">
+            <img
+              class="drag-handle"
+              cdkDragHandle
+              src="../assets/custom_icons/dot_Add_Tag_Button.svg"
+            />
+            <button
+              [ngStyle]="{
+                'background-color': tagsControl.get(tag + '.color')?.value
+              }"
+              type="button"
+              (click)="tempSelectedTag = tag"
+              [matMenuTriggerFor]="colorSelection"
+              class="tag-color"
+            >
+              <img src="../assets/custom_icons/white_Arrow_dropdown.svg" alt="" />
+            </button>
+            <div [formGroupName]="tag" class="input">
+              <input
+                class="add_Tag_Input"
+                placeholder="Add a tag"
+                type="text"
+                formControlName="tag"
+              />
+              <img
+                (click)="removeControl(tag)"
+                class="delete-button"
+                src="../assets/alore_Blue_Close.svg"
+                alt=""
+              />
+            </div>
+          </div>
+  
+          <!-- tag data message if searched data was empty -->
+          <p *ngIf="tagsData.length <= 0 && searchTag" class="tag-not-found">
+            Label not found
+          </p>
+        </form>
+      </div>
+    </div>
+    <div class="action-button">
+      <button
+        (click)="submitTagData();"
+        [disabled]="!formControl.valid && tagsData.length <= 0"
+        class="popup_Primary_Extra_Small_Button width_ex_sm"
+      >
+        Save
+      </button>
+      <button
+        (click)="pageAction.emit({page : 8})"
+        class="popup_Secondary_Extra_Small_Button width_ex_sm"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+  
+  <!-- color picker -->
+  <mat-menu #colorSelection="matMenu">
+    <div class="color-selection-container">
+      <button
+        (click)="selectColor(colors)"
+        *ngFor="let colors of colorSelections"
+      >
+        <div
+          class="color-element"
+          [ngStyle]="{ 'background-color': colors }"
+        ></div>
+      </button>
+    </div>
+  </mat-menu>

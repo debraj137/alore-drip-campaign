@@ -1,0 +1,66 @@
+<!-- profile info starts here -->
+<div class="profileContainer"  (event)="$event.stopPropagation()">
+  <div class="proPhotoSection">
+    <div class="photo">
+      <button
+        class="large_Avatar_No_Image_Not_Online round_{{ userDetails?.firstName[0].toLowerCase() }}">
+        <span class="large_Avatar_No_Image_Not_Online_Initial"> {{ userDetails?.firstName[0] }}{{ userDetails?.lastName[0] }} </span>
+      </button>
+      <!-- <button class="uploadImageContainer">
+        <img src="../../../assets/common_css/signup-Img.svg" alt="" />
+      </button> -->
+    </div>
+    <h1 class="proName">{{ userDetails?.userName }}</h1>
+    <h3 class="proEmail">{{ userDetails?.userEmailId }}</h3>
+    <!-- <button class="popup_Secondary_Medium">Manage your profile</button> -->
+    <button 
+        (click)="redirectToUserProfile()"
+        class="secondary_Normal_Button_Blue">
+        Manage your profile
+      </button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="proCardsContainer scroll-vertical">
+    <div class="proFlexContainer" >
+      <div class="proCard stateClass" (click)="getPresentUserData(i)" *ngFor="let item of userListData; let i = index">
+        <button class="small_Avatar_No_Image_Not_Online round_{{ item?.firstName[0].toLowerCase() }}">
+          <span class="small_Avatar_No_Image_Not_Online_Initial">
+            {{ item?.firstName[0] }}{{ item?.lastName[0] }}
+
+          </span>
+        </button>
+        <div class="cardDetails">
+          <h3 class="proCardName">{{ item.fistName }} {{item.lastName}}</h3>
+          <h3 class="proCardEmail">{{ item.userEmailId }}</h3>
+        </div>
+        <button (click)="signOutSpecificUser(item.userId); $event.stopPropagation()" class="signoutButton">sign out</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="addNewAccountCard" (click)="signIn(); $event.stopPropagation()">
+    <img src="../../../assets/common_css/add-Icon-profile.svg" alt="" />
+    <span>Add a new account</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="profooter">
+    <button class="secondary_Normal_Button_Blue" (click)="doLogout()">Signout of {{ userDetails?.userEmailId }}</button>
+    <button class="secondary_Normal_Button_Purple" (click)="emptyUserData()" >Signout of all account</button>
+    <div class="privacy">
+      <button class="privacyButton">Privacy Policy</button>
+      <button class="termButton">Terms of Service</button>
+    </div>
+  </div>
+</div>
+<!-- <button
+  class="large_Avatar_No_Image_Not_Online"
+  (click)="openProfileInfo = !openProfileInfo"
+>
+  <span class="large_Avatar_No_Image_Not_Online_Initial"> JA </span>
+</button> -->
+<!-- profile info ends here -->

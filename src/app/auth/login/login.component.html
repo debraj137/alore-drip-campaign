@@ -1,0 +1,55 @@
+<div class="login-page-container">
+    <div class="header">
+        <div class="title">
+            <span>campaign</span>
+            <span>BY ALORE</span>
+        </div>
+        <div class="link-container">
+            <span *ngFor="let link of headerLink">
+                {{link}}
+            </span>
+        </div>
+        <div class="trial-button">
+            <button (click)="signIn()" mat-flat-button>
+                Sign In
+            </button>
+        </div>
+    </div>
+    <div class="body">
+        <h1>
+            Effortless
+            <span>Campaign</span>,
+            at scale
+        </h1>
+        <p>
+            Campaign by Alore helps you generate real engagements to warm up your email address without any human
+            intervention.
+        </p>
+        <div class="register-button">
+            <button (click)="signUp()" mat-flat-button>
+                Sign Up
+            </button>
+            <button mat-flat-button>
+                Book a Demo
+            </button>
+        </div>
+    </div>
+    <div class="footer-container">
+        <div class="copyright">
+            <span>
+                &#169; 2021 Campaign by Alore. All rights reserved.
+            </span>
+            <div class="terms">
+                <a href="/terms-of-service">
+                    Terms of Service
+                </a>
+                <a href="/privacy-Policy">
+                    Privacy Policy
+                </a>
+                <a href="/cookie-Policy">
+                    Cookie Policy
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

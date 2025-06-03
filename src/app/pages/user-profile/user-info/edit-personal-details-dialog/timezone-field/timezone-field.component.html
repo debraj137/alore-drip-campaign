@@ -1,0 +1,35 @@
+<section *ngIf= "isTimezoneLoaded" id="timeZoneInput" class="input_Section">
+
+<div class="first-name">
+    <h5>Time Zone</h5>
+</div>
+
+  <mat-select
+        #timezoneInput
+        placeholder="Select a timezone"
+        class="timeZoneDropDown"
+        [formControl]="timezone"
+        name="item"
+        (focusout)="triggerEvent($event)"
+      >
+        <div class="inputContainer">
+          <input
+            type="text"
+            (focus)="(true)"
+            (keyup)="onKeyDown($event.target)"
+            placeholder="Search for timezones"
+          />
+        </div>
+        <mat-option
+          (click)="currentselectedTime = null"
+          class="timeZoneOptions"
+          *ngFor="let item of onlyTimeZoneNames"
+          [value]="item"
+        >
+          {{ item }}
+        </mat-option>
+   </mat-select>
+
+
+<!-- </mat-form-field> -->
+</section>

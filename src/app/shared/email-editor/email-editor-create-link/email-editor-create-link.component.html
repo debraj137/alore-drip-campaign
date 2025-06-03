@@ -1,0 +1,124 @@
+<div class="
+    email-editor-create-link-container
+    default-modal
+">
+    <div class="header">
+        <div class="icon">
+            <svg>
+                <use xlink:href="#link" />
+            </svg>
+        </div>
+        <div class="label">
+            <p>Insert a link</p>
+            <span>Redirect your reader to a webpage</span>
+        </div>
+        <div class="close-button">
+            <button  
+                (click)="dialogRef.close()"
+                class="alore_blue_Close_Button"
+            >
+            <img src="../assets/alore_Blue_Close.svg" alt="" />
+          </button>
+        </div>
+    </div>
+    <form
+        [formGroup]="formControl" 
+        class="body">
+        <div class="form-field">
+            <span>
+                Enter the URL
+            </span>
+            <div
+                [class.invalid]="
+                    getControlValidation('url')?.errors  &&
+                    getControlValidation('url')?.touched" 
+                [class.valid]="
+                    !getControlValidation('url')?.errors  &&
+                    getControlValidation('url')?.touched"  
+                class="input">
+                <input
+                    formControlName="url"
+                    class="add_Tag_Input"
+                    placeholder="Enter URL with or without http:// or https://"
+                    type="text"
+                />
+            </div>
+            <span
+                *ngIf="
+                    getControlValidation('url')?.errors?.['required']  &&
+                    getControlValidation('url')?.touched
+                " 
+                class="form-field-error">
+                Please insert url
+            </span>
+            <span
+                *ngIf="
+                    getControlValidation('url')?.errors?.['dotError']  &&
+                    getControlValidation('url')?.touched
+                "
+                class="form-field-error">
+                URL format invalid
+            </span>
+            <span
+                *ngIf="
+                    getControlValidation('url')?.errors?.['atError']  &&
+                    getControlValidation('url')?.touched
+                "
+                class="form-field-error">
+                URL cannot include '@'
+            </span>
+        </div>
+        <div class="form-field">
+            <span>
+                Text to display
+            </span>
+            <div
+                [class.invalid]="
+                    getControlValidation('text')?.errors  &&
+                    getControlValidation('text')?.touched"  
+                [class.valid]="
+                    !getControlValidation('text')?.errors  &&
+                    getControlValidation('text')?.touched"  
+                class="input">
+                <input
+                    formControlName="text"
+                    class="add_Tag_Input"
+                    placeholder="Highlighted text will appear here"
+                    type="text"
+                />
+            </div>
+            <span
+                *ngIf="
+                    getControlValidation('text')?.errors  &&
+                    getControlValidation('text')?.touched
+                "
+                class="form-field-error">
+                Please insert a text
+            </span>
+        </div>
+    </form>
+    <div
+        class="action-button">
+        <button
+            (click)="save()"
+            [disabled]="!formControl.valid"
+            class="primary_Normal_Button_Blue">
+            Save
+        </button>
+        <button
+            (click)="dialogRef.close()"
+            class="secondary_Normal_Button_Blue">
+            Cancel
+        </button>
+    </div>
+</div>
+
+<svg display="none">
+    <symbol id="link">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2741 1.79031C15.9628 -0.594166 12.2054 -0.594166 9.89401 1.79031L9.16371 2.54372C8.87541 2.84114 8.8828 3.31596 9.18022 3.60425C9.47764 3.89255 9.95246 3.88516 10.2408 3.58774L10.9711 2.83433C12.6931 1.05783 15.475 1.05783 17.1971 2.83433C18.9318 4.62392 18.9318 7.53482 17.1971 9.32442L15.4556 11.121C13.8887 12.7375 11.3582 12.7375 9.79134 11.121L9.51045 10.8312C9.22215 10.5338 8.74734 10.5264 8.44992 10.8147C8.1525 11.103 8.14511 11.5778 8.4334 11.8753L8.71429 12.165C10.8705 14.3895 14.3764 14.3895 16.5326 12.165L18.2741 10.3684C20.5728 7.99706 20.5728 4.16169 18.2741 1.79031ZM4.54351 8.87996C6.11039 7.2635 8.64085 7.2635 10.2077 8.87996L10.4886 9.16974C10.7769 9.46716 11.2517 9.47455 11.5492 9.18625C11.8466 8.89796 11.854 8.42314 11.5657 8.12572L11.2848 7.83595C9.12857 5.61151 5.62268 5.61151 3.46646 7.83595L1.72496 9.63254C-0.573686 12.0039 -0.573686 15.8393 1.72496 18.2107C4.03631 20.5951 7.79371 20.5951 10.1051 18.2107L10.8354 17.4573C11.1237 17.1598 11.1163 16.685 10.8189 16.3967C10.5214 16.1084 10.0466 16.1158 9.75832 16.4132L9.02802 17.1667C7.306 18.9431 4.52403 18.9431 2.80201 17.1667C1.0673 15.3771 1.0673 12.4662 2.80201 10.6766L4.54351 8.87996Z" fill="#334BFA"/>
+    </symbol>
+    <symbol id="close">
+        <path d="M1.5 10.5L10.5 1.5M1.5 1.5L10.5 10.5" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
+    </symbol>
+</svg>

@@ -1,0 +1,60 @@
+// .integrate-icon{
+//     margin: auto;
+// }
+
+.integrate-icon{
+    position: relative;
+    padding: 40px;
+    margin-top: 25px;
+    max-width: 200px;
+    border-radius: 14px;
+    box-shadow: var(--alore-shadow-box-light);
+    transition: background-color 300ms linear;
+
+    &:hover{
+        cursor: pointer;
+        background-color: var(--alore-light-grey);
+    }
+
+    .body{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        flex-direction: column;
+
+        span{
+            font-size: 22px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        small{
+            max-width: 150px;
+            padding: 12px 0;
+            color: var(--alore-secondary-text);
+        }
+
+        .icon{
+            width: 80px;
+            height: 80px;
+            border-radius: 80px;
+            font-size: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--alore-mid-blue);
+            color: var(--alore-main-blue);
+        }
+    }
+
+    .footer{
+        display: flex;
+        margin-top: 20px;
+
+        button {
+          cursor: pointer;
+          margin: 0 auto;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<div style="display: flex; justify-content: center; align-items: center;">
+  <section class="main_Container_BCC">
+    <div class="header_Container_BCC">
+      <section class="icon_And_Header">
+        <div class="icon_Inside_Header">
+          <img src="../../../assets/common_css/hash_Tag_Icon.svg" alt="" />
+        </div>
+        <div class="Text_Inside_Header">
+          <p>Add a BCC or Forward Email</p>
+          <span>Add an email to be forwarded 🤓</span>
+        </div>
+      </section>
+      <div class="close_Button_Div">
+        <button class="alore_blue_Close_Button" (click)="dialogRef.close()">
+          <img src="../assets/alore_Blue_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <section class="input_Field_Section">
+      <form [formGroup]="formControl">
+        <div class="bcc_Div">
+          <p>BCC Email</p>
+          <button
+            class="text_Input_Extra_Small error"
+            [class.error]="!isBccValid"
+            [class.success]="isBccSuccess"
+          >
+          <input
+            formControlName="bccEmail"
+            type="text"
+            placeholder="Enter a valid email address"
+            id="check"
+            [focus]="true"
+          />
+        </button>
+        <mat-error *ngIf="!isBccValid">Email invalid</mat-error>
+        </div>
+        <div class="forward_Div">
+          <p>Forward Email</p>
+          <button
+            class="text_Input_Extra_Small success"
+            [class.error]="!isForwardValid"
+            [class.success]="isForwardSuccess"
+          >
+            <input
+              formControlName="forwardEmail"
+              type="text"
+              placeholder="Enter a valid email address"
+              id="check"
+            />
+          </button>
+          <mat-error *ngIf="!isForwardValid">Email invalid</mat-error>
+        </div>
+      </form>
+    </section>
+    <div class="button_Div">
+      <section>
+        <button  class="primary_Normal_Button_Blue width_ex_sml"
+          [disabled]="(!isBccSuccess && !isForwardSuccess)"
+          (click)="addBccMail()">
+          <span>Save</span>
+        </button>
+        <button (click)="dialogRef.close()" class="secondary_Normal_Button_Blue width_ex_sml">
+          Cancel
+        </button>
+      </section>
+    </div>
+  </section>
+</div>
+
+

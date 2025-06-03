@@ -1,0 +1,128 @@
+.email-editor-change-color-container{
+    min-width: 554px;
+    background-color: white;
+    margin: 50px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 56px rgba(0, 0, 0, 0.08);
+    row-gap: 0!important;
+
+    .header{
+        .icon{
+            svg{
+                width: 24px!important;
+                height: 24px!important;
+            }
+        }
+    }
+    .body{
+        margin-top: 20px;
+
+        span{
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            color: #181818b3;
+        }
+        .custom-color{
+            margin-top: 20px;
+        }
+        .color-container{
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-column-gap: 30px;
+            grid-row-gap: 10px;
+
+            .color-group{
+                &:hover{
+                    .delete-color{
+                        display: flex!important;
+                    }
+                }
+
+                .color-element{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 30px;
+                    transition: box-shadow 100ms linear;
+                    cursor: pointer;
+    
+                    &:active{
+                        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.5)!important;
+                    }
+                    &:hover{
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+                    }
+                }
+                .delete-color{
+                    display: none;
+                    position: absolute;
+                    border: 1px solid var(--alore-main-blue);
+                    background-color: white;
+                    border-radius: 20px;
+                    font-size: 9px;
+                    padding: 0;
+                    margin: -32px 0 0 20px;
+                    width: 13px;
+                    height: 13px;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+        .input-area{
+            display: flex;
+            margin: 40px 0;
+            justify-content: space-between;
+
+            .hex-input{
+                display: flex;
+                gap: 5px;
+                flex-direction: column;
+                max-width: 165px;
+
+                .text_Input_Extra_Small{
+                    height: 40px;
+                    display: flex;
+                    padding: 0;
+                    margin-top: 0;
+                    max-width: 100%;
+
+                    span{
+                        min-width: 25px;
+                        text-align: center;
+                    }
+                
+                    .divider{
+                        width: 1px;
+                        height: 100%;
+                        margin: 0 5px 0 0;
+                        border-left: 1px solid rgba(24, 24, 24, 0.2);
+                    }
+
+                    input{
+                        max-width: 127px;
+                        color: #181818;
+                    }
+                }
+            }
+
+            .selected-color{
+                min-width: 162px;
+                display: flex;
+                gap: 5px;
+                flex-direction: column;
+
+                .active-color{
+                    border-radius: 40px;
+                    border: 2px solid #334BFA;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+
+    .spinner{
+        margin: 20px auto;
+    }
+}

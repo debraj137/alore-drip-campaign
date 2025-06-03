@@ -1,0 +1,3969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <main>
+    <section class="leftSideDiv">
+      <!-- EXTRA SMALL BUTTON STARTS HERE -->
+      <section>
+        <div>
+          <h2>Button Extra Small Size</h2>
+          <button class="button_Extra_Small_Normal_State width_ex_sm" [disabled]="disabledButton == true">
+            <span class="button_Extra_Small_Normal_State_Text">More</span>
+          </button>
+        </div>
+      </section>
+      <!-- EXTRA SMALL BUTTON ENDS HERE -->
+
+      <!-- SMALL BUTTON NORMAL STATE STARTS HERE -->
+
+      <section>
+        <h2>Button Small Size</h2>
+
+        <button class="small_Button_Normal_State width_sm" [disabled]="disabledButton == true">
+          <span class="small_Button_Normal_State_Text" style="
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+              ">
+            <img src="../assets/plusButton.svg" alt="" />
+            New Campaign
+          </span>
+        </button>
+      </section>
+
+      <!-- SMALL BUTTON NORMAL STATE ENDS HERE -->
+
+      <!-- BUTTON MEDIUM NORMAL STATE STARTS HERE  -->
+      <section>
+        <div>
+          <h2>Button Medium Size</h2>
+          <button class="button_Medium_Normal_State width_med" [disabled]="disabledButton == true">
+            <span class="button_Medium_State_Text">
+              <img src="../assets/plusButton.svg" alt="" />
+              Add campaign base
+            </span>
+          </button>
+        </div>
+      </section>
+      <!-- BUTTON MEDIUM NORMAL STATE ENDS HERE -->
+
+      <!-- BUTTON LARGE NORMAL STATE STARTS HERE -->
+
+      <section>
+        <div>
+          <h2>Button Large Size</h2>
+          <button class="button_Large_Normal_State width_lar" [disabled]="disabledButton == true">
+            <span class="button_Large_State_Text">
+              <img src="../assets/plusButton.svg" alt="" />
+              Add a campaign base
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <!-- BUTTON LARGE NORMAL STATE ENDS HERE -->
+
+      <!-- BUTTON XLARGE NORMAL STATE STARTS HERE  -->
+
+      <section>
+        <h2>Button X Large Size</h2>
+
+        <button class="button_XLarge_Size_Normal_State width_ex_lar" [disabled]="disabledButton == true">
+          <span class="button_XLarge_Size_Normal_State_Text">
+            <img src="../assets/plusButton.svg" alt="" />
+            New Campaign
+          </span>
+        </button>
+      </section>
+
+      <!-- BUTTON XLARGE NORMAL STATE STARTS HERE   -->
+    </section>
+
+    <section class="rightSideDiv">
+      <!-- BUTTON DISABLE STATE STARTS HERE  -->
+
+      <button style="margin-top: 100px" class="small_Button_Normal_State" (click)="disableAll()"
+        [ngClass]="{ disabledButton: disabledButton == true }">
+        <span class="small_Button_Normal_State_Text">Disable all</span>
+      </button>
+
+      <!-- BUTTON DISABLE STATE ENDS HERE  -->
+
+      <br />
+      <!-- MENU COLLAPSE BUTTON LARGE STARTS HERE  -->
+
+      <button class="menu_Collapse_Button_Large" [disabled]="disabledButton == true">
+        <img src="../assets/backButtonLarge.svg" alt="" />
+      </button>
+
+      <!-- MENU COLLAPSE BUTTON LARGE ENDS HERE  -->
+
+      <!-- MENU COLLAPSE BUTTON SMALL STARTS HERE  -->
+
+      <button class="menu_Collapse_Button_Small" [disabled]="disabledButton == true">
+        <img src="../assets/backButtonSmall.svg" alt="" />
+      </button>
+
+      <!-- MENU COLLAPSE BUTTON SMALL ENDS HERE  -->
+      <br />
+      <!-- CLOSE BUTTON STARTS HERE  -->
+
+      <button class="close_Button_Normal" [disabled]="disabledButton == true">
+        <img src="../assets/closeIcon.svg" alt="" />
+      </button>
+
+      <!-- CLOSE BUTTON ENDS HERE  -->
+
+      <!-- AVATAR NO IMAGE NOT ONLINE STARTS HERE  -->
+      <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 360px;
+          ">
+        <!-- AVATAR LARGE STARTS HERE  -->
+
+        <button class="large_Avatar_No_Image_Not_Online">
+          <span class="large_Avatar_No_Image_Not_Online_Initial"> ab </span>
+        </button>
+
+        <!-- AVATAR LARGE ENDS HERE  -->
+
+        <!-- AVATAR MEDIUM STARTS HERE  -->
+
+        <button class="medium_Avatar_No_Image_Not_Online">
+          <span class="medium_Avatar_No_Image_Not_Online_Initial"> ab </span>
+        </button>
+
+        <!-- AVATAR MEDIUM ENDS HERE   -->
+
+        <!-- AVATAR SMALL STARTS HERE  -->
+
+        <button class="small_Avatar_No_Image_Not_Online">
+          <span class="small_Avatar_No_Image_Not_Online_Initial"> ab </span>
+        </button>
+
+        <!-- AVATAR SMALL ENDS HERE  -->
+
+        <!-- AVATAR EXTRA SMALL STARTS HERE  -->
+
+        <button class="extra_Small_Avatar_No_Image_Not_Online">
+          <span class="extra_Small_Avatar_No_Image_Not_Online_Initial">
+            A
+          </span>
+        </button>
+
+        <!-- AVATAR EXTRA SMALL ENDS HERE   -->
+      </div>
+
+      <!-- AVATAR NO IMAGE NOT ONLINE ENDS HERE  -->
+
+      <!-- AVATAR IMAGE NOT ONLINE STARTS HERE  -->
+      <div style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 360px;
+          ">
+        <!-- AVATAR LARGE STARTS HERE  -->
+
+        <div class="large_Avatar_Image_Not_Online">
+          <img src="../assets/Image.svg" alt="" />
+        </div>
+
+        <!-- AVATAR LARGE ENDS HERE -->
+
+        <!-- AVATAR MEDIUM STARTS HERE  -->
+
+        <div class="medium_Avatar_Image_Not_Online">
+          <img src="../assets/Image.svg" alt="" />
+        </div>
+
+        <!-- AVATAR MEDIUM ENDS HERE  -->
+
+        <!-- AVATAR SMALL STARTS HERE  -->
+
+        <div class="small_Avatar_Image_Not_Online">
+          <img src="../assets/Image.svg" alt="" />
+        </div>
+
+        <!-- AVATAR SMALL ENDS HERE  -->
+
+        <!-- AVATAR EXTRA SMALL STARTS HERE  -->
+
+        <div class="extra_Small_Avatar_Image_Not_Online">
+          <img src="../assets/Image.svg" alt="" />
+        </div>
+
+        <!-- AVATAR EXTRA SMALL ENDS HERE   -->
+      </div>
+      <!-- AVATAR IMAGE NOT ONLINE ENDS HERE  -->
+
+      <!-- JUST EXAMPLE OF WITHOUT IMAGE AVATAR WITH ONLINE STATUS  -->
+      <div>
+        <button class="avatar_No_Image_Online">
+          <span class="avatar_No_Image_Online_Initial"> re </span>
+        </button>
+
+        <div class="avatar_No_Image_Online_Indicator_Outer">
+          <div class="avatar_No_Image_Online_Indicator_Inner"></div>
+        </div>
+      </div>
+
+      <!-- JUST EXAMPLE OF WITHOUT IMAGE AVATAR WITH ONLINE STATUS  -->
+
+      <!-- AVATAR NO IMAGE ONLINE ENDS HERE -->
+
+      <!-- JUST EXAMPLE OF IMAGE AVATAR WITH ONLINE STATUS  -->
+
+      <div>
+        <div class="large_Avatar_Image_Not_Online">
+          <img src="../assets/Image.svg" alt="" />
+        </div>
+
+        <div class="avatar_No_Image_Online_Indicator_Outer">
+          <div class="avatar_No_Image_Online_Indicator_Inner"></div>
+        </div>
+      </div>
+
+      <!-- JUST EXAMPLE OF IMAGE AVATAR WITH ONLINE STATUS  -->
+
+      <!-- SPINNNER DIV STARTS HERE -->
+
+      <div class="spinner"></div>
+
+      <!-- SPINNER DIV ENDS HERE  -->
+    </section>
+  </main>
+
+  <!-- CAMPAIGN LIST VIEW DIV STARTS HERE  -->
+
+  <section>
+    <div class="templateDivs">
+      <input class="checkBoxClass" type="checkbox" />
+      <div class="name">
+        <span>Campaign B - Call to Action A Test</span>
+        <button class="b1">CXOs</button>
+        <button class="b2">Latin American</button>
+      </div>
+      <div>
+        <button class="active_State">
+          <span class="active_State_Text"> Active </span>
+        </button>
+      </div>
+      <div class="avatar">
+        <button class="round_e">
+          <!-- <img src="" alt="" /> -->
+          <span>CM</span>
+        </button>
+        <div>Chandan Maharana</div>
+      </div>
+      <div class="dropDown">
+        <button>
+          Lead Generation
+          <img src="../assets/dropDown.svg" alt="" />
+        </button>
+      </div>
+      <div class="date1">
+        <span class="heading">April 12,2022</span>
+        <span class="subHeading">12 days Ago</span>
+      </div>
+      <div class="date2">
+        <span class="heading">April 12,2022</span>
+        <span class="subHeading">Today</span>
+      </div>
+      <div class="count">2,450</div>
+      <div class="rate">33%</div>
+    </div>
+  </section>
+
+  <!-- CAMPAIGN LIST VIEW DIV ENDS HERE  -->
+
+  <section class="statusButton">
+    <!-- COMPLETED STATUS BUTTON STARTS HERE -->
+
+    <button class="completed_State">
+      <span class="completed_State_Text"> Completed </span>
+    </button>
+
+    <!-- COMPLETED STATUS BUTTON ENDS HERE -->
+
+    <!-- ACTIVE STATUS BUTTON STARTS HERE -->
+
+    <button class="active_State">
+      <span class="active_State_Text"> Active </span>
+    </button>
+
+    <!-- ACTIVE STATUS BUTTON ENDS HERE -->
+
+    <!-- ERROR STATUS BUTTON STARTS HERE -->
+
+    <button class="error_State">
+      <span class="error_State_Text"> Error ! </span>
+    </button>
+
+    <!-- ERROR STATUS BUTTON ENDS HERE -->
+
+    <!-- AUSED STATUS BUTTON STARTS HERE -->
+
+    <button class="paused_State">
+      <span class="paused_State_Text"> Paused </span>
+    </button>
+
+    <!-- PAUSED STATUS BUTTON ENDS HERE -->
+
+    <!-- DRAFT STATUS BUTTON STARTS HERE -->
+
+    <button class="draft_State">
+      <span class="draft_State_Text"> Draft </span>
+    </button>
+
+    <!-- DRAFT STATUS BUTTON ENDS HERE -->
+  </section>
+
+  <!-- EMOJI PICKER STARTS HERE  -->
+
+  <button class="button_XLarge_Size_Normal_State" style="margin-top: 50px" (click)="toggle = !toggle">
+    Emoji
+  </button>
+
+  <emoji-mart class="emojiPicker" *ngIf="toggle" [set]="'google'" (emojiSelect)="addEmoji($event)"
+    (clickOutside)="toggle = false" [style]="{
+        position: 'relative',
+        top: '28px',
+        width: '652px',
+        height: '460px'
+      }" [i18n]="{
+        search: 'Search',
+        categories: {
+          search: 'Résultats de recherche',
+          recent: 'Frequently Used'
+        }
+      }" [skin]="1"></emoji-mart>
+
+  <!-- EMOJI PICKER ENDS HERE  -->
+
+  <!-- ALL BUTTON SECTION STARTS HERE  -->
+
+  <section class="buttons">
+    <!-- DELETE BUTTON STARTS HERE  -->
+
+    <button class="delete_Button_Large_Normal_State">Yes, delete</button>
+
+    <!-- DELETE BUTTON ENDS HERE  -->
+
+    <!-- LIST VIEW BUTTON STARTS HERE  -->
+    <br />
+
+    <div>
+      <button class="list_View_Button">
+        <span class="list_View_Button_Text"> Lead Generation </span>
+      </button>
+    </div>
+
+    <!-- LIST VIEW BUTTON ENDS HERE -->
+
+    <!-- PLUS BUTTON STARTS HERE  -->
+    <!--
+    <button class="plus_button">
+      <img src="../assets/plusButtonAdd.svg" alt="">
+    </button> -->
+
+    <!-- PLUS BUTTON ENDS HERE  -->
+  </section>
+
+  <!-- ALL BUTTON SECTION ENDS HERE  -->
+
+  <!-- All  DROPDOWNS STARTS HERE  -->
+
+  <section class="dropDown"></section>
+  <!-- All  DROPDOWNS ENDS HERE  -->
+
+  <!-- CARD VIEW STARTS HERE  -->
+
+  <section class="cardView" style="margin-top: 50px">
+    <div class="carViewDiv" *ngFor="let item of racipeList">
+      <div class="picture">
+        <img src="../assets/card-back_image.svg" alt="" />
+      </div>
+      <div class="cardNameSection">
+        <div class="cardName">
+          {{ item }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARD VIEW ENDS HERE  -->
+
+  <!-- ALL CHECKBOX WITHOUT CAPTION STARTS HERE  -->
+  <section style="display: flex; justify-content: space-between; margin-top: 50px">
+    <!-- LARGE CHECKBOX STARTS HERE -->
+
+    <section class="checkbox_Large_Div">
+      <button (click)="clickedBox = !clickedBox" class="checkbox_Large_Button" [ngClass]="{
+            enabledBox: clickedBox == true,
+            disabledBox: clickedBox == false
+          }" [disabled]="disabledButton == true">
+        <img class="checkbox_Tick_Large" src="../assets/tick.svg" alt="" *ngIf="clickedBox == true" />
+        <img class="checkbox_Minus_Large" src="../assets/minus.svg" alt="" *ngIf="clickedBox == false" />
+      </button>
+      <span class="checkbox_Large_Button_Text" [ngClass]="{ labelDisable: disabledButton == true }">Label</span>
+    </section>
+
+    <!-- LARGE CHECKBOX ENDS HERE -->
+
+    <!-- MEDIUM CHECKBOX STARTS HERE  -->
+
+    <section class="checkbox_Medium_Div">
+      <button (click)="clickedBox = !clickedBox" class="checkbox_Medium_Button" [ngClass]="{
+            enabledBox: clickedBox == true,
+            disabledBox: clickedBox == false
+          }" [disabled]="disabledButton == true">
+        <img class="checkbox_Tick_Medium" src="../assets/tick.svg" alt="" *ngIf="clickedBox == true" />
+        <img class="checkbox_Minus_Medium" src="../assets/minus.svg" alt="" *ngIf="clickedBox == false" />
+      </button>
+      <span class="checkbox_Medium_Button_Text" [ngClass]="{ labelDisable: disabledButton == true }">Label</span>
+    </section>
+
+    <!-- MEDIUM CHECKBOX ENDS HERE  -->
+
+    <!-- SMALL CHECKBOX STARTS HERE  -->
+
+    <section class="checkbox_Small_Div">
+      <button (click)="clickedBox = !clickedBox" class="checkbox_Small_Button" [ngClass]="{
+            enabledBox: clickedBox == true,
+            disabledBox: clickedBox == false
+          }" [disabled]="disabledButton == true">
+        <img class="checkbox_Tick_Small" src="../assets/tick.svg" alt="" *ngIf="clickedBox == true" />
+        <img class="checkbox_Minus_Small" src="../assets/minus.svg" alt="" *ngIf="clickedBox == false" />
+      </button>
+      <span class="checkbox_Small_Button_Text" [ngClass]="{ labelDisable: disabledButton == true }">Label</span>
+    </section>
+
+    <!-- SMALL CHECKBOX ENDS HERE  -->
+  </section>
+
+  <!-- ALL CHECKBOX WITHOUT CAPTION ENDS HERE  -->
+
+  <!-- ALL CHECKBOX WITH CAPTION STARTS HERE  -->
+
+  <section style="display: flex; justify-content: space-between; margin-top: 50px">
+    <!-- LARGE CHECKBOX STARTS HERE -->
+
+    <section class="checkbox_Large_With_Caption_Div">
+      <button (click)="clickedBox = !clickedBox" class="checkbox_Large_With_Caption_Button" [ngClass]="{
+            enabledBox: clickedBox == true,
+            disabledBox: clickedBox == false
+          }" [disabled]="disabledButton == true">
+        <img class="checkbox_Tick_Large_With_Caption" src="../assets/tick.svg" alt="" *ngIf="clickedBox == true" />
+        <img class="checkbox_Minus_Large_With_Caption" src="../assets/minus.svg" alt="" *ngIf="clickedBox == false" />
+      </button>
+      <div class="checkbox_Large_With_Caption_Button_Text" [ngClass]="{ labelDisable: disabledButton == true }">
+        Label
+
+        <div class="checkbox_Large_With_Caption_Text">Caption</div>
+      </div>
+    </section>
+
+    <!-- LARGE CHECKBOX ENDS HERE -->
+
+    <!-- MEDIUM CHECKBOX STARTS HERE  -->
+
+    <section class="checkbox_Medium_With_Caption_Div">
+      <button (click)="clickedBox = !clickedBox" class="checkbox_Medium_With_Caption_Button" [ngClass]="{
+            enabledBox: clickedBox == true,
+            disabledBox: clickedBox == false
+          }" [disabled]="disabledButton == true">
+        <img class="checkbox_Tick_Medium_With_Caption" src="../assets/tick.svg" alt="" *ngIf="clickedBox == true" />
+        <img class="checkbox_Minus_Medium_With_Caption" src="../assets/minus.svg" alt="" *ngIf="clickedBox == false" />
+      </button>
+      <div class="checkbox_Large_With_Caption_Button_Text" [ngClass]="{ labelDisable: disabledButton == true }">
+        Label
+
+        <div class="checkbox_Medium_With_Caption_Text">Caption</div>
+      </div>
+    </section>
+
+    <!-- MEDIUM CHECKBOX ENDS HERE  -->
+
+    <!-- SMALL CHECKBOX STARTS HERE  -->
+
+    <section class="checkbox_Small_With_Caption_Div">
+      <button (click)="clickedBox = !clickedBox" class="checkbox_Small_With_Caption_Button" [ngClass]="{
+            enabledBox: clickedBox == true,
+            disabledBox: clickedBox == false
+          }" [disabled]="disabledButton == true">
+        <img class="checkbox_Tick_Small_With_Caption" src="../assets/tick.svg" alt="" *ngIf="clickedBox == true" />
+        <img class="checkbox_Minus_Small_With_Caption" src="../assets/minus.svg" alt="" *ngIf="clickedBox == false" />
+      </button>
+      <div class="checkbox_Large_With_Caption_Button_Text" [ngClass]="{ labelDisable: disabledButton == true }">
+        Label
+
+        <div class="checkbox_Small_With_Caption_Text">Caption</div>
+      </div>
+    </section>
+
+    <!-- SMALL CHECKBOX ENDS HERE  -->
+  </section>
+
+  <!-- ALL CHECKBOX WITH CAPTION ENDS HERE  -->
+
+  <!-- All RADIO BUTTON WITHOUT CAPTION STARTS HERE  -->
+
+  <section style="display: flex; justify-content: space-between; margin-top: 50px">
+    <!-- LARGE RADIO BUTTON STARTS HERE -->
+    <section>
+      <label class="large_Radio_label">
+        <input type="radio" class="large_Radio_Input" name="radio" [disabled]="disabledButton == true" />
+        <span class="large_Radio_Inner"></span>
+      </label>
+      <div class="large_Radio_Text">Label</div>
+    </section>
+
+    <!-- LARGE RADIO BUTTON ENDS HERE  -->
+
+    <!-- MEDIUM RADIO BUTTON STARTS HERE -->
+
+    <section>
+      <label class="medium_Radio_label">
+        <input type="radio" class="medium_Radio_Input" name="radio" [disabled]="disabledButton == true" />
+        <span class="medium_Radio_Inner"></span>
+      </label>
+      <div class="medium_Radio_Text">Label</div>
+    </section>
+
+    <!-- MEDIUM RADIO BUTTON ENDS HERE -->
+
+    <section>
+      <label class="small_Radio_label">
+        <input type="radio" class="small_Radio_Input" name="radio" [disabled]="disabledButton == true" />
+        <span class="small_Radio_Inner"></span>
+      </label>
+      <div class="small_Radio_Text">Label</div>
+    </section>
+    <!-- --------------------------------------  -->
+  </section>
+  <!-- All RADIO BUTTON WITHOUT CAPTION ENDS HERE -->
+
+  <!-- All RADIO BUTTON WITH CAPTION STARTS HERE  -->
+
+  <section style="display: flex; justify-content: space-between; margin-top: 50px">
+    <!-- LARGE RADIO BUTTON STARTS HERE -->
+
+    <section>
+      <label class="large_Radio_label">
+        <input type="radio" class="large_Radio_Input" name="radio" [disabled]="disabledButton == true" />
+        <span class="large_Radio_Inner"></span>
+      </label>
+      <div class="large_Radio_Text">Label</div>
+    </section>
+
+    <!-- LARGE RADIO BUTTON ENDS HERE  -->
+
+    <!-- MEDIUM RADIO BUTTON STARTS HERE -->
+
+    <section>
+      <label class="medium_Radio_label">
+        <input type="radio" class="medium_Radio_Input" name="radio" [disabled]="disabledButton == true" />
+        <span class="medium_Radio_Inner"></span>
+      </label>
+      <div class="medium_Radio_Text">Label</div>
+    </section>
+
+    <!-- MEDIUM RADIO BUTTON ENDS HERE -->
+
+    <section>
+      <label class="small_Radio_label">
+        <input type="radio" class="small_Radio_Input" name="radio" [disabled]="disabledButton == true" />
+        <span class="small_Radio_Inner"></span>
+      </label>
+      <div class="small_Radio_Text">Label</div>
+    </section>
+
+    <!---------------------------------------  -->
+  </section>
+
+  <!-- All RADIO BUTTON WITH CAPTION ENDS HERE -->
+
+  <!-- ALL BADGE STARTS HERE  -->
+
+  <h2 style="margin-top: 50px">Badges</h2>
+
+  <div style="display: flex; justify-content: space-between; align-items: center">
+    <!-- Blue badge starts here  -->
+
+    <section>
+      <button class="badge_Blue">79</button>
+    </section>
+
+    <!-- Blue badge ends here  -->
+
+    <!-- Red badge starts here  -->
+    <section>
+      <button class="badge_Red">46</button>
+    </section>
+
+    <!-- Red badge ends here  -->
+
+    <!-- Orange badge starts here  -->
+    <section>
+      <button class="badge_Orange">22</button>
+    </section>
+
+    <!-- Orange badge ends here  -->
+
+    <!-- Yellow badge starts here  -->
+    <section>
+      <button class="badge_Yellow">6</button>
+    </section>
+
+    <!-- Yellow badge ends here  -->
+
+    <!-- Green badge starts here  -->
+    <section>
+      <button class="badge_Green">234</button>
+    </section>
+
+    <!-- Green badge ends here  -->
+
+    <!-- Grey badge starts here  -->
+
+    <section>
+      <button class="badge_Grey">28</button>
+    </section>
+
+    <!-- Grey badge ends here  -->
+  </div>
+  <!-- ALL BADGE ENDS HERE  -->
+
+  <!-- ALL SWITCH RADIO BUTTON STARTS HERE  -->
+
+  <h2>Radio Switch Button</h2>
+
+  <div>
+    <!-- PRIMARY LARGE RADIO SWITCH BUTTON STARTS HERE  -->
+    <label class="toggle_Primary_Large_Label" style="margin-right: 50px">
+      <input type="checkbox" class="toggle_Primary_Large_Input" [disabled]="disabledButton == true" />
+      <span class="toggle_Primary_Large_Inner round"></span>
+    </label>
+
+    <!-- PRIMARY LARGE RADIO SWITCH BUTTON ENDS HERE  -->
+
+    <!-- PRIMARY MEDIUM RADIO SWITCH BUTTON STARTS HERE  -->
+
+    <label class="toggle_Primary_Medium_Label" style="margin-right: 50px">
+      <input type="checkbox" class="toggle_Primary_Medium_Input" [disabled]="disabledButton == true" />
+      <span class="toggle_Primary_Medium_Inner round"></span>
+    </label>
+
+    <!-- PRIMARY MEDIUM RADIO SWITCH BUTTON ENDS HERE -->
+
+    <!-- PRIMARY SMALL RADIO SWITCH BUTTON STARTS HERE  -->
+
+    <label class="toggle_Primary_Small_Label" style="margin-right: 50px">
+      <input type="checkbox" class="toggle_Primary_Small_Input" [disabled]="disabledButton == true" />
+      <span class="toggle_Primary_Small_Inner round"></span>
+    </label>
+    <!-- PRIMARY SMALL RADIO SWITCH BUTTON ENDS HERE  -->
+  </div>
+
+  <div>
+    <!-- SECONDARY LARGE RADIO SWITCH BUTTON STARTS HERE  -->
+    <label class="toggle_Secondary_Large_Label" style="margin-right: 50px">
+      <input type="checkbox" class="toggle_Secondary_Large_Input" [disabled]="disabledButton == true" />
+      <span class="toggle_Secondary_Large_Inner round"></span>
+    </label>
+
+    <!-- SECONDARY LARGE RADIO SWITCH BUTTON ENDS HERE  -->
+
+    <!-- SECONDARY MEDIUM RADIO SWITCH BUTTON STARTS HERE  -->
+
+    <label class="toggle_Secondary_Medium_Label" style="margin-right: 50px">
+      <input type="checkbox" class="toggle_Secondary_Medium_Input" [disabled]="disabledButton == true" />
+      <span class="toggle_Secondary_Medium_Inner round"></span>
+    </label>
+
+    <!-- SECONDARY MEDIUM RADIO SWITCH BUTTON ENDS HERE -->
+
+    <!-- SECONDARY SMALL RADIO SWITCH BUTTON STARTS HERE  -->
+
+    <label class="toggle_Secondary_Small_Label" style="margin-right: 50px">
+      <input type="checkbox" class="toggle_Secondary_Small_Input" [disabled]="disabledButton == true" />
+      <span class="toggle_Secondary_Small_Inner round"></span>
+    </label>
+    <!-- SECONDARY SMALL RADIO SWITCH BUTTON ENDS HERE  -->
+  </div>
+
+  <div>
+    <!-- TERTIARY LARGE RADIO SWITCH BUTTON STARTS HERE  -->
+    <label class="toggle_Tertiary_Large_Label" style="margin-right: 50px">
+      <input type="checkbox" class="toggle_Tertiary_Large_Input" [disabled]="disabledButton == true" />
+      <span class="toggle_Tertiary_Large_Inner round"></span>
+    </label>
+
+    <!-- TERTIARY LARGE RADIO SWITCH BUTTON ENDS HERE  -->
+
+    <!-- TERTIARY MEDIUM RADIO SWITCH BUTTON STARTS HERE  -->
+
+    <label class="toggle_Tertiary_Medium_Label" style="margin-right: 50px">
+      <input type="checkbox" class="toggle_Tertiary_Medium_Input" [disabled]="disabledButton == true" />
+      <span class="toggle_Tertiary_Medium_Inner round"></span>
+    </label>
+
+    <!-- TERTIARY MEDIUM RADIO SWITCH BUTTON ENDS HERE -->
+
+    <!-- TERTIARY SMALL RADIO SWITCH BUTTON STARTS HERE  -->
+
+    <label class="toggle_Tertiary_Small_Label" style="margin-right: 50px">
+      <input type="checkbox" class="toggle_Tertiary_Small_Input" [disabled]="disabledButton == true" />
+      <span class="toggle_Tertiary_Small_Inner round"></span>
+    </label>
+
+    <!-- TERTIARY SMALL RADIO SWITCH BUTTON ENDS HERE  -->
+  </div>
+
+  <!-- ALL SWITCH RADIO BUTTON ENDS HERE  -->
+
+  <!-- ALL PRIMARY BUTTON POPUP STARTS HERE  -->
+
+  <section class="primary_Popup">
+    <section>
+      <!-- PRIMARY BUTTON EXTRA EXTRA SMALL STARTS HERE  -->
+
+      <h2 style="margin-bottom: 20px">
+        Popup Primary Extra Extra Small Button
+      </h2>
+      <button class="popup_Primary_Extra_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- PRIMARY BUTTON EXTRA EXTRA SMALL ENDS HERE  -->
+    </section>
+
+    <section>
+      <!-- PRIMARY BUTTON EXTRA SMALL STARTS HERE  -->
+
+      <h2 style="margin-bottom: 20px">Popup Primary Extra Small Button</h2>
+      <button class="popup_Primary_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- PRIMARY BUTTON EXTRA SMALL ENDS HERE  -->
+    </section>
+
+    <section>
+      <!-- PRIMARY BUTTON SMALL STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Primary Small Button</h2>
+      <button class="popup_Primary_Small_Button width_sm" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- PRIMARY BUTTON SMALL ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- PRIMARY BUTTON MEDIUM STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Primary Medium Button</h2>
+      <button class="popup_Primary_Medium_Button width_med" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- PRIMARY BUTTON MEDIUM ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- PRIMARY BUTTON LARGE STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Primary Large Button</h2>
+      <button class="popup_Primary_Large_Button width_lar" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- PRIMARY BUTTON LARGE ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- PRIMARY BUTTON EXTRA LARGE STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Primary Extra Large Button</h2>
+      <button class="popup_Primary_Extra_Large_Button width_ex_lar" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- PRIMARY BUTTON EXTRA LARGE ENDS HERE -->
+    </section>
+  </section>
+
+  <!-- ALL PRIMARY BUTTON POPUP ENDS HERE  -->
+
+  <!-- ALL SECONDARY BUTTON POPUP STARTS HERE  -->
+
+  <section class="secondary_Popup">
+    <section>
+      <!-- SECONDARY BUTTON EXTRA EXTRA SMALL STARTS HERE  -->
+
+      <h2 style="margin-bottom: 20px">
+        Popup Secondary Extra Extra Small Button
+      </h2>
+      <button class="popup_Secondary_Extra_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- SECONDARY BUTTON EXTRA EXTRA SMALL ENDS HERE  -->
+    </section>
+
+    <section>
+      <!-- SECONDARY BUTTON EXTRA SMALL STARTS HERE  -->
+
+      <h2 style="margin-bottom: 20px">Popup Secondary Extra Small Button</h2>
+      <button class="popup_Secondary_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- SECONDARY BUTTON EXTRA SMALL ENDS HERE  -->
+    </section>
+
+    <section>
+      <!-- SECONDARY BUTTON SMALL STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Secondary Small Button</h2>
+      <button class="popup_Secondary_Small_Button width_sm" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- SECONDARY BUTTON SMALL ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- SECONDARY BUTTON MEDIUM STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">
+        Popup Secondary Medium Button Button
+      </h2>
+      <button class="popup_Secondary_Medium_Button width_med" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- SECONDARY BUTTON MEDIUM ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- SECONDARY BUTTON LARGE STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Secondary Large Button</h2>
+      <button class="popup_Secondary_Large_Button width_lar" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- SECONDARY BUTTON LARGE ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- SECONDARY BUTTON EXTRA LARGE STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Secondary Extra Large Button</h2>
+      <button class="popup_Secondary_Extra_Large_Button width_ex_lar" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- SECONDARY BUTTON EXTRA LARGE ENDS HERE -->
+    </section>
+  </section>
+
+  <!-- ALL SECONDARY BUTTON POPUP ENDS HERE  -->
+
+  <!-- ------------------------------------------------------------------------>
+
+  <!-- ALL ALTERNATIVE SECONDARY BUTTON POPUP STARTS HERE  -->
+
+  <section class="secondary_Popup">
+    <section>
+      <!-- ALTERNATIVE SECONDARY BUTTON EXTRA EXTRA SMALL STARTS HERE  -->
+
+      <h2 style="margin-bottom: 20px">
+        Popup Alternative Secondary Extra Extra Small Button
+      </h2>
+      <button class="popup_Alt_Secondary_Extra_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- ALTERNATIVE SECONDARY BUTTON EXTRA EXTRA SMALL ENDS HERE  -->
+    </section>
+
+    <section>
+      <!-- ALTERNATIVE SECONDARY BUTTON EXTRA SMALL STARTS HERE  -->
+
+      <h2 style="margin-bottom: 20px">
+        Popup Alternative Secondary Extra Small Button
+      </h2>
+      <button class="popup_Alt_Secondary_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- ALTERNATIVE SECONDARY BUTTON EXTRA SMALL ENDS HERE  -->
+    </section>
+
+    <section>
+      <!-- ALTERNATIVE SECONDARY BUTTON SMALL STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">
+        Popup Alternative Secondary Small Button
+      </h2>
+      <button class="popup_Alt_Secondary_Small_Button width_sm" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- ALTERNATIVE SECONDARY BUTTON SMALL ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- ALTERNATIVE SECONDARY BUTTON MEDIUM STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">
+        Popup Alternative Secondary Medium Button Button
+      </h2>
+      <button class="popup_Alt_Secondary_Medium_Button width_med" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- ALTERNATIVE SECONDARY BUTTON MEDIUM ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- ALTERNATIVE SECONDARY BUTTON LARGE STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">
+        Popup Alternative Secondary Large Button
+      </h2>
+      <button class="popup_Alt_Secondary_Large_Button width_lar" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- ALTERNATIVE SECONDARY BUTTON LARGE ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- ALTERNATIVE SECONDARY BUTTON EXTRA LARGE STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">
+        Popup Alternative Secondary Extra Large Button
+      </h2>
+      <button class="popup_Alt_Secondary_Extra_Large_Button width_ex_lar" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- ALTERNATIVE SECONDARY BUTTON EXTRA LARGE ENDS HERE -->
+    </section>
+  </section>
+
+  <!-- ALL ALTERNATIVE SECONDARY BUTTON POPUP ENDS HERE  -->
+
+  <!-- ALL TERTIARY BUTTON POPUP STARTS HERE  -->
+
+  <section class="tertiary_Popup">
+    <section>
+      <!-- TERTIARY BUTTON EXTRA EXTRA SMALL STARTS HERE  -->
+
+      <h2 style="margin-bottom: 20px">
+        Popup Tertiary Extra Extra Small Button
+      </h2>
+      <button class="popup_Tertiary_Extra_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- TERTIARY BUTTON EXTRA SMALL ENDS HERE  -->
+    </section>
+
+    <section>
+      <!-- TERTIARY BUTTON EXTRA SMALL STARTS HERE  -->
+
+      <h2 style="margin-bottom: 20px">Popup Tertiary Extra Small Button</h2>
+      <button class="popup_Tertiary_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- TERTIARY BUTTON EXTRA SMALL ENDS HERE  -->
+    </section>
+
+    <section>
+      <!-- TERTIARY BUTTON SMALL STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Tertiary Small Button</h2>
+      <button class="popup_Tertiary_Small_Button width_sm" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- TERTIARY BUTTON SMALL ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- TERTIARY BUTTON MEDIUM STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Tertiary Medium Button</h2>
+      <button class="popup_Tertiary_Medium_Button width_med" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- TERTIARY BUTTON MEDIUM ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- TERTIARY BUTTON LARGE STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Tertiary Large Button</h2>
+      <button class="popup_Tertiary_Large_Button width_lar" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- TERTIARY BUTTON LARGE ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- TERTIARY BUTTON EXTRA LARGE STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Tertiary Extra Large Button</h2>
+      <button class="popup_Tertiary_Extra_Large_Button width_ex_lar" [disabled]="disabledButton == true">
+        Save
+      </button>
+
+      <!-- TERTIARY BUTTON EXTRA LARGE ENDS HERE -->
+    </section>
+  </section>
+
+  <!-- ALL TERTIARY BUTTON POPUP ENDS HERE  -->
+
+  <!-- ALL DELETE BUTTON POPUP STARTS HERE  -->
+
+  <section class="delete_Popup">
+    <section>
+      <!-- DELETE BUTTON EXTRA EXTRA SMALL STARTS HERE  -->
+
+      <h2 style="margin-bottom: 20px">
+        Popup Delete Extra Extra Small Button
+      </h2>
+      <button class="popup_Delete_Extra_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+        Delete
+      </button>
+
+      <!-- DELETE BUTTON EXTRA SMALL ENDS HERE  -->
+    </section>
+
+    <section>
+      <!-- DELETE BUTTON EXTRA SMALL STARTS HERE  -->
+
+      <h2 style="margin-bottom: 20px">Popup Delete Extra Small Button</h2>
+      <button class="popup_Delete_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+        Delete
+      </button>
+
+      <!-- DELETE BUTTON EXTRA SMALL ENDS HERE  -->
+    </section>
+
+    <section>
+      <!-- DELETE BUTTON SMALL STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Delete Small Button</h2>
+      <button class="popup_Delete_Small_Button width_sm" [disabled]="disabledButton == true">
+        Delete
+      </button>
+
+      <!-- DELETE BUTTON SMALL ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- DELETE BUTTON MEDIUM STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Delete Medium Button</h2>
+      <button class="popup_Delete_Medium_Button width_med" [disabled]="disabledButton == true">
+        Delete
+      </button>
+
+      <!-- DELETE BUTTON MEDIUM ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- DELETE BUTTON LARGE STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Delete Large Button</h2>
+      <button class="popup_Delete_Large_Button width_lar" [disabled]="disabledButton == true">
+        Delete
+      </button>
+
+      <!-- DELETE BUTTON LARGE ENDS HERE -->
+    </section>
+
+    <section>
+      <!-- DELETE BUTTON EXTRA LARGE STARTS HERE -->
+
+      <h2 style="margin-bottom: 20px">Popup Delete Extra Large Button</h2>
+      <button class="popup_Delete_Extra_Large_Button width_ex_lar" [disabled]="disabledButton == true">
+        Delete
+      </button>
+
+      <!-- DELETE BUTTON EXTRA LARGE ENDS HERE -->
+    </section>
+  </section>
+
+  <!-- ALL DELETE BUTTON POPUP ENDS HERE  -->
+
+  <!-- ALL ALTERNATIVE RIGHT ARROW BUTTON STARTS HERE  -->
+
+  <!-- EXTRA SMALL ALT RIGHT ARROW BUTTON STARTS HERE -->
+  <section>
+    <div>
+      <h2 style="margin-bottom: 20px">Alt Right Arrow Extra Small Button</h2>
+      <button class="alt_Button_Extra_Small_Right_Arrow width_ex_sm" [disabled]="disabledButton == true">
+        <span class="alt_Button_Extra_Small_Right_Arrow_Text">Continue</span>
+      </button>
+    </div>
+  </section>
+  <!-- EXTRA SMALL ALT RIGHT ARROW BUTTON ENDS HERE  -->
+
+  <!-- SMALL ALT RIGHT ARROW BUTTON STARTS HERE -->
+
+  <section>
+    <h2 style="margin-bottom: 20px">Alt Right Arrow Small Button</h2>
+
+    <button class="alt_Button_Small_Right_Arrow width_sm" [disabled]="disabledButton == true">
+      <span class="alt_Button_Small_Right_Arrow_Text">
+        Continue
+
+        <img src="../assets/arrow_Right.svg" alt="" />
+      </span>
+    </button>
+  </section>
+
+  <!-- SMALL ALT RIGHT ARROW BUTTON ENDS HERE -->
+
+  <!-- MEDIUM ALT RIGHT ARROW BUTTON STARTS HERE -->
+  <section>
+    <div>
+      <h2 style="margin-bottom: 20px">Alt Right Arrow Medium Button</h2>
+      <button class="alt_Button_Medium_Right_Arrow width_med" [disabled]="disabledButton == true">
+        <span class="alt_Button_Medium_Right_Arrow_Text">
+          Continue
+
+          <img src="../assets/arrow_Right.svg" alt="" />
+        </span>
+      </button>
+    </div>
+  </section>
+  <!-- MEDIUM ALT RIGHT ARROW BUTTON ENDS HERE -->
+
+  <!-- LARGE ALT RIGHT ARROW BUTTON STARTS HERE -->
+
+  <section>
+    <div>
+      <h2 style="margin-bottom: 20px">Alt Right Arrow large Button</h2>
+      <button class="alt_Button_Large_Right_Arrow width_lar" [disabled]="disabledButton == true">
+        <span class="alt_Button_Large_Right_Arrow_Text">
+          Continue
+          <img src="../assets/arrow_Right.svg" alt="" />
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <!-- LARGE ALT RIGHT ARROW BUTTON ENDS HERE -->
+
+  <!-- XLARGE LARGE ALT RIGHT ARROW BUTTON STARTS HERE -->
+
+  <section>
+    <h2 style="margin-bottom: 20px">Alt Right Arrow X Large Button</h2>
+
+    <button class="alt_Button_XLarge_Right_Arrow width_ex_lar" [disabled]="disabledButton == true">
+      <span class="alt_Button_XLarge_Right_Arrow_Text">
+        Continue
+        <img src="../assets/arrow_Right.svg" alt="" />
+      </span>
+    </button>
+  </section>
+
+  <!-- XLARGE LARGE ALT RIGHT ARROW BUTTON ENDS HERE   -->
+
+  <!-- ALL ALTERNATIVE RIGHT ARROW BUTTON ENDS HERE  -->
+
+  <!-- ALL ALTERNATIVE LEFT ARROW BUTTON STARTS HERE  -->
+
+  <!-- EXTRA SMALL ALT LEFT ARROW BUTTON STARTS HERE -->
+  <section>
+    <div>
+      <h2 style="margin-bottom: 20px">Alt Left Arrow Extra Small Button</h2>
+      <button class="alt_Button_Extra_Small_Left_Arrow width_ex_sm" [disabled]="disabledButton == true">
+        <span class="alt_Button_Extra_Small_Left_Arrow_Text">Continue</span>
+      </button>
+    </div>
+  </section>
+  <!-- EXTRA SMALL ALT LEFT ARROW BUTTON ENDS HERE  -->
+
+  <!-- SMALL ALT LEFT ARROW BUTTON STARTS HERE -->
+
+  <section>
+    <h2 style="margin-bottom: 20px">Alt Left Arrow Small Button</h2>
+
+    <button class="alt_Button_Small_Left_Arrow width_sm" [disabled]="disabledButton == true">
+      <span class="alt_Button_Small_Left_Arrow_Text">
+        <img src="../assets/arrow_Left.svg" alt="" />
+        Continue
+      </span>
+    </button>
+  </section>
+
+  <!-- SMALL ALT LEFT ARROW BUTTON ENDS HERE -->
+
+  <!-- MEDIUM ALT LEFT ARROW BUTTON STARTS HERE -->
+  <section>
+    <div>
+      <h2 style="margin-bottom: 20px">Alt Left Arrow Medium Button</h2>
+      <button class="alt_Button_Medium_Left_Arrow width_med" [disabled]="disabledButton == true">
+        <span class="alt_Button_Medium_Left_Arrow_Text">
+          <img src="../assets/arrow_Left.svg" alt="" />
+          Continue
+        </span>
+      </button>
+    </div>
+  </section>
+  <!-- MEDIUM ALT LEFT ARROW BUTTON ENDS HERE -->
+
+  <!-- LARGE ALT LEFT ARROW BUTTON STARTS HERE -->
+
+  <section>
+    <div>
+      <h2 style="margin-bottom: 20px">Alt Left Arrow Large Button</h2>
+      <button class="alt_Button_Large_Left_Arrow width_lar" [disabled]="disabledButton == true">
+        <span class="alt_Button_Large_Left_Arrow_Text">
+          <img src="../assets/arrow_Left.svg" alt="" />
+          Continue
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <!-- LARGE ALT LEFT ARROW BUTTON ENDS HERE -->
+
+  <!-- XLARGE LARGE ALT LEFT ARROW BUTTON STARTS HERE -->
+
+  <section>
+    <h2 style="margin-bottom: 20px">Alt Left Arrow X Large Button</h2>
+
+    <button class="alt_Button_XLarge_Left_Arrow width_ex_lar" [disabled]="disabledButton == true">
+      <span class="alt_Button_XLarge_Left_Arrow_Text">
+        <img src="../assets/arrow_Left.svg" alt="" />
+        Continue
+      </span>
+    </button>
+  </section>
+
+  <!-- XLARGE LARGE ALT LEFT ARROW BUTTON ENDS HERE   -->
+  <!-- ALL ALTERNATIVE LEFT ARROW BUTTON ENDS HERE  -->
+
+  <!-- ALL TOOLTIPS STARTS HERE   -->
+
+  <section style="display: flex; justify-content: space-between; margin-top: 50px">
+    <h2>Primary tooltip</h2>
+
+    <!-- SMALL TOOLTIP STARTS HERE  -->
+    <div class="small_Primary_Tooltip">
+      <span class="small_Primary_TooltipText">Cody Fisher</span>
+      <span>Hover Over Me</span>
+    </div>
+
+    <!-- SMALL TOOLTIP ENDS HERE  -->
+
+    <!-- MEDIUM TOOLTIP STARTS HERE  -->
+
+    <div class="medium_Primary_Tooltip">
+      <span class="medium_Primary_TooltipText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+        dignissimos..?</span>
+      <span>Hover Over Me</span>
+    </div>
+
+    <!-- MEDIUM TOOLTIP ENDS HERE  -->
+
+    <!-- LARGE TOOLTIP STARTS HERE  -->
+    <div class="large_Primary_Tooltip">
+      <span class="large_Primary_TooltipText">Cody Fishethere Chandan ka Bhai</span>
+      <span>Hover Over Me</span>
+    </div>
+
+    <!-- LARGE TOOLTIP ENDS HERE  -->
+  </section>
+
+  <!-- All PRIMARY SIZE TOOLTIP ENDS HERE  -->
+
+  <!-- All ALERT SIZE TOOLTIP STARTS HERE  -->
+  <section style="display: flex; justify-content: space-between; margin-top: 50px">
+    <h2>Alert tooltip</h2>
+
+    <!-- SMALL TOOLTIP STARTS HERE  -->
+    <div class="small_Alert_Tooltip">
+      <span class="small_Alert_TooltipText">Cody Fisher</span>
+      <span>Hover Over Me</span>
+    </div>
+
+    <!-- SMALL TOOLTIP ENDS HERE  -->
+
+    <!-- MEDIUM TOOLTIP STARTS HERE  -->
+
+    <div class="medium_Alert_Tooltip">
+      <span class="medium_Alert_TooltipText">Lorem Ipsum has been the industry's standard dummy text ever since
+        the 1500s...!!!!</span>
+      <span>Hover Over Me</span>
+    </div>
+
+    <!-- MEDIUM TOOLTIP ENDS HERE  -->
+
+    <!-- LARGE TOOLTIP STARTS HERE  -->
+    <div class="large_Alert_Tooltip">
+      <span class="large_Alert_TooltipText">Cody Fishethere Chandan ka Bhai</span>
+      <span>Hover Over Me</span>
+    </div>
+
+    <!-- LARGE TOOLTIP ENDS HERE  -->
+  </section>
+
+  <!-- All ALERT SIZE TOOLTIP ENDS HERE  -->
+
+  <!-- All SECONDARY SIZE TOOLTIP STARTS HERE  -->
+  <section style="display: flex; justify-content: space-between; margin-top: 50px">
+    <h2>Secondary tooltip</h2>
+
+    <!-- SMALL TOOLTIP STARTS HERE  -->
+    <div class="small_Secondary_Tooltip">
+      <span class="small_Secondary_TooltipText">Cody Fisher</span>
+      <span>Hover Over Me</span>
+    </div>
+
+    <!-- SMALL TOOLTIP ENDS HERE  -->
+
+    <!-- MEDIUM TOOLTIP STARTS HERE  -->
+
+    <div class="medium_Secondary_Tooltip">
+      <span class="medium_Secondary_TooltipText">Lorem Ipsum has been the industry's standard dummy text ever since
+        the 1500s...!!!!</span>
+      <span>Hover Over Me</span>
+    </div>
+
+    <!-- MEDIUM TOOLTIP ENDS HERE  -->
+
+    <!-- LARGE TOOLTIP STARTS HERE  -->
+    <div class="large_Secondary_Tooltip">
+      <span class="large_Secondary_TooltipText">Cody Fishethere Chandan ka Bhai</span>
+      <span>Hover Over Me</span>
+    </div>
+
+    <!-- LARGE TOOLTIP ENDS HERE  -->
+  </section>
+
+  <!-- All SECONDARY SIZE TOOLTIP ENDS HERE  -->
+
+  <!-- ALL TOOLTIPS ENDS HERE   -->
+
+  <!-- google button starts here -->
+  <section>
+    <button class="googleButton" [disabled]="disabledButton == true">
+      <img src="./assets/google_logo.svg" alt="" />
+      Sign in with Google
+    </button>
+  </section>
+  <!-- google button ends here -->
+  <!-- MICROSOFT button starts here -->
+  <section>
+    <button class="msButton" [disabled]="disabledButton == true">
+      <img src="./assets/ms-logo.svg" alt="" />
+      Sign in with Microsoft
+    </button>
+  </section>
+  <!-- MICROSOFT button ends here -->
+
+  <!-- ALL SEARCH BUTTON STARTS HERE   -->
+  <button class="text_Input_Extra_Small" [disabled]="disabledButton == true"
+    [ngClass]="{ success: successValue == true, error: errorValue == true }">
+    <input [disabled]="disabledButton == true" type="search" placeholder="Search for team" [(ngModel)]="value"
+      (ngModelChange)="getvalue()" id="check" />
+    <img src="../assets/search_icon.svg" alt="" />
+  </button>
+  <!-- ALL SEARCH BUTTON ENDS HERE   -->
+  <!-- second type search bar starts here -->
+  <button class="searchBar2 width4" [disabled]="disabledButton == true">
+    <span class="fixedText">Search for team</span>
+    <div class="inputSection">
+      <input [disabled]="disabledButton == true" autofocus="false" type="search" [(ngModel)]="value2"
+        (ngModelChange)="getvalue()" id="check" />
+      <img src="../assets/search_icon.svg" alt="" />
+    </div>
+  </button>
+  <!-- second type search bar ends here -->
+  <!-- Dropdown starts here -->
+  <section style="display: flex; flex-direction: row; justify-content: space-between">
+    <!-- custom dropdown starts here -->
+
+    <!-- dropdown with icons and description starts here -->
+
+    <button class="dropdown_Trigger_With_Icons_And_Desc" [ngClass]="{ activeClass: triggerDropDown == true }"
+      (click)="triggerDropDown = !triggerDropDown">
+      <div>
+        {{ selectedValueOption }}
+      </div>
+      <img src="../assets/DropDownArrow.svg" alt="" />
+    </button>
+    <div class="dropDown_Container_With_Icons_And_Desc" *ngIf="triggerDropDown == true">
+      <ul (click)="optionClickValue(i)" class="Option_With_Icons_And_Desc"
+        *ngFor="let item of accesslist; let i = index">
+        <img src="{{ item.image }}" alt="" />
+        <div class="description">
+          <span style="color: black">{{ item.type }}</span>
+          <span class="accessDetails" style="color: black">{{
+            item.desc
+            }}</span>
+        </div>
+      </ul>
+    </div>
+
+    <!-- dropdown with icons and description ends here  -->
+
+    <!-- jayesh crete dropDown  -->
+
+    <div class="outer_Div_Dropdown_with_Icon">
+      <input class="input_Dropdown_with_Icon hidden" type="text" />
+
+      <img src="../assets/DropDownArrow.svg" alt="" />
+    </div>
+
+    <!-- jayesh crete dropDown   -->
+
+    <!-- dropdown without icons but description starts here  -->
+
+    <button class="dropdown_Trigger_Without_Icons_But_Desc" [ngClass]="{ activeClass: triggerDropDown == true }"
+      (click)="triggerDropDown = !triggerDropDown">
+      <div>
+        {{ selectedValueOption }}
+      </div>
+      <img src="../assets/DropDownArrow.svg" alt="" />
+    </button>
+    <div class="dropDown_Container_Without_Icons_But_Desc" *ngIf="triggerDropDown == true">
+      <ul (click)="optionClickValue(i)" class="Options" *ngFor="let item of accesslist; let i = index">
+        <img src="{{ item.image }}" alt="" />
+        <div class="description">
+          <span style="color: black">{{ item.type }}</span>
+          <span class="accessDetails" style="color: black">{{
+            item.desc
+            }}</span>
+        </div>
+      </ul>
+    </div>
+
+    <!-- dropdown without icons but description ends here  -->
+
+    <!-- custom dropdown ends here -->
+  </section>
+  <!-- Dropdown ends here -->
+
+  <!-- shareButton click starts -->
+  <button (click)="shareButtonOpen()">Share button</button>
+
+  <!-- shareButton click ends  -->
+
+  <!-- Announcement modal starts here -->
+  <section style="display: flex; width: 110%; flex-wrap: wrap">
+    <!-- example 0 -->
+    <div class="announceContainer announce_Red">
+      <div class="headerAnnounce">
+        <h4 class="headerText">Modal Title</h4>
+        <button style="border: none; background: transparent; height: 24px">
+          <img src="../assets/closeAnnounce.svg" alt="" />
+        </button>
+      </div>
+      <img style="width: 100%; height: 50px; display: block; margin-top: 40px" src="../assets/infoAnnounceCard.svg"
+        alt="" />
+      <h4 class="subHeadText">How it works</h4>
+      <span class="description">One way to announce or promote certain new product or special event
+        is perhaps using this new modal bar</span>
+    </div>
+    <!-- example 0 -->
+    <!-- example 1 -->
+    <div class="announceContainer announce_Green">
+      <div class="headerAnnounce">
+        <h4 class="headerText">Modal Title</h4>
+        <button style="border: none; background: transparent; height: 24px">
+          <img src="../assets/closeAnnounce.svg" alt="" />
+        </button>
+      </div>
+      <img style="width: 100%; height: 50px; display: block; margin-top: 40px" src="../assets/infoAnnounceCard.svg"
+        alt="" />
+      <h4 class="subHeadText">How it works</h4>
+      <span class="description">One way to announce or promote certain new product or special event
+        is perhaps using this new modal bar</span>
+    </div>
+    <!-- example 1 -->
+    <!-- example 2 -->
+    <div class="announceContainer announce_Blue">
+      <div class="headerAnnounce">
+        <h4 class="headerText">Modal Title</h4>
+        <button style="border: none; background: transparent; height: 24px">
+          <img src="../assets/closeAnnounce.svg" alt="" />
+        </button>
+      </div>
+      <img style="width: 100%; height: 50px; display: block; margin-top: 40px" src="../assets/infoAnnounceCard.svg"
+        alt="" />
+      <h4 class="subHeadText">How it works</h4>
+      <span class="description">One way to announce or promote certain new product or special event
+        is perhaps using this new modal bar</span>
+    </div>
+    <!-- example 2 -->
+    <!-- example 3 -->
+    <div class="announceContainer announce_Purple">
+      <div class="headerAnnounce">
+        <h4 class="headerText">Modal Title</h4>
+        <button style="border: none; background: transparent; height: 24px">
+          <img src="../assets/closeAnnounce.svg" alt="" />
+        </button>
+      </div>
+      <img style="width: 100%; height: 50px; display: block; margin-top: 40px" src="../assets/successAnnounceCard.svg"
+        alt="" />
+      <h4 class="subHeadText">How it works</h4>
+      <span class="description">One way to announce or promote certain new product or special event
+        is perhaps using this new modal bar</span>
+    </div>
+    <!-- example 3 -->
+    <!-- example 4 -->
+    <div class="announceContainer announce_Turquoise">
+      <div class="headerAnnounce">
+        <h4 class="headerText">Modal Title</h4>
+        <button style="border: none; background: transparent; height: 24px">
+          <img src="../assets/closeAnnounce.svg" alt="" />
+        </button>
+      </div>
+      <img style="width: 100%; height: 50px; display: block; margin-top: 40px" src="../assets/successAnnounceCard.svg"
+        alt="" />
+      <h4 class="subHeadText">How it works</h4>
+      <span class="description">One way to announce or promote certain new product or special event
+        is perhaps using this new modal bar</span>
+    </div>
+    <!-- example 4 -->
+    <!-- example 5 -->
+    <div class="announceContainer announce_Yellow">
+      <div class="headerAnnounce">
+        <h4 class="headerText">Modal Title</h4>
+        <button style="border: none; background: transparent; height: 24px">
+          <img src="../assets/closeAnnounce.svg" alt="" />
+        </button>
+      </div>
+      <img style="width: 100%; height: 50px; display: block; margin-top: 40px" src="../assets/successAnnounceCard.svg"
+        alt="" />
+      <h4 class="subHeadText">How it works</h4>
+      <span class="description">One way to announce or promote certain new product or special event
+        is perhaps using this new modal bar</span>
+    </div>
+    <!-- example 5 -->
+    <!-- example 6 -->
+    <div class="announceContainer announce_Orange">
+      <div class="headerAnnounce">
+        <h4 class="headerText">Modal Title</h4>
+        <button style="border: none; background: transparent; height: 24px">
+          <img src="../assets/closeAnnounce.svg" alt="" />
+        </button>
+      </div>
+      <img style="width: 100%; height: 50px; display: block; margin-top: 40px" src="../assets/successAnnounceCard.svg"
+        alt="" />
+      <h4 class="subHeadText">How it works</h4>
+      <span class="description">One way to announce or promote certain new product or special event
+        is perhaps using this new modal bar</span>
+    </div>
+    <!-- example 6 -->
+    <!-- example 7 -->
+    <div class="announceContainer announce_Navy_Blue">
+      <div class="headerAnnounce">
+        <h4 class="headerText">Modal Title</h4>
+        <button style="border: none; background: transparent; height: 24px">
+          <img src="../assets/closeAnnounce.svg" alt="" />
+        </button>
+      </div>
+      <img style="width: 100%; height: 50px; display: block; margin-top: 40px" src="../assets/successAnnounceCard.svg"
+        alt="" />
+      <h4 class="subHeadText">How it works</h4>
+      <span class="description">One way to announce or promote certain new product or special event
+        is perhaps using this new modal bar</span>
+    </div>
+    <!-- example 7 -->
+  </section>
+  <!-- Announcement modal ends here -->
+
+  <!-- Progress modal Starts here -->
+  <div class="progress_Modal_Wrapper">
+    <div class="progress_Modal_Container margin_Top_50px">
+      <h1 class="progress_Modal_Title">Welcome!</h1>
+      <p class="progress_Modal_Desc">A few steps away to unlock Wallet</p>
+      <div class="progress_Modal_Items_Container">
+        <div class="progress_Modal_Item">
+          <div class="progress_Modal_Checkbox">
+            <img class="progress_Modal_Checkbox_Thick" src="../assets/thick-checkbox.svg" alt="" />
+          </div>
+          <p class="progress_Modal_Checkbox_Text">Create account</p>
+        </div>
+        <div class="progress_Modal_Item">
+          <div class="progress_Modal_Checkbox">
+            <img class="progress_Modal_Checkbox_Thick" src="../assets/thick-checkbox.svg" alt="" />
+          </div>
+          <p class="progress_Modal_Checkbox_Text">Validate Phone number</p>
+        </div>
+        <div class="progress_Modal_Item progress_Modal_Active">
+          <div class="progress_Modal_Number">
+            <p class="progress_Modal_No">3</p>
+          </div>
+          <p class="progress_Modal_Checkbox_Text">
+            Update personal information
+          </p>
+        </div>
+        <div class="progress_Modal_Item">
+          <div class="progress_Modal_Number">
+            <p class="progress_Modal_No">4</p>
+          </div>
+          <p class="progress_Modal_Checkbox_Text">Validate Address</p>
+        </div>
+        <div class="progress_Modal_Item">
+          <div class="progress_Modal_Number">
+            <p class="progress_Modal_No">5</p>
+          </div>
+          <p class="progress_Modal_Checkbox_Text">Validate Email</p>
+        </div>
+        <div class="progress_Modal_Item">
+          <div class="progress_Modal_Number">
+            <p class="progress_Modal_No">6</p>
+          </div>
+          <p class="progress_Modal_Checkbox_Text">Verify Documents</p>
+        </div>
+        <div class="progress_Modal_Item">
+          <div class="progress_Modal_Number">
+            <p class="progress_Modal_No">7</p>
+          </div>
+          <p class="progress_Modal_Checkbox_Text">Confirmation</p>
+        </div>
+      </div>
+      <footer class="progress_Modal_Button_Wrapper">
+        <button class="alt_Button_Small_Right_Arrow">
+          <span class="alt_Button_Small_Right_Arrow_Text">
+            Continue
+            <img src="../assets/arrow_Right.svg" alt="" />
+          </span>
+        </button>
+        <button class="popup_Alt_Secondary_Small_Button">Skip for now</button>
+      </footer>
+    </div>
+
+    <div class="progress_Modal_Container margin_Top_50px margin_Left_50px">
+      <h1 class="progress_Modal_Title">Welcome!</h1>
+      <p class="progress_Modal_Desc">A few steps away to unlock Wallet</p>
+      <div class="progress_Modal_Items_Container">
+        <div class="progress_Modal_Item with-line">
+          <div class="progress_Modal_Checkbox">
+            <img class="progress_Modal_Checkbox_Thick" src="../assets/thick-checkbox.svg" alt="" />
+          </div>
+          <p class="progress_Modal_Checkbox_Text">Create account</p>
+          <div class="progress_Modal_Item_Line"></div>
+        </div>
+        <div class="progress_Modal_Item with-line">
+          <div class="progress_Modal_Checkbox">
+            <img class="progress_Modal_Checkbox_Thick" src="../assets/thick-checkbox.svg" alt="" />
+          </div>
+          <p class="progress_Modal_Checkbox_Text">Validate Phone number</p>
+          <div class="progress_Modal_Item_Line"></div>
+        </div>
+        <div class="progress_Modal_Item with-line progress_Modal_Active">
+          <div class="progress_Modal_Number">
+            <p class="progress_Modal_No">3</p>
+          </div>
+          <p class="progress_Modal_Checkbox_Text">
+            Update personal information
+          </p>
+          <div class="progress_Modal_Item_Line"></div>
+        </div>
+        <div class="progress_Modal_Item with-line">
+          <div class="progress_Modal_Number">
+            <p class="progress_Modal_No">4</p>
+          </div>
+          <p class="progress_Modal_Checkbox_Text">Validate Address</p>
+          <div class="progress_Modal_Item_Line"></div>
+        </div>
+        <div class="progress_Modal_Item with-line">
+          <div class="progress_Modal_Number">
+            <p class="progress_Modal_No">5</p>
+          </div>
+          <p class="progress_Modal_Checkbox_Text">Validate Email</p>
+          <div class="progress_Modal_Item_Line"></div>
+        </div>
+        <div class="progress_Modal_Item with-line">
+          <div class="progress_Modal_Number">
+            <p class="progress_Modal_No">6</p>
+          </div>
+          <p class="progress_Modal_Checkbox_Text">Verify Documents</p>
+          <div class="progress_Modal_Item_Line"></div>
+        </div>
+        <div class="progress_Modal_Item with-line">
+          <div class="progress_Modal_Number">
+            <p class="progress_Modal_No">7</p>
+          </div>
+          <p class="progress_Modal_Checkbox_Text">Confirmation</p>
+        </div>
+      </div>
+      <footer class="progress_Modal_Button_Wrapper">
+        <button class="alt_Button_Small_Right_Arrow">
+          <span class="alt_Button_Small_Right_Arrow_Text">
+            Continue
+            <img src="../assets/arrow_Right.svg" alt="" />
+          </span>
+        </button>
+        <button class="popup_Alt_Secondary_Small_Button">Skip for now</button>
+      </footer>
+    </div>
+  </div>
+  <!-- Progress modal ends here -->
+
+  <!-- Filter controls for table starts here -->
+  <section class="filter_Control_Wrapper">
+    <button class="filter_Control">
+      <img class="filter_Control_Icon" src="../assets/ascending.svg" alt="" />
+    </button>
+
+    <button class="filter_Control filter_Control_Disabled margin_Left_20px">
+      <img class="filter_Control_Icon" src="../assets/ascending.svg" alt="" />
+    </button>
+
+    <button class="filter_Control_With_Text margin_Left_20px">
+      <img class="filter_Control_Icon_Text" src="../assets/ascending.svg" alt="" />
+      Low to High
+    </button>
+
+    <button class="filter_Control_With_Text filter_Control_With_Text_Disabled margin_Left_20px">
+      <img class="filter_Control_Icon_Text" src="../assets/ascending.svg" alt="" />
+      Low to High
+    </button>
+  </section>
+  <!-- Filter controls for table ends here -->
+
+  <!-- Chip name starts here -->
+  <section>
+    <div class="chip_Name_With_Photo_Wrapper">
+      <div class="chip_Name chip_Name_Blue margin_Left_20px">
+        <div class="chip_Name_Picture_Wrapper">
+          <img class="chip_Name_Picture" src="https://img.antaranews.com/cache/800x533/2021/09/04/2021-09-04-4.png.webp"
+            alt="User name" />
+          <div class="chip_Name_Picture_Online_Sign"></div>
+        </div>
+        <div class="chip_Name_Info">
+          <h6 class="chip_Name_Username">Nevaeh Simmons</h6>
+          <p class="chip_Name_Email">nevaeh.simmons@example.com</p>
+        </div>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="chip_Name chip_Name_Green margin_Left_20px">
+        <div class="chip_Name_Picture_Wrapper">
+          <img class="chip_Name_Picture" src="https://img.antaranews.com/cache/800x533/2021/09/04/2021-09-04-4.png.webp"
+            alt="User name" />
+          <div class="chip_Name_Picture_Online_Sign"></div>
+        </div>
+        <div class="chip_Name_Info">
+          <h6 class="chip_Name_Username">Nevaeh Simmons</h6>
+          <p class="chip_Name_Email">nevaeh.simmons@example.com</p>
+        </div>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="chip_Name chip_Name_Grey margin_Left_20px">
+        <div class="chip_Name_Picture_Wrapper">
+          <img class="chip_Name_Picture" src="https://img.antaranews.com/cache/800x533/2021/09/04/2021-09-04-4.png.webp"
+            alt="User name" />
+          <div class="chip_Name_Picture_Online_Sign"></div>
+        </div>
+        <div class="chip_Name_Info">
+          <h6 class="chip_Name_Username">Nevaeh Simmons</h6>
+          <p class="chip_Name_Email">nevaeh.simmons@example.com</p>
+        </div>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="chip_Name chip_Name_Purple margin_Left_20px">
+        <div class="chip_Name_Picture_Wrapper">
+          <img class="chip_Name_Picture" src="https://img.antaranews.com/cache/800x533/2021/09/04/2021-09-04-4.png.webp"
+            alt="User name" />
+          <div class="chip_Name_Picture_Online_Sign"></div>
+        </div>
+        <div class="chip_Name_Info">
+          <h6 class="chip_Name_Username">Nevaeh Simmons</h6>
+          <p class="chip_Name_Email">nevaeh.simmons@example.com</p>
+        </div>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <div class="chip_Name_Without_Photo_Wrapper">
+      <div class="chip_Name chip_Name_Blue margin_Left_20px">
+        <div class="chip_Name_Info">
+          <h6 class="chip_Name_Username">Nevaeh Simmons</h6>
+          <p class="chip_Name_Email">nevaeh.simmons@example.com</p>
+        </div>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="chip_Name chip_Name_Green margin_Left_20px">
+        <div class="chip_Name_Info">
+          <h6 class="chip_Name_Username">Nevaeh Simmons</h6>
+          <p class="chip_Name_Email">nevaeh.simmons@example.com</p>
+        </div>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="chip_Name chip_Name_Grey margin_Left_20px">
+        <div class="chip_Name_Info">
+          <h6 class="chip_Name_Username">Nevaeh Simmons</h6>
+          <p class="chip_Name_Email">nevaeh.simmons@example.com</p>
+        </div>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="chip_Name chip_Name_Purple margin_Left_20px">
+        <div class="chip_Name_Info">
+          <h6 class="chip_Name_Username">Nevaeh Simmons</h6>
+          <p class="chip_Name_Email">nevaeh.simmons@example.com</p>
+        </div>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <div class="chip_Only_Name_Wrapper">
+      <div class="chip_Only_Name chip_Only_Name_Blue margin_Left_20px">
+        <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="chip_Only_Name chip_Only_Name_Green margin_Left_20px">
+        <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="chip_Only_Name chip_Only_Name_Grey margin_Left_20px">
+        <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="chip_Only_Name chip_Only_Name_Purple margin_Left_20px">
+        <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="chip_Only_Name chip_Only_Name_Red margin_Left_20px">
+        <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+        <button class="chip_Name_Close">
+          <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Chip name ends here -->
+
+  <section style="margin: 50px 50px; display: flex; justify-content: space-around">
+    <!-- setting modal Medium starts here  -->
+
+    <div class="setting_Modal_Medium">
+      <div class="all_Element_Inside_Setting_Medium">
+        <section class="header_Setting_Modal_Medium">
+          <div class="icon_Div_Setting_Medium">
+            <img src="../../../assets/settingIcon.svg" alt="" />
+          </div>
+          <div class="header_Div_Setting_Modal_Medium">
+            <h2 class="top_Header_On_Setting_Modal_Medium">Settings</h2>
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="sub_Div_Setting_Modal_Medium">
+          <div class="content_div">
+            <section class="content_data">
+              <h6 class="content_data_name">Strictly Necessary</h6>
+
+              <p class="content_data_details">
+                These cookies are necessary for the website and can’t be
+                deactivated
+              </p>
+            </section>
+
+            <section class="switch_Button_Div_Medium">
+              <label class="toggle_Primary_Medium_Label">
+                <input type="checkbox" class="toggle_Primary_Medium_Input" [disabled]="disabledButton == true" />
+                <span class="toggle_Primary_Medium_Inner round"></span>
+              </label>
+            </section>
+          </div>
+
+          <div class="content_div">
+            <section class="content_data">
+              <h6 class="content_data_name">Marketing & Analytics</h6>
+
+              <p class="content_data_details">
+                These cookies can be set by our advertising partners through
+                our website
+              </p>
+            </section>
+
+            <section class="switch_Button_Div_Medium">
+              <label class="toggle_Primary_Medium_Label">
+                <input type="checkbox" class="toggle_Primary_Medium_Input" [disabled]="disabledButton == true" />
+                <span class="toggle_Primary_Medium_Inner round"></span>
+              </label>
+            </section>
+          </div>
+
+          <div class="content_div">
+            <section class="content_data">
+              <h6 class="content_data_name">Preferences</h6>
+
+              <p class="content_data_details">
+                To individualize your content, we use tools that personalize
+                your web experience.
+              </p>
+            </section>
+
+            <section class="switch_Button_Div_Medium">
+              <label class="toggle_Primary_Medium_Label">
+                <input type="checkbox" class="toggle_Primary_Medium_Input" [disabled]="disabledButton == true" />
+                <span class="toggle_Primary_Medium_Inner round"></span>
+              </label>
+            </section>
+          </div>
+
+          <div class="content_div">
+            <section class="content_data">
+              <h6 class="content_data_name">Preferences</h6>
+
+              <p class="content_data_details">
+                To individualize your content, we use tools that personalize
+                your web experience.
+              </p>
+            </section>
+
+            <section class="switch_Button_Div_Medium">
+              <label class="toggle_Primary_Medium_Label">
+                <input type="checkbox" class="toggle_Primary_Medium_Input" [disabled]="disabledButton == true" />
+                <span class="toggle_Primary_Medium_Inner round"></span>
+              </label>
+            </section>
+          </div>
+        </section>
+
+        <section class="button_Div_Medium">
+          <button class="popup_Primary_Small_Button width_sm" [disabled]="disabledButton == true">
+            Save Preferences
+          </button>
+        </section>
+      </div>
+    </div>
+
+    <!-- setting modal Medium ends here  -->
+
+    <!-- setting modal Large Starts here  -->
+
+    <div class="setting_Modal_Large">
+      <div class="all_Element_Inside_Setting_Large">
+        <section class="header_Setting_Modal_Large">
+          <div class="icon_Div_Setting_Large">
+            <img src="../../../assets/settingIcon.svg" alt="" />
+          </div>
+          <div class="header_Div_Setting_Modal_Large">
+            <h2 class="top_Header_On_Setting_Modal_Large">Settings</h2>
+
+            <p>
+              We use cookies, some of them are essential, others are optional.
+              <span>Learn more</span>
+            </p>
+          </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="sub_Div_Setting_Modal_Large">
+          <div class="content_div">
+            <section class="content_data">
+              <h6 class="content_data_name">Strictly Necessary</h6>
+
+              <p class="content_data_details">
+                These cookies are necessary for the website and can’t be
+                deactivated
+              </p>
+            </section>
+
+            <section class="switch_Button_Div">
+              <label class="toggle_Primary_Medium_Label">
+                <input type="checkbox" class="toggle_Primary_Medium_Input" [disabled]="disabledButton == true" />
+                <span class="toggle_Primary_Medium_Inner round"></span>
+              </label>
+            </section>
+          </div>
+
+          <div class="content_div">
+            <section class="content_data">
+              <h6 class="content_data_name">Marketing & Analytics</h6>
+
+              <p class="content_data_details">
+                These cookies can be set by our advertising partners through
+                our website
+              </p>
+            </section>
+
+            <section class="switch_Button_Div_Large">
+              <label class="toggle_Primary_Medium_Label">
+                <input type="checkbox" class="toggle_Primary_Medium_Input" [disabled]="disabledButton == true" />
+                <span class="toggle_Primary_Medium_Inner round"></span>
+              </label>
+            </section>
+          </div>
+
+          <div class="content_div">
+            <section class="content_data">
+              <h6 class="content_data_name">Preferences</h6>
+
+              <p class="content_data_details">
+                To individualize your content, we use tools that personalize
+                your web experience.
+              </p>
+            </section>
+
+            <section class="switch_Button_Div_Large">
+              <label class="toggle_Primary_Medium_Label">
+                <input type="checkbox" class="toggle_Primary_Medium_Input" [disabled]="disabledButton == true" />
+                <span class="toggle_Primary_Medium_Inner round"></span>
+              </label>
+            </section>
+          </div>
+        </section>
+
+        <section class="button_Div_Large">
+          <button class="popup_Primary_Small_Button width_sm" [disabled]="disabledButton == true">
+            Save Preferences
+          </button>
+        </section>
+      </div>
+    </div>
+
+    <!-- setting modal Large ends here  -->
+  </section>
+
+  <!-- All divider and indicators starts here  -->
+
+  <!-- You have to give width class at the time of execution  -->
+
+  <h2 style="padding-top: 20px; padding-bottom: 20px">
+    Divider and Indicators
+  </h2>
+
+  <div style="padding: 20px" class="divider_Indicator_Active"></div>
+
+  <div style="padding: 20px" class="divider_Indicator_Inactive"></div>
+
+  <div style="padding: 20px" class="divider"></div>
+
+  <!-- All divider and indicators ends here  -->
+
+  <!-- Pastel Color Avatar without Image Starts here   -->
+
+  <h2>Pastel Colors to be used for Avatar without Image</h2>
+
+  <section class="pastel_Color_Avatar">
+    <div class="col_d4dab4">d4dab4</div>
+    <div class="col_b39b97">b39b97</div>
+    <div class="col_fdc296">fdc296</div>
+    <div class="col_cc89ea">cc89ea</div>
+    <div class="col_f693bf">f693bf</div>
+    <div class="col_005efe">005efe</div>
+    <div class="col_b1e756">b1e756</div>
+    <div class="col_00ffdd">00ffdd</div>
+    <div class="col_fe6a00">fe6a00</div>
+    <div class="col_91eafa">91eafa</div>
+    <div class="col_9cc69e">9cc69e</div>
+    <div class="col_8eefe8">8eefe8</div>
+    <div class="col_9bdfe0">9bdfe0</div>
+    <div class="col_a98dfe">a98dfe</div>
+    <div class="col_f486c3">a98dfe</div>
+    <div class="col_00ef55">00ef55</div>
+    <div class="col_ffd900">ffd900</div>
+    <div class="col_ffbe00">ffbe00</div>
+    <div class="col_f4d885">f4d885</div>
+    <div class="col_daff01">daff01</div>
+    <div class="col_8be1c6">8be1c6</div>
+    <div class="col_df8e8d">df8e8d</div>
+    <div class="col_ff2b00">ff2b00</div>
+    <div class="col_1eff00">1eff00</div>
+    <div class="col_0099ff">0099ff</div>
+    <div class="col_00ff89">00ff89</div>
+  </section>
+
+  <!-- Pastel Color Avatar without Image Ends here  -->
+
+  <!-- Color to be used in charts starts here  -->
+
+  <h2>Colors to be used in charts</h2>
+
+  <section class="chart_Color">
+    <div class="col_334BFA">334BFA</div>
+    <div class="col_33FAE3">33FAE3</div>
+    <div class="col_7F33FA">7F33FA</div>
+    <div class="col_FAE233">FAE233</div>
+    <div class="col_FA7F33">FA7F33</div>
+    <div class="col_FA336F">FA336F</div>
+    <div class="col_EEF220">EEF220</div>
+    <div class="col_24CA49">24CA49</div>
+    <div class="col_8AC4FF">8AC4FF</div>
+    <div class="col_FF8F8F">FF8F8F</div>
+    <div class="col_000E87">000E87</div>
+  </section>
+
+  <!-- Color to be used in charts ends here  -->
+
+  <div style="margin-top: 50px"></div>
+
+  <!-- Invite members modal starts here  -->
+
+  <main class="main_Container_Invite">
+    <section class="inner_Container_Invite">
+      <div class="header_Invite">Invite members</div>
+
+      <div class="divider"></div>
+
+      <section class="sub_Container_Invite">
+        <div class="list_Invite">
+          <div class="chip_Only_Name_Wrapper">
+            <div class="chip_Only_Name chip_Only_Name_Blue">
+              <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+              <button class="chip_Name_Close">
+                <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+              </button>
+            </div>
+          </div>
+
+          <div class="chip_Only_Name_Wrapper">
+            <div class="chip_Only_Name chip_Only_Name_Grey small_Secondary_Tooltip">
+              <span class="small_Secondary_TooltipText">already a user</span>
+              <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+              <button class="chip_Name_Close">
+                <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+              </button>
+            </div>
+          </div>
+          <div class="chip_Only_Name_Wrapper">
+            <div class="chip_Only_Name chip_Only_Name_Blue">
+              <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+              <button class="chip_Name_Close">
+                <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+              </button>
+            </div>
+          </div>
+          <div class="chip_Only_Name_Wrapper">
+            <div class="chip_Only_Name chip_Only_Name_Blue">
+              <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+              <button class="chip_Name_Close">
+                <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+              </button>
+            </div>
+          </div>
+
+          <div class="chip_Only_Name_Wrapper">
+            <div class="chip_Only_Name chip_Only_Name_Blue">
+              <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+              <button class="chip_Name_Close">
+                <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+              </button>
+            </div>
+          </div>
+
+          <div class="chip_Only_Name_Wrapper">
+            <div class="chip_Only_Name chip_Only_Name_Red small_Secondary_Tooltip">
+              <span class="small_Secondary_TooltipText">please enter a valid email address</span>
+              <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+              <button class="chip_Name_Close">
+                <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+              </button>
+            </div>
+            <!-- <div class="small_Secondary_Tooltip">
+                      <span class="small_Secondary_TooltipText">Cody Fisher</span>
+                    </div> -->
+          </div>
+
+          <div class="chip_Only_Name_Wrapper">
+            <div class="chip_Only_Name chip_Only_Name_Blue">
+              <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+              <button class="chip_Name_Close">
+                <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+              </button>
+            </div>
+          </div>
+
+          <div class="chip_Only_Name_Wrapper">
+            <div class="chip_Only_Name chip_Only_Name_Blue">
+              <h6 class="chip_Only_Name_Email">kamlesh@alore.io</h6>
+              <button class="chip_Name_Close">
+                <img class="chip_Name_Close_Icon" src="../assets/white_Close.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="count_List_Invite">Invite 8 members to this projects</div>
+        <div>
+          <button class="popup_Primary_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+            Invite
+          </button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- Invite members modal ends here  -->
+
+  <!-- Badges tags start here -->
+  <section style="margin: 20px; display: flex">
+    <div>
+      <div class="badge_Tag badge_Tag_Purple">
+        <p class="badge_Tag_Text">Completed</p>
+      </div>
+      <div class="badge_Tag badge_Tag_Purple margin_Top_20px">
+        <p class="badge_Tag_Text">Completed</p>
+        <button class="badge_Tag_Icon_Close">
+          <img src="../assets/purple_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="margin_Left_20px">
+      <div class="badge_Tag badge_Tag_Orange">
+        <p class="badge_Tag_Text">Completed</p>
+      </div>
+      <div class="badge_Tag badge_Tag_Orange margin_Top_20px">
+        <p class="badge_Tag_Text">Completed</p>
+        <button class="badge_Tag_Icon_Close">
+          <img src="../assets/orange_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="margin_Left_20px">
+      <div class="badge_Tag badge_Tag_Blue">
+        <p class="badge_Tag_Text">Completed</p>
+      </div>
+      <div class="badge_Tag badge_Tag_Blue margin_Top_20px">
+        <p class="badge_Tag_Text">Completed</p>
+        <button class="badge_Tag_Icon_Close">
+          <img src="../assets/alore_Blue_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="margin_Left_20px">
+      <div class="badge_Tag badge_Tag_Dark_Blue">
+        <p class="badge_Tag_Text">Completed</p>
+      </div>
+      <div class="badge_Tag badge_Tag_Dark_Blue margin_Top_20px">
+        <p class="badge_Tag_Text">Completed</p>
+        <button class="badge_Tag_Icon_Close">
+          <img src="../assets/navy_Blue_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="margin_Left_20px">
+      <div class="badge_Tag badge_Tag_Pink">
+        <p class="badge_Tag_Text">Completed</p>
+      </div>
+      <div class="badge_Tag badge_Tag_Pink margin_Top_20px">
+        <p class="badge_Tag_Text">Completed</p>
+        <button class="badge_Tag_Icon_Close">
+          <img src="../assets/red_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Badges tags end here -->
+
+  <!-- Badges reverse start here -->
+  <section style="margin: 20px; display: flex">
+    <div>
+      <div class="badge_Tag badge_Reverse_Tag badge_Reverse_Tag_Purple">
+        <p class="badge_Tag_Text">Completed</p>
+      </div>
+      <div class="badge_Tag badge_Reverse_Tag badge_Reverse_Tag_Purple margin_Top_20px">
+        <p class="badge_Tag_Text">Completed</p>
+        <button class="badge_Tag_Icon_Close">
+          <img src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="margin_Left_20px">
+      <div class="badge_Tag badge_Reverse_Tag badge_Reverse_Tag_Orange">
+        <p class="badge_Tag_Text">Completed</p>
+      </div>
+      <div class="badge_Tag badge_Reverse_Tag badge_Reverse_Tag_Orange margin_Top_20px">
+        <p class="badge_Tag_Text">Completed</p>
+        <button class="badge_Tag_Icon_Close">
+          <img src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="margin_Left_20px">
+      <div class="badge_Tag badge_Reverse_Tag badge_Reverse_Tag_Blue">
+        <p class="badge_Tag_Text">Completed</p>
+      </div>
+      <div class="badge_Tag badge_Reverse_Tag badge_Reverse_Tag_Blue margin_Top_20px">
+        <p class="badge_Tag_Text">Completed</p>
+        <button class="badge_Tag_Icon_Close">
+          <img src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="margin_Left_20px">
+      <div class="badge_Tag badge_Reverse_Tag badge_Reverse_Tag_Dark_Blue">
+        <p class="badge_Tag_Text">Completed</p>
+      </div>
+      <div class="badge_Tag badge_Reverse_Tag badge_Reverse_Tag_Dark_Blue margin_Top_20px">
+        <p class="badge_Tag_Text">Completed</p>
+        <button class="badge_Tag_Icon_Close">
+          <img src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+    <div class="margin_Left_20px">
+      <div class="badge_Tag badge_Reverse_Tag badge_Reverse_Tag_Pink">
+        <p class="badge_Tag_Text">Completed</p>
+      </div>
+      <div class="badge_Tag badge_Reverse_Tag badge_Reverse_Tag_Pink margin_Top_20px">
+        <p class="badge_Tag_Text">Completed</p>
+        <button class="badge_Tag_Icon_Close">
+          <img src="../assets/white_Close.svg" alt="" />
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Badges reverse tags end here -->
+
+  <!-- Tab layout starts here -->
+  <section style="margin: 20px">
+    <div class="tab_Layout" style="margin-bottom: 20px">
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActive === 0" (click)="onTabLayoutClick(0)">
+        <p class="tab_Layout_Text">Status</p>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActive === 1" (click)="onTabLayoutClick(1)">
+        <p class="tab_Layout_Text">Comments</p>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActive === 2" (click)="onTabLayoutClick(2)">
+        <p class="tab_Layout_Text">Activity</p>
+      </div>
+      <div class="tab_Layout_Item tab_Layout_Item_Disabled">
+        <p class="tab_Layout_Text">Activity</p>
+      </div>
+    </div>
+
+    <div class="tab_Layout" style="margin-bottom: 20px">
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveIcon === 0"
+        (click)="onTabLayoutClickIcon(0)">
+        <img class="tab_Layout_Icon" src="../assets/icon_Discount.svg" alt="" />
+        <p class="tab_Layout_Text">Status</p>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveIcon === 1"
+        (click)="onTabLayoutClickIcon(1)">
+        <img class="tab_Layout_Icon" src="../assets/icon_Discount.svg" alt="" />
+        <p class="tab_Layout_Text">Comments</p>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveIcon === 2"
+        (click)="onTabLayoutClickIcon(2)">
+        <img class="tab_Layout_Icon" src="../assets/activity_Icon.svg" alt="" />
+        <p class="tab_Layout_Text">Activity</p>
+      </div>
+      <div class="tab_Layout_Item tab_Layout_Item_Disabled">
+        <img class="tab_Layout_Icon" src="../assets/icon_Receipt.svg" alt="" />
+        <p class="tab_Layout_Text">Activity</p>
+      </div>
+    </div>
+
+    <div class="tab_Layout" style="margin-bottom: 20px">
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveNumber === 0"
+        (click)="onTabLayoutClickNumber(0)">
+        <p class="tab_Layout_Text">Status</p>
+        <div class="tab_Layout_Badge badge_Blue">79</div>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveNumber === 1"
+        (click)="onTabLayoutClickNumber(1)">
+        <p class="tab_Layout_Text">Comments</p>
+        <div class="tab_Layout_Badge badge_Red">46</div>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveNumber === 2"
+        (click)="onTabLayoutClickNumber(2)">
+        <p class="tab_Layout_Text">Activity</p>
+        <div class="tab_Layout_Badge badge_Yellow">6</div>
+      </div>
+      <div class="tab_Layout_Item tab_Layout_Item_Disabled">
+        <p class="tab_Layout_Text">Activity</p>
+        <div class="tab_Layout_Badge badge_Yellow">6</div>
+      </div>
+    </div>
+
+    <div class="tab_Layout" style="margin-bottom: 20px">
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveIconNumber === 0"
+        (click)="onTabLayoutClickIconNumber(0)">
+        <img class="tab_Layout_Icon" src="../assets/icon_Discount.svg" alt="" />
+        <p class="tab_Layout_Text">Status</p>
+        <div class="tab_Layout_Badge badge_Blue">79</div>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveIconNumber === 1"
+        (click)="onTabLayoutClickIconNumber(1)">
+        <img class="tab_Layout_Icon" src="../assets/icon_Discount.svg" alt="" />
+        <p class="tab_Layout_Text">Comments</p>
+        <div class="tab_Layout_Badge badge_Red">46</div>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveIconNumber === 2"
+        (click)="onTabLayoutClickIconNumber(2)">
+        <img class="tab_Layout_Icon" src="../assets/icon_Receipt.svg" alt="" />
+        <p class="tab_Layout_Text">Activity</p>
+        <div class="tab_Layout_Badge badge_Yellow">6</div>
+      </div>
+      <div class="tab_Layout_Item tab_Layout_Item_Disabled">
+        <img class="tab_Layout_Icon" src="../assets/icon_Receipt.svg" alt="" />
+        <p class="tab_Layout_Text">Activity</p>
+        <div class="tab_Layout_Badge badge_Yellow">6</div>
+      </div>
+    </div>
+  </section>
+  <!-- Tab layout ends here -->
+
+  <!-- All Smiley and icons Starts here  -->
+
+  <section style="margin: 0 auto; width: 500px; height: 600px">
+    <div style="display: flex; width: 300px; justify-content: space-between">
+      <!-- add button with state starts here  -->
+
+      <button class="main_Div_Basic_Plus">
+        <img src="../assets/custom_icons/basic_Plus_Button.svg" alt="" />
+      </button>
+
+      <!-- add button with state ends here -->
+
+      <!-- white sad smile starts here   -->
+
+      <img style="background: red" src="../assets/custom_icons/sad_Emoji_White.svg" alt="" />
+
+      <!-- white sad smile ends here  -->
+
+      <!-- blue sad smile starts here -->
+
+      <img src="../assets/custom_icons/sad_Emoji_Blue.svg" alt="" />
+
+      <!-- blue sad smile ends here -->
+
+      <!-- green sad smile starts here  -->
+
+      <img src="../assets/custom_icons/sad_Emoji_Green.svg" alt="" />
+
+      <!-- green sad smile ends here  -->
+
+      <!-- red sad smile starts here -->
+
+      <img src="../assets/custom_icons/sad_Emoji_Red.svg" alt="" />
+
+      <!-- red sad smile ends here  -->
+
+      <!-- white smiley starts here  -->
+      <img style="background: red" src="../assets/custom_icons/smiley_White.svg" alt="" />
+      <!-- white smiley ends here  -->
+
+      <!-- blue smiley starts here  -->
+      <img src="../assets/custom_icons/smiley_Blue.svg" alt="" />
+      <!-- blue smiley ends here  -->
+
+      <!-- red smiley starts here  -->
+      <img src="../assets/custom_icons/smiley_Red.svg" alt="" />
+      <!-- red smiley ends here  -->
+
+      <!-- green smiley starts here  -->
+      <img src="../assets/custom_icons/smiley_Green.svg" alt="" />
+      <!-- green smiley ends here  -->
+    </div>
+
+    <div>
+      <img src="../assets/custom_icons/down_Circle.svg" alt="" />
+
+      <img src="../assets/custom_icons/up_Circle.svg" alt="" />
+
+      <img src="../assets/custom_icons/trend_down_Red.svg" alt="" />
+
+      <img src="../assets/custom_icons/trend_up_Yellow.svg" alt="" />
+
+      <img src="../assets/custom_icons/trend_down_Orange.svg" alt="" />
+
+      <img src="../assets/custom_icons/trend_up_Green.svg" alt="" />
+    </div>
+
+    <!-- purple close button -->
+
+    <button class="purple_Close_Button" [disabled]="disabledButton == true">
+      <img src="../assets/purple_Close.svg" alt="" />
+    </button>
+
+    <!-- purple close button  -->
+
+    <!-- white close button   -->
+
+    <section style="
+          background: #7f33fa;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        ">
+      <button class="white_Close_Button" [disabled]="disabledButton == true">
+        <img src="../assets/white_Close.svg" alt="" />
+      </button>
+    </section>
+
+    <!-- white close button  -->
+
+    <!-- alore blue button   -->
+
+    <button class="alore_blue_Close_Button" [disabled]="disabledButton == true">
+      <img src="../assets/alore_Blue_Close.svg" alt="" />
+    </button>
+
+    <!-- alore blue button   -->
+
+    <!-- orange button  -->
+
+    <button class="orange_Close_Button" [disabled]="disabledButton == true">
+      <img src="../assets/orange_Close.svg" alt="" />
+    </button>
+
+    <!-- orange button  -->
+
+    <!-- navy blue button  -->
+
+    <button class="navy_Blue_Close_Button" [disabled]="disabledButton == true">
+      <img src="../assets/navy_Blue_Close.svg" alt="" />
+    </button>
+
+    <!-- navy blue button   -->
+
+    <!-- red button  -->
+
+    <button class="red_Close_Button" [disabled]="disabledButton == true">
+      <img src="../assets/red_Close.svg" alt="" />
+    </button>
+
+    <!-- red button  -->
+
+    <!-- files icons  -->
+    <div style="display: flex; width: 300px; justify-content: space-between">
+      <img class="file_Upload" src="../assets/custom_icons/file_Upload.svg" alt="" />
+      <img class="file_Created" src="../assets/custom_icons/file_Created.svg" alt="" />
+      <img class="file_Download" src="../assets/custom_icons/file_Download.svg" alt="" />
+      <img class="file_Move" src="../assets/custom_icons/file_Move.svg" alt="" />
+      <img class="file_Upload_Failed" src="../assets/custom_icons/file_Upload_Failed.svg" alt="" />
+    </div>
+
+    <div style="display: flex; width: 300px; justify-content: space-between">
+      <img class="verified" src="../assets/custom_icons/verified.svg" alt="" />
+
+      <img class="pause" src="../assets/custom_icons/pause.svg" alt="" />
+
+      <img class="alert_Triangle" src="../assets/custom_icons/alert_Triangle.svg" alt="" />
+
+      <img class="stopped" src="../assets/custom_icons/stopped.svg" alt="" />
+    </div>
+    <!-- files icons  -->
+
+    <!-- other icons  -->
+
+    <div style="display: flex; width: 600px; justify-content: space-between">
+      <img class="heart" src="../assets/custom_icons/heart.svg" alt="" />
+      <img class="unHeart" src="../assets/custom_icons/unheart.svg" alt="" />
+      <img class="delete" src="../assets/custom_icons/delete.svg" alt="" />
+      <img class="send" src="../assets/custom_icons/send.svg" alt="" />
+      <img class="mailUnsent" src="../assets/custom_icons/mailUnsent.svg" alt="" />
+      <img class="unmark_Important" src="../assets/custom_icons/unmark_Important.svg" alt="" />
+      <img class="important_Star" src="../assets/custom_icons/important_Star.svg" alt="" />
+
+      <img class="archiveState" src="../assets/custom_icons/archive.svg" alt="" />
+      <img class="successful" src="../assets/custom_icons/successful.svg" alt="" />
+      <img class="share" src="../assets/custom_icons/share.svg" alt="" />
+
+      <img class="archiveState" src="../assets/custom_icons/archiveState.svg" alt="" />
+    </div>
+
+    <!-- other icons  -->
+  </section>
+  <!-- All Smiley and icons ends here  -->
+
+  <section style="
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 50px;
+      ">
+    <!-- plain textarea starts here  -->
+
+    <div>
+      <section [ngClass]="{
+            successPlaintext: successValue == true,
+            errorPlaintext: errorValue == true,
+            disabledPlaintext: disabledButton == true
+          }" class="outer_Container_Div_Textarea">
+        <section class="header_Div_Textarea">
+          <div [ngClass]="{ disabledHelpertext: disabledButton == false }">
+            Placeholder
+          </div>
+          <div [ngClass]="{ disabledHelpertext: disabledButton == true }">
+            {{ message.value.length }} / 200
+          </div>
+        </section>
+        <textarea matInput #message maxlength="200" [disabled]="disabledButton == true" [(ngModel)]="value"
+          (ngModelChange)="getvalue()"></textarea>
+      </section>
+      <div [ngClass]="{
+            successHelpertext: successValue == true,
+            errorHelpertext: errorValue == true,
+            disabledHelpertext: disabledButton == true
+          }" [ngClass]="{
+            successHelpertext: successValue == true,
+            errorHelpertext: errorValue == true
+          }" class="helpertext_Div_Textarea">
+        Helper Text
+      </div>
+    </div>
+
+    <div>
+      <h2 class="label_Plaintext">Label Name</h2>
+
+      <section [ngClass]="{
+            successPlaintext: successValue == true,
+            errorPlaintext: errorValue == true,
+            disabledPlaintext: disabledButton == true
+          }" class="outer_Container_Div_Textarea">
+        <section class="header_Div_Textarea">
+          <div [ngClass]="{ disabledHelpertext: disabledButton == true }">
+            Placeholder
+          </div>
+          <div [ngClass]="{ disabledHelpertext: disabledButton == true }">
+            {{ message.value.length }} / 200
+          </div>
+        </section>
+        <textarea matInput #message maxlength="200" [disabled]="disabledButton == true" [(ngModel)]="value"
+          (ngModelChange)="getvalue()"></textarea>
+      </section>
+      <div [ngClass]="{
+            successHelpertext: successValue == true,
+            errorHelpertext: errorValue == true,
+            disabledHelpertext: disabledButton == true
+          }" class="helpertext_Div_Textarea">
+        Helper Text
+      </div>
+    </div>
+
+    <!-- plain textarea ends here  -->
+  </section>
+
+  <!-- Choose your plan modal starts here -->
+  <section style="margin: 30px">
+    <div class="choose_Your_Plan_Type_1">
+      <header class="choose_Your_Plan_Type_1_Header">
+        <div class="icon_Div_Setting">
+          <img src="../../../assets/settingIcon.svg" alt="" />
+        </div>
+        <h2 class="choose_Your_Plan_Type_1_Header_Title">Choose your plan</h2>
+      </header>
+      <div class="choose_Your_Plan_Type_1_Body">
+        <div class="choose_Your_Plan_Item_Type_1">
+          <div class="choose_Your_Plan_Item_Type_1_Content" [class.choose_Your_Plan_Item_Type_1_Content_Active]="
+                chooseYourPlanType1 === 0
+              " (click)="onItemPlanClick(0)">
+            <label class="medium_Radio_label">
+              <input type="radio" class="medium_Radio_Input" name="radio" />
+              <span class="medium_Radio_Inner"></span>
+            </label>
+            <div class="choose_Your_Plan_Caption_Wrapper">
+              <p class="choose_Your_Plan_Label">Label</p>
+              <p class="choose_Your_Plan_Caption">Caption</p>
+            </div>
+            <p class="choose_Your_Plan_Price">$50/mo</p>
+          </div>
+          <div class="choose_Your_Plan_Item_Type_1_Content choose_Your_Plan_Item_Type_1_Content_Disable">
+            <label class="medium_Radio_label">
+              <input type="radio" class="medium_Radio_Input" name="radio" />
+              <span class="medium_Radio_Inner"></span>
+            </label>
+            <div class="choose_Your_Plan_Caption_Wrapper">
+              <p class="choose_Your_Plan_Label">Label</p>
+              <p class="choose_Your_Plan_Caption">Caption</p>
+            </div>
+            <p class="choose_Your_Plan_Price">$50/mo</p>
+            <div class="choose_Your_Plan_Popup">
+              <p class="choose_Your_Plan_Popup_Text">
+                Error message to be disaplayed here
+              </p>
+            </div>
+          </div>
+          <div class="choose_Your_Plan_Item_Type_1_Content" [class.choose_Your_Plan_Item_Type_1_Content_Active]="
+                chooseYourPlanType1 === 1
+              " (click)="onItemPlanClick(1)">
+            <label class="medium_Radio_label">
+              <input type="radio" class="medium_Radio_Input" name="radio" />
+              <span class="medium_Radio_Inner"></span>
+            </label>
+            <div class="choose_Your_Plan_Caption_Wrapper">
+              <p class="choose_Your_Plan_Label">Label</p>
+              <p class="choose_Your_Plan_Caption">Caption</p>
+            </div>
+            <p class="choose_Your_Plan_Price">$50/mo</p>
+          </div>
+          <div class="choose_Your_Plan_Item_Type_1_Content" [class.choose_Your_Plan_Item_Type_1_Content_Active]="
+                chooseYourPlanType1 === 2
+              " (click)="onItemPlanClick(2)">
+            <label class="medium_Radio_label">
+              <input type="radio" class="medium_Radio_Input" name="radio" />
+              <span class="medium_Radio_Inner"></span>
+            </label>
+            <div class="choose_Your_Plan_Caption_Wrapper">
+              <p class="choose_Your_Plan_Label">Label</p>
+              <p class="choose_Your_Plan_Caption">Caption</p>
+            </div>
+            <p class="choose_Your_Plan_Price">$50/mo</p>
+          </div>
+        </div>
+      </div>
+      <footer class="choose_Your_Plan_Footer">
+        <button class="popup_Primary_Small_Button">Save Preferences</button>
+      </footer>
+    </div>
+
+    <div class="choose_Your_Plan_Type_2 margin_Top_50px">
+      <header class="choose_Your_Plan_Type_2_Header">
+        <div class="icon_Div_Setting">
+          <img src="../../../assets/settingIcon.svg" alt="" />
+        </div>
+        <div class="choose_Your_Plan_Type_2_Title_Wrapper">
+          <h2 class="choose_Your_Plan_Type_2_Header_Title">
+            Choose your plan
+          </h2>
+          <p class="choose_Your_Plan_Type_2_Header_Subtitle">
+            We use cookies, some of them are essential, others are optional.
+            <a class="choose_Your_Plan_Type_2_Learn_More" href="#">Learn more</a>
+          </p>
+        </div>
+      </header>
+      <div class="choose_Your_Plan_Type_2_Body">
+        <div class="choose_Your_Plan_Item_Type_2">
+          <div class="choose_Your_Plan_Item_Type_2_Content" [class.choose_Your_Plan_Item_Type_2_Content_Active]="
+                chooseYourPlanType2 === 0
+              " (click)="onItemPlanClick(0, 2)">
+            <label class="medium_Radio_label">
+              <input type="radio" class="medium_Radio_Input" name="radio" />
+              <span class="medium_Radio_Inner"></span>
+            </label>
+            <div class="choose_Your_Plan_Caption_Wrapper">
+              <p class="choose_Your_Plan_Label">Label</p>
+              <p class="choose_Your_Plan_Caption">Caption</p>
+            </div>
+          </div>
+          <div class="choose_Your_Plan_Item_Type_2_Content choose_Your_Plan_Item_Type_2_Content_Disable">
+            <label class="medium_Radio_label">
+              <input type="radio" class="medium_Radio_Input" name="radio" />
+              <span class="medium_Radio_Inner"></span>
+            </label>
+            <div class="choose_Your_Plan_Caption_Wrapper">
+              <p class="choose_Your_Plan_Label">Label</p>
+              <p class="choose_Your_Plan_Caption">Caption</p>
+            </div>
+            <div class="choose_Your_Plan_Popup">
+              <p class="choose_Your_Plan_Popup_Text">
+                Error message to be disaplayed here
+              </p>
+            </div>
+          </div>
+          <div class="choose_Your_Plan_Item_Type_2_Content" [class.choose_Your_Plan_Item_Type_2_Content_Active]="
+                chooseYourPlanType2 === 1
+              " (click)="onItemPlanClick(1, 2)">
+            <label class="medium_Radio_label">
+              <input type="radio" class="medium_Radio_Input" name="radio" />
+              <span class="medium_Radio_Inner"></span>
+            </label>
+            <div class="choose_Your_Plan_Caption_Wrapper">
+              <p class="choose_Your_Plan_Label">Label</p>
+              <p class="choose_Your_Plan_Caption">Caption</p>
+            </div>
+          </div>
+          <div class="choose_Your_Plan_Item_Type_2_Content" [class.choose_Your_Plan_Item_Type_2_Content_Active]="
+                chooseYourPlanType2 === 2
+              " (click)="onItemPlanClick(2, 2)">
+            <label class="medium_Radio_label">
+              <input type="radio" class="medium_Radio_Input" name="radio" />
+              <span class="medium_Radio_Inner"></span>
+            </label>
+            <div class="choose_Your_Plan_Caption_Wrapper">
+              <p class="choose_Your_Plan_Label">Label</p>
+              <p class="choose_Your_Plan_Caption">Caption</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="choose_Your_Plan_Footer">
+        <button class="popup_Primary_Small_Button">Save Preferences</button>
+      </footer>
+    </div>
+
+    <div class="choose_Your_Plan_Type_2 margin_Top_50px">
+      <header class="choose_Your_Plan_Type_2_Header">
+        <div class="icon_Div_Setting">
+          <img src="../../../assets/settingIcon.svg" alt="" />
+        </div>
+        <div class="choose_Your_Plan_Type_2_Title_Wrapper">
+          <h2 class="choose_Your_Plan_Type_2_Header_Title">
+            Choose your plan
+          </h2>
+          <p class="choose_Your_Plan_Type_2_Header_Subtitle">
+            We use cookies, some of them are essential, others are optional.
+            <a class="choose_Your_Plan_Type_2_Learn_More" href="#">Learn more</a>
+          </p>
+        </div>
+      </header>
+      <div class="choose_Your_Plan_Type_2_Body">
+        <div class="choose_Your_Plan_Item_Type_2">
+          <div class="choose_Your_Plan_Item_Type_2_Content choose_Your_Plan_Item_Type_2_Content_No_Caption"
+            [class.choose_Your_Plan_Item_Type_2_Content_Active]="
+                chooseYourPlanType3 === 0
+              " (click)="onItemPlanClick(0, 3)">
+            <label class="medium_Radio_label">
+              <input type="radio" class="medium_Radio_Input" name="radio" />
+              <span class="medium_Radio_Inner"></span>
+            </label>
+            <div class="choose_Your_Plan_Caption_Wrapper">
+              <p class="choose_Your_Plan_Label">Label</p>
+            </div>
+          </div>
+          <div
+            class="choose_Your_Plan_Item_Type_2_Content choose_Your_Plan_Item_Type_2_Content_No_Caption choose_Your_Plan_Item_Type_2_Content_Disable">
+            <label class="medium_Radio_label">
+              <input type="radio" class="medium_Radio_Input" name="radio" />
+              <span class="medium_Radio_Inner"></span>
+            </label>
+            <div class="choose_Your_Plan_Caption_Wrapper">
+              <p class="choose_Your_Plan_Label">Label</p>
+            </div>
+            <div class="choose_Your_Plan_Popup">
+              <p class="choose_Your_Plan_Popup_Text">
+                Error message to be disaplayed here
+              </p>
+            </div>
+          </div>
+          <div class="choose_Your_Plan_Item_Type_2_Content choose_Your_Plan_Item_Type_2_Content_No_Caption"
+            [class.choose_Your_Plan_Item_Type_2_Content_Active]="
+                chooseYourPlanType3 === 1
+              " (click)="onItemPlanClick(1, 3)">
+            <label class="medium_Radio_label">
+              <input type="radio" class="medium_Radio_Input" name="radio" />
+              <span class="medium_Radio_Inner"></span>
+            </label>
+            <div class="choose_Your_Plan_Caption_Wrapper">
+              <p class="choose_Your_Plan_Label">Label</p>
+            </div>
+          </div>
+          <div class="choose_Your_Plan_Item_Type_2_Content choose_Your_Plan_Item_Type_2_Content_No_Caption"
+            [class.choose_Your_Plan_Item_Type_2_Content_Active]="
+                chooseYourPlanType3 === 2
+              " (click)="onItemPlanClick(2, 3)">
+            <label class="medium_Radio_label">
+              <input type="radio" class="medium_Radio_Input" name="radio" />
+              <span class="medium_Radio_Inner"></span>
+            </label>
+            <div class="choose_Your_Plan_Caption_Wrapper">
+              <p class="choose_Your_Plan_Label">Label</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="choose_Your_Plan_Footer">
+        <button class="popup_Primary_Small_Button">Save Preferences</button>
+      </footer>
+    </div>
+  </section>
+  <!-- Choose your plan type 1 ends here -->
+
+  <!-- Pagination layout starts here -->
+  <section style="margin: 50px">
+    <div class="pagination">
+      <div class="pagination_Wrapper">
+        <button class="pagination_Button_Arrow pagination_Button_Arrow_Left pagination_Button_Arrow_Type1">
+          <img class="pagination_Button_Arrow_Icon_Left" src="../assets/alore_Chevron_Right.svg" alt="" />
+        </button>
+        <button class="pagination_Button">1</button>
+        <button class="pagination_Button pagination_Active">2</button>
+        <button class="pagination_Button">3</button>
+        <button class="pagination_Button">4</button>
+        <button class="pagination_Button">5</button>
+        <button class="pagination_Button_Arrow pagination_Button_Arrow_Right pagination_Button_Arrow_Type1">
+          <img class="pagination_Button_Arrow_Icon_Right" src="../assets/alore_Chevron_Right.svg" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <div class="pagination margin_Top_20px">
+      <div class="pagination_Wrapper">
+        <button class="pagination_Button_Arrow pagination_Button_Arrow_Left pagination_Button_Arrow_Type1">
+          <img class="pagination_Button_Arrow_Icon_Left" src="../assets/alore_Chevron_Right.svg" alt="" />
+        </button>
+        <button class="pagination_Button">1</button>
+        <button class="pagination_Button pagination_Active">2</button>
+        <button class="pagination_Button">3</button>
+        <p style="margin-left: 20px; margin-right: 20px">...</p>
+        <button class="pagination_Button">4</button>
+        <button class="pagination_Button">5</button>
+        <button class="pagination_Button_Arrow pagination_Button_Arrow_Right pagination_Button_Arrow_Type1">
+          <img class="pagination_Button_Arrow_Icon_Right" src="../assets/alore_Chevron_Right.svg" alt="" />
+        </button>
+      </div>
+    </div>
+
+    <div class="pagination margin_Top_20px">
+      <div class="pagination_Wrapper">
+        <button class="pagination_Button_Arrow pagination_Button_Arrow_Left pagination_Button_Arrow_Left_Type2">
+          <img class="pagination_Button_Arrow_Icon_Left" src="../assets/alore_Chevron_Right.svg" alt="" />
+          <span class="pagination_Button_Arrow_Text_Prev">Previous</span>
+        </button>
+        <button class="pagination_Button">1</button>
+        <button class="pagination_Button pagination_Active">2</button>
+        <button class="pagination_Button">3</button>
+        <p style="margin-left: 20px; margin-right: 20px">...</p>
+        <button class="pagination_Button">4</button>
+        <button class="pagination_Button">5</button>
+        <button class="pagination_Button_Arrow pagination_Button_Arrow_Right pagination_Button_Arrow_Right_Type2">
+          <span class="pagination_Button_Arrow_Text_Next">Next</span>
+          <img class="pagination_Button_Arrow_Icon_Right" src="../assets/alore_Chevron_Right.svg" alt="" />
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Pagination layout ends here -->
+
+  <!-- Tab layout starts here -->
+  <section style="margin: 20px">
+    <div class="tab_Layout" style="margin-bottom: 20px">
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActive === 0" (click)="onTabLayoutClick(0)">
+        <p class="tab_Layout_Text">Status</p>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActive === 1" (click)="onTabLayoutClick(1)">
+        <p class="tab_Layout_Text">Comments</p>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActive === 2" (click)="onTabLayoutClick(2)">
+        <p class="tab_Layout_Text">Activity</p>
+      </div>
+      <div class="tab_Layout_Item tab_Layout_Item_Disabled">
+        <p class="tab_Layout_Text">Activity</p>
+      </div>
+    </div>
+
+    <div class="tab_Layout" style="margin-bottom: 20px">
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveIcon === 0"
+        (click)="onTabLayoutClickIcon(0)">
+        <img class="tab_Layout_Icon" src="../assets/icon_Discount.svg" alt="" />
+        <p class="tab_Layout_Text">Status</p>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveIcon === 1"
+        (click)="onTabLayoutClickIcon(1)">
+        <img class="tab_Layout_Icon" src="../assets/icon_Discount.svg" alt="" />
+        <p class="tab_Layout_Text">Comments</p>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveIcon === 2"
+        (click)="onTabLayoutClickIcon(2)">
+        <img class="tab_Layout_Icon" src="../assets/icon_Receipt.svg" alt="" />
+        <p class="tab_Layout_Text">Activity</p>
+      </div>
+      <div class="tab_Layout_Item tab_Layout_Item_Disabled">
+        <img class="tab_Layout_Icon" src="../assets/icon_Receipt.svg" alt="" />
+        <p class="tab_Layout_Text">Activity</p>
+      </div>
+    </div>
+
+    <div class="tab_Layout" style="margin-bottom: 20px">
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveNumber === 0"
+        (click)="onTabLayoutClickNumber(0)">
+        <p class="tab_Layout_Text">Status</p>
+        <div class="tab_Layout_Badge badge_Blue">79</div>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveNumber === 1"
+        (click)="onTabLayoutClickNumber(1)">
+        <p class="tab_Layout_Text">Comments</p>
+        <div class="tab_Layout_Badge badge_Red">46</div>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveNumber === 2"
+        (click)="onTabLayoutClickNumber(2)">
+        <p class="tab_Layout_Text">Activity</p>
+        <div class="tab_Layout_Badge badge_Yellow">6</div>
+      </div>
+      <div class="tab_Layout_Item tab_Layout_Item_Disabled">
+        <p class="tab_Layout_Text">Activity</p>
+        <div class="tab_Layout_Badge badge_Yellow">6</div>
+      </div>
+    </div>
+
+    <div class="tab_Layout" style="margin-bottom: 20px">
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveIconNumber === 0"
+        (click)="onTabLayoutClickIconNumber(0)">
+        <img class="tab_Layout_Icon" src="../assets/icon_Discount.svg" alt="" />
+        <p class="tab_Layout_Text">Status</p>
+        <div class="tab_Layout_Badge badge_Blue">79</div>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveIconNumber === 1"
+        (click)="onTabLayoutClickIconNumber(1)">
+        <img class="tab_Layout_Icon" src="../assets/icon_Discount.svg" alt="" />
+        <p class="tab_Layout_Text">Comments</p>
+        <div class="tab_Layout_Badge badge_Red">46</div>
+      </div>
+      <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActiveIconNumber === 2"
+        (click)="onTabLayoutClickIconNumber(2)">
+        <img class="tab_Layout_Icon" src="../assets/icon_Receipt.svg" alt="" />
+        <p class="tab_Layout_Text">Activity</p>
+        <div class="tab_Layout_Badge badge_Yellow">6</div>
+      </div>
+      <div class="tab_Layout_Item tab_Layout_Item_Disabled">
+        <img class="tab_Layout_Icon" src="../assets/icon_Receipt.svg" alt="" />
+        <p class="tab_Layout_Text">Activity</p>
+        <div class="tab_Layout_Badge badge_Yellow">6</div>
+      </div>
+    </div>
+  </section>
+  <!-- Tab layout ends here -->
+
+  <section style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      ">
+    <!-- status modal starts here  -->
+
+    <div class="main_Container_Status_Modal">
+      <section class="tab_Status_Modal">
+        <div class="tab_Layout">
+          <div class="tab_Layout_Item borderClassLeft" [class.tab_Layout_Item_Active]="tabLayoutActive === 0"
+            (click)="onTabLayoutClick(0)">
+            <p class="tab_Layout_Text">Status</p>
+          </div>
+          <div class="tab_Layout_Item" [class.tab_Layout_Item_Active]="tabLayoutActive === 1"
+            (click)="onTabLayoutClick(1)">
+            <p class="tab_Layout_Text">Comments</p>
+          </div>
+          <div class="tab_Layout_Item borderClassRight" [class.tab_Layout_Item_Active]="tabLayoutActive === 2"
+            (click)="onTabLayoutClick(2)">
+            <p class="tab_Layout_Text">Activity</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="info_Div_Status_Modal">
+        <div class="info_SubDiv">
+          <button class="badge_Blue">79</button>
+
+          <p class="info_SubDiv_Text">Open</p>
+        </div>
+        <div class="info_SubDiv">
+          <button class="badge_Red">46</button>
+
+          <p class="info_SubDiv_Text">Overdue</p>
+        </div>
+        <div class="info_SubDiv">
+          <button class="badge_Orange">22</button>
+
+          <p class="info_SubDiv_Text">Due this week</p>
+        </div>
+        <div class="info_SubDiv">
+          <button class="badge_Yellow">6</button>
+
+          <p class="info_SubDiv_Text">Waiting for review</p>
+        </div>
+        <div class="info_SubDiv">
+          <button class="badge_Green">234</button>
+
+          <p class="info_SubDiv_Text">Done</p>
+        </div>
+      </section>
+      <div class="divider"></div>
+      <section class="info_Div_Status_Modal_below">
+        <div class="info_SubDiv">
+          <button class="badge_Grey">28</button>
+
+          <p class="info_SubDiv_Text">With new documents</p>
+        </div>
+
+        <div class="info_SubDiv">
+          <button class="badge_Grey">28</button>
+
+          <p class="info_SubDiv_Text">With new documents</p>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="option_Status_Modal">
+        <div class="info_SubDiv">
+          <img class="export_Img" src="../assets/export_Docs.svg" alt="" />
+
+          <p class="info_SubDiv_Text">Export documents</p>
+        </div>
+
+        <div class="info_SubDiv">
+          <img class="edit_Img" src="../assets/edit_StatusModal.svg" alt="" />
+
+          <p class="info_SubDiv_Text">Edit</p>
+        </div>
+      </section>
+    </div>
+    <!-- status modal ends here    -->
+  </section>
+
+  <section style="margin: 50px 0 100px 150px">
+    <!-- tags start here  -->
+
+    <div class="main_Container_Tag">
+      <section class="header_Div_Tag">
+        <div>
+          <section class="header_Tag_Modal">
+            <section class="header_Img_Tag_Modal">
+              <div class="icon_Div_Tag_Modal">
+                <img src="../../../assets/add_Tag.svg" alt="" />
+              </div>
+              <div class="header_Div_Tag_Modal">
+                <h2 class="top_Header_On_Tag_Modal">Add a tag</h2>
+
+                <p>Tags help you organise & plan campaigns better</p>
+              </div>
+            </section>
+            <button class="alore_blue_Close_Button" [disabled]="disabledButton == true">
+              <img src="../assets/alore_Blue_Close.svg" alt="" />
+            </button>
+          </section>
+        </div>
+
+        <div class="middle_div_Tag_Modal">
+          <section class="search_Div">
+            <button class="text_Input_Extra_Small" [disabled]="disabledButton == true" [ngClass]="{
+                  success: successValue == true,
+                  error: errorValue == true
+                }">
+              <input [disabled]="disabledButton == true" type="search" placeholder="Search for team" [(ngModel)]="value"
+                (ngModelChange)="getvalue()" id="check" />
+              <img src="../assets/search_icon.svg" alt="" />
+            </button>
+          </section>
+
+          <div class="divider_Indicator_Inactive"></div>
+
+          <section class="add_Tag_Section">
+            <p>You have not created any options</p>
+
+            <section class="add_Tags_Div">
+              <img src="../assets/custom_icons/white_Dots.svg" alt="" />
+
+              <button class="tag_Arrow_Button">
+                <img src="../assets/custom_icons/white_Arrow_dropdown.svg" alt="" />
+              </button>
+              <button class="input_And_Close_Button">
+                <input class="add_Tag_Input" placeholder="Add a tag" type="text" />
+
+                <button class="alore_blue_Close_Button" [disabled]="disabledButton == true">
+                  <img src="../assets/alore_Blue_Close.svg" alt="" />
+                </button>
+              </button>
+            </section>
+
+            <section class="add_Tags_Div">
+              <img src="../assets/custom_icons/dot_Add_Tag_Button.svg" alt="" />
+
+              <button class="tag_Arrow_Button">
+                <img src="../assets/custom_icons/white_Arrow_dropdown.svg" alt="" />
+              </button>
+              <button class="input_And_Close_Button">
+                <input class="add_Tag_Input" placeholder="Tag D" type="text" />
+
+                <button class="alore_blue_Close_Button" [disabled]="disabledButton == true">
+                  <img src="../assets/alore_Blue_Close.svg" alt="" />
+                </button>
+              </button>
+            </section>
+
+            <div class="divider_Indicator_Inactive"></div>
+          </section>
+        </div>
+
+        <div class="button_Div_Tag_Modal">
+          <button class="popup_Primary_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+            Save
+          </button>
+
+          <button class="popup_Secondary_Extra_Small_Button width_ex_sm" [disabled]="disabledButton == true">
+            Save
+          </button>
+        </div>
+      </section>
+    </div>
+    <!-- tags ends here  -->
+  </section>
+
+  <!-- all new buttons starts here  -->
+  <div>
+    <h2 style="text-align: center; font-family: monospace">
+      There are three type in Primary, Secondary and Delete buttons <br />
+      1. height: 43px;
+      <br />
+      2. height: 50px;
+      <br />
+      3. height: 30px;
+    </h2>
+  </div>
+  <!-- primary buttons  -->
+
+  <h2>1. Primary Buttons with Height 43px;</h2>
+
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- Primary button blue without icon starts here  -->
+
+    <button class="primary_Normal_Button_Blue width_ex_sml" [disabled]="disabledButton == true">
+      Re-integrate
+    </button>
+
+    <!-- Primary button blue without icon ends here  -->
+
+    <!-- Primary Button blue with Icon right starts here  -->
+
+    <button class="primary_Normal_Button_Blue_With_Icon_Right width_sml" [disabled]="disabledButton == true">
+      <span class="primary_Normal_Button_Blue_With_Icon_Right_Text">
+        Re-integrate
+        <img src="../assets/common_css/right_Icon_Button.svg" alt="" />
+      </span>
+    </button>
+
+    <!-- Primary Button blue with Icon right ends here  -->
+
+    <!-- Primary Button blue with Icon left starts here  -->
+
+    <button class="primary_Normal_Button_Blue_With_Icon_Left width_sml" [disabled]="disabledButton == true">
+      <span class="primary_Normal_Button_Blue_With_Icon_Left_Text">
+        <img src="../assets/common_css/left_Icon_Button.svg" alt="" />
+
+        Re-integrate
+      </span>
+    </button>
+
+    <!-- Primary Button blue with Icon left ends here  -->
+  </div>
+
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- Primary button purple without icon starts here  -->
+
+    <button class="primary_Normal_Button_Purple width_ex_sml" [disabled]="disabledButton == true">
+      Re-integrate
+    </button>
+
+    <!-- Primary button purple without icon ends here  -->
+
+    <!-- Primary Button purple with Icon right starts here  -->
+
+    <button class="primary_Normal_Button_Purple_With_Icon_Right width_sml" [disabled]="disabledButton == true">
+      <span class="primary_Normal_Button_Purple_With_Icon_Right_Text">
+        Re-integrate
+        <img src="../assets/common_css/right_Icon_Button.svg" alt="" />
+      </span>
+    </button>
+
+    <!-- Primary Button purple with Icon right ends here  -->
+
+    <!-- Primary Button purple with Icon left starts here  -->
+
+    <button class="primary_Normal_Button_Purple_With_Icon_Left width_sml" [disabled]="disabledButton == true">
+      <span class="primary_Normal_Button_Purple_With_Icon_Left_Text">
+        <img src="../assets/common_css/left_Icon_Button.svg" alt="" />
+
+        Re-integrate
+      </span>
+    </button>
+
+    <!-- Primary Button purple with Icon left ends here  -->
+  </div>
+
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- Primary button orange without icon starts here  -->
+
+    <button class="primary_Normal_Button_Orange width_ex_sml" [disabled]="disabledButton == true">
+      Re-integrate
+    </button>
+
+    <!-- Primary button orange without icon ends here  -->
+
+    <!-- Primary Button orange with Icon right starts here  -->
+
+    <button class="primary_Normal_Button_Orange_With_Icon_Right width_sml" [disabled]="disabledButton == true">
+      <span class="primary_Normal_Button_Orange_With_Icon_Right_Text">
+        Re-integrate
+        <img src="../assets/common_css/right_Icon_Button.svg" alt="" />
+      </span>
+    </button>
+
+    <!-- Primary Button orange with Icon right ends here  -->
+
+    <!-- Primary Button orange with Icon left starts here  -->
+
+    <button class="primary_Normal_Button_Orange_With_Icon_Left width_sml" [disabled]="disabledButton == true">
+      <span class="primary_Normal_Button_Orange_With_Icon_Left_Text">
+        <img src="../assets/common_css/left_Icon_Button.svg" alt="" />
+
+        Re-integrate
+      </span>
+    </button>
+
+    <!-- Primary Button orange with Icon left ends here  -->
+  </div>
+
+  <!-- primary buttons  -->
+
+  <h2>2. Secondary Buttons with Height 43px;</h2>
+
+  <!-- secondary buttons -->
+
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- secondary button blue without icon starts here  -->
+
+    <button class="secondary_Normal_Button_Blue width_ex_sml" [disabled]="disabledButton == true">
+      Re-integrate
+    </button>
+
+    <!-- secondary button blue without icon ends here  -->
+
+    <!-- secondary Button blue with Icon right starts here  -->
+
+    <button class="secondary_Normal_Button_Blue_With_Icon_Right width_sml" [disabled]="disabledButton == true">
+      <span class="secondary_Normal_Button_Blue_With_Icon_Right_Text">
+        Re-integrate
+        <img src="../assets/common_css/right_Icon_Button.svg" alt="" />
+      </span>
+    </button>
+
+    <!-- secondary Button blue with Icon right ends here  -->
+
+    <!-- secondary Button blue with Icon left starts here  -->
+
+    <button class="secondary_Normal_Button_Blue_With_Icon_Left width_sml" [disabled]="disabledButton == true">
+      <span class="secondary_Normal_Button_Blue_With_Icon_Left_Text">
+        <img src="../assets/common_css/left_Icon_Button.svg" alt="" />
+
+        Re-integrate
+      </span>
+    </button>
+
+    <!-- secondary Button blue with Icon left ends here  -->
+  </div>
+
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- secondary button purple without icon starts here  -->
+
+    <button class="secondary_Normal_Button_Purple width_ex_sml" [disabled]="disabledButton == true">
+      Re-integrate
+    </button>
+
+    <!-- secondary button purple without icon ends here  -->
+
+    <!-- secondary Button purple with Icon right starts here  -->
+
+    <button class="secondary_Normal_Button_Purple_With_Icon_Right width_sml" [disabled]="disabledButton == true">
+      <span class="secondary_Normal_Button_Purple_With_Icon_Right_Text">
+        Re-integrate
+        <img src="../assets/common_css/right_Icon_Button.svg" alt="" />
+      </span>
+    </button>
+
+    <!-- secondary Button purple with Icon right ends here  -->
+
+    <!-- secondary Button purple with Icon left starts here  -->
+
+    <button class="secondary_Normal_Button_Purple_With_Icon_Left width_sml" [disabled]="disabledButton == true">
+      <span class="secondary_Normal_Button_Purple_With_Icon_Left_Text">
+        <img src="../assets/common_css/left_Icon_Button.svg" alt="" />
+
+        Re-integrate
+      </span>
+    </button>
+
+    <!-- secondary Button purple with Icon left ends here  -->
+  </div>
+
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- secondary button orange without icon starts here  -->
+
+    <button class="secondary_Normal_Button_Orange width_ex_sml" [disabled]="disabledButton == true">
+      Re-integrate
+    </button>
+
+    <!-- secondary button orange without icon ends here  -->
+
+    <!-- secondary Button orange with Icon right starts here  -->
+
+    <button class="secondary_Normal_Button_Orange_With_Icon_Right width_sml" [disabled]="disabledButton == true">
+      <span class="secondary_Normal_Button_Orange_With_Icon_Right_Text">
+        Re-integrate
+        <img src="../assets/common_css/right_Icon_Button.svg" alt="" />
+      </span>
+    </button>
+
+    <!-- secondary Button orange with Icon right ends here  -->
+
+    <!-- secondary Button orange with Icon left starts here  -->
+
+    <button class="secondary_Normal_Button_Orange_With_Icon_Left width_sml" [disabled]="disabledButton == true">
+      <span class="secondary_Normal_Button_Orange_With_Icon_Left_Text">
+        <img src="../assets/common_css/left_Icon_Button.svg" alt="" />
+
+        Re-integrate
+      </span>
+    </button>
+
+    <!-- secondary Button orange with Icon left ends here  -->
+  </div>
+  <!-- secondary buttons  -->
+
+  <h2>3. Delete Buttons with Height 43px;</h2>
+
+  <!-- delete buttons  -->
+
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- delete button without icon starts here  -->
+
+    <button class="delete_Button width_ex_sml" [disabled]="disabledButton == true">
+      Delete
+    </button>
+
+    <!-- delete button without icon ends here  -->
+
+    <!-- delete Button with Icon right starts here  -->
+
+    <button class="delete_Button_With_Icon_Right width_sml" [disabled]="disabledButton == true">
+      <span class="delete_Button_With_Icon_Right_Text">
+        Delete
+        <img src="../assets/common_css/delete.svg" alt="" />
+      </span>
+    </button>
+
+    <!-- delete Button with Icon right ends here  -->
+
+    <!-- delete Button with Icon left starts here  -->
+
+    <button class="delete_Button_With_Icon_Left width_sml" [disabled]="disabledButton == true">
+      <span class="delete_Button_With_Icon_Left_Text">
+        <img src="../assets/common_css/delete.svg" alt="" />
+        Delete
+      </span>
+    </button>
+
+    <!-- delete Button with Icon right ends here  -->
+  </div>
+
+  <!-- small delete button  -->
+
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- delete button without icon starts here  -->
+
+    <button class="delete_Small_Button width_ex_sml" [disabled]="disabledButton == true">
+      Delete
+    </button>
+
+    <!-- delete button without icon ends here  -->
+
+    <!-- delete Button with Icon right starts here  -->
+
+    <button class="delete_Small_Button_With_Icon_Right width_sml" [disabled]="disabledButton == true">
+      <span class="delete_Small_Button_With_Icon_Right_Text">
+        Delete
+        <img src="../assets/common_css/delete_Small_Icon.svg" alt="" />
+      </span>
+    </button>
+
+    <!-- delete Button with Icon right ends here  -->
+
+    <!-- delete Button with Icon left starts here  -->
+
+    <button class="delete_Small_Button_With_Icon_Left width_sml" [disabled]="disabledButton == true">
+      <span class="delete_Small_Button_With_Icon_Left_Text">
+        <img src="../assets/common_css/delete_Small_Icon.svg" alt="" />
+        Delete
+      </span>
+    </button>
+
+    <!-- delete Button with Icon right ends here  -->
+  </div>
+
+  <!-- small delete button  -->
+
+  <!-- delete buttons  -->
+
+  <h2>4.Alternative button</h2>
+
+  <!-- alternative button -->
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- alternative button blue starts here  -->
+
+    <button class="alt_Button_Blue width_ex_sml" [disabled]="disabledButton == true">
+      More
+    </button>
+
+    <!-- alternative button blue ends here -->
+
+    <!-- alternative button blue with icon right starts here -->
+
+    <button class="alt_Button_Blue_With_Icon_Right width_sml" [disabled]="disabledButton == true">
+      <span class="alt_Button_Blue_With_Icon_Right_Text">
+        More
+        <img src="../assets/common_css/more_Dropdown.svg" alt="" />
+      </span>
+    </button>
+
+    <!-- alternative button blue with icon right ends here  -->
+
+    <!-- alternative button blue with icon left starts here -->
+
+    <button class="alt_Button_Blue_With_Icon_Left width_sml" [disabled]="disabledButton == true">
+      <span class="alt_Button_Blue_With_Icon_Left_Text">
+        <img src="../assets/common_css/add_Icon.svg" alt="" />
+        Add a new Campaign
+      </span>
+    </button>
+
+    <!-- alternative button blue with icon left ends here  -->
+  </div>
+
+
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- alternative button purple starts here  -->
+
+    <button class="alt_Button_Purple width_ex_sml" [disabled]="disabledButton == true">
+      More
+    </button>
+
+    <!-- alternative button purple ends here -->
+
+    <!-- alternative button purple with icon right starts here -->
+
+    <button class="alt_Button_Purple_With_Icon_Right width_sml" [disabled]="disabledButton == true">
+      <span class="alt_Button_Purple_With_Icon_Right_Text">
+        More
+        <img src="../assets/common_css/more_Purple_Icon.svg" alt="" />
+      </span>
+    </button>
+
+    <!-- alternative button purple with icon right ends here  -->
+
+    <!-- alternative button purple with icon left starts here -->
+
+    <button class="alt_Button_Purple_With_Icon_Left width_sml" [disabled]="disabledButton == true">
+      <span class="alt_Button_Purple_With_Icon_Left_Text">
+        <img src="../assets/common_css/add_Icon.svg" alt="" />
+        Add a new Campaign
+      </span>
+    </button>
+
+    <!-- alternative button purple with icon left ends here  -->
+  </div>
+
+
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- alternative button orange starts here  -->
+
+    <button class="alt_Button_Orange width_ex_sml" [disabled]="disabledButton == true">
+      More
+    </button>
+
+    <!-- alternative button orange ends here -->
+
+    <!-- alternative button orange with icon right starts here -->
+
+    <button class="alt_Button_Orange_With_Icon_Right width_sml" [disabled]="disabledButton == true">
+      <span class="alt_Button_Orange_With_Icon_Right_Text">
+        More
+        <img src="../assets/common_css/more_Purple_Icon.svg" alt="" />
+      </span>
+    </button>
+
+    <!-- alternative button orange with icon right ends here  -->
+
+    <!-- alternative button orange with icon left starts here -->
+
+    <button class="alt_Button_Orange_With_Icon_Left width_sml" [disabled]="disabledButton == true">
+      <span class="alt_Button_Orange_With_Icon_Left_Text">
+        <img src="../assets/common_css/add_Icon.svg" alt="" />
+        Add a new Campaign
+      </span>
+    </button>
+
+    <!-- alternative button orange with icon left ends here  -->
+  </div>
+  <!-- alternative button -->
+
+  <!-- all new buttons ends here  -->
+
+  <!-- profile info starts here -->
+  <div class="profileContainer" *ngIf="openProfileInfo == true">
+    <div class="proPhotoSection">
+      <div class="photo">
+        <button class="large_Avatar_No_Image_Not_Online" (click)="openProfileInfo = !openProfileInfo">
+          <span class="large_Avatar_No_Image_Not_Online_Initial"> JA </span>
+        </button>
+        <button class="uploadImageContainer">
+          <img src="../assets/ImageUploadDark.svg" alt="" />
+        </button>
+      </div>
+      <h1 class="proName">Jas Arora</h1>
+      <h3 class="proEmail">jas@alore.io</h3>
+      <button class="popup_Secondary_Medium">Manage your profile</button>
+    </div>
+    <div class="proCardsContainer">
+      <div class="proFlexContainer">
+        <div class="proCard stateClass" *ngFor="let item of listsOfProfile">
+          <button class="small_Avatar_No_Image_Not_Online">
+            <span class="small_Avatar_No_Image_Not_Online_Initial">
+              {{ item.shName }}
+            </span>
+          </button>
+          <div class="cardDetails">
+            <h3 class="proCardName">{{ item.name }}</h3>
+            <h3 class="proCardEmail">{{ item.email }}</h3>
+          </div>
+          <button class="signoutButton">sign out</button>
+        </div>
+        <div class="addNewAccountCard">
+          <img src="../assets/addNewAccount.svg" alt="" />
+          <span>Add a new account</span>
+        </div>
+      </div>
+    </div>
+    <div class="profooter">
+      <button class="popup_Secondary_Medium">Signout of all account</button>
+      <div class="privacy">
+        <button class="privacyButton">Privacy Policy</button>
+        <button class="termButton">Terms of Service</button>
+      </div>
+    </div>
+  </div>
+  <button class="large_Avatar_No_Image_Not_Online" (click)="openProfileInfo = !openProfileInfo">
+    <span class="large_Avatar_No_Image_Not_Online_Initial"> JA </span>
+  </button>
+  <!-- profile info ends here -->
+
+  <section style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- Navigation Pane - Objective Screen  -->
+
+    <div class="nav_Objective_Screen" [ngClass]="{ disabled_Button_Nav: disabledButton == true }">
+      <span class="nav_Objective_Screen_Text">Lead Generation</span>
+    </div>
+
+    <button class="nav_Objective_Screen_With_Icon" [ngClass]="{ disabled_Button_Nav: disabledButton == true }">
+      <div class="nav_Objective_Screen_Text_With_Icon">
+        <span>Lead Generation</span>
+      </div>
+      <div class="nav_Objective_Screen_Img_With_Icon">
+        <img src="../assets/common_css/three_Dot_Nav.svg" alt="" />
+      </div>
+    </button>
+
+    <!-- Navigation Pane - Objective Screen   -->
+  </section>
+
+  <!-- Navigation Pane - Objective Header  -->
+
+  <section style="margin: 50px; display: flex; justify-content: space-around">
+    <section class="nav_Objective_Header_Container">
+      <div class="nav_Objective_Header">
+        <span class="nav_Objective_Header_Text">By Alore community</span>
+        <div class="nav_Objective_Header_Img">
+          <img src="../assets/common_css/add_Icon_Nav.svg" alt="" />
+        </div>
+      </div>
+
+      <div class="divider_Indicator_Inactive"></div>
+    </section>
+  </section>
+
+  <!-- Navigation Pane - Objective Header  -->
+
+
+  <!-- Recipe card starts here -->
+  <div class="reciepeCardContainer">
+    <div class="reciepeCard">
+      <div class="imageContainer">
+        <img src="../../../assets/reciepeImage.svg" alt="">
+      </div>
+      <div class="reciepeDetails">
+        <div class="reciepename">
+          Receipe 1: Pain-Gain Framework
+        </div>
+        <div class="rateType">
+          Mail sent: 1,450,265
+        </div>
+        <div class="rateContainer">
+          <div class="rateTypeContainer">
+            <span class="rateType"> Open Rate: </span>
+            <span></span>
+          </div>
+          <div class="rateTypeContainer">
+            <span class="rateType">Reply Rate: </span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Recipe card ends here -->
+
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- Recipe Detail page : left Nav Side  -->
+
+    <section class="main_Recipe_Right_Column_Container">
+      <div class="main_Recipe_Right_Column">
+        <section class="main_Recipe_Right_Column_Title">
+          Campaign Details
+          <div class="divider_Indicator_Inactive"></div>
+        </section>
+
+        <section class="main_Recipe_Right_Column_Daily_Limit">
+          <div class="main_Recipe_Right_Column_Daily_Limit_Title">
+            Daily Mail sent
+          </div>
+          <div class="main_Recipe_Right_Column_Daily_Limit_Value">
+            100 Emails / Day
+          </div>
+        </section>
+        <section class="main_Recipe_Right_Column_Interval">
+          <div class="main_Recipe_Right_Column_Interval_Title">
+            Interval
+          </div>
+          <div class="main_Recipe_Right_Column_Interval_Value">
+            2 Days
+          </div>
+        </section>
+        <section class="main_Recipe_Right_Column_Days_And_Timing">
+          <div class="main_Recipe_Right_Column_Days_And_Timing_Title">
+            Days & Timings
+          </div>
+          <div class="main_Recipe_Right_Column_Days_And_Timing_Value_Div">
+            <section>
+              <button class="right_Column_Button col_Mon">Mon</button>
+              <span>0900-1100 hours</span>
+            </section>
+            <section>
+              <button class="right_Column_Button col_Tue">Tue</button>
+              <span>0900-1100 hours</span>
+            </section>
+            <section>
+              <button class="right_Column_Button col_Wed">Wed</button>
+              <span>0900-1100 hours</span>
+            </section>
+            <section>
+              <button class="right_Column_Button col_Thu">Thu</button>
+              <span>0900-1100 hours</span>
+            </section>
+            <section>
+              <button class="right_Column_Button col_Fri">Fri</button>
+              <span>0900-1100 hours</span>
+            </section>
+            <section>
+              <button class="right_Column_Button col_Sat">Sat</button>
+              <span>0900-1100 hours</span>
+            </section>
+            <section>
+              <button class="right_Column_Button col_Sun">Sun</button>
+              <span>0900-1100 hours</span>
+            </section>
+          </div>
+        </section>
+
+
+      </div>
+    </section>
+
+    <!-- Recipe Detail page : left Nav Side  -->
+  </div>
+
+
+  <br>
+
+  <div style="margin: 50px; display: flex; justify-content: space-around">
+    <!-- setting popup modal  -->
+
+    <section class="main_Container_Setting_Popup">
+      <div class="header_Setting_Popup">
+        <section class="icon_And_Header">
+          <div class="icon_Inside_Header">
+            <img src="../../../assets/common_css/setting_Icon_Popup_Modal.svg" alt="">
+          </div>
+          <div class="Text_Inside_Header">
+            <p>Continue with same settings?</p>
+            <span>Choose if you would like to customise the settings</span>
+          </div>
+        </section>
+        <div class="close_Button_Div">
+          <button class="alore_blue_Close_Button">
+            <img src="../assets/alore_Blue_Close.svg" alt="" />
+          </button>
+        </div>
+      </div>
+
+
+      <section class="control_Setting">
+        <div class="control_setting_Value">
+
+          <div class="medium_Radio_Div">
+
+            <mat-radio-button [disabled]="disabledButton == true" class="radio_Medium_button"
+              value="1"></mat-radio-button>
+            <!-- <div class="medium_Label_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label</div> -->
+          </div>
+
+          <section class="desc_Beside_Radio">
+            <p>Yes, I would like you continue with same setting</p>
+            <span>Don’t worry you can always edit the settings</span>
+          </section>
+        </div>
+
+
+
+        <div class="control_setting_Value">
+
+          <div class="medium_Radio_Div">
+
+            <mat-radio-button [disabled]="disabledButton == true" class="radio_Medium_button"
+              value="1"></mat-radio-button>
+            <!-- <div class="medium_Label_Div" [ngClass]="{'labelDisable': disabledButton == true}">Label</div> -->
+          </div>
+
+          <section class="desc_Beside_Radio">
+            <p>No, I would like customise the settings to my needs</p>
+            <span>We are all up for it!</span>
+          </section>
+        </div>
+      </section>
+
+      <div class="button_Div">
+        <button class="primary_Normal_Button_Blue width_ex_sml">
+          Next
+        </button>
+
+        <button class="secondary_Normal_Button_Blue width_ex_sml">
+          Cancel
+        </button>
+      </div>
+
+    </section>
+    <!-- setting popup modal  -->
+
+  </div>
+
+
+  <section style="display: flex; justify-content: space-between; align-items: center;">
+
+    <!-- toggle button starts here  -->
+
+    <!-- toggle_Primary_Large  -->
+
+    <mat-slide-toggle checked class="toggle_Primary_Large"></mat-slide-toggle>
+
+    <!-- toggle_Primary_Large  -->
+
+    <!-- toggle_Primary_Medium  -->
+
+    <mat-slide-toggle checked class="toggle_Primary_Medium"></mat-slide-toggle>
+
+    <!-- toggle_Primary_Medium  -->
+
+    <!-- toggle_Primary_Small  -->
+
+    <mat-slide-toggle checked class="toggle_Primary_Small"></mat-slide-toggle>
+
+    <!-- toggle_Primary_Small  -->
+
+
+    <br>
+    <!-- toggle_Secondary_Large  -->
+
+    <mat-slide-toggle checked class="toggle_Secondary_Large"></mat-slide-toggle>
+
+    <!-- toggle_Secondary_Large  -->
+
+    <!-- toggle_Secondary_Medium  -->
+
+    <mat-slide-toggle checked class="toggle_Secondary_Medium"></mat-slide-toggle>
+
+    <!-- toggle_Secondary_Medium  -->
+
+    <!-- toggle_Secondary_Small  -->
+
+    <mat-slide-toggle checked class="toggle_Secondary_Small"></mat-slide-toggle>
+
+    <!-- toggle_Secondary_Small  -->
+
+    <br>
+
+    <!-- toggle_Tertiary_Large  -->
+
+    <mat-slide-toggle checked class="toggle_Tertiary_Large"></mat-slide-toggle>
+
+    <!-- toggle_Tertiary_Large  -->
+
+    <!-- toggle_Tertiary_Medium  -->
+
+    <mat-slide-toggle checked class="toggle_Tertiary_Medium"></mat-slide-toggle>
+
+    <!-- toggle_Tertiary_Medium  -->
+
+    <!-- toggle_Tertiary_Small  -->
+
+    <mat-slide-toggle checked class="toggle_Tertiary_Small"></mat-slide-toggle>
+
+    <!-- toggle_Tertiary_Small  -->
+
+    <!-- toggle button ends here   -->
+
+  </section>
+
+</body>
+
+</html>

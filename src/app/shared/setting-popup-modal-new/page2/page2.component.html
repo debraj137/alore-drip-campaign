@@ -1,0 +1,79 @@
+<div class="main_Container_Time_Zone">
+  <div class="divider"></div>
+  <div class="body scroll-vertical">
+    <p>Select</p>
+    <div class="flag-Div">
+      <section
+        class="details_Container_Section"
+        (click)="pressedPreDefinedTime(data,i)"
+        [ngClass]="{'space': i == 2,'space2' : i == 4,'selectedtime':currentselectedTime == i}"
+        *ngFor="let data of countryDetails,let i = index">
+          <div class="image_Div">
+            <img src="{{ data.image }}" alt="">
+          </div>
+
+          <section class="main_Details">
+            <p class="para">{{ data.countryName }}</p>
+            <span>{{ data.time }}</span>
+          </section>
+      </section>
+    </div>
+    <section id="timeZoneInput" class="input_Section">
+      <div class="head_Input_Section">
+        <span> Or Search for Timezone </span>
+        <img
+          matTooltipClass="small_Primary_Tooltip"
+          mat-raised-button
+          matTooltipPosition="above"
+          matTooltip="Select TimeZone"
+          src="../../../assets/common_css/info_About_Time_Zone.svg"
+          alt=""
+        />
+      </div>
+      <mat-select
+        #timezoneInput
+        placeholder="Select a timezone"
+        class="timeZoneDropDown"
+        [(ngModel)]="selectedValue"
+        name="item"
+        (focusout)="triggerEvent($event)"
+      >
+        <div class="inputContainer">
+          <input
+            type="text"
+            (focus)="(true)"
+            (keyup)="onKeyDown($event.target)"
+            placeholder="Search for timezones"
+          />
+        </div>
+        <mat-option
+          (click)="currentselectedTime = null"
+          class="timeZoneOptions"
+          *ngFor="let item of onlyTimeZoneNames"
+          [value]="item"
+        >
+          {{ item }}
+        </mat-option>
+      </mat-select>
+    </section>
+  </div>
+
+  <div class="divider_Bottom"></div>
+
+  <div class="next_Button_Div">
+    <button
+      class="primary_Normal_Button_Blue width_ex_sml"
+      [disabled]="selectedValue == '' && currentselectedTime == null"
+      (click)="sendCustomTimeZone()"
+    >
+      {{isSingleStep? 'Save' : 'Next'}}
+    </button>
+    <button
+      *ngIf="!isFirstStep || isSingleStep"
+      (click)="pageAction.emit({page : isSingleStep ? 0 : prevStep})"
+      class="secondary_Normal_Button_Blue width_ex_sml"
+    >
+      {{isSingleStep? 'Close' : 'Back'}}
+    </button>
+  </div>
+</div>

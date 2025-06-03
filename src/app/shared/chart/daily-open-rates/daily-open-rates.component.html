@@ -1,0 +1,45 @@
+<div class="chart" *ngIf="loader == false">
+  <div class="chart-first-tier" >
+    <header class="chart-header">
+      <span class="chart-header-title">Daily Open Rates</span>
+    </header>
+    <div class="noGraph" *ngIf="isDataEmpty">
+      <img src="../../../assets/no-volume-graph.svg" alt="" >
+      <span>Daily open rates data empty</span>
+    </div>
+    <div
+      *ngIf="!isDataEmpty"  
+      class="chart-total-wrapper">
+      <h1 class="chart-total">{{percentage}}%</h1>
+      <div class="chart-body">
+        <div class="chart-total-like-wrapper">
+          <p class="chart-desc">Opened/Delivered</p>
+          <p class="chart-desc">{{openedMail}}/{{delivered}}</p>
+        </div>
+        <div class="chart-demo">
+          <div class="chart-icon-wrapper">
+            <div class="chart-blue-icon chart-icon"></div>
+            <p class="chart-icon-desc">Open rate</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      *ngIf="!isDataEmpty" 
+      class="chart-bar-chart-wrapper">
+      <canvas
+          baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+      >
+      </canvas>
+    </div>
+  </div>
+</div>
+<app-graph-loader
+  [title]="'Daily Open Rates'"
+  *ngIf="loader == true">
+</app-graph-loader>

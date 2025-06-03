@@ -1,0 +1,257 @@
+body {
+  margin-top: -30px;
+  margin-left: -30px;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+
+.email-editor-breadcumbcontainer {
+  padding-left:30px;
+  @media (max-width:1366px){
+    padding-left:0px;
+  }
+}
+
+.editor {
+  width: 100%;
+
+  .editorHeader {
+    padding: 30px 30px 0 30px;
+    display: flex;
+
+    .desc {
+      flex: auto;
+
+      p {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 36px;
+        // color: #181818;
+        display: block;
+        margin-bottom: 26px;
+      }
+    }
+
+    .action-button {
+      display: flex;
+      gap: 30px;
+
+      button {
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .spinner{
+          width: 30px;
+          height: 30px;
+        }
+
+        &:active{
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5), inset 0px 4px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        &:nth-child(1) {
+          border-color: var(--alore-main-blue);
+
+          &:hover {
+            background-color:rgba(51, 75, 250, 0.2);
+          }
+  
+          &:active {
+            background-color: var(--alore-main-blue);
+  
+            img {
+              filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(280deg) brightness(203%) contrast(101%);
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          border-color: #fa336f;
+
+          &:hover {
+            background-color:
+              rgba(250, 51, 111, 0.2);
+          }
+  
+          &:active {
+            background-color: #FA336F;
+  
+            img {
+              filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(280deg) brightness(203%) contrast(101%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.alt_Button_Blue_With_Icon_Left {
+  width: 240px;
+  padding: 0px 15px;
+  position: fixed;
+  bottom: 40px;
+  left: 80px;
+}
+
+//   -------------------------------------------------------------
+
+.scroll-horiz {
+  scrollbar-color:var(--alore-main-blue)  #e4e4e4;
+        scrollbar-width: thin;
+  &::-webkit-scrollbar-track {
+    border-radius: 50px;
+    padding-left: 10px;
+    background-color: #e4e4e4;
+  }
+
+  &::-webkit-scrollbar {
+    height: 4px;
+    width: 2px;
+    padding-left: 10px;
+    border-radius: 50px;
+    background-color: #acacac;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    padding-left: 10px;
+    background-color: var(--alore-main-blue);
+  }
+}
+
+// -------------------------------------------------
+
+.mainContainer {
+  .editor {
+    
+     .medium_Primary_Tooltip:hover .medium_Primary_TooltipText {
+      left: 43px;
+      top: 113px;
+     }
+     .medium_Primary_TooltipText::before {
+      left: 18%;
+      top: -32%;
+      transform: rotateX(178deg);
+     }
+  }
+}
+
+@media only screen and (max-width:1366px) {
+  .mainContainer{
+    .editor{
+
+
+      .editorHeader{
+        padding:0px !important;
+
+        .desc{
+                p{
+                  font-size: 20px !important;
+                  line-height: 30px !important;
+                  margin-bottom: 5px;
+                }
+        }
+
+        .alt_Button_Purple_With_Icon_Left {
+          width: 115px;
+          height: 36px;
+          border-radius: 5px;
+          padding: 4px 9px !important;
+          font-size: 12px;
+      }
+
+      .action-button {
+  
+        gap: 15px;
+
+        button{
+          height:40px !important;
+          width:40px !important;
+
+          svg{
+            width: 20px !important;
+          }
+        }
+      }
+    }
+  }
+}
+}
+
+.button-container-email-editor {
+  display: flex;
+}
+
+@media only screen and(max-width:480px){
+.editorHeader{
+  flex-wrap: wrap;
+  gap:10px;
+}
+.mainContainer{
+   .editorHeader{
+    .desc p{
+      max-width: 260px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-bottom: 0px;
+    }
+
+    .alt_Button_Purple_With_Icon_Left{
+      margin-right:0px !important;
+    }
+
+   .button-container-email-editor {
+      display: flex;
+      align-items: flex-start;
+
+  }
+
+
+   }
+}
+
+.mainContainer{
+  .editor{
+    .editorHeader{
+    .action-button {
+      gap:5px;
+
+      button{
+        height:31px !important;
+        width:31px !important;
+
+        img{
+          width: 20px !important;
+        }
+      }
+    }
+  }
+}
+}
+
+.save-btn-info{
+  font-size:10px !important;
+  max-width:79px !important;
+  line-height:10px !important;
+  margin-top:5px !important;
+}
+
+}
+
+      

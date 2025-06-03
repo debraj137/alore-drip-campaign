@@ -1,0 +1,34 @@
+<div class="step1-prospect">
+    <mat-radio-group
+        (change)="valueChanges()"
+        [(ngModel)]="step1Model">
+        <mat-radio-button class="radio_Medium_button"
+            *ngFor="let step1 of step1Selection; let i = index"
+            [value]="i+1">
+            <div class="desc">
+                <span>
+                    {{step1.label}}
+                </span>
+                <p>
+                    {{step1.desc}}
+                </p>
+            </div>
+            <div *ngIf="i <= 2" class="sample-button" >
+            <a href="../../../../../assets/sample.csv/sample.csv" download>
+                Download sample list</a>
+                <img src="../../../../assets/common_css/right_Icon_blue.svg" alt="">
+                <div *ngIf="i === 1"
+                     class="recommended_Value_Div">
+                    <img src="../../../../../assets/common_css/recommeded_Icon.svg" alt="" />
+                    <span>Most often used</span>
+                </div>
+            </div>
+            <div *ngIf="i >= 3" class="sample-button leads-download">
+              <a href={{csvDetail.filePath}} download={{csvDetail.fileName}}>
+                Download existing leads</a>
+                <img src="../../../../assets/common_css/right_Arrow_Icon_green.svg" alt="">
+            </div>
+
+        </mat-radio-button>
+    </mat-radio-group>
+</div>

@@ -1,0 +1,20 @@
+<div class="stepper-layout-leftbar-container">
+    <img src="../../../assets/img/drip-logo.png">
+    <div class="step-list">
+        <div
+            *ngFor="let step of stepList; let i = index" 
+            class="step-item"
+            [class.valid]="i === 0"
+            [class.active]="i === 1">
+            <div class="label-stepper">
+                <mat-icon *ngIf="i === 0">
+                    done
+                </mat-icon>
+                <span *ngIf="i !== 0">
+                    {{i + 1}}
+                </span>
+            </div>
+            {{step}}
+        </div>
+    </div>
+</div>
